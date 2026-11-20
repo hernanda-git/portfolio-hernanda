@@ -3,7 +3,6 @@ import { PROFILE } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
 import { ARCHETYPE_LABELS, SECTORS, type SectorId } from '../data/sectors';
 import { IconArrowRight, IconShield } from './Icons';
-import { MiniPreview } from './MiniPreview';
 
 interface OverviewViewProps {
   projects: ConceptProject[];
@@ -86,9 +85,9 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <section style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '12px', gap: '12px', flexWrap: 'wrap' }}>
           <div>
-            <h2 className="section-title">Featured Interactive Prototypes Across 6 Distinct Interfaces</h2>
+            <h2 className="section-title">Featured Product Concepts Across 6 Distinct UI/UX Disciplines</h2>
             <p className="section-desc">
-              Click any card to launch its full interactive prototype, Indonesian regulatory brief, and SVG system architecture.
+              Click any product screenshot to inspect its full 1280×800 UI/UX design, Indonesian market brief, and layered system architecture.
             </p>
           </div>
           <button type="button" className="btn btn-sm" onClick={() => onExploreAtlas()}>
@@ -105,8 +104,12 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
               className="project-card"
               onClick={() => onOpenProject(project)}
             >
-              <div className="project-card-preview">
-                <MiniPreview project={project} />
+              <div className="project-card-shot">
+                <img
+                  src={`./screenshots/${project.id}.webp`}
+                  alt={`${project.name} UI/UX screen`}
+                  className="project-card-img"
+                />
               </div>
               <div className="project-card-body">
                 <div className="project-card-top">
@@ -117,7 +120,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
                 <p className="project-tagline">{project.tagline}</p>
                 <div className="project-card-foot">
                   <span>{project.platform}</span>
-                  <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Launch Prototype -&gt;</span>
+                  <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Inspect UI/UX -&gt;</span>
                 </div>
               </div>
             </button>

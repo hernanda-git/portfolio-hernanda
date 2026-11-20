@@ -9,7 +9,6 @@ import {
   type SectorId,
 } from '../data/sectors';
 import { IconClose, IconFilter, IconGrid, IconLayers, IconSearch, IconTable } from './Icons';
-import { MiniPreview } from './MiniPreview';
 
 interface AtlasViewProps {
   projects: ConceptProject[];
@@ -306,8 +305,13 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                     className="project-card"
                     onClick={() => onOpenProject(project, filtered)}
                   >
-                    <div className="project-card-preview">
-                      <MiniPreview project={project} />
+                    <div className="project-card-shot">
+                      <img
+                        src={`./screenshots/${project.id}.webp`}
+                        alt={`${project.name} UI/UX product screen`}
+                        className="project-card-img"
+                        loading="lazy"
+                      />
                     </div>
                     <div className="project-card-body">
                       <div className="project-card-top">
@@ -321,7 +325,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                       <p className="project-tagline">{project.tagline}</p>
                       <div className="project-card-foot">
                         <span>{project.standards[0]}</span>
-                        <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Open Studio -&gt;</span>
+                        <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Inspect UI/UX -&gt;</span>
                       </div>
                     </div>
                   </button>

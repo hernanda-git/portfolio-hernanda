@@ -3,8 +3,7 @@ import { EXPERIENCES } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
 import { ARCHETYPE_LABELS, SECTORS } from '../data/sectors';
 import { ArchDiagram } from './ArchDiagram';
-import { ArchetypeRenderer } from './archetypes/ArchetypeRenderer';
-import { IconArrowLeft, IconArrowRight, IconClose, IconShield } from './Icons';
+import { IconArrowLeft, IconArrowRight, IconClose, IconExternal, IconShield } from './Icons';
 
 interface PrototypeStudioProps {
   project: ConceptProject | null;
@@ -21,10 +20,12 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
   onSelectProject,
   onJumpToExperience,
 }) => {
-  const [studioTab, setStudioTab] = useState<'prototype' | 'brief' | 'architecture'>('prototype');
+  const [studioTab, setStudioTab] = useState<'ui' | 'brief' | 'architecture'>('ui');
+  const [zoomOpen, setZoomOpen] = useState(false);
 
   useEffect(() => {
-    setStudioTab('prototype');
+    setStudioTab('ui');
+    setZoomOpen(false);
   }, [project?.id]);
 
   const currentIdx = project ? listContext.findIndex((p) => p.id === project.id) : -1;
@@ -35,30 +36,38 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
     if (!project) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
-      } else if (e.key === 'ArrowLeft' && prevProject) {
+        if (zoomOpen) setZoomOpen(false);
+        else onClose();
+      } else if (e.key === 'ArrowLeft' && prevProject && !zoomOpen) {
         onSelectProject(prevProject);
-      } else if (e.key === 'ArrowRight' && nextProject) {
+      } else if (e.key === 'ArrowRight' && nextProject && !zoomOpen) {
         onSelectProject(nextProject);
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [project, prevProject, nextProject, onClose, onSelectProject]);
+  }, [project, prevProject, nextProject, zoomOpen, onClose, onSelectProject]);
 
   if (!project) return null;
 
   const sectorMeta = SECTORS.find((s) => s.id === project.sector);
   const linkedExp = project.cvLink ? EXPERIENCES.find((e) => e.id === project.cvLink) : null;
+  const shotSrc = `./screenshots/${project.id}.webp`;
 
   return (
-    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Prototype Studio: ${project.name}`}>
+    <div
+      className="modal-backdrop"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Product Case Study: ${project.name}`}
+    >
       <div className="studio-modal" onClick={(e) => e.stopPropagation()}>
         <div className="studio-header">
           <div className="studio-title-group">
             <span className="tag tag-mono">{project.id}</span>
             <h2 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>{project.name}</h2>
-            <span className="tag tag-warn">Concept Prototype · Undeployed</span>
+            <span className="tag tag-warn">Concept Design · Undeployed</span>
             <span className="tag">{project.platform}</span>
             <span className="tag tag-accent">{ARCHETYPE_LABELS[project.archetype]}</span>
           </div>
@@ -69,7 +78,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
               className="btn btn-sm"
               disabled={!prevProject}
               onClick={() => prevProject && onSelectProject(prevProject)}
-              title="Previous concept (Left arrow)"
+              title="Previous project (Left arrow)"
             >
               <IconArrowLeft size={13} />
               Prev
@@ -79,12 +88,12 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
               className="btn btn-sm"
               disabled={!nextProject}
               onClick={() => nextProject && onSelectProject(nextProject)}
-              title="Next concept (Right arrow)"
+              title="Next project (Right arrow)"
             >
               Next
               <IconArrowRight size={13} />
             </button>
-            <button type="button" className="icon-btn" onClick={onClose} aria-label="Close prototype studio">
+            <button type="button" className="icon-btn" onClick={onClose} aria-label="Close case study">
               <IconClose size={14} />
             </button>
           </div>
@@ -94,10 +103,10 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
           <div style={{ display: 'flex', gap: '4px' }}>
             <button
               type="button"
-              className={`studio-tab-btn ${studioTab === 'prototype' ? 'is-active' : ''}`}
-              onClick={() => setStudioTab('prototype')}
+              className={`studio-tab-btn ${studioTab === 'ui' ? 'is-active' : ''}`}
+              onClick={() => setStudioTab('ui')}
             >
-              Interactive Prototype
+              UI/UX Product Screen (1280×800)
             </button>
             <button
               type="button"
@@ -115,23 +124,87 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
             </button>
           </div>
           <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)', padding: '6px 0' }}>
-            {sectorMeta?.name} · Use arrow keys to step across concepts
+            {sectorMeta?.name} · Arrow keys to step across 108 projects
           </div>
         </div>
 
         <div className="studio-body">
-          {studioTab === 'prototype' && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <ArchetypeRenderer key={project.id} project={project} />
-              <div className="brief-box" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                <div style={{ maxWidth: '72ch' }}>
-                  <div style={{ fontSize: '13px', fontWeight: 600 }}>{project.tagline}</div>
-                  <div style={{ fontSize: '12px', color: 'var(--ui-text-2)', marginTop: '2px' }}>{project.summary}</div>
+          {studioTab === 'ui' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <div className="screenshot-stage">
+                <div className="screenshot-stage-bar">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span className="status-dot ok" />
+                    <strong style={{ fontSize: '12.5px' }}>{project.preview.surfaceTitle}</strong>
+                    <span className="tag tag-mono">{project.preview.envTag}</span>
+                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-sm"
+                    onClick={() => setZoomOpen(true)}
+                  >
+                    <IconExternal size={12} />
+                    Inspect Full Screen
+                  </button>
                 </div>
-                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                  {project.standards.map((s) => (
-                    <span className="tag tag-mono" key={s}>{s}</span>
-                  ))}
+
+                <button
+                  type="button"
+                  className="screenshot-img-btn"
+                  onClick={() => setZoomOpen(true)}
+                  title="Click to inspect full 1280×800 UI/UX screen"
+                >
+                  <img
+                    src={shotSrc}
+                    alt={`${project.name} — ${project.tagline} UI/UX screen`}
+                    className="screenshot-img-full"
+                  />
+                </button>
+              </div>
+
+              <div className="brief-grid">
+                <div className="brief-box">
+                  <div className="brief-label">PRODUCT SUMMARY &amp; PROBLEM SOLVED</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '4px' }}>{project.tagline}</div>
+                  <p style={{ margin: '0 0 8px', fontSize: '12.5px', color: 'var(--ui-text-2)' }}>{project.summary}</p>
+                  <p style={{ margin: 0, fontSize: '12px', color: 'var(--ui-text-muted)' }}>
+                    <strong>Pain Point:</strong> {project.problem}
+                  </p>
+                </div>
+
+                <div className="brief-box" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div>
+                    <div className="brief-label">INDONESIAN STANDARDS &amp; TECH STACK</div>
+                    <div className="tag-wrap">
+                      {project.standards.map((s) => (
+                        <span className="tag tag-accent tag-mono" key={s}>{s}</span>
+                      ))}
+                      {project.stack.map((t) => (
+                        <span className="tag tag-mono" key={t}>{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div style={{ fontSize: '12px', color: 'var(--ui-text-2)' }}>
+                    <strong>Target Audience:</strong> {project.audience}
+                  </div>
+                  {linkedExp && (
+                    <div style={{ paddingTop: '8px', borderTop: '1px solid var(--ui-line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
+                      <span style={{ fontSize: '11.5px', color: 'var(--ui-ok)' }}>
+                        Informed by CV: <strong>{linkedExp.company}</strong>
+                      </span>
+                      <button
+                        type="button"
+                        className="btn btn-sm"
+                        onClick={() => {
+                          onClose();
+                          onJumpToExperience(linkedExp.id);
+                        }}
+                      >
+                        View CV Role
+                        <IconArrowRight size={11} />
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -180,7 +253,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '12px', color: 'var(--ui-text-2)' }}>
                     <IconShield size={15} />
                     <span>
-                      This is an original, undeployed conceptual product prototype designed to demonstrate architectural range and Indonesian market fluency. Metrics shown in the prototype are realistic sample domain data.
+                      Original undeployed conceptual product &amp; UI/UX exploration built to demonstrate architectural breadth across Indonesia’s technology landscape. Figures in the UI mockup represent realistic domain sample data.
                     </span>
                   </div>
                 </div>
@@ -245,6 +318,33 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
           )}
         </div>
       </div>
+
+      {zoomOpen && (
+        <div
+          className="lightbox-backdrop"
+          onClick={(e) => {
+            e.stopPropagation();
+            setZoomOpen(false);
+          }}
+        >
+          <div className="lightbox-frame" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-bar">
+              <span className="tag-mono" style={{ fontSize: '12px' }}>
+                {project.id} · {project.name} — 1280×800 UI/UX Design Screen
+              </span>
+              <button type="button" className="btn btn-sm" onClick={() => setZoomOpen(false)}>
+                <IconClose size={12} />
+                Close (Esc)
+              </button>
+            </div>
+            <img
+              src={shotSrc}
+              alt={`${project.name} full resolution UI/UX design`}
+              className="lightbox-img"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
