@@ -408,8 +408,8 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                       <h3 className="project-name">{project.name}</h3>
                       <p className="project-tagline">{project.tagline}</p>
                       <div className="project-card-foot">
-                        <span>{project.standards[0]}</span>
-                        <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Lihat UI/UX -&gt;</span>
+                        <span>{project.standards[0]} · 4 Hal</span>
+                        <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka 4 Halaman -&gt;</span>
                       </div>
                     </div>
                   </button>

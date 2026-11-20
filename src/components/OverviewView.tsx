@@ -19,6 +19,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
 }) => {
   const featured = projects.filter((p) => p.featured).slice(0, 6);
   const archetypeCount = Object.keys(ARCHETYPE_LABELS).length;
+  const totalScreens = projects.length * 4;
 
   const stats = [
     {
@@ -34,7 +35,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
     {
       label: 'Atlas Konsep Produk',
       value: `${projects.length} Konsep`,
-      detail: `${SECTORS.length} sektor pasar · ${archetypeCount} arketipe UI`,
+      detail: `${totalScreens} halaman UI/UX · ${SECTORS.length} sektor pasar`,
     },
     {
       label: 'Skala Sistem Utama',
@@ -143,8 +144,8 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
                 <h3 className="project-name">{project.name}</h3>
                 <p className="project-tagline">{project.tagline}</p>
                 <div className="project-card-foot">
-                  <span>{project.platform}</span>
-                  <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Lihat UI/UX -&gt;</span>
+                  <span>{project.platform} · 4 Halaman UI</span>
+                  <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka 4 Halaman -&gt;</span>
                 </div>
               </div>
             </button>

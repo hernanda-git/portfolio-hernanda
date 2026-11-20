@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { EXPERIENCES } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
+import { getPageScreenshotPath, PROJECT_PAGES } from '../data/projectPages';
 import { ARCHETYPE_LABELS, SECTORS } from '../data/sectors';
 import { ArchDiagram } from './ArchDiagram';
 import { IconArrowLeft, IconArrowRight, IconClose, IconExternal, IconShield } from './Icons';
@@ -21,10 +22,12 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
   onJumpToExperience,
 }) => {
   const [studioTab, setStudioTab] = useState<'ui' | 'brief' | 'architecture'>('ui');
+  const [pageIdx, setPageIdx] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
 
   useEffect(() => {
     setStudioTab('ui');
+    setPageIdx(0);
     setZoomOpen(false);
   }, [project?.id]);
 
@@ -32,27 +35,39 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
   const prevProject = currentIdx > 0 ? listContext[currentIdx - 1] : null;
   const nextProject = currentIdx >= 0 && currentIdx < listContext.length - 1 ? listContext[currentIdx + 1] : null;
 
+  const artPlan = project ? PROJECT_PAGES[project.id] : null;
+  const pages = artPlan?.pages ?? [
+    { slug: 'p1' as const, title: 'Halaman Utama', layout: 'executive-bento-brief' as const },
+  ];
+  const activePage = pages[pageIdx] ?? pages[0];
+
   useEffect(() => {
     if (!project) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         if (zoomOpen) setZoomOpen(false);
         else onClose();
-      } else if (e.key === 'ArrowLeft' && prevProject && !zoomOpen) {
+      } else if (e.key >= '1' && e.key <= '4') {
+        const idx = parseInt(e.key, 10) - 1;
+        if (idx < pages.length) setPageIdx(idx);
+      } else if (zoomOpen) {
+        if (e.key === 'ArrowLeft') setPageIdx((i) => (i > 0 ? i - 1 : pages.length - 1));
+        else if (e.key === 'ArrowRight') setPageIdx((i) => (i + 1) % pages.length);
+      } else if (e.key === 'ArrowLeft' && prevProject) {
         onSelectProject(prevProject);
-      } else if (e.key === 'ArrowRight' && nextProject && !zoomOpen) {
+      } else if (e.key === 'ArrowRight' && nextProject) {
         onSelectProject(nextProject);
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [project, prevProject, nextProject, zoomOpen, onClose, onSelectProject]);
+  }, [project, prevProject, nextProject, zoomOpen, pages.length, onClose, onSelectProject]);
 
   if (!project) return null;
 
   const sectorMeta = SECTORS.find((s) => s.id === project.sector);
   const linkedExp = project.cvLink ? EXPERIENCES.find((e) => e.id === project.cvLink) : null;
-  const shotSrc = `./screenshots/${project.id}.webp`;
+  const activeShotSrc = getPageScreenshotPath(project.id, activePage.slug);
 
   return (
     <div
@@ -68,8 +83,8 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
             <span className="tag tag-mono">{project.id}</span>
             <h2 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>{project.name}</h2>
             <span className="tag tag-warn">Konsep Desain · Belum Deploy</span>
+            <span className="tag tag-accent">{pages.length} Halaman UI/UX</span>
             <span className="tag">{project.platform}</span>
-            <span className="tag tag-accent">{ARCHETYPE_LABELS[project.archetype]}</span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -106,7 +121,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
               className={`studio-tab-btn ${studioTab === 'ui' ? 'is-active' : ''}`}
               onClick={() => setStudioTab('ui')}
             >
-              Tampilan UI/UX (1280×800)
+              Galeri {pages.length} Halaman UI/UX
             </button>
             <button
               type="button"
@@ -124,28 +139,67 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
             </button>
           </div>
           <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)', padding: '6px 0' }}>
-            {sectorMeta?.name} · Tombol panah untuk menelusuri {listContext.length} konsep
+            {sectorMeta?.name} · Tombol 1–4 ganti halaman · Panah ganti konsep ({listContext.length})
           </div>
         </div>
 
         <div className="studio-body">
           {studioTab === 'ui' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              <div className="screenshot-stage">
-                <div className="screenshot-stage-bar">
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span className="status-dot ok" />
-                    <strong style={{ fontSize: '12.5px' }}>{project.preview.surfaceTitle}</strong>
-                    <span className="tag tag-mono">{project.preview.envTag}</span>
-                  </div>
+              {/* Page Switcher Bar */}
+              <div className="page-switcher-bar" role="tablist" aria-label="Daftar halaman produk">
+                {pages.map((pg, idx) => (
                   <button
                     type="button"
-                    className="btn btn-sm"
-                    onClick={() => setZoomOpen(true)}
+                    key={pg.slug}
+                    role="tab"
+                    aria-selected={pageIdx === idx}
+                    className={`page-pill-btn ${pageIdx === idx ? 'is-active' : ''}`}
+                    onClick={() => setPageIdx(idx)}
                   >
-                    <IconExternal size={12} />
-                    Perbesar Layar Penuh
+                    <span className="page-pill-num">0{idx + 1}</span>
+                    <span className="page-pill-title">{pg.title}</span>
                   </button>
+                ))}
+              </div>
+
+              {/* Active 1280x800 Viewport */}
+              <div className="screenshot-stage">
+                <div className="screenshot-stage-bar">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    <span className="status-dot ok" />
+                    <strong style={{ fontSize: '12.5px' }}>
+                      Halaman 0{pageIdx + 1}: {activePage.title}
+                    </strong>
+                    <span className="tag tag-mono">{project.preview.envTag}</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <button
+                      type="button"
+                      className="btn btn-sm"
+                      onClick={() => setPageIdx((i) => (i > 0 ? i - 1 : pages.length - 1))}
+                      aria-label="Halaman sebelumnya"
+                    >
+                      <IconArrowLeft size={12} />
+                    </button>
+                    <span className="tag tag-mono">{pageIdx + 1} / {pages.length}</span>
+                    <button
+                      type="button"
+                      className="btn btn-sm"
+                      onClick={() => setPageIdx((i) => (i + 1) % pages.length)}
+                      aria-label="Halaman berikutnya"
+                    >
+                      <IconArrowRight size={12} />
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-sm"
+                      onClick={() => setZoomOpen(true)}
+                    >
+                      <IconExternal size={12} />
+                      Perbesar
+                    </button>
+                  </div>
                 </div>
 
                 <button
@@ -155,13 +209,43 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                   title="Klik untuk memperbesar tampilan UI/UX penuh 1280×800"
                 >
                   <img
-                    src={shotSrc}
-                    alt={`${project.name} — ${project.tagline} tampilan UI/UX`}
+                    key={activeShotSrc}
+                    src={activeShotSrc}
+                    alt={`${project.name} — ${activePage.title} (1280×800)`}
                     className="screenshot-img-full"
                   />
                 </button>
               </div>
 
+              {/* 4-Page Visual Filmstrip Thumbnails */}
+              <div className="page-thumb-strip">
+                {pages.map((pg, idx) => {
+                  const thumbSrc = getPageScreenshotPath(project.id, pg.slug);
+                  return (
+                    <button
+                      type="button"
+                      key={pg.slug}
+                      className={`page-thumb-card ${pageIdx === idx ? 'is-active' : ''}`}
+                      onClick={() => setPageIdx(idx)}
+                    >
+                      <div className="page-thumb-img-wrap">
+                        <img
+                          src={thumbSrc}
+                          alt={`Pratinjau ${pg.title}`}
+                          className="page-thumb-img"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="page-thumb-meta">
+                        <span className="page-thumb-idx">0{idx + 1}</span>
+                        <span className="page-thumb-label">{pg.title}</span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Quick Summary & Stack Strip */}
               <div className="brief-grid">
                 <div className="brief-box">
                   <div className="brief-label">RINGKASAN PRODUK &amp; MASALAH YANG DISELESAIKAN</div>
@@ -176,6 +260,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                   <div>
                     <div className="brief-label">STANDAR INDONESIA &amp; TECH STACK</div>
                     <div className="tag-wrap">
+                      <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
                       {project.standards.map((s) => (
                         <span className="tag tag-accent tag-mono" key={s}>{s}</span>
                       ))}
@@ -240,10 +325,22 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                 </div>
 
                 <div className="brief-box">
-                  <div className="brief-label">STANDAR &amp; INTEGRASI NASIONAL</div>
-                  <div className="tag-wrap">
-                    {project.standards.map((s) => (
-                      <span className="tag tag-accent tag-mono" key={s}>{s}</span>
+                  <div className="brief-label">DAFTAR HALAMAN UI/UX ({pages.length} LAYAR)</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                    {pages.map((pg, idx) => (
+                      <button
+                        type="button"
+                        key={pg.slug}
+                        className="btn btn-sm"
+                        style={{ justifyContent: 'space-between' }}
+                        onClick={() => {
+                          setPageIdx(idx);
+                          setStudioTab('ui');
+                        }}
+                      >
+                        <span>0{idx + 1}. {pg.title}</span>
+                        <IconArrowRight size={11} />
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -330,16 +427,34 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
           <div className="lightbox-frame" onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-bar">
               <span className="tag-mono" style={{ fontSize: '12px' }}>
-                {project.id} · {project.name} — Desain UI/UX 1280×800
+                {project.id} · {project.name} — 0{pageIdx + 1}/{pages.length}: {activePage.title} (1280×800)
               </span>
-              <button type="button" className="btn btn-sm" onClick={() => setZoomOpen(false)}>
-                <IconClose size={12} />
-                Tutup (Esc)
-              </button>
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                <button
+                  type="button"
+                  className="btn btn-sm"
+                  onClick={() => setPageIdx((i) => (i > 0 ? i - 1 : pages.length - 1))}
+                >
+                  <IconArrowLeft size={12} />
+                  Hal. Prev
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-sm"
+                  onClick={() => setPageIdx((i) => (i + 1) % pages.length)}
+                >
+                  Hal. Next
+                  <IconArrowRight size={12} />
+                </button>
+                <button type="button" className="btn btn-sm" onClick={() => setZoomOpen(false)}>
+                  <IconClose size={12} />
+                  Tutup (Esc)
+                </button>
+              </div>
             </div>
             <img
-              src={shotSrc}
-              alt={`Desain UI/UX resolusi penuh ${project.name}`}
+              src={activeShotSrc}
+              alt={`Desain UI/UX resolusi penuh ${project.name} — ${activePage.title}`}
               className="lightbox-img"
             />
           </div>
