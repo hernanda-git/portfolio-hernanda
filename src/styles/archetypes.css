@@ -1,0 +1,543 @@
+/* Dedicated domain-authentic visual styles for all 18 UI Archetypes
+   (Both MiniPreview thumbnails and Full Interactive Studio Prototypes).
+   Strict unslop-ui compliance: flat surfaces, zero gradients, zero blur, crisp hairlines. */
+
+/* =========================================================================
+   MINI PREVIEW THUMBNAILS (164px live miniature interfaces in gallery)
+   ========================================================================= */
+.mini-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  line-height: 1.25;
+  overflow: hidden;
+  user-select: none;
+}
+
+.mini-bar {
+  height: 22px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  border-bottom: 1px solid var(--ui-line);
+  background: var(--ui-surface);
+  flex-shrink: 0;
+}
+
+.mini-bar-title {
+  font-weight: 600;
+  color: var(--ui-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mini-bar-env {
+  font-family: var(--ui-mono);
+  font-size: 9px;
+  color: var(--ui-text-muted);
+  white-space: nowrap;
+}
+
+.mini-body {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Mini Mobile Device Frame */
+.mini-phone-stage {
+  flex: 1;
+  background: var(--ui-surface-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px 0;
+}
+
+.mini-phone {
+  width: 176px;
+  height: 100%;
+  background: var(--ui-surface);
+  border: 2px solid var(--ui-text);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-phone-head {
+  padding: 6px 8px;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mini-phone-row {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--ui-line);
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+/* Mini Terminal / CLI */
+.mini-term {
+  background: var(--ui-term-bg);
+  color: var(--ui-term-text);
+  font-family: var(--ui-mono);
+}
+
+.mini-term .mini-bar {
+  background: var(--ui-term-surface);
+  border-bottom-color: var(--ui-term-line);
+}
+
+.mini-term .mini-bar-title {
+  color: var(--ui-term-text);
+}
+
+/* Mini Desktop ERP Window */
+.mini-erp-menu {
+  height: 16px;
+  padding: 0 8px;
+  background: var(--ui-surface-3);
+  border-bottom: 1px solid var(--ui-line);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  color: var(--ui-text-2);
+}
+
+.mini-erp-split {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+}
+
+.mini-erp-tree {
+  border-right: 1px solid var(--ui-line);
+  background: var(--ui-surface-2);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 8.5px;
+  color: var(--ui-text-muted);
+}
+
+/* Mini Kanban */
+.mini-kanban {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.mini-kanban-col {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-2);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Mini Split Ledger / Clinical / Vault */
+.mini-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.mini-kpi-box {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-2);
+  padding: 4px 5px;
+}
+
+.mini-kpi-lbl {
+  font-size: 8.5px;
+  color: var(--ui-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-kpi-val {
+  font-family: var(--ui-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ui-text);
+}
+
+.mini-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 3px 6px;
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-1);
+}
+
+/* Mini POS Grid */
+.mini-pos-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 6px;
+}
+
+.mini-pos-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.mini-pos-tile {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-2);
+  padding: 4px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mini-pos-receipt {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-2);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--ui-mono);
+  font-size: 8.5px;
+}
+
+/* =========================================================================
+   FULL INTERACTIVE PROTOTYPE WORKBENCH (Inside PrototypeStudio)
+   ========================================================================= */
+.proto-shell {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line-strong);
+  border-radius: var(--ui-r-4);
+  overflow: hidden;
+}
+
+.proto-chrome {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--ui-line);
+  background: var(--ui-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.proto-brand-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proto-brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.proto-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid var(--ui-line);
+}
+
+.proto-metric-cell {
+  padding: 10px 14px;
+  border-right: 1px solid var(--ui-line);
+}
+
+.proto-metric-cell:last-child {
+  border-right: 0;
+}
+
+.proto-metric-label {
+  font-size: var(--ui-size-1);
+  color: var(--ui-text-muted);
+}
+
+.proto-metric-val {
+  font-family: var(--ui-mono);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.proto-action-log {
+  padding: 8px 14px;
+  border-top: 1px solid var(--ui-line);
+  background: var(--ui-surface-2);
+  font-family: var(--ui-mono);
+  font-size: var(--ui-size-1);
+  color: var(--ui-text-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Interactive Mobile SuperApp Workbench */
+.proto-mobile-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px;
+  background: var(--ui-canvas);
+}
+
+.proto-phone-device {
+  border: 2px solid var(--ui-text);
+  border-radius: 8px;
+  background: var(--ui-surface);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.proto-phone-banner {
+  padding: 14px;
+  color: #ffffff;
+}
+
+.proto-phone-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--ui-line);
+  background: var(--ui-surface-2);
+}
+
+.proto-phone-tab {
+  border: 0;
+  background: transparent;
+  padding: 8px 4px;
+  font-size: var(--ui-size-1);
+  font-weight: 500;
+  color: var(--ui-text-2);
+  cursor: pointer;
+}
+
+.proto-phone-tab.is-active {
+  color: var(--ui-accent-ink);
+  background: var(--ui-surface);
+  font-weight: 600;
+}
+
+/* Interactive Terminal / CLI */
+.proto-terminal {
+  background: var(--ui-term-bg);
+  color: var(--ui-term-text);
+  font-family: var(--ui-mono);
+  font-size: 12px;
+}
+
+.proto-term-top {
+  padding: 8px 14px;
+  background: var(--ui-term-surface);
+  border-bottom: 1px solid var(--ui-term-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.proto-term-grid {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 320px;
+}
+
+.proto-term-side {
+  border-right: 1px solid var(--ui-term-line);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.proto-term-cmd {
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  border: 1px solid var(--ui-term-line);
+  border-radius: 3px;
+  background: var(--ui-term-surface);
+  color: var(--ui-term-text);
+  font-family: var(--ui-mono);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.proto-term-cmd.is-active {
+  border-color: #4c8dff;
+  color: #7cb0ff;
+}
+
+/* Interactive Split Pane (Ledger, EMR, Geo, SCADA, IDE, Vault, ERP, SOC) */
+.proto-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr);
+}
+
+.proto-split-left {
+  border-right: 1px solid var(--ui-line);
+  padding: 12px 14px;
+}
+
+.proto-split-right {
+  padding: 12px 14px;
+  background: var(--ui-surface-2);
+}
+
+.proto-row-btn {
+  width: 100%;
+  padding: 9px 10px;
+  margin-bottom: 6px;
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-3);
+  background: var(--ui-surface);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.proto-row-btn:hover {
+  border-color: var(--ui-line-strong);
+}
+
+.proto-row-btn.is-active {
+  border-color: var(--ui-accent);
+  background: var(--ui-accent-soft);
+}
+
+/* Kanban Board */
+.proto-kanban-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 14px;
+  background: var(--ui-canvas);
+}
+
+.proto-kanban-col {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-3);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* POS Interactive Grid */
+.proto-pos-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 300px;
+}
+
+.proto-pos-menu {
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  border-right: 1px solid var(--ui-line);
+}
+
+.proto-pos-card {
+  border: 1px solid var(--ui-line);
+  border-radius: var(--ui-r-3);
+  padding: 10px;
+  background: var(--ui-surface);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.proto-pos-card:hover {
+  border-color: var(--ui-accent);
+}
+
+.proto-pos-cart {
+  padding: 14px;
+  background: var(--ui-surface-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Calendar / Roster Matrix */
+.proto-cal-grid {
+  display: grid;
+  grid-template-columns: 150px repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--ui-line);
+  font-size: var(--ui-size-1);
+}
+
+.proto-cal-cell {
+  padding: 8px;
+  border-right: 1px solid var(--ui-line);
+  border-bottom: 1px solid var(--ui-line);
+}
+
+@media (max-width: 820px) {
+  .proto-mobile-layout,
+  .proto-term-grid,
+  .proto-split,
+  .proto-kanban-grid,
+  .proto-pos-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .proto-split-left,
+  .proto-pos-menu,
+  .proto-term-side {
+    border-right: 0;
+    border-bottom: 1px solid var(--ui-line);
+  }
+
+  .proto-metrics-row {
+    grid-template-columns: 1fr;
+  }
+
+  .proto-metric-cell {
+    border-right: 0;
+    border-bottom: 1px solid var(--ui-line);
+  }
+}

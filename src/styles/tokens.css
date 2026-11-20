@@ -1,0 +1,100 @@
+/* unslop-ui baseline tokens — Reference: Stripe Dashboard + Linear
+   Light default. Single accent (Jakarta Cobalt). Flat surfaces, 1 hairline level. */
+
+:root {
+  /* neutral ramp */
+  --ui-canvas: #f4f4f1;
+  --ui-surface: #ffffff;
+  --ui-surface-2: #fafaf8;
+  --ui-surface-3: #ededeb;
+  --ui-line: #e2e2dc;
+  --ui-line-strong: #c8c8bf;
+  --ui-text: #141413;
+  --ui-text-2: #4f4f4a;
+  --ui-text-muted: #76766f;
+
+  /* one portfolio accent: Jakarta Cobalt */
+  --ui-accent: #0f52ba;
+  --ui-accent-hover: #0b4196;
+  --ui-accent-soft: #eaf1fc;
+  --ui-accent-ink: #0f52ba;
+
+  /* semantic state only */
+  --ui-ok: #117a43;
+  --ui-ok-soft: #e9f6ef;
+  --ui-warn: #9a5b00;
+  --ui-warn-soft: #fef4e6;
+  --ui-bad: #b42318;
+  --ui-bad-soft: #fdeceb;
+
+  /* terminal / dark-instrument internal surface */
+  --ui-term-bg: #16181d;
+  --ui-term-surface: #1e2128;
+  --ui-term-line: #2d313b;
+  --ui-term-text: #e6e8ec;
+  --ui-term-muted: #949ba8;
+
+  /* spacing: 4px base */
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-5: 20px;
+  --ui-space-6: 24px;
+  --ui-space-8: 32px;
+
+  /* density */
+  --ui-row: 24px;
+  --ui-row-lg: 32px;
+  --ui-control: 28px;
+
+  /* type: deliberate editorial + technical jumps */
+  --ui-font: "IBM Plex Sans", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ui-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --ui-mono: "IBM Plex Mono", "Cascadia Mono", "Consolas", "SF Mono", monospace;
+
+  --ui-size-1: 11px;    /* metadata & tags */
+  --ui-size-2: 12.5px;  /* dense UI body */
+  --ui-size-3: 14px;    /* reading body */
+  --ui-size-4: 17px;    /* section title */
+  --ui-size-5: 22px;    /* view title */
+  --ui-size-6: 32px;    /* editorial display */
+  --ui-leading: 1.42;
+
+  /* radius: disciplined 2px–8px */
+  --ui-r-1: 2px;
+  --ui-r-2: 3px;
+  --ui-r-3: 4px;
+  --ui-r-4: 6px;
+  --ui-r-5: 8px;
+}
+
+[data-theme="dark"] {
+  --ui-canvas: #141517;
+  --ui-surface: #1b1d20;
+  --ui-surface-2: #212428;
+  --ui-surface-3: #282c31;
+  --ui-line: #2d3138;
+  --ui-line-strong: #3f454f;
+  --ui-text: #eceef2;
+  --ui-text-2: #b4b9c2;
+  --ui-text-muted: #848b96;
+
+  --ui-accent: #4c8dff;
+  --ui-accent-hover: #6aa1ff;
+  --ui-accent-soft: #16243a;
+  --ui-accent-ink: #7cb0ff;
+
+  --ui-ok: #34c279;
+  --ui-ok-soft: #12291e;
+  --ui-warn: #eab308;
+  --ui-warn-soft: #2c2310;
+  --ui-bad: #f97066;
+  --ui-bad-soft: #311716;
+
+  --ui-term-bg: #101216;
+  --ui-term-surface: #171a20;
+  --ui-term-line: #272c36;
+  --ui-term-text: #e6e8ec;
+  --ui-term-muted: #8e96a4;
+}
