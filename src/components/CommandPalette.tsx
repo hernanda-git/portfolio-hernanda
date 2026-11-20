@@ -100,7 +100,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   let runningIndex = 0;
 
   return (
-    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label="Command palette">
+    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label="Pencarian cepat">
       <div className="cmd-modal" onClick={(e) => e.stopPropagation()}>
         <div className="cmd-input-row">
           <IconSearch size={15} />
@@ -112,9 +112,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               setQuery(e.target.value);
               setCursor(0);
             }}
-            placeholder="Jump to any of 108 concepts, standards (QRIS, SATUSEHAT, CoreTax, UU PDP), stack, or career..."
+            placeholder={`Loncat ke ${projects.length} konsep, standar (QRIS, SATUSEHAT, CoreTax, UU PDP), stack, atau karier...`}
           />
-          <button type="button" className="icon-btn" onClick={onClose} aria-label="Close command palette">
+          <button type="button" className="icon-btn" onClick={onClose} aria-label="Tutup pencarian cepat">
             <IconClose size={13} />
           </button>
         </div>
@@ -122,12 +122,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         <div className="cmd-list">
           {flatCount === 0 ? (
             <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--ui-text-muted)', fontSize: '12.5px' }}>
-              No matching concepts, sectors, or career records for &quot;{query}&quot;. Try &quot;QRIS&quot;, &quot;SATUSEHAT&quot;, &quot;CoreTax&quot;, &quot;Mining&quot;, or &quot;.NET MAUI&quot;.
+              Tidak ditemukan konsep, sektor, atau pengalaman untuk &quot;{query}&quot;. Coba &quot;QRIS&quot;, &quot;SATUSEHAT&quot;, &quot;CoreTax&quot;, &quot;Tambang&quot;, atau &quot;.NET MAUI&quot;.
             </div>
           ) : (
             <>
               <div className="facet-title" style={{ padding: '4px 10px' }}>
-                <span>{query ? 'Concept Prototypes' : 'Featured Flagship Concepts'}</span>
+                <span>{query ? 'Konsep Produk' : 'Konsep Unggulan'}</span>
                 <span className="tag-mono">{results.matchedProjects.length}</span>
               </div>
               {results.matchedProjects.map((p) => {
@@ -162,7 +162,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               {results.matchedSectors.length > 0 && (
                 <>
                   <div className="facet-title" style={{ padding: '8px 10px 4px' }}>
-                    <span>Indonesian Market Sectors</span>
+                    <span>Sektor Pasar Indonesia</span>
                   </div>
                   {results.matchedSectors.map((s) => {
                     const idx = runningIndex++;
@@ -178,7 +178,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                         }}
                       >
                         <span style={{ fontSize: '12.5px', fontWeight: 500 }}>{s.name}</span>
-                        <span className="tag">Filter Sector</span>
+                        <span className="tag">Filter Sektor</span>
                       </button>
                     );
                   })}
@@ -188,7 +188,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               {results.matchedExp.length > 0 && (
                 <>
                   <div className="facet-title" style={{ padding: '8px 10px 4px' }}>
-                    <span>Verified Career History (CV)</span>
+                    <span>Riwayat Karier Terverifikasi (CV)</span>
                   </div>
                   {results.matchedExp.map((e) => {
                     const idx = runningIndex++;
@@ -207,7 +207,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                           <div style={{ fontSize: '12.5px', fontWeight: 600 }}>{e.role} — {e.company}</div>
                           <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)' }}>{e.period} · {e.sector}</div>
                         </div>
-                        <span className="tag tag-ok">Verified CV</span>
+                        <span className="tag tag-ok">CV Valid</span>
                       </button>
                     );
                   })}

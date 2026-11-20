@@ -60,14 +60,14 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={`Product Case Study: ${project.name}`}
+      aria-label={`Studi Kasus Produk: ${project.name}`}
     >
       <div className="studio-modal" onClick={(e) => e.stopPropagation()}>
         <div className="studio-header">
           <div className="studio-title-group">
             <span className="tag tag-mono">{project.id}</span>
             <h2 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>{project.name}</h2>
-            <span className="tag tag-warn">Concept Design · Undeployed</span>
+            <span className="tag tag-warn">Konsep Desain · Belum Deploy</span>
             <span className="tag">{project.platform}</span>
             <span className="tag tag-accent">{ARCHETYPE_LABELS[project.archetype]}</span>
           </div>
@@ -78,22 +78,22 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
               className="btn btn-sm"
               disabled={!prevProject}
               onClick={() => prevProject && onSelectProject(prevProject)}
-              title="Previous project (Left arrow)"
+              title="Proyek sebelumnya (Panah kiri)"
             >
               <IconArrowLeft size={13} />
-              Prev
+              Sebelumnya
             </button>
             <button
               type="button"
               className="btn btn-sm"
               disabled={!nextProject}
               onClick={() => nextProject && onSelectProject(nextProject)}
-              title="Next project (Right arrow)"
+              title="Proyek berikutnya (Panah kanan)"
             >
-              Next
+              Berikutnya
               <IconArrowRight size={13} />
             </button>
-            <button type="button" className="icon-btn" onClick={onClose} aria-label="Close case study">
+            <button type="button" className="icon-btn" onClick={onClose} aria-label="Tutup studi kasus">
               <IconClose size={14} />
             </button>
           </div>
@@ -106,25 +106,25 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
               className={`studio-tab-btn ${studioTab === 'ui' ? 'is-active' : ''}`}
               onClick={() => setStudioTab('ui')}
             >
-              UI/UX Product Screen (1280×800)
+              Tampilan UI/UX (1280×800)
             </button>
             <button
               type="button"
               className={`studio-tab-btn ${studioTab === 'brief' ? 'is-active' : ''}`}
               onClick={() => setStudioTab('brief')}
             >
-              Product &amp; Indonesia Market Brief
+              Ringkasan Produk &amp; Pasar Indonesia
             </button>
             <button
               type="button"
               className={`studio-tab-btn ${studioTab === 'architecture' ? 'is-active' : ''}`}
               onClick={() => setStudioTab('architecture')}
             >
-              Solution Architecture &amp; Stack
+              Arsitektur Solusi &amp; Stack
             </button>
           </div>
           <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)', padding: '6px 0' }}>
-            {sectorMeta?.name} · Arrow keys to step across 108 projects
+            {sectorMeta?.name} · Tombol panah untuk menelusuri {listContext.length} konsep
           </div>
         </div>
 
@@ -144,7 +144,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                     onClick={() => setZoomOpen(true)}
                   >
                     <IconExternal size={12} />
-                    Inspect Full Screen
+                    Perbesar Layar Penuh
                   </button>
                 </div>
 
@@ -152,11 +152,11 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                   type="button"
                   className="screenshot-img-btn"
                   onClick={() => setZoomOpen(true)}
-                  title="Click to inspect full 1280×800 UI/UX screen"
+                  title="Klik untuk memperbesar tampilan UI/UX penuh 1280×800"
                 >
                   <img
                     src={shotSrc}
-                    alt={`${project.name} — ${project.tagline} UI/UX screen`}
+                    alt={`${project.name} — ${project.tagline} tampilan UI/UX`}
                     className="screenshot-img-full"
                   />
                 </button>
@@ -164,17 +164,17 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
 
               <div className="brief-grid">
                 <div className="brief-box">
-                  <div className="brief-label">PRODUCT SUMMARY &amp; PROBLEM SOLVED</div>
+                  <div className="brief-label">RINGKASAN PRODUK &amp; MASALAH YANG DISELESAIKAN</div>
                   <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '4px' }}>{project.tagline}</div>
                   <p style={{ margin: '0 0 8px', fontSize: '12.5px', color: 'var(--ui-text-2)' }}>{project.summary}</p>
                   <p style={{ margin: 0, fontSize: '12px', color: 'var(--ui-text-muted)' }}>
-                    <strong>Pain Point:</strong> {project.problem}
+                    <strong>Masalah Pasar:</strong> {project.problem}
                   </p>
                 </div>
 
                 <div className="brief-box" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div>
-                    <div className="brief-label">INDONESIAN STANDARDS &amp; TECH STACK</div>
+                    <div className="brief-label">STANDAR INDONESIA &amp; TECH STACK</div>
                     <div className="tag-wrap">
                       {project.standards.map((s) => (
                         <span className="tag tag-accent tag-mono" key={s}>{s}</span>
@@ -185,12 +185,12 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                     </div>
                   </div>
                   <div style={{ fontSize: '12px', color: 'var(--ui-text-2)' }}>
-                    <strong>Target Audience:</strong> {project.audience}
+                    <strong>Target Pengguna:</strong> {project.audience}
                   </div>
                   {linkedExp && (
                     <div style={{ paddingTop: '8px', borderTop: '1px solid var(--ui-line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
                       <span style={{ fontSize: '11.5px', color: 'var(--ui-ok)' }}>
-                        Informed by CV: <strong>{linkedExp.company}</strong>
+                        Berakar dari CV: <strong>{linkedExp.company}</strong>
                       </span>
                       <button
                         type="button"
@@ -200,7 +200,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                           onJumpToExperience(linkedExp.id);
                         }}
                       >
-                        View CV Role
+                        Lihat Peran CV
                         <IconArrowRight size={11} />
                       </button>
                     </div>
@@ -214,19 +214,19 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
             <div className="brief-grid">
               <div className="brief-box" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <div>
-                  <div className="brief-label">PRODUCT OVERVIEW</div>
+                  <div className="brief-label">IKHTISAR PRODUK</div>
                   <p style={{ margin: 0, fontSize: '13.5px' }}>{project.summary}</p>
                 </div>
                 <div>
-                  <div className="brief-label">MARKET PAIN POINT SOLVED</div>
+                  <div className="brief-label">PERMASALAHAN PASAR YANG DIATASI</div>
                   <p style={{ margin: 0, fontSize: '13px', color: 'var(--ui-text-2)' }}>{project.problem}</p>
                 </div>
                 <div>
-                  <div className="brief-label">INDONESIAN REGULATORY &amp; ECOSYSTEM FIT</div>
+                  <div className="brief-label">KESESUAIAN REGULASI &amp; EKOSISTEM INDONESIA</div>
                   <p style={{ margin: 0, fontSize: '13px', color: 'var(--ui-text-2)' }}>{project.indonesiaContext}</p>
                 </div>
                 <div>
-                  <div className="brief-label">CORE CAPABILITIES</div>
+                  <div className="brief-label">KAPABILITAS UTAMA</div>
                   <ul className="exp-bullets" style={{ margin: 0 }}>
                     {project.features.map((f) => <li key={f}>{f}</li>)}
                   </ul>
@@ -235,12 +235,12 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <div className="brief-box">
-                  <div className="brief-label">TARGET AUDIENCE &amp; BUYERS</div>
+                  <div className="brief-label">TARGET AUDIENS &amp; PEMBELI</div>
                   <p style={{ margin: 0, fontSize: '13px', fontWeight: 500 }}>{project.audience}</p>
                 </div>
 
                 <div className="brief-box">
-                  <div className="brief-label">STANDARDS &amp; NATIONAL INTEGRATIONS</div>
+                  <div className="brief-label">STANDAR &amp; INTEGRASI NASIONAL</div>
                   <div className="tag-wrap">
                     {project.standards.map((s) => (
                       <span className="tag tag-accent tag-mono" key={s}>{s}</span>
@@ -249,18 +249,18 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                 </div>
 
                 <div className="brief-box">
-                  <div className="brief-label">CREDIBILITY &amp; STATUS DISCLOSURE</div>
+                  <div className="brief-label">KETERBUKAAN STATUS &amp; KREDIBILITAS</div>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '12px', color: 'var(--ui-text-2)' }}>
                     <IconShield size={15} />
                     <span>
-                      Original undeployed conceptual product &amp; UI/UX exploration built to demonstrate architectural breadth across Indonesia’s technology landscape. Figures in the UI mockup represent realistic domain sample data.
+                      Eksplorasi konsep produk dan UI/UX orisinal (belum di-deploy ke produksi) untuk menunjukkan keluasan arsitektur di lanskap teknologi Indonesia. Angka pada mockup UI merupakan data sampel domain yang realistis.
                     </span>
                   </div>
                 </div>
 
                 {linkedExp && (
                   <div className="brief-box" style={{ borderColor: 'var(--ui-accent)' }}>
-                    <div className="brief-label">INFORMED BY VERIFIED CAREER EXPERIENCE</div>
+                    <div className="brief-label">BERAKAR DARI PENGALAMAN KARIER TERVERIFIKASI</div>
                     <div style={{ fontSize: '13px', fontWeight: 600 }}>{linkedExp.role} — {linkedExp.company}</div>
                     <div style={{ fontSize: '11.5px', color: 'var(--ui-text-2)', margin: '4px 0 10px' }}>
                       {linkedExp.period} · {linkedExp.summary}
@@ -273,7 +273,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                         onJumpToExperience(linkedExp.id);
                       }}
                     >
-                      View Verified Career Record
+                      Lihat Catatan Karier Terverifikasi
                       <IconArrowRight size={12} />
                     </button>
                   </div>
@@ -285,26 +285,26 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
           {studioTab === 'architecture' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div className="brief-box">
-                <div className="brief-label">LAYERED SOLUTION ARCHITECTURE</div>
+                <div className="brief-label">ARSITEKTUR SOLUSI BERLAPIS</div>
                 <ArchDiagram project={project} />
               </div>
 
               <div className="brief-grid">
                 <div className="brief-box">
-                  <div className="brief-label">PROPOSED TECHNOLOGY ECOSYSTEM</div>
+                  <div className="brief-label">EKOSISTEM TEKNOLOGI YANG DIUSULKAN</div>
                   <div className="tag-wrap" style={{ marginBottom: '12px' }}>
                     {project.stack.map((tech) => (
                       <span className="tag tag-mono" key={tech}>{tech}</span>
                     ))}
                   </div>
-                  <div className="brief-label">ARCHITECTURAL RATIONALE</div>
+                  <div className="brief-label">RASIONAL ARSITEKTUR</div>
                   <p style={{ margin: 0, fontSize: '12.5px', color: 'var(--ui-text-2)' }}>
-                    Follows SOLID and KISS principles — favoring modular monoliths or cleanly bounded .NET / TypeScript services with explicit outbox messaging, deterministic audit ledgers, and Jakarta data-residency alignment under UU PDP No. 27/2022.
+                    Mengikuti prinsip SOLID dan KISS — mengutamakan Modular Monolith atau layanan .NET / TypeScript berbatas jelas dengan outbox messaging eksplisit, audit ledger deterministik, serta kepatuhan residensi data Jakarta sesuai UU PDP No. 27/2022.
                   </p>
                 </div>
 
                 <div className="brief-box">
-                  <div className="brief-label">LAYER RESPONSIBILITIES</div>
+                  <div className="brief-label">TANGGUNG JAWAB SETIAP LAPISAN</div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px' }}>
                     <div><strong>Client Surface:</strong> {project.architecture.client}</div>
                     <div><strong>Edge &amp; Auth:</strong> {project.architecture.edge}</div>
@@ -330,16 +330,16 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
           <div className="lightbox-frame" onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-bar">
               <span className="tag-mono" style={{ fontSize: '12px' }}>
-                {project.id} · {project.name} — 1280×800 UI/UX Design Screen
+                {project.id} · {project.name} — Desain UI/UX 1280×800
               </span>
               <button type="button" className="btn btn-sm" onClick={() => setZoomOpen(false)}>
                 <IconClose size={12} />
-                Close (Esc)
+                Tutup (Esc)
               </button>
             </div>
             <img
               src={shotSrc}
-              alt={`${project.name} full resolution UI/UX design`}
+              alt={`Desain UI/UX resolusi penuh ${project.name}`}
               className="lightbox-img"
             />
           </div>

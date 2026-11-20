@@ -29,10 +29,10 @@ export const ArchDiagram: React.FC<ArchDiagramProps> = ({ project }) => {
         width="100%"
         style={{ minWidth: '720px', display: 'block', background: 'var(--ui-surface-2)', border: '1px solid var(--ui-line)', borderRadius: '4px' }}
         role="img"
-        aria-label={`System architecture diagram for ${project.name}`}
+        aria-label={`Diagram arsitektur sistem untuk ${project.name}`}
       >
         <text x="16" y="24" fontSize="10.5" fontFamily="IBM Plex Mono, monospace" fill="var(--ui-text-muted)">
-          REFERENCE SOLUTION ARCHITECTURE — {project.id} · {project.name.toUpperCase()} · DATA RESIDENCY: INDONESIA (WIB)
+          ARSITEKTUR SOLUSI REFERENSI — {project.id} · {project.name.toUpperCase()} · RESIDENSI DATA: INDONESIA (WIB)
         </text>
 
         {nodes.map((node, idx) => {
@@ -109,7 +109,7 @@ export const ArchDiagram: React.FC<ArchDiagramProps> = ({ project }) => {
         })}
 
         <text x="16" y="144" fontSize="9.5" fontFamily="IBM Plex Mono, monospace" fill="var(--ui-text-muted)">
-          Standards: {project.standards.join('  ·  ')}  |  Primary Stack: {project.stack.join(', ')}
+          Standar: {project.standards.join('  ·  ')}  |  Stack Utama: {project.stack.join(', ')}
         </text>
       </svg>
     </div>

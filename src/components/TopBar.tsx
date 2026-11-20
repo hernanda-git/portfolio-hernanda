@@ -33,20 +33,20 @@ export const TopBar: React.FC<TopBarProps> = ({
         </span>
       </button>
 
-      <nav className="topbar-nav" aria-label="Primary navigation">
+      <nav className="topbar-nav" aria-label="Navigasi utama">
         <button
           type="button"
           className={`nav-tab ${activeTab === 'overview' ? 'is-active' : ''}`}
           onClick={() => onSelectTab('overview')}
         >
-          Overview
+          Ringkasan
         </button>
         <button
           type="button"
           className={`nav-tab ${activeTab === 'atlas' ? 'is-active' : ''}`}
           onClick={() => onSelectTab('atlas')}
         >
-          Concept Atlas
+          Atlas Konsep
           <span className="nav-count">{totalProjects}</span>
         </button>
         <button
@@ -54,7 +54,7 @@ export const TopBar: React.FC<TopBarProps> = ({
           className={`nav-tab ${activeTab === 'experience' ? 'is-active' : ''}`}
           onClick={() => onSelectTab('experience')}
         >
-          Verified Career
+          Karier Terverifikasi
           <span className="nav-count">{totalExperiences}</span>
         </button>
         <button
@@ -62,22 +62,22 @@ export const TopBar: React.FC<TopBarProps> = ({
           className={`nav-tab ${activeTab === 'architecture' ? 'is-active' : ''}`}
           onClick={() => onSelectTab('architecture')}
         >
-          Architecture &amp; Contact
+          Arsitektur &amp; Kontak
         </button>
       </nav>
 
       <div className="topbar-actions">
-        <button type="button" className="cmd-trigger" onClick={onOpenCommand} aria-label="Open command search">
+        <button type="button" className="cmd-trigger" onClick={onOpenCommand} aria-label="Buka pencarian cepat">
           <IconSearch size={13} />
-          <span className="cmd-trigger-label">Search 108 concepts...</span>
+          <span className="cmd-trigger-label">Cari {totalProjects} konsep...</span>
           <span className="kbd">Ctrl K</span>
         </button>
         <button
           type="button"
           className="icon-btn"
           onClick={onToggleTheme}
-          aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-          title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+          aria-label={theme === 'light' ? 'Ubah ke tema gelap' : 'Ubah ke tema terang'}
+          title={theme === 'light' ? 'Ubah ke tema gelap' : 'Ubah ke tema terang'}
         >
           {theme === 'light' ? <IconMoon size={14} /> : <IconSun size={14} />}
         </button>

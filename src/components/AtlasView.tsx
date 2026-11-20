@@ -30,6 +30,20 @@ const PLATFORMS: PlatformType[] = [
 
 const ARCHETYPES = Object.keys(ARCHETYPE_LABELS) as ArchetypeId[];
 
+function matchesQuery(p: ConceptProject, q: string): boolean {
+  if (!q) return true;
+  return (
+    p.id.toLowerCase().includes(q) ||
+    p.name.toLowerCase().includes(q) ||
+    p.tagline.toLowerCase().includes(q) ||
+    p.summary.toLowerCase().includes(q) ||
+    p.audience.toLowerCase().includes(q) ||
+    p.stack.some((s) => s.toLowerCase().includes(q)) ||
+    p.standards.some((s) => s.toLowerCase().includes(q)) ||
+    ARCHETYPE_LABELS[p.archetype].toLowerCase().includes(q)
+  );
+}
+
 export const AtlasView: React.FC<AtlasViewProps> = ({
   projects,
   initialSector,
@@ -54,27 +68,80 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
   }, [initialSector, onSectorConsumed]);
 
   const activeLens = CURATED_LENSES.find((l) => l.id === lensId) ?? CURATED_LENSES[0];
+  const normalizedQuery = search.trim().toLowerCase();
 
-  const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    return projects.filter((p) => {
-      if (!activeLens.filter(p)) return false;
-      if (selectedSector !== 'all' && p.sector !== selectedSector) return false;
-      if (selectedPlatform !== 'all' && p.platform !== selectedPlatform) return false;
-      if (selectedArchetype !== 'all' && p.archetype !== selectedArchetype) return false;
-      if (!q) return true;
-      return (
-        p.id.toLowerCase().includes(q) ||
-        p.name.toLowerCase().includes(q) ||
-        p.tagline.toLowerCase().includes(q) ||
-        p.summary.toLowerCase().includes(q) ||
-        p.audience.toLowerCase().includes(q) ||
-        p.stack.some((s) => s.toLowerCase().includes(q)) ||
-        p.standards.some((s) => s.toLowerCase().includes(q)) ||
-        ARCHETYPE_LABELS[p.archetype].toLowerCase().includes(q)
-      );
-    });
-  }, [projects, search, selectedSector, selectedPlatform, selectedArchetype, activeLens]);
+  // Dynamic counts for curated lens chips (respecting current search query)
+  const lensCounts = useMemo(() => {
+    const map: Record<string, number> = {};
+    for (const lens of CURATED_LENSES) {
+      map[lens.id] = projects.filter((p) => lens.filter(p) && matchesQuery(p, normalizedQuery)).length;
+    }
+    return map;
+  }, [projects, normalizedQuery]);
+
+  // Base pool after lens + search
+  const searchAndLensPool = useMemo(
+    () => projects.filter((p) => activeLens.filter(p) && matchesQuery(p, normalizedQuery)),
+    [projects, activeLens, normalizedQuery]
+  );
+
+  // Cross-facet pools: each facet reflects all OTHER active filters so every count is mathematically accurate
+  const sectorPool = useMemo(
+    () =>
+      searchAndLensPool.filter(
+        (p) =>
+          (selectedPlatform === 'all' || p.platform === selectedPlatform) &&
+          (selectedArchetype === 'all' || p.archetype === selectedArchetype)
+      ),
+    [searchAndLensPool, selectedPlatform, selectedArchetype]
+  );
+
+  const platformPool = useMemo(
+    () =>
+      searchAndLensPool.filter(
+        (p) =>
+          (selectedSector === 'all' || p.sector === selectedSector) &&
+          (selectedArchetype === 'all' || p.archetype === selectedArchetype)
+      ),
+    [searchAndLensPool, selectedSector, selectedArchetype]
+  );
+
+  const archetypePool = useMemo(
+    () =>
+      searchAndLensPool.filter(
+        (p) =>
+          (selectedSector === 'all' || p.sector === selectedSector) &&
+          (selectedPlatform === 'all' || p.platform === selectedPlatform)
+      ),
+    [searchAndLensPool, selectedSector, selectedPlatform]
+  );
+
+  const filtered = useMemo(
+    () =>
+      sectorPool.filter((p) => selectedSector === 'all' || p.sector === selectedSector),
+    [sectorPool, selectedSector]
+  );
+
+  const sectorCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const s of SECTORS) counts[s.id] = 0;
+    for (const p of sectorPool) counts[p.sector] = (counts[p.sector] || 0) + 1;
+    return counts;
+  }, [sectorPool]);
+
+  const platformCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const pl of PLATFORMS) counts[pl] = 0;
+    for (const p of platformPool) counts[p.platform] = (counts[p.platform] || 0) + 1;
+    return counts;
+  }, [platformPool]);
+
+  const archetypeCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const arch of ARCHETYPES) counts[arch] = 0;
+    for (const p of archetypePool) counts[p.archetype] = (counts[p.archetype] || 0) + 1;
+    return counts;
+  }, [archetypePool]);
 
   const hasFilters =
     search.trim() !== '' ||
@@ -108,11 +175,11 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
               className="search-input"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Filter 108 concepts by name, QRIS, SATUSEHAT, CoreTax, UU PDP, .NET, mining..."
-              aria-label="Filter concept prototypes"
+              placeholder={`Saring ${projects.length} konsep berdasarkan nama, QRIS, SATUSEHAT, CoreTax, UU PDP, .NET, tambang...`}
+              aria-label="Saring konsep produk"
             />
             {search && (
-              <button type="button" className="search-clear" onClick={() => setSearch('')} aria-label="Clear filter">
+              <button type="button" className="search-clear" onClick={() => setSearch('')} aria-label="Hapus pencarian">
                 <IconClose size={13} />
               </button>
             )}
@@ -125,11 +192,11 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
               onClick={() => setMobileFiltersOpen((v) => !v)}
             >
               <IconFilter size={13} />
-              Filters
+              Filter
             </button>
 
-            <span className="tag tag-mono">
-              Showing {filtered.length} / {projects.length}
+            <span className="tag tag-mono" data-testid="atlas-showing-count">
+              Menampilkan {filtered.length} / {projects.length}
             </span>
 
             {hasFilters && (
@@ -138,14 +205,14 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
               </button>
             )}
 
-            <div className="segmented" role="tablist" aria-label="Atlas view mode">
+            <div className="segmented" role="tablist" aria-label="Mode tampilan Atlas">
               <button
                 type="button"
                 className={`seg-btn ${viewMode === 'gallery' ? 'is-active' : ''}`}
                 onClick={() => setViewMode('gallery')}
               >
                 <IconGrid size={13} />
-                Visual Gallery
+                Galeri Visual
               </button>
               <button
                 type="button"
@@ -153,7 +220,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                 onClick={() => setViewMode('matrix')}
               >
                 <IconTable size={13} />
-                Matrix
+                Matriks
               </button>
               <button
                 type="button"
@@ -161,14 +228,14 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                 onClick={() => setViewMode('ecosystem')}
               >
                 <IconLayers size={13} />
-                Market Map
+                Peta Pasar
               </button>
             </div>
           </div>
         </div>
 
         {/* Curated Lenses */}
-        <div className="lens-bar" aria-label="Curated lenses">
+        <div className="lens-bar" aria-label="Lensa kurasi">
           {CURATED_LENSES.map((lens) => (
             <button
               type="button"
@@ -177,7 +244,8 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
               title={lens.description}
               onClick={() => setLensId(lens.id)}
             >
-              {lens.label}
+              <span>{lens.label}</span>
+              <span className="lens-count">{lensCounts[lens.id]}</span>
             </button>
           ))}
         </div>
@@ -185,17 +253,17 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
 
       {/* Body: Facet Sidebar + Active View */}
       <div className="atlas-body">
-        <aside className={`facet-sidebar ${mobileFiltersOpen ? 'is-mobile-open' : ''}`} aria-label="Catalog facets">
-          <div className="facet-group">
+        <aside className={`facet-sidebar ${mobileFiltersOpen ? 'is-mobile-open' : ''}`} aria-label="Filter katalog">
+          <div className="facet-group" data-facet-group="sector">
             <div className="facet-title">
-              <span>Market Sectors (15)</span>
+              <span>Sektor Pasar ({SECTORS.length})</span>
               {selectedSector !== 'all' && (
                 <button
                   type="button"
                   style={{ border: 0, background: 'none', color: 'var(--ui-accent-ink)', cursor: 'pointer', fontSize: '11px' }}
                   onClick={() => setSelectedSector('all')}
                 >
-                  All
+                  Semua
                 </button>
               )}
             </div>
@@ -204,78 +272,94 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
               className={`facet-row ${selectedSector === 'all' ? 'is-active' : ''}`}
               onClick={() => setSelectedSector('all')}
             >
-              <span className="facet-row-label">All Indonesian Sectors</span>
-              <span className="facet-count">{projects.length}</span>
+              <span className="facet-row-label">Semua Sektor Indonesia</span>
+              <span className="facet-count" data-facet-all="sector">{sectorPool.length}</span>
             </button>
             {SECTORS.map((s) => {
-              const count = projects.filter((p) => p.sector === s.id).length;
+              const count = sectorCounts[s.id] ?? 0;
               return (
                 <button
                   type="button"
                   key={s.id}
-                  className={`facet-row ${selectedSector === s.id ? 'is-active' : ''}`}
-                  onClick={() => setSelectedSector(s.id)}
+                  className={`facet-row ${selectedSector === s.id ? 'is-active' : ''} ${count === 0 ? 'is-zero' : ''}`}
+                  onClick={() => setSelectedSector(selectedSector === s.id ? 'all' : s.id)}
                 >
                   <span className="facet-row-label">{s.shortName}</span>
-                  <span className="facet-count">{count}</span>
+                  <span className="facet-count" data-facet-item="sector">{count}</span>
                 </button>
               );
             })}
           </div>
 
-          <div className="facet-group">
+          <div className="facet-group" data-facet-group="platform">
             <div className="facet-title">
-              <span>Platform Class (6)</span>
+              <span>Kelas Platform ({PLATFORMS.length})</span>
               {selectedPlatform !== 'all' && (
                 <button
                   type="button"
                   style={{ border: 0, background: 'none', color: 'var(--ui-accent-ink)', cursor: 'pointer', fontSize: '11px' }}
                   onClick={() => setSelectedPlatform('all')}
                 >
-                  All
+                  Semua
                 </button>
               )}
             </div>
+            <button
+              type="button"
+              className={`facet-row ${selectedPlatform === 'all' ? 'is-active' : ''}`}
+              onClick={() => setSelectedPlatform('all')}
+            >
+              <span className="facet-row-label">Semua Platform</span>
+              <span className="facet-count" data-facet-all="platform">{platformPool.length}</span>
+            </button>
             {PLATFORMS.map((pl) => {
-              const count = projects.filter((p) => p.platform === pl).length;
+              const count = platformCounts[pl] ?? 0;
               return (
                 <button
                   type="button"
                   key={pl}
-                  className={`facet-row ${selectedPlatform === pl ? 'is-active' : ''}`}
+                  className={`facet-row ${selectedPlatform === pl ? 'is-active' : ''} ${count === 0 ? 'is-zero' : ''}`}
                   onClick={() => setSelectedPlatform(selectedPlatform === pl ? 'all' : pl)}
                 >
                   <span className="facet-row-label">{pl}</span>
-                  <span className="facet-count">{count}</span>
+                  <span className="facet-count" data-facet-item="platform">{count}</span>
                 </button>
               );
             })}
           </div>
 
-          <div className="facet-group">
+          <div className="facet-group" data-facet-group="archetype">
             <div className="facet-title">
-              <span>UI Archetype (18)</span>
+              <span>Arketipe UI ({ARCHETYPES.length})</span>
               {selectedArchetype !== 'all' && (
                 <button
                   type="button"
                   style={{ border: 0, background: 'none', color: 'var(--ui-accent-ink)', cursor: 'pointer', fontSize: '11px' }}
                   onClick={() => setSelectedArchetype('all')}
                 >
-                  All
+                  Semua
                 </button>
               )}
             </div>
+            <button
+              type="button"
+              className={`facet-row ${selectedArchetype === 'all' ? 'is-active' : ''}`}
+              onClick={() => setSelectedArchetype('all')}
+            >
+              <span className="facet-row-label">Semua Arketipe UI</span>
+              <span className="facet-count" data-facet-all="archetype">{archetypePool.length}</span>
+            </button>
             {ARCHETYPES.map((arch) => {
-              const count = projects.filter((p) => p.archetype === arch).length;
+              const count = archetypeCounts[arch] ?? 0;
               return (
                 <button
                   type="button"
                   key={arch}
-                  className={`facet-row ${selectedArchetype === arch ? 'is-active' : ''}`}
+                  className={`facet-row ${selectedArchetype === arch ? 'is-active' : ''} ${count === 0 ? 'is-zero' : ''}`}
                   onClick={() => setSelectedArchetype(selectedArchetype === arch ? 'all' : arch)}
                 >
                   <span className="facet-row-label">{ARCHETYPE_LABELS[arch]}</span>
-                  <span className="facet-count">{count}</span>
+                  <span className="facet-count" data-facet-item="archetype">{count}</span>
                 </button>
               );
             })}
@@ -286,13 +370,13 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
           {filtered.length === 0 ? (
             <div className="empty-state">
               <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--ui-text)', marginBottom: '6px' }}>
-                No concept prototypes match the current filter combination.
+                Tidak ada konsep produk yang cocok dengan kombinasi filter saat ini.
               </div>
               <p style={{ margin: '0 0 14px', fontSize: '12.5px' }}>
-                Clear one or more active facets or search terms to return to the full 108-project Indonesian Market Atlas.
+                Hapus satu atau lebih filter aktif untuk kembali ke seluruh {projects.length} konsep Atlas Pasar Indonesia.
               </p>
               <button type="button" className="btn btn-primary" onClick={resetAll}>
-                Reset all filters
+                Reset semua filter
               </button>
             </div>
           ) : viewMode === 'gallery' ? (
@@ -308,7 +392,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                     <div className="project-card-shot">
                       <img
                         src={`./screenshots/${project.id}.webp`}
-                        alt={`${project.name} UI/UX product screen`}
+                        alt={`Tampilan UI/UX produk ${project.name}`}
                         className="project-card-img"
                         loading="lazy"
                       />
@@ -317,7 +401,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                       <div className="project-card-top">
                         <span className="project-id">{project.id}</span>
                         <div style={{ display: 'flex', gap: '4px' }}>
-                          {project.cvLink && <span className="tag tag-ok">CV Domain</span>}
+                          {project.cvLink && <span className="tag tag-ok">Domain CV</span>}
                           <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
                         </div>
                       </div>
@@ -325,7 +409,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                       <p className="project-tagline">{project.tagline}</p>
                       <div className="project-card-foot">
                         <span>{project.standards[0]}</span>
-                        <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Inspect UI/UX -&gt;</span>
+                        <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Lihat UI/UX -&gt;</span>
                       </div>
                     </div>
                   </button>
@@ -339,14 +423,14 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                     className="btn"
                     onClick={() => setVisibleLimit((n) => n + 36)}
                   >
-                    Load 36 more ({filtered.length - visibleLimit} remaining)
+                    Muat 36 lagi (tersisa {filtered.length - visibleLimit})
                   </button>
                   <button
                     type="button"
                     className="btn btn-primary"
                     onClick={() => setVisibleLimit(filtered.length)}
                   >
-                    Show all {filtered.length} previews
+                    Tampilkan semua {filtered.length} konsep
                   </button>
                 </div>
               )}
@@ -357,12 +441,12 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Product Concept</th>
-                    <th>Sector</th>
+                    <th>Konsep Produk</th>
+                    <th>Sektor</th>
                     <th>Platform</th>
-                    <th>Interface Archetype</th>
-                    <th>National Standard / Focus</th>
-                    <th>Primary Stack</th>
+                    <th>Arketipe UI</th>
+                    <th>Standar Nasional / Fokus</th>
+                    <th>Stack Utama</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -398,7 +482,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                         <h3 className="section-title" style={{ fontSize: '15px' }}>{sec.name}</h3>
                         <p className="section-desc">{sec.indonesiaThesis}</p>
                       </div>
-                      <span className="tag tag-mono">{group.length} concepts</span>
+                      <span className="tag tag-mono">{group.length} konsep</span>
                     </div>
                     <div className="ecosystem-tiles">
                       {group.map((p) => (

@@ -52,7 +52,7 @@ function pageWrap(body, theme, font, extraCss = '') {
 
 function itemsTable(project, theme) {
   return `<table class="dt">
-    <thead><tr><th>Code</th><th>Record / Operation</th><th>Metric</th><th>Meta</th><th>Status</th></tr></thead>
+    <thead><tr><th>Kode</th><th>Aktivitas / Catatan</th><th>Metrik</th><th>Info</th><th>Status</th></tr></thead>
     <tbody>
       ${project.preview.items.map((it) => `<tr>
         <td class="mono" style="font-weight:700;color:${project.brandColor};white-space:nowrap">${esc(it.code)}</td>
@@ -116,7 +116,7 @@ export function renderTasteScreen(project, taste) {
 
           <div class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px">
             <div style="display:flex;justify-content:space-between;align-items:center">
-              <strong class="hd" style="font-size:14px">Verification &amp; Context</strong>
+              <strong class="hd" style="font-size:14px">Verifikasi &amp; Konteks Indonesia</strong>
               <span class="mono muted">${esc(project.id)}</span>
             </div>
             <div style="font-size:12.5px;color:${theme.muted};line-height:1.55">${esc(project.indonesiaContext)}</div>
@@ -267,7 +267,7 @@ export function renderTasteScreen(project, taste) {
             </div>
           </div>
           <div class="card" style="flex:1;padding:14px;display:flex;flex-direction:column;gap:8px">
-            <div style="font-weight:700;font-size:12.5px">Live Activity &amp; Commitments</div>
+            <div style="font-weight:700;font-size:12.5px">Aktivitas Live &amp; Transaksi</div>
             ${items.map((it) => `<div style="padding:9px 10px;border:1px solid ${theme.border};border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:8px">
               <div><div style="font-weight:600;font-size:12px">${esc(it.title)}</div><div class="muted">${esc(it.subtitle)}</div></div>
               <div style="text-align:right;flex-shrink:0"><div class="mono" style="font-weight:700;font-size:11.5px">${esc(it.value)}</div>${pill(it.status, it.tone, theme.dark)}</div>
@@ -278,13 +278,13 @@ export function renderTasteScreen(project, taste) {
         <div style="display:flex;flex-direction:column;gap:14px">
           <div class="card" style="padding:14px">
             <div style="display:flex;justify-content:space-between;margin-bottom:10px">
-              <strong class="hd" style="font-size:13.5px">Operational Intelligence &amp; Visual Engine</strong>
+              <strong class="hd" style="font-size:13.5px">Visualisasi &amp; Intelijen Operasional</strong>
               <span class="mono muted">${esc(m2.label)}: ${esc(m2.value)}</span>
             </div>
             ${heroWidget}
           </div>
           <div class="card" style="flex:1;padding:14px;display:flex;flex-direction:column;gap:10px">
-            <div style="font-weight:700;font-size:12.5px">System Readout &amp; Compliance Proof</div>
+            <div style="font-weight:700;font-size:12.5px">Log Sistem &amp; Bukti Kepatuhan</div>
             <div style="padding:12px;background:#0e121a;color:#e2e8f0;border-radius:6px;font-family:Cascadia Mono,monospace;font-size:10.5px;line-height:1.55">${esc(project.preview.snippet)}</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto">
               ${project.features.slice(0, 2).map((f) => `<div style="padding:9px;background:${theme.surface2};border:1px solid ${theme.border};border-radius:5px;font-size:11px">${esc(f)}</div>`).join('')}
@@ -467,19 +467,19 @@ export function renderTasteScreen(project, taste) {
 
         <div class="card" style="grid-column:span 2;padding:14px;display:flex;flex-direction:column;gap:8px">
           <div style="display:flex;justify-content:space-between">
-            <strong class="hd" style="font-size:13.5px">Primary Visual Module</strong>
+            <strong class="hd" style="font-size:13.5px">Modul Visual Utama</strong>
             <span class="mono muted">${esc(project.standards.join(' · '))}</span>
           </div>
           <div style="flex:1;display:flex;align-items:center">${heroWidget}</div>
         </div>
 
         <div class="card" style="grid-column:span 2;display:flex;flex-direction:column">
-          <div class="card-hd"><span>Operational Register</span><span class="mono muted">${esc(project.id)}</span></div>
+          <div class="card-hd"><span>Daftar Operasional</span><span class="mono muted">${esc(project.id)}</span></div>
           ${itemsTable(project, theme)}
         </div>
 
         <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px">
-          <strong class="hd" style="font-size:13px">Verified Trace &amp; Readiness</strong>
+          <strong class="hd" style="font-size:13px">Jejak Verifikasi &amp; Konteks</strong>
           <div style="padding:11px;background:#0d1118;color:#e2e8f0;border-radius:6px;font-family:Cascadia Mono,monospace;font-size:10px;line-height:1.5">${esc(project.preview.snippet)}</div>
           <div class="muted" style="line-height:1.5">${esc(project.indonesiaContext)}</div>
         </div>

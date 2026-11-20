@@ -8,12 +8,12 @@ interface ExperienceViewProps {
   onOpenProject: (project: ConceptProject) => void;
 }
 
-const TYPES: Array<'All' | ExperienceItem['employmentType']> = [
-  'All',
+const TYPES: Array<'Semua' | ExperienceItem['employmentType']> = [
+  'Semua',
   'Full-Time',
   'Founder',
   'Leadership',
-  'Consultant / Placement',
+  'Konsultan / Penempatan',
   'Freelance',
 ];
 
@@ -21,10 +21,10 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
   highlightExpId,
   onOpenProject,
 }) => {
-  const [typeFilter, setTypeFilter] = useState<'All' | ExperienceItem['employmentType']>('All');
+  const [typeFilter, setTypeFilter] = useState<'Semua' | ExperienceItem['employmentType']>('Semua');
 
   const items = useMemo(() => {
-    if (typeFilter === 'All') return EXPERIENCES;
+    if (typeFilter === 'Semua') return EXPERIENCES;
     return EXPERIENCES.filter((e) => e.employmentType === typeFilter);
   }, [typeFilter]);
 
@@ -34,29 +34,33 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
         <div className="panel-header">
           <div>
             <h1 className="section-title" style={{ fontSize: '20px' }}>
-              Verified Production Career History (2016 – 2026)
+              Riwayat Karier Produksi Terverifikasi (2016 – 2026)
             </h1>
             <p className="section-desc">
-              Sourced verbatim from {PROFILE.name}’s resume — 16 real engagements across AI inference, civic SaaS, enterprise approval workflows, mining, banking, insurance, logistics, and law enforcement.
+              Bersumber langsung dari CV {PROFILE.name} — {EXPERIENCES.length} pengalaman nyata lintas AI inference, SaaS kewargaan, workflow approval enterprise, pertambangan, perbankan, asuransi, logistik, dan instansi pemerintah.
             </p>
           </div>
           <span className="tag tag-ok">
             <IconShield size={12} />
-            CV-Verified Record
+            Terverifikasi CV
           </span>
         </div>
 
         <div style={{ padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', background: 'var(--ui-surface-2)' }}>
-          {TYPES.map((t) => (
-            <button
-              type="button"
-              key={t}
-              className={`lens-chip ${typeFilter === t ? 'is-active' : ''}`}
-              onClick={() => setTypeFilter(t)}
-            >
-              {t}
-            </button>
-          ))}
+          {TYPES.map((t) => {
+            const count = t === 'Semua' ? EXPERIENCES.length : EXPERIENCES.filter((e) => e.employmentType === t).length;
+            return (
+              <button
+                type="button"
+                key={t}
+                className={`lens-chip ${typeFilter === t ? 'is-active' : ''}`}
+                onClick={() => setTypeFilter(t)}
+              >
+                <span>{t}</span>
+                <span className="lens-count">{count}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -110,7 +114,7 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
 
                   {exp.relatedConceptIds.length > 0 && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '11px', color: 'var(--ui-text-muted)' }}>Related concepts:</span>
+                      <span style={{ fontSize: '11px', color: 'var(--ui-text-muted)' }}>Konsep terkait:</span>
                       {exp.relatedConceptIds.map((cid) => {
                         const proj = PROJECTS_BY_ID[cid];
                         if (!proj) return null;
@@ -137,8 +141,8 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
         <aside className="skill-panel">
           <div className="panel-header">
             <div>
-              <h2 className="section-title" style={{ fontSize: '15px' }}>Technical Capabilities Matrix</h2>
-              <p className="section-desc">Core production stack (2016–2026)</p>
+              <h2 className="section-title" style={{ fontSize: '15px' }}>Matriks Kapabilitas Teknis</h2>
+              <p className="section-desc">Stack produksi inti (2016–2026)</p>
             </div>
           </div>
 

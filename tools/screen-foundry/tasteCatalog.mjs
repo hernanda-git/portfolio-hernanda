@@ -1,4 +1,4 @@
-// Unique per-project art direction across all 108 projects:
+// Unique per-project art direction across all 120 projects:
 // { shell, theme, font, widget, persona, nav } — NO two adjacent projects share the same taste!
 
 export const TASTE_CATALOG = {
@@ -139,4 +139,18 @@ export const TASTE_CATALOG = {
   'ID-106': { shell: 'icon-rail-narrow', theme: 'coffee-roast', font: 'industrial-condensed', widget: 'bengkel-bays', persona: 'Service Adv · 8 Lift Bays', nav: ['8 Bays', 'PKB Jasa', 'Parts', 'WA Quote'] },
   'ID-107': { shell: 'top-nav-editorial', theme: 'sharia-sand', font: 'editorial-serif', widget: 'radial-gauge', persona: 'Nazhir Audit · PSAK 112', nav: ['Pokok Wakaf', 'Produktif', '8 Asnaf', 'BSZ Pajak'] },
   'ID-108': { shell: 'mac-window-studio', theme: 'paper-editorial', font: 'editorial-serif', widget: 'bilingual-redline', persona: 'PPAT Notaris · Tangsel', nav: ['Deal Room', 'BPN e-Cert', 'BPHTB', 'AJB Draft'] },
+
+  // EKSPANSI PASAR INDONESIA: ID-109 .. ID-120 (12 unique tastes)
+  'ID-109': { shell: 'mobile-asymmetric', theme: 'maritime-navy', font: 'swiss-geometric', widget: 'corridor-hub', persona: 'Komuter · Halim -> Padalarang', nav: ['Tiket QR', 'Feeder KA', 'Transit'] },
+  'ID-110': { shell: 'dark-command-hud', theme: 'sovereign-indigo', font: 'technical-mono', widget: 'latency-dual', persona: 'LiveOps Mgr · 142K CCU', nav: ['Event Live', 'Gacha Rate', 'QRIS Top-Up', 'Anti-Cheat'] },
+  'ID-111': { shell: 'split-sidebar-brand', theme: 'clinical-mint', font: 'humanist-friendly', widget: 'ecg-soap', persona: 'drh. Nadya · VetOS Kemang', nav: ['Rawat Jalan', 'Vaksinasi', 'Lab Hewan', 'Boarding'] },
+  'ID-112': { shell: 'windows-ribbon-erp', theme: 'sharia-sand', font: 'editorial-serif', widget: 'bar-regional', persona: 'Bendahara · KSP Makmur', nav: ['Anggota', 'Simpanan', 'Pinjaman', 'SHU RAT'] },
+  'ID-113': { shell: 'floating-topbar-cards', theme: 'retail-coral', font: 'swiss-geometric', widget: 'oee-rings', persona: 'Gate Director · GBK 18K', nav: ['QR Dinamis', 'Gate Scan', 'Resale Resmi', 'Pajak PB1'] },
+  'ID-114': { shell: 'mobile-asymmetric', theme: 'blueprint-cobalt', font: 'humanist-friendly', widget: 'radar-spider', persona: 'Siswa SNBT · Target STEI', nav: ['Tryout IRT', 'Analisis', 'Peluang PTN'] },
+  'ID-115': { shell: 'dark-command-hud', theme: 'nord-dev', font: 'industrial-condensed', widget: 'solar-strings', persona: 'NOC Grid · KIPP Nusantara', nav: ['Mikrogrid', 'BESS 42%', 'PLTS 50MW', 'Distribusi'] },
+  'ID-116': { shell: 'top-nav-editorial', theme: 'swiss-mono', font: 'swiss-geometric', widget: 'milestone-vault', persona: 'KPR Desk · 7 Bank Mitra', nav: ['Pre-Scoring', 'SLIK / DSCR', 'Simulasi', 'Akad PPAT'] },
+  'ID-117': { shell: 'windows-ribbon-erp', theme: 'bali-linen', font: 'humanist-friendly', widget: 'branch-heatmap', persona: 'Kasir Hub · 14 Outlet Kilo', nav: ['Order RFID', 'Mesin Cuci', 'Royalti', 'Kurir Antar'] },
+  'ID-118': { shell: 'top-nav-editorial', theme: 'paper-editorial', font: 'editorial-serif', widget: 'bar-regional', persona: 'Editor Akuisisi · Gramedia', nav: ['Katalog ISBN', 'Royalti', 'PPh 23', 'e-Book DRM'] },
+  'ID-119': { shell: 'bento-executive', theme: 'coffee-roast', font: 'humanist-friendly', widget: 'truck-load', persona: 'Ops Katering · 4.200 Pax', nav: ['Rotasi Menu', 'Gizi HACCP', 'Kirim Kantin', 'Tagihan'] },
+  'ID-120': { shell: 'icon-rail-narrow', theme: 'civic-crimson', font: 'technical-mono', widget: 'radar-spider', persona: 'Asesor SPBE · 47 Indikator', nav: ['Indeks 3.82', 'Bukti Dukung', 'Arsitektur', 'PANRB'] },
 };

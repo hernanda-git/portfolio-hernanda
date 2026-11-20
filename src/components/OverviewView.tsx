@@ -1,5 +1,5 @@
 import React from 'react';
-import { PROFILE } from '../data/profile';
+import { EXPERIENCES, PROFILE } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
 import { ARCHETYPE_LABELS, SECTORS, type SectorId } from '../data/sectors';
 import { IconArrowRight, IconShield } from './Icons';
@@ -18,6 +18,30 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
   onOpenExperience,
 }) => {
   const featured = projects.filter((p) => p.featured).slice(0, 6);
+  const archetypeCount = Object.keys(ARCHETYPE_LABELS).length;
+
+  const stats = [
+    {
+      label: 'Rekayasa Produksi',
+      value: '10+ Thn',
+      detail: `${PROFILE.activeSince}–2026 lintas enterprise & startup`,
+    },
+    {
+      label: 'Pengalaman CV Valid',
+      value: `${EXPERIENCES.length} Peran`,
+      detail: 'Fintech, Pertambangan, Asuransi, Logistik, AI, GovTech',
+    },
+    {
+      label: 'Atlas Konsep Produk',
+      value: `${projects.length} Konsep`,
+      detail: `${SECTORS.length} sektor pasar · ${archetypeCount} arketipe UI`,
+    },
+    {
+      label: 'Skala Sistem Utama',
+      value: '80+ App',
+      detail: 'Orkestrasi workflow approval konglomerasi',
+    },
+  ];
 
   return (
     <div>
@@ -29,12 +53,12 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
               <span className="status-dot ok" />
               <span>{PROFILE.location} · {PROFILE.timezone}</span>
               <span>·</span>
-              <span>Active Since {PROFILE.activeSince}</span>
+              <span>Aktif Sejak {PROFILE.activeSince}</span>
               <span>·</span>
               <span>.NET · Solution Architecture · AI Inference</span>
             </div>
             <h1 className="hero-title">
-              Engineering durable enterprise software &amp; mapping 108 digital products for Indonesia’s economy.
+              Merancang perangkat lunak enterprise yang tangguh &amp; memetakan {projects.length} produk digital untuk ekonomi Indonesia.
             </h1>
             <p className="hero-lead">{PROFILE.summary[0]}</p>
             <p className="hero-lead">{PROFILE.summary[1]}</p>
@@ -42,21 +66,21 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
 
           <div className="hero-cta-row">
             <button type="button" className="btn btn-primary" onClick={() => onExploreAtlas()}>
-              Explore 108 Interactive Concepts
+              Jelajahi {projects.length} Konsep Produk
               <IconArrowRight size={14} />
             </button>
             <button type="button" className="btn" onClick={onOpenExperience}>
-              Read Verified Career (2016–2026)
+              Lihat Karier Terverifikasi (2016–2026)
             </button>
             <a className="btn" href={`mailto:${PROFILE.email}`}>
-              Direct Conversation
+              Diskusi Langsung
             </a>
           </div>
         </div>
 
         <aside className="hero-side">
           <div className="stat-grid">
-            {PROFILE.verifiedStats.map((st) => (
+            {stats.map((st) => (
               <div className="stat-cell" key={st.label}>
                 <div className="stat-val">{st.value}</div>
                 <div className="stat-label">{st.label}</div>
@@ -69,29 +93,29 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             <div>
               <div className="credibility-title">
                 <IconShield size={14} />
-                <span>Real Work vs. Conceptual Exploration</span>
+                <span>Pengalaman Nyata vs. Eksplorasi Konseptual</span>
               </div>
               <p style={{ margin: 0, lineHeight: 1.48 }}>{PROFILE.credibilityStatement}</p>
             </div>
             <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-              <span className="tag tag-ok">16 Verified CV Roles</span>
-              <span className="tag tag-warn">108 Undeployed Concepts</span>
+              <span className="tag tag-ok">{EXPERIENCES.length} Pengalaman CV Valid</span>
+              <span className="tag tag-warn">{projects.length} Konsep Belum Deploy</span>
             </div>
           </div>
         </aside>
       </section>
 
-      {/* Featured Interactive Prototypes */}
+      {/* Featured Product Concepts */}
       <section style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '12px', gap: '12px', flexWrap: 'wrap' }}>
           <div>
-            <h2 className="section-title">Featured Product Concepts Across 6 Distinct UI/UX Disciplines</h2>
+            <h2 className="section-title">Konsep Produk Unggulan Lintas 6 Disiplin UI/UX</h2>
             <p className="section-desc">
-              Click any product screenshot to inspect its full 1280×800 UI/UX design, Indonesian market brief, and layered system architecture.
+              Klik tangkapan layar produk mana saja untuk meninjau desain UI/UX penuh 1280×800, ringkasan pasar Indonesia, dan arsitektur sistem berlapisnya.
             </p>
           </div>
           <button type="button" className="btn btn-sm" onClick={() => onExploreAtlas()}>
-            View all {projects.length} concepts
+            Lihat seluruh {projects.length} konsep
             <IconArrowRight size={13} />
           </button>
         </div>
@@ -107,7 +131,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
               <div className="project-card-shot">
                 <img
                   src={`./screenshots/${project.id}.webp`}
-                  alt={`${project.name} UI/UX screen`}
+                  alt={`Tampilan UI/UX ${project.name}`}
                   className="project-card-img"
                 />
               </div>
@@ -120,7 +144,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
                 <p className="project-tagline">{project.tagline}</p>
                 <div className="project-card-foot">
                   <span>{project.platform}</span>
-                  <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Inspect UI/UX -&gt;</span>
+                  <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Lihat UI/UX -&gt;</span>
                 </div>
               </div>
             </button>
@@ -132,12 +156,12 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <section className="panel">
         <div className="panel-header">
           <div>
-            <h2 className="section-title">Indonesian Digital Economy Atlas — 15 Market Sectors</h2>
+            <h2 className="section-title">Atlas Ekonomi Digital Indonesia — {SECTORS.length} Sektor Pasar</h2>
             <p className="section-desc">
-              Every sector maps real 2025–2026 Indonesian infrastructure standards (QRIS Tap, BI-FAST, SATUSEHAT, CoreTax, UU PDP, RKAB/SIMBARA, IDXCarbon, BPJPH). Click any sector to inspect its concepts.
+              Setiap sektor memetakan standar infrastruktur nyata Indonesia 2025–2026 (QRIS Tap, BI-FAST, SATUSEHAT, CoreTax, UU PDP, RKAB/SIMBARA, IDXCarbon, BPJPH, SPBE). Klik sektor mana saja untuk menyaring konsepnya.
             </p>
           </div>
-          <span className="tag tag-mono">108 Concepts · 18 UI Archetypes</span>
+          <span className="tag tag-mono">{projects.length} Konsep · {archetypeCount} Arketipe UI</span>
         </div>
 
         <div className="sector-radar-grid">

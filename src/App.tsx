@@ -105,13 +105,13 @@ export const App: React.FC = () => {
           />
         )}
 
-        {activeTab === 'architecture' && <ArchitectureView />}
+        {activeTab === 'architecture' && <ArchitectureView totalProjects={PROJECTS.length} />}
       </main>
 
       <footer className="site-footer">
         <div className="footer-inner">
           <span>
-            {PROFILE.name} — {PROFILE.location} · Verified CV History (16 Engagements) clearly separated from {PROJECTS.length} Conceptual Product Prototypes.
+            {PROFILE.name} — {PROFILE.location} · Riwayat CV Terverifikasi ({EXPERIENCES.length} Pengalaman) dipisahkan tegas dari {PROJECTS.length} Konsep Produk Digital.
           </span>
           <span>
             <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a> · <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">{PROFILE.linkedinLabel}</a>

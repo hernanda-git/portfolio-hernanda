@@ -633,7 +633,17 @@ select:focus-visible,
   color: var(--ui-text-2);
   font-size: var(--ui-size-1);
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
+}
+
+.lens-count {
+  font-family: var(--ui-mono);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.78;
 }
 
 .lens-chip:hover {
@@ -716,6 +726,8 @@ select:focus-visible,
 }
 
 .facet-row-label {
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -724,7 +736,15 @@ select:focus-visible,
 .facet-count {
   font-family: var(--ui-mono);
   font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  min-width: 30px;
+  text-align: right;
+  flex-shrink: 0;
   color: var(--ui-text-muted);
+}
+
+.facet-row.is-zero {
+  opacity: 0.42;
 }
 
 .facet-row.is-active .facet-count {

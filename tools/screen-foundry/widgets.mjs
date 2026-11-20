@@ -63,7 +63,7 @@ export function renderHeroWidget(widgetType, project, theme, seed) {
       return `<svg viewBox="0 0 640 130" width="100%" height="130" style="display:block;background:${bg};border:1px solid ${bd};border-radius:6px">
         <path d="M0,32H640 M0,65H640 M0,98H640 M80,0V130 M160,0V130 M240,0V130 M320,0V130 M400,0V130 M480,0V130 M560,0V130" stroke="${bd}" stroke-width="0.8"/>
         <polyline points="0,72 52,72 64,62 72,72 88,72 96,24 106,104 116,54 128,72 195,72 206,62 214,72 232,72 240,22 250,104 260,54 274,72 345,72 356,62 366,72 384,72 392,24 402,102 412,54 426,72 505,72 518,62 528,72 544,72 552,24 562,104 574,56 590,72 640,72" fill="none" stroke="${c}" stroke-width="2.2"/>
-        <text x="14" y="20" font-size="10" font-family="Cascadia Mono,monospace" font-weight="700" fill="${c}">LEAD II · 78 BPM · SpO2 98% · TD 138/84 mmHg · SATUSEHAT FHIR R4</text>
+        <text x="14" y="20" font-size="10" font-family="Cascadia Mono,monospace" font-weight="700" fill="${c}">VITAL TELEMETRY · ${esc(project.preview.envTag)} · ${esc(project.standards[0])}</text>
       </svg>`;
 
     case 'radar-spider':
@@ -178,13 +178,13 @@ export function renderHeroWidget(widgetType, project, theme, seed) {
     case 'truck-load':
       return `<div style="padding:14px;background:${bg};border:1px solid ${bd};border-radius:6px;display:grid;grid-template-columns:1.2fr 1fr;gap:14px;align-items:center">
         <div>
-          <div style="font-family:Cascadia Mono,monospace;font-size:10px;color:${c};font-weight:700;margin-bottom:6px">FUSO TRONTON LOAD OPTIMIZER · 18.4 / 20.0 TON (92%)</div>
+          <div style="font-family:Cascadia Mono,monospace;font-size:10px;color:${c};font-weight:700;margin-bottom:6px">${esc(project.preview.surfaceTitle.toUpperCase())} · KAPASITAS 92%</div>
           <div style="height:36px;background:${theme.surface};border:2px solid ${tx};border-radius:4px;display:flex;overflow:hidden">
-            <div style="width:42%;background:${c};color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">Besi 13mm (8.4t)</div>
-            <div style="width:36%;background:${c2};color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">Semen 1 DO (8.0t)</div>
-            <div style="width:14%;background:#16a34a;color:#fff;font-size:9.5px;font-weight:700;display:flex;align-items:center;justify-content:center">GRC</div>
+            <div style="width:42%;background:${c};color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">${esc(items[0].code)} (42%)</div>
+            <div style="width:36%;background:${c2};color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">${esc(items[1].code)} (36%)</div>
+            <div style="width:14%;background:#16a34a;color:#fff;font-size:9.5px;font-weight:700;display:flex;align-items:center;justify-content:center">OK</div>
           </div>
-          <div style="font-size:11px;color:${mu};margin-top:6px">Free bongkar Jabodetabek · TOP 30 Hari · Faktur Pajak PPN auto-queued</div>
+          <div style="font-size:11px;color:${mu};margin-top:6px">${esc(project.standards.join(' · '))} · ${esc(project.preview.envTag)}</div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
           ${productThumbSvg(seed, c)}
@@ -262,7 +262,7 @@ export function renderHeroWidget(widgetType, project, theme, seed) {
 
     case 'solar-strings':
       return `<div style="padding:12px;background:#0e1218;border:1px solid #262e3d;border-radius:6px">
-        <div style="font-family:Cascadia Mono,monospace;font-size:10px;color:#fbbf24;margin-bottom:8px">CIKARANG ROOFTOP 1.8 MWp — 16 DC STRING ARRAY TELEMETRY (AMPS)</div>
+        <div style="font-family:Cascadia Mono,monospace;font-size:10px;color:#fbbf24;margin-bottom:8px">${esc(project.preview.surfaceTitle.toUpperCase())} — 16 DC STRING / NODE TELEMETRY</div>
         <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px">
           ${[11.4, 11.2, 11.5, 0.2, 11.3, 11.1, 10.9, 11.4, 10.2, 10.1, 9.8, 10.4, 11.3, 11.2, 11.0, 11.4].map((amp, i) => {
             const fault = amp < 2;

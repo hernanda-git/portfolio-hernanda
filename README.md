@@ -1,24 +1,26 @@
-# Muhammad Hernanda — Developer Portfolio & Indonesian Digital Product Atlas
+# Muhammad Hernanda — Portofolio & Atlas Produk Digital Indonesia
 
-A personalized engineering portfolio and interactive **108-project Indonesian Market Concept Atlas** built for **Muhammad Hernanda** (Principal Software Engineer, Solution Architect & Inference Engineer, Jakarta).
+Portofolio rekayasa perangkat lunak dan **Atlas 120 Konsep Produk Digital Indonesia** untuk **Muhammad Hernanda** (Principal Software Engineer, Solution Architect & Inference Engineer, Jakarta) dalam Bahasa Indonesia dengan istilah teknis, standar, dan protokol tetap utuh.
 
-## Structure & Credibility Boundary
+## Struktur & Batas Kredibilitas
 
-- **Verified Production Career (2016–2026):** 16 real engagements and technical capability matrix sourced directly from CV (`Resume of Muhammad Hernanda (September 2026).pdf`).
-- **Indonesian Market Concept Atlas (108 Prototypes):** Explicitly badged undeployed architectural concepts across **15 Indonesian market sectors** and **18 distinct interactive UI archetypes** (Mobile App, CLI/Terminal, Financial Ledger, Clinical EMR, Geo/Fleet Map, Marketplace, Kanban Approval, AI Agent Console, POS/Kiosk, Industrial SCADA, GovTech Portal, BI Analytics, API/Schema IDE, Resource Scheduler, Compliance Vault, Desktop ERP, Community/Cohort, SecOps Desk).
+- **Karier Produksi Terverifikasi (2016–2026):** 16 pengalaman kerja nyata dan matriks kapabilitas teknis yang bersumber langsung dari CV (`Resume of Muhammad Hernanda (September 2026).pdf`).
+- **Atlas Konsep Produk Indonesia (120 Konsep):** Eksplorasi konseptual berlabel jelas (`Konsep Desain · Belum Deploy`) lintas **15 sektor pasar Indonesia**, **6 kelas platform**, dan **18 arketipe UI**. Setiap proyek memiliki tangkapan layar UI/UX beresolusi tinggi `1280×800` WebP yang dirender melalui `tools/screen-foundry/` dengan kombinasi 10 shell aplikasi, 18 tema visual, 5 sistem tipografi, dan 28 komponen visual domain.
+- **Filter Faset Dinamis:** Seluruh angka di menu sidebar Atlas (`Sektor Pasar`, `Kelas Platform`, `Arketipe UI`) dan lensa kurasi dihitung secara dinamis lintas faset (*cross-facet*) dan sejajar rapi dengan `tabular-nums`.
 
-## Commands
+## Perintah
 
 ```bash
 npm install
-npm run dev        # local dev server
-npm run build      # strict tsc + Vite production bundle in dist/
-npm run preview    # serve built dist/ locally
+npm run dev                               # server pengembangan lokal
+node tools/screen-foundry/renderAll.mjs   # render ulang 120 screenshot WebP 1280x800
+npm run build                             # tsc + build produksi Vite di dist/
+npm run preview                           # pratinjau lokal hasil build dist/
 ```
 
-## Design Reference (`unslop-ui`)
+## Referensi Desain (`unslop-ui`)
 
-- Reference: **Stripe Dashboard + Linear**
-- Default Theme: Light (`#f4f4f1` canvas, `#ffffff` primary surface) with persistent Dark mode toggle
-- Accent: Jakarta Cobalt (`#0f52ba`)
-- Static audit: `node C:/Workspace/.agents/skills/unslop-ui/audit.mjs C:/Workspace/portfolio-hernanda --strict` (0 high, 0 medium, 0 low)
+- Referensi: **Stripe Dashboard + Linear**
+- Tema Default: Terang (`#f4f4f1` kanvas, `#ffffff` permukaan utama) dengan tombol tema gelap persisten
+- Aksen: Jakarta Cobalt (`#0f52ba`)
+- Audit statis: `node C:/Workspace/.agents/skills/unslop-ui/audit.mjs C:/Workspace/portfolio-hernanda/src C:/Workspace/portfolio-hernanda/index.html --strict` (`0 high, 0 medium, 0 low`)

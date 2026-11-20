@@ -12,7 +12,8 @@ const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const { PROJECTS_PART_1 } = await import('../../src/data/projectsPart1.ts');
 const { PROJECTS_PART_2 } = await import('../../src/data/projectsPart2.ts');
 const { PROJECTS_PART_3 } = await import('../../src/data/projectsPart3.ts');
-const ALL_PROJECTS = [...PROJECTS_PART_1, ...PROJECTS_PART_2, ...PROJECTS_PART_3];
+const { PROJECTS_PART_4 } = await import('../../src/data/projectsPart4.ts');
+const ALL_PROJECTS = [...PROJECTS_PART_1, ...PROJECTS_PART_2, ...PROJECTS_PART_3, ...PROJECTS_PART_4];
 
 console.log(`Loaded ${ALL_PROJECTS.length} projects with unique tastes.`);
 fs.mkdirSync(OUT_DIR, { recursive: true });
