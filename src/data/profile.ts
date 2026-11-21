@@ -36,7 +36,7 @@ export const PROFILE = {
     'Memanfaatkan AI secara pragmatis (sekitar 20% akselerasi kerja harian) agar keputusan arsitektur, verifikasi kualitas, dan akuntabilitas teknis tetap dipegang penuh oleh engineer.',
   ],
   credibilityStatement:
-    'Portofolio ini memisahkan secara tegas riwayat karier produksi yang terverifikasi (2016–2026, langsung dari CV) dengan 120 konsep produk di Atlas Pasar Indonesia yang bersifat eksplorasi desain & arsitektur (belum di-deploy ke produksi).',
+    'Portofolio ini memisahkan secara tegas riwayat karier produksi yang terverifikasi (2016–2026, langsung dari CV) dengan seluruh konsep produk di Atlas Pasar Indonesia yang bersifat eksplorasi desain & arsitektur (belum di-deploy ke produksi).',
 };
 
 export const SKILL_GROUPS: SkillGroup[] = [

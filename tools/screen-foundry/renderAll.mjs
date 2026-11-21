@@ -12,10 +12,24 @@ const { PROJECTS_PART_1 } = await import('../../src/data/projectsPart1.ts');
 const { PROJECTS_PART_2 } = await import('../../src/data/projectsPart2.ts');
 const { PROJECTS_PART_3 } = await import('../../src/data/projectsPart3.ts');
 const { PROJECTS_PART_4 } = await import('../../src/data/projectsPart4.ts');
+const { PROJECTS_PART_5 } = await import('../../src/data/projectsPart5.ts');
+const { PROJECTS_PART_6 } = await import('../../src/data/projectsPart6.ts');
 const { PROJECT_PAGES } = await import('../../src/data/projectPages.ts');
 
-const ALL_PROJECTS = [...PROJECTS_PART_1, ...PROJECTS_PART_2, ...PROJECTS_PART_3, ...PROJECTS_PART_4];
+const ALL_PROJECTS = [
+  ...PROJECTS_PART_1,
+  ...PROJECTS_PART_2,
+  ...PROJECTS_PART_3,
+  ...PROJECTS_PART_4,
+  ...PROJECTS_PART_5,
+  ...PROJECTS_PART_6,
+];
 fs.mkdirSync(OUT_DIR, { recursive: true });
+
+const fromArg = process.argv.find((a) => a.startsWith('--from='));
+const fromNum = fromArg ? parseInt(fromArg.split('=')[1], 10) : 1;
+const layoutArg = process.argv.find((a) => a.startsWith('--layout='));
+const onlyLayout = layoutArg ? layoutArg.split('=')[1] : null;
 
 const jobs = [];
 const htmlByKey = new Map();
@@ -39,9 +53,12 @@ for (const project of ALL_PROJECTS) {
     }
     seenLayouts.add(pageSpec.layout);
 
-    const fileBase = pageSpec.slug === 'p1' ? project.id : `${project.id}-${pageSpec.slug}`;
-    htmlByKey.set(fileBase, renderProjectPage(project, pageSpec, art));
-    jobs.push(fileBase);
+    const num = parseInt(project.id.replace(/\D/g, ''), 10);
+    if (num >= fromNum && (!onlyLayout || pageSpec.layout === onlyLayout)) {
+      const fileBase = pageSpec.slug === 'p1' ? project.id : `${project.id}-${pageSpec.slug}`;
+      htmlByKey.set(fileBase, renderProjectPage(project, pageSpec, art));
+      jobs.push(fileBase);
+    }
   }
 }
 
@@ -69,7 +86,7 @@ const chrome = spawn(
     '--headless=new',
     '--disable-gpu',
     '--no-sandbox',
-    '--remote-debugging-port=9235',
+    '--remote-debugging-port=9241',
     `--user-data-dir=${userDataDir}`,
     'about:blank',
   ],
@@ -77,13 +94,13 @@ const chrome = spawn(
 );
 
 async function waitForBrowser() {
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 100; i++) {
     try {
-      const r = await fetch('http://127.0.0.1:9235/json/version');
+      const r = await fetch('http://127.0.0.1:9241/json/version');
       const v = await r.json();
       if (v.webSocketDebuggerUrl) return v.webSocketDebuggerUrl;
     } catch {}
-    await new Promise((r) => setTimeout(r, 150));
+    await new Promise((r) => setTimeout(r, 200));
   }
   throw new Error('Chrome CDP failed to start');
 }
@@ -91,7 +108,7 @@ async function waitForBrowser() {
 await waitForBrowser();
 
 async function createTabClient() {
-  const r = await fetch('http://127.0.0.1:9235/json/new?about:blank', { method: 'PUT' });
+  const r = await fetch('http://127.0.0.1:9241/json/new?about:blank', { method: 'PUT' });
   const tab = await r.json();
   const ws = new WebSocket(tab.webSocketDebuggerUrl);
   await new Promise((resolve) => ws.addEventListener('open', resolve));

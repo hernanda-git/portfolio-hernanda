@@ -220,10 +220,10 @@ export function renderLayoutB(layout, project, pageSpec, theme, font, persona) {
             </div>
           </div>
 
-          <div style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:12px;padding:14px;background:${theme.surface2};border:1.5px dashed ${theme.borderStrong};border-radius:10px">
+          <div style="flex:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:12px;padding:14px;background:${theme.surface2};border:1.5px dashed ${theme.borderStrong};border-radius:10px;min-width:0;overflow:hidden">
             ${units.map((u, idx) => {
               const col = u.tone === 'bad' ? '#dc2626' : u.tone === 'warn' ? '#d97706' : '#16a34a';
-              return `<div style="background:${theme.surface};border:2px solid ${idx === 0 ? c : col};border-radius:8px;padding:12px;display:flex;flex-direction:column;justify-content:space-between">
+              return `<div style="min-width:0;overflow:hidden;background:${theme.surface};border:2px solid ${idx === 0 ? c : col};border-radius:8px;padding:12px;display:flex;flex-direction:column;justify-content:space-between">
                 <div style="display:flex;justify-content:space-between;align-items:center">
                   <span class="mono" style="font-size:10.5px;font-weight:700;color:${col}">${esc(u.code)}</span>
                   <span style="width:9px;height:9px;border-radius:50%;background:${col}"></span>
