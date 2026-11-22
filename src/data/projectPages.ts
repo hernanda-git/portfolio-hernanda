@@ -231,68 +231,140 @@ export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {
       'Proyeksi Likuiditas 5 Hari & Sensitivitas USD',
     ]
   ),
-  'ID-013': plan('sharia-sand', 'editorial-serif', 'Escrow Officer · BSI VA',
-    ['Naskah Akad & BAST', 'document-redline-editor'],
-    ['Inbox Pencairan Termin', 'email-approval-inbox'],
-    ['Jurnal Rekening Escrow', 'accounting-ledger-sheet'],
-    ['Audit Kustodi Syariah', 'audit-compliance-dossier']),
-  'ID-014': plan('studio-daylight', 'swiss-geometric', 'Kepala Cabang · BPR Bekasi',
-    ['Wizard Kredit & SLIK OJK', 'form-wizard-onboarding'],
-    ['Jurnal Teller & EOD', 'accounting-ledger-sheet'],
-    ['Analitik NPL & Kolektibilitas', 'executive-bento-brief'],
-    ['RBAC Cabang & Limit', 'settings-rbac-matrix']),
-  'ID-015': plan('bloomberg-obsidian', 'technical-mono', 'Fraud Ops · BI TIKMI',
-    ['Terminal Radar Mule Ring', 'trading-fraud-terminal'],
-    ['DAG Aturan Velocity Skor', 'dag-pipeline-canvas'],
-    ['Inbox Tahan Settlement', 'email-approval-inbox'],
-    ['Dossier Laporan PPATK STR', 'audit-compliance-dossier']),
-  'ID-016': plan('sharia-sand', 'editorial-serif', 'Jamaah · Vault Emas JKT',
-    ['Target Gram & Porsi Haji', 'mobile-biometric-wallet'],
-    ['Alur Nabung 3 Langkah', 'mobile-trio-journey'],
-    ['Sertifikat Kustodian Emas', 'document-redline-editor'],
-    ['Jurnal Fisik 999.9', 'accounting-ledger-sheet']),
-  'ID-017': plan('sovereign-indigo', 'technical-mono', 'Payment Arch · ASPI SNAP',
-    ['Workbench SNAP BI 73/24', 'api-postman-inspector'],
-    ['Diff Signing RSA-SHA256', 'ide-code-diff-workbench'],
-    ['DAG Simulasi Callback', 'dag-pipeline-canvas'],
-    ['Sertifikat & Kunci Partner', 'settings-rbac-matrix']),
-  'ID-018': plan('clinical-mint', 'humanist-friendly', 'Staf · PT Karya Mandiri',
-    ['Simulasi Tarik Gaji EWA', 'mobile-biometric-wallet'],
-    ['Alur Pencairan BI-FAST', 'mobile-trio-journey'],
-    ['Rekonsiliasi Potong Payroll', 'accounting-ledger-sheet'],
-    ['Kebijakan Plafon HRIS', 'settings-rbac-matrix']),
-  'ID-019': plan('paper-editorial', 'swiss-geometric', 'Credit Analyst · UMKM SBY',
-    ['Ringkasan Skor Arus QRIS', 'executive-bento-brief'],
-    ['Wizard Pengajuan KUR', 'form-wizard-onboarding'],
-    ['Inbox Komite Kredit', 'email-approval-inbox'],
-    ['Cek SLIK & e-Faktur', 'audit-compliance-dossier']),
-  'ID-020': plan('maritime-navy', 'swiss-geometric', 'FX Corridor Desk · ASEAN',
-    ['Peta Koridor Remitansi', 'geo-dispatch-map'],
-    ['Terminal Kurs & Spread FX', 'trading-fraud-terminal'],
-    ['Jurnal Settlement BI-FAST', 'accounting-ledger-sheet'],
-    ['Kepatuhan PPATK IFTI', 'audit-compliance-dossier']),
+  'ID-013': enterprisePlan(
+    'Swiss Institutional Treasury + Stripe Treasury / Adyen Enterprise Ledger',
+    'M. Irfan Hidayat, S.E. · Senior Escrow Custodian · PT Amanah Kustodian Syariah',
+    [
+      'Buku Kustodian & Portofolio Escrow Syariah',
+      'Buku Besar ACID & Inspektor Pencairan Termin',
+      'Verifikasi BAST, State Machine & Bukti Lapangan',
+      'Rail SNAP BI / BI-FAST & Sub-Akun PPh Final',
+      'Ruang Sengketa Independen, Kepatuhan DSN-MUI & WORM',
+    ]
+  ),
+  'ID-014': enterprisePlan(
+    'SAP S/4HANA Fiori Horizon + Temenos Transact Desktop',
+    'Ir. Hendra Wijaya · Pimpinan Operasional · PT BPR Nusantara Jaya (Sandi OJK 601842)',
+    [
+      'Ringkasan Eksekutif & Konsolidasi Cabang',
+      'Stasiun Teller Keyboard-First & Mutasi Kas',
+      'Portofolio Kredit, Aging Kolektibilitas & PPAP',
+      'Validator & Generator Pelaporan OJK SLIK & APOLO',
+      'Batch EOD Akrual, General Ledger & Trial Balance',
+    ]
+  ),
+  'ID-015': enterprisePlan(
+    'CrowdStrike Falcon SIEM + SentinelOne Operations Center',
+    'R. Aditya · Lead Fraud Ops SOC · PT Nusantara Pay Switch (PJP Lv.1)',
+    [
+      'Komando Radar Fraud Real-Time',
+      'Meja Triase & Inspektor Payload gRPC',
+      'Graf Jaringan Mule & Farm Emulator',
+      'Mode Shadow & Replay Aturan 30 Hari',
+      'Kepatuhan BI TIKMI & Dossier STR PPATK',
+    ]
+  ),
+  'ID-016': enterprisePlan(
+    'SAP S/4HANA Fiori Horizon + Workday Financial Management',
+    'H. Ridwan Fadillah · VP Kustodian & Kepatuhan Syariah · PT EmasHaji Kustodi Syariah Tbk',
+    [
+      'Ringkasan Eksekutif Kustodi Emas & Kesiapan Porsi',
+      'Buku Besar Gram & Persetujuan Pencairan (Maker-Checker)',
+      'Aplikasi Mobile Calon Jamaah (Trio Layar PWA & Kontrak API)',
+      'Katalog PPIU Resmi Kemenag & Kuota BPS-BPIH',
+      'Kepatuhan Syariah, Audit PSAK 101/102 & CoreTax XML',
+    ]
+  ),
+  'ID-017': enterprisePlan(
+    'Postman Enterprise + Insomnia IDE + Swagger Inspector',
+    'R. Wijaya · Lead Payment Architect · PT Nusantara Pay Gateway',
+    [
+      'Workbench Request & Inspektor Tanda Tangan Live',
+      'Pipeline Kriptografi RSA/HMAC & Diff Quirk Bank',
+      'Log Replay Transaksi, Telemetri & Simulator Error',
+      'Generator Kode Klien C# / Go / TS & OpenAPI 3.1',
+      'Suite Uji Otomatis & Bukti Sertifikasi ASPI SNAP BI',
+    ]
+  ),
+  'ID-018': enterprisePlan(
+    'SAP S/4HANA Fiori Horizon + Workday Payroll',
+    'Rina Kartika · VP Payroll & HR Operations · PT Karya Mandiri Tbk',
+    [
+      'Konsol Eksekutif EWA & Eksposur Multi-Entitas',
+      'Buku Besar Pencairan BI-FAST & Inspektor Akrual',
+      'Pengalaman Mobile (.NET MAUI) & Mesin Guardrail',
+      'Rekonsiliasi Cut-Off Payroll, DoA & CoreTax PSAK 24',
+      'Audit WORM Ledger, Keamanan SSO & SLA Infrastruktur',
+    ]
+  ),
+  'ID-019': enterprisePlan(
+    'Databricks SQL Analytics + Snowflake Horizon + Tableau Enterprise',
+    'R. Kusuma · Senior Credit Risk Analyst · BPD Jatim & Konsorsium UMKM',
+    [
+      'Eksekutif Portofolio & Analitik Regional BPD',
+      'Antrean Underwriting & Meja Skor Arus Kas',
+      'Arsitektur Lakehouse Medallion & Kontrak SQL/dbt',
+      'Laboratorium Stres DSCR & Simulator Komite Kredit',
+      'Tata Kelola OJK, Persetujuan UU PDP & Audit WORM',
+    ]
+  ),
+  'ID-020': enterprisePlan(
+    'Adyen Treasury + Stripe Sigma + BIS Nexus Clearing Console',
+    'R. Kusuma · Kepala Operasi Remitansi & Likuiditas · RemitNusa Switch',
+    [
+      'Ikhtisar Koridor & Kuotasi FX Real-Time',
+      'Buku Besar Transaksi & Inspektor BI-FAST',
+      'Likuiditas Prefund & Rekonsiliasi Multi-Mata Uang',
+      'Skrining AML/OFAC & Pelaporan PPATK IFTI',
+      'Topologi ISO 20022 & Telemetri Rel BI-FAST',
+    ]
+  ),
 
   // SEKTOR 3: E-COMMERCE & RITEL (ID-021 .. ID-028)
-  'ID-021': plan('retail-coral', 'swiss-geometric', 'Fulfillment Ops · 3 Gudang',
-    ['Papan Wave & Packing 3PL', 'kanban-sprint-board'],
-    ['Denah Gudang & Rak SKU', 'floorplan-bay-grid'],
-    ['Rekonsiliasi Escrow Kanal', 'accounting-ledger-sheet'],
-    ['Analitik Margin Omnichannel', 'executive-bento-brief']),
-  'ID-022': plan('coffee-roast', 'humanist-friendly', 'Kasir #1 · Outlet Kemang',
-    ['Kasir Touch POS & QRIS', 'pos-touch-register'],
-    ['Kitchen Display Barista', 'kds-kitchen-board'],
-    ['Jadwal Shift & Outlet', 'calendar-schedule-week'],
-    ['Tutup Shift & Jurnal Kas', 'accounting-ledger-sheet']),
-  'ID-023': plan('solar-terracotta', 'industrial-condensed', 'Site Buyer · Karawang',
-    ['Katalog Material SNI B2B', 'social-creator-marketplace'],
-    ['Wizard RFQ & Kredit TOP', 'form-wizard-onboarding'],
-    ['Peta Pengiriman Tronton', 'geo-dispatch-map'],
-    ['Faktur PPN & Giro', 'accounting-ledger-sheet']),
-  'ID-024': plan('coffee-roast', 'humanist-friendly', 'Toko Sumber Rejeki · Depok',
-    ['Belanja Grosir Warung', 'mobile-chat-commerce'],
-    ['Alur Restok 3 Langkah', 'mobile-trio-journey'],
-    ['Peta Rute Sales Kanvas', 'geo-dispatch-map'],
-    ['Katalog Promo Prinsipal', 'social-creator-marketplace']),
+  'ID-021': enterprisePlan(
+    'Shopify Plus Organization Admin + Tokopedia Seller Center Enterprise',
+    'Nadia Kusuma · Head of Omnichannel Operations · PT Lumina Botanika Nusantara',
+    [
+      'Pusat Kendali Omnichannel & Penjaga Flash Sale',
+      'Matriks Stok Multi-Channel & Kunci Buffer Redis Lua',
+      'Meja Wave-Picking & Cetak AWB Thermal Massal',
+      'Rekonsiliasi Escrow, Margin Waterfall & Sanggah Biaya',
+      'Routing Multi-Gudang & Optimasi Ongkir Nusantara',
+    ]
+  ),
+  'ID-022': enterprisePlan(
+    'Toast POS + Square for Restaurants',
+    'Rina Wulandari · Store Manager & Senior Barista · Kopi Nusantara Kemang',
+    [
+      'Terminal Kasir Touch POS & Layar QRIS Dinamis',
+      'Layar Barista & Kitchen Display System (KDS)',
+      'Mesin Resep BOM, Potong Gram & Stok FEFO',
+      'Settlement Shift Kasir, PB1 10% & Rekonsiliasi',
+      'Armada Multi-Outlet & SQLite Offline-First Sync',
+    ]
+  ),
+  'ID-023': enterprisePlan(
+    'Shopify Plus B2B + Tokopedia Seller Enterprise',
+    'Ir. Hendra Kusuma · Kepala Pengadaan · PT Wijaya Graha Konstruksi',
+    [
+      'Katalog Principal & Harga Berjenjang',
+      'Antrean RFQ Instan & Negosiasi Principal',
+      'Kalkulator Tonase Truk & Rencana Muat',
+      'Manajemen Kredit TOP, Giro/VA & e-Faktur CoreTax',
+      'Surat Jalan Digital & Bukti Terima Mandor',
+    ]
+  ),
+  'ID-024': enterprisePlan(
+    'SAP S/4HANA Fiori Horizon + Android Offline-First GT Commerce',
+    'R. Santoso · Kepala Operasional Sub-Distributor · PT Sumber Makmur Distribusi',
+    [
+      'Pusat Kendali Sub-Distributor & Ringkasan Restock',
+      'Buku Besar Pesanan Restock & Inspektor Satuan GT',
+      'Pratinjau Aplikasi Android Warung (Offline-First)',
+      'Peta Rute Milk-Run Depok-Bogor & Manifest Armada',
+      'Tata Kelola DoA Tempo 7H, Rebate PSAK 72 & CoreTax XML',
+    ]
+  ),
   'ID-025': plan('gaming-neon', 'swiss-geometric', 'Live Producer · Studio 2',
     ['Ruang Siaran Live 9:16', 'livestream-commerce-studio'],
     ['Katalog Etalase & Stok', 'social-creator-marketplace'],
