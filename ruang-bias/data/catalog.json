@@ -1,0 +1,4362 @@
+[
+  {
+    "id": "ID-001",
+    "name": "GarudaRouter",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "AI / Agentic",
+    "subject": "Enterprise multi-provider LLM inference gateway & tata kelola token",
+    "audience": "Konglomerasi Indonesia, perbankan, dan enterprise multi-anak perusahaan",
+    "pages": [
+      {
+        "title": "Command Center & Kesehatan Pool",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/garudarouter/command-center-kesehatan-pool/"
+      },
+      {
+        "title": "Telemetri Request & Inspektor Trace",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/garudarouter/telemetri-request-inspektor-trace/"
+      },
+      {
+        "title": "Topologi Routing & Aturan Failover",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/garudarouter/topologi-routing-aturan-failover/"
+      },
+      {
+        "title": "Kepatuhan UU PDP PP 33/2026 & RBAC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/garudarouter/kepatuhan-uu-pdp-pp-33-2026-rbac/"
+      },
+      {
+        "title": "Developer SDK & Diff Redaksi Prompt",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/garudarouter/developer-sdk-diff-redaksi-prompt/"
+      }
+    ]
+  },
+  {
+    "id": "ID-002",
+    "name": "NusaRAG Legal",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "Web SaaS",
+    "subject": "Workbench peninjauan kontrak berbasis regulasi Indonesia & UU PDP",
+    "audience": "Tim legal korporat, firma hukum, dan compliance officer BUMN",
+    "pages": [
+      {
+        "title": "Matriks Audit Klausul & Register Kontrak",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusarag-legal/matriks-audit-klausul-register-kontrak/"
+      },
+      {
+        "title": "Komparator Redline Dwibahasa EN-ID",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusarag-legal/komparator-redline-dwibahasa-en-id/"
+      },
+      {
+        "title": "Checklist DPA UU PDP & Batas 3x24 Jam",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusarag-legal/checklist-dpa-uu-pdp-batas-3x24-jam/"
+      },
+      {
+        "title": "Korpus JDIH & Mesin Hybrid RAG pgvector",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusarag-legal/korpus-jdih-mesin-hybrid-rag-pgvector/"
+      },
+      {
+        "title": "Memo Risiko Hukum, Partner Sign-Off & e-Meterai",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusarag-legal/memo-risiko-hukum-partner-sign-off-e-meterai/"
+      }
+    ]
+  },
+  {
+    "id": "ID-003",
+    "name": "SuaraCS QA",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "AI / Agentic",
+    "subject": "Auditor kualitas call center Bahasa Indonesia & dialek daerah berbasis AI",
+    "audience": "Bank, operator telekomunikasi, BPO e-commerce, dan contact center asuransi",
+    "pages": [
+      {
+        "title": "Pusat Kendali Audit & Telemetri ASR Dialek",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suaracs-qa/pusat-kendali-audit-telemetri-asr-dialek/"
+      },
+      {
+        "title": "Antrean Audit Panggilan & Inspektor Cepat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suaracs-qa/antrean-audit-panggilan-inspektor-cepat/"
+      },
+      {
+        "title": "Studio Forensik Audio, Diarization & Sensor PII",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suaracs-qa/studio-forensik-audio-diarization-sensor-pii/"
+      },
+      {
+        "title": "Pipeline AI, Guardrail OJK & Atribusi Biaya",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suaracs-qa/pipeline-ai-guardrail-ojk-atribusi-biaya/"
+      },
+      {
+        "title": "Antrean Coaching <5 Menit & Kepatuhan WORM PDP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suaracs-qa/antrean-coaching-5-menit-kepatuhan-worm-pdp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-004",
+    "name": "SwarmForge CLI",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "AI / Agentic",
+    "subject": "Orkestrator multi-agent untuk migrasi kode & upgrade legacy .NET",
+    "audience": "Engineering lead yang memodernisasi sistem legacy .NET Framework, Java, atau PHP",
+    "pages": [
+      {
+        "title": "TUI Operator Shell & Orkestrasi Worktree Swarm",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swarmforge-cli/tui-operator-shell-orkestrasi-worktree-swarm/"
+      },
+      {
+        "title": "Antrean Migrasi Modul & Inspektor Kontrak",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swarmforge-cli/antrean-migrasi-modul-inspektor-kontrak/"
+      },
+      {
+        "title": "Inspektor Diff AST Roslyn & Paritas Replay",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swarmforge-cli/inspektor-diff-ast-roslyn-paritas-replay/"
+      },
+      {
+        "title": "Topologi Git Worktree & Pipeline Verify Gate",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swarmforge-cli/topologi-git-worktree-pipeline-verify-gate/"
+      },
+      {
+        "title": "Transkrip Audit Deterministik & Review PR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swarmforge-cli/transkrip-audit-deterministik-review-pr/"
+      }
+    ]
+  },
+  {
+    "id": "ID-005",
+    "name": "DokterScribe ID",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "Web SaaS",
+    "subject": "Asisten dikte konsultasi klinis ke catatan SOAP & kode ICD-10",
+    "audience": "Dokter poliklinik rawat jalan, dokter spesialis RS, dan koder rekam medis",
+    "pages": [
+      {
+        "title": "Ruang Konsultasi & Dikte SOAP Real-Time",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dokterscribe-id/ruang-konsultasi-dikte-soap-real-time/"
+      },
+      {
+        "title": "Antrean Poliklinik Shift & Meja Koder ICD-10",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dokterscribe-id/antrean-poliklinik-shift-meja-koder-icd-10/"
+      },
+      {
+        "title": "Integrasi SIMRS & Inspektor SATUSEHAT FHIR R4",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dokterscribe-id/integrasi-simrs-inspektor-satusehat-fhir-r4/"
+      },
+      {
+        "title": "Privasi Audio Zero-Retention & Audit UU PDP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dokterscribe-id/privasi-audio-zero-retention-audit-uu-pdp/"
+      },
+      {
+        "title": "Pendamping Tablet Dokter & Analitik Beban Kerja Poli",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dokterscribe-id/pendamping-tablet-dokter-analitik-beban-kerja-poli/"
+      }
+    ]
+  },
+  {
+    "id": "ID-006",
+    "name": "BasaGuard RedTeam",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "AI / Agentic",
+    "subject": "Firewall keamanan LLM & red-team agentic 24/7 khusus Bahasa Indonesia",
+    "audience": "CISO, tim keamanan fintech, dan pemilik platform AI enterprise",
+    "pages": [
+      {
+        "title": "Meja Ancaman LLM Runtime & Matriks OWASP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/basaguard-redteam/meja-ancaman-llm-runtime-matriks-owasp/"
+      },
+      {
+        "title": "Antrean Triase Insiden & Inspektor Payload Adversarial",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/basaguard-redteam/antrean-triase-insiden-inspektor-payload-adversarial/"
+      },
+      {
+        "title": "Firewall Tool-Call Inline & Mesin Kebijakan Agen",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/basaguard-redteam/firewall-tool-call-inline-mesin-kebijakan-agen/"
+      },
+      {
+        "title": "Pemindai Indirect Injection RAG & Korpus Red-Team ID",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/basaguard-redteam/pemindai-indirect-injection-rag-korpus-red-team-id/"
+      },
+      {
+        "title": "Kepatuhan OWASP LLM, UU PDP & Kesiapan Audit BSSN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/basaguard-redteam/kepatuhan-owasp-llm-uu-pdp-kesiapan-audit-bssn/"
+      }
+    ]
+  },
+  {
+    "id": "ID-007",
+    "name": "PajakCopilot",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "AI / Agentic",
+    "subject": "Agent konsultasi regulasi CoreTax DJP, klasifikasi PPh & PPN",
+    "audience": "Manajer pajak, Kantor Konsultan Pajak (KKP), dan tim CFO",
+    "pages": [
+      {
+        "title": "Klasifikasi Faktur & Objek Potong CoreTax",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pajakcopilot/klasifikasi-faktur-objek-potong-coretax/"
+      },
+      {
+        "title": "Orkestrasi Agent RAG & Evaluasi Sitasi PMK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pajakcopilot/orkestrasi-agent-rag-evaluasi-sitasi-pmk/"
+      },
+      {
+        "title": "Simulator PPh 26 Lintas Negara & Tax Treaty DGT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pajakcopilot/simulator-pph-26-lintas-negara-tax-treaty-dgt/"
+      },
+      {
+        "title": "Korpus Regulasi & Graf Pasal UU HPP / PMK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pajakcopilot/korpus-regulasi-graf-pasal-uu-hpp-pmk/"
+      },
+      {
+        "title": "Kertas Kerja Auditor & Ekspor CoreTax XML",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pajakcopilot/kertas-kerja-auditor-ekspor-coretax-xml/"
+      }
+    ]
+  },
+  {
+    "id": "ID-008",
+    "name": "LokalEdge Vision",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "IoT / Edge",
+    "subject": "Inference CCTV edge on-premise untuk deteksi APD K3 & cacat pabrik",
+    "audience": "Pabrik manufaktur, gudang logistik, dan tim keselamatan K3 smelter",
+    "pages": [
+      {
+        "title": "Ruang Kontrol SCADA & Grid RTSP Real-Time",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lokaledge-vision/ruang-kontrol-scada-grid-rtsp-real-time/"
+      },
+      {
+        "title": "Inventaris 16 Kanal RTSP & Inspektor Kamera",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lokaledge-vision/inventaris-16-kanal-rtsp-inspektor-kamera/"
+      },
+      {
+        "title": "Kalibrasi Poligon Zona ROI & Topologi Edge-PLC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lokaledge-vision/kalibrasi-poligon-zona-roi-topologi-edge-plc/"
+      },
+      {
+        "title": "Inspeksi Mutu Konveyor QA & OEE Jalur Kemas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lokaledge-vision/inspeksi-mutu-konveyor-qa-oee-jalur-kemas/"
+      },
+      {
+        "title": "Scorecard K3 Shift, Bukti Anonim & Klaster Edge",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lokaledge-vision/scorecard-k3-shift-bukti-anonim-klaster-edge/"
+      }
+    ]
+  },
+  {
+    "id": "ID-009",
+    "name": "KatalogAI Studio",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "Web SaaS",
+    "subject": "Linter kepatuhan BPOM/Halal, copywriting & margin SKU marketplace UMKM",
+    "audience": "Brand D2C lokal, distributor, dan agensi enabler marketplace",
+    "pages": [
+      {
+        "title": "Pusat Kesiapan Katalog & Sinkronisasi Multi-Channel",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogai-studio/pusat-kesiapan-katalog-sinkronisasi-multi-channel/"
+      },
+      {
+        "title": "Katalog Master SKU & Inspektor Kepatuhan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogai-studio/katalog-master-sku-inspektor-kepatuhan/"
+      },
+      {
+        "title": "Studio Copywriting AI & Linter Klaim BPOM/TikTok",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogai-studio/studio-copywriting-ai-linter-klaim-bpom-tiktok/"
+      },
+      {
+        "title": "Kalkulator Margin Bersih & Waterfall Biaya Kanal",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogai-studio/kalkulator-margin-bersih-waterfall-biaya-kanal/"
+      },
+      {
+        "title": "Validator Regulasi BPOM/Halal & Sinkronisasi Feed",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogai-studio/validator-regulasi-bpom-halal-sinkronisasi-feed/"
+      }
+    ]
+  },
+  {
+    "id": "ID-010",
+    "name": "TaniPredict AI",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "Web SaaS",
+    "subject": "Prediksi panen perkebunan berbasis satelit NDVI, BMKG & poligon EUDR",
+    "audience": "Perusahaan perkebunan sawit/kopi, koperasi plasma, dan pembiayaan agri",
+    "pages": [
+      {
+        "title": "Komando Kebun, Prakiraan TBS 30h & Neraca PKS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tanipredict-ai/komando-kebun-prakiraan-tbs-30h-neraca-pks/"
+      },
+      {
+        "title": "Matriks 18 Blok Agronomi & Inspektor Anomali NDVI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tanipredict-ai/matriks-18-blok-agronomi-inspektor-anomali-ndvi/"
+      },
+      {
+        "title": "Peta Spasial NDVI Sentinel-2, BMKG & Alih Rute",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tanipredict-ai/peta-spasial-ndvi-sentinel-2-bmkg-alih-rute/"
+      },
+      {
+        "title": "Kepatuhan Poligon EUDR Pasca-2020 & Otorisasi DoA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tanipredict-ai/kepatuhan-poligon-eudr-pasca-2020-otorisasi-doa/"
+      },
+      {
+        "title": "Inspeksi Agronom Offline & Kalibrasi Model Yield",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tanipredict-ai/inspeksi-agronom-offline-kalibrasi-model-yield/"
+      }
+    ]
+  },
+  {
+    "id": "ID-011",
+    "name": "TapNusa QRIS",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Mobile App",
+    "subject": "Dompet komuter NFC QRIS Tap & QR lintas negara ASEAN",
+    "audience": "Komuter Jabodetabek, merchant ritel, dan pelancong bisnis ASEAN",
+    "pages": [
+      {
+        "title": "Ikhtisar Kliring QRIS Tap, Likuiditas BI-FAST & SLA Transit",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tapnusa-qris/ikhtisar-kliring-qris-tap-likuiditas-bi-fast-sla-transit/"
+      },
+      {
+        "title": "Buku Besar Transaksi & Inspektor APDU / Double-Entry",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tapnusa-qris/buku-besar-transaksi-inspektor-apdu-double-entry/"
+      },
+      {
+        "title": "Pratinjau Aplikasi Mobile Komuter (.NET MAUI 9 + Kotlin HCE)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tapnusa-qris/pratinjau-aplikasi-mobile-komuter-net-maui-9-kotlin-hce/"
+      },
+      {
+        "title": "Persetujuan Settlement DoA (Maker-Checker) & Rekonsiliasi FX",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tapnusa-qris/persetujuan-settlement-doa-maker-checker-rekonsiliasi-fx/"
+      },
+      {
+        "title": "Kepatuhan Bank Indonesia (SNAP BI, PMK 69 & CoreTax XML)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tapnusa-qris/kepatuhan-bank-indonesia-snap-bi-pmk-69-coretax-xml/"
+      }
+    ]
+  },
+  {
+    "id": "ID-012",
+    "name": "KasirTreasury BI",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Hub treasury korporat multi-bank SNAP BI, rekonsiliasi VA & BI-FAST",
+    "audience": "Tim treasury korporat, holding multi-PT, dan CFO perusahaan Indonesia",
+    "pages": [
+      {
+        "title": "Posisi Kas & Cutoff Multi-Bank",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirtreasury-bi/posisi-kas-cutoff-multi-bank/"
+      },
+      {
+        "title": "Rekonsiliasi Virtual Account & Piutang ERP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirtreasury-bi/rekonsiliasi-virtual-account-piutang-erp/"
+      },
+      {
+        "title": "Pencairan BI-FAST & Otorisasi Berjenjang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirtreasury-bi/pencairan-bi-fast-otorisasi-berjenjang/"
+      },
+      {
+        "title": "Konektivitas SNAP BI & Kontrol Host-to-Host",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirtreasury-bi/konektivitas-snap-bi-kontrol-host-to-host/"
+      },
+      {
+        "title": "Proyeksi Likuiditas 5 Hari & Sensitivitas USD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirtreasury-bi/proyeksi-likuiditas-5-hari-sensitivitas-usd/"
+      }
+    ]
+  },
+  {
+    "id": "ID-013",
+    "name": "AmanahEscrow",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Escrow termin syariah berbasis Wakalah untuk kontrak B2B & properti",
+    "audience": "Developer properti, kontraktor konstruksi, dan perdagangan komoditas syariah",
+    "pages": [
+      {
+        "title": "Buku Kustodian & Portofolio Escrow Syariah",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/amanahescrow/buku-kustodian-portofolio-escrow-syariah/"
+      },
+      {
+        "title": "Buku Besar ACID & Inspektor Pencairan Termin",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/amanahescrow/buku-besar-acid-inspektor-pencairan-termin/"
+      },
+      {
+        "title": "Verifikasi BAST, State Machine & Bukti Lapangan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/amanahescrow/verifikasi-bast-state-machine-bukti-lapangan/"
+      },
+      {
+        "title": "Rail SNAP BI / BI-FAST & Sub-Akun PPh Final",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/amanahescrow/rail-snap-bi-bi-fast-sub-akun-pph-final/"
+      },
+      {
+        "title": "Ruang Sengketa Independen, Kepatuhan DSN-MUI & WORM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/amanahescrow/ruang-sengketa-independen-kepatuhan-dsn-mui-worm/"
+      }
+    ]
+  },
+  {
+    "id": "ID-014",
+    "name": "BPRCore Cloud",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Desktop / WPF",
+    "subject": "Core banking modular & pelaporan OJK SLIK/APOLO untuk BPR/BPRS",
+    "audience": "1.400+ BPR dan BPRS daerah yang memodernisasi sistem desktop legacy",
+    "pages": [
+      {
+        "title": "Ringkasan Eksekutif & Konsolidasi Cabang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bprcore-cloud/ringkasan-eksekutif-konsolidasi-cabang/"
+      },
+      {
+        "title": "Stasiun Teller Keyboard-First & Mutasi Kas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bprcore-cloud/stasiun-teller-keyboard-first-mutasi-kas/"
+      },
+      {
+        "title": "Portofolio Kredit, Aging Kolektibilitas & PPAP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bprcore-cloud/portofolio-kredit-aging-kolektibilitas-ppap/"
+      },
+      {
+        "title": "Validator & Generator Pelaporan OJK SLIK & APOLO",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bprcore-cloud/validator-generator-pelaporan-ojk-slik-apolo/"
+      },
+      {
+        "title": "Batch EOD Akrual, General Ledger & Trial Balance",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bprcore-cloud/batch-eod-akrual-general-ledger-trial-balance/"
+      }
+    ]
+  },
+  {
+    "id": "ID-015",
+    "name": "DeteksiQRIS",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Radar fraud pembayaran real-time, akun penampung & anomali kecepatan",
+    "audience": "Payment gateway, e-wallet, dan bank digital di bawah pengawasan BI TIKMI",
+    "pages": [
+      {
+        "title": "Komando Radar Fraud Real-Time",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/deteksiqris/komando-radar-fraud-real-time/"
+      },
+      {
+        "title": "Meja Triase & Inspektor Payload gRPC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/deteksiqris/meja-triase-inspektor-payload-grpc/"
+      },
+      {
+        "title": "Graf Jaringan Mule & Farm Emulator",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/deteksiqris/graf-jaringan-mule-farm-emulator/"
+      },
+      {
+        "title": "Mode Shadow & Replay Aturan 30 Hari",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/deteksiqris/mode-shadow-replay-aturan-30-hari/"
+      },
+      {
+        "title": "Kepatuhan BI TIKMI & Dossier STR PPATK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/deteksiqris/kepatuhan-bi-tikmi-dossier-str-ppatk/"
+      }
+    ]
+  },
+  {
+    "id": "ID-016",
+    "name": "EmasHaji Plan",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Mobile App",
+    "subject": "Aplikasi tabungan emas syariah untuk porsi Haji & keberangkatan Umrah",
+    "audience": "Keluarga Muslim Indonesia yang merencanakan porsi Haji dan Umrah jangka panjang",
+    "pages": [
+      {
+        "title": "Ringkasan Eksekutif Kustodi Emas & Kesiapan Porsi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/emashaji-plan/ringkasan-eksekutif-kustodi-emas-kesiapan-porsi/"
+      },
+      {
+        "title": "Buku Besar Gram & Persetujuan Pencairan (Maker-Checker)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/emashaji-plan/buku-besar-gram-persetujuan-pencairan-maker-checker/"
+      },
+      {
+        "title": "Aplikasi Mobile Calon Jamaah (Trio Layar PWA & Kontrak API)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/emashaji-plan/aplikasi-mobile-calon-jamaah-trio-layar-pwa-kontrak-api/"
+      },
+      {
+        "title": "Katalog PPIU Resmi Kemenag & Kuota BPS-BPIH",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/emashaji-plan/katalog-ppiu-resmi-kemenag-kuota-bps-bpih/"
+      },
+      {
+        "title": "Kepatuhan Syariah, Audit PSAK 101/102 & CoreTax XML",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/emashaji-plan/kepatuhan-syariah-audit-psak-101-102-coretax-xml/"
+      }
+    ]
+  },
+  {
+    "id": "ID-017",
+    "name": "SNAPBox Studio",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "API / Middleware",
+    "subject": "Sandbox API SNAP Bank Indonesia & debugger tanda tangan ISO-20022",
+    "audience": "Backend engineer fintech, tim integrasi bank, dan payment architect",
+    "pages": [
+      {
+        "title": "Workbench Request & Inspektor Tanda Tangan Live",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/snapbox-studio/workbench-request-inspektor-tanda-tangan-live/"
+      },
+      {
+        "title": "Pipeline Kriptografi RSA/HMAC & Diff Quirk Bank",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/snapbox-studio/pipeline-kriptografi-rsa-hmac-diff-quirk-bank/"
+      },
+      {
+        "title": "Log Replay Transaksi, Telemetri & Simulator Error",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/snapbox-studio/log-replay-transaksi-telemetri-simulator-error/"
+      },
+      {
+        "title": "Generator Kode Klien C# / Go / TS & OpenAPI 3.1",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/snapbox-studio/generator-kode-klien-c-go-ts-openapi-3-1/"
+      },
+      {
+        "title": "Suite Uji Otomatis & Bukti Sertifikasi ASPI SNAP BI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/snapbox-studio/suite-uji-otomatis-bukti-sertifikasi-aspi-snap-bi/"
+      }
+    ]
+  },
+  {
+    "id": "ID-018",
+    "name": "TarikCepat EWA",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Mobile App",
+    "subject": "Akses gaji berjalan (Earned Wage Access) terhubung absensi HRIS",
+    "audience": "Pekerja pabrik, staf ritel, dan departemen HR enterprise",
+    "pages": [
+      {
+        "title": "Konsol Eksekutif EWA & Eksposur Multi-Entitas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tarikcepat-ewa/konsol-eksekutif-ewa-eksposur-multi-entitas/"
+      },
+      {
+        "title": "Buku Besar Pencairan BI-FAST & Inspektor Akrual",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tarikcepat-ewa/buku-besar-pencairan-bi-fast-inspektor-akrual/"
+      },
+      {
+        "title": "Pengalaman Mobile (.NET MAUI) & Mesin Guardrail",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tarikcepat-ewa/pengalaman-mobile-net-maui-mesin-guardrail/"
+      },
+      {
+        "title": "Rekonsiliasi Cut-Off Payroll, DoA & CoreTax PSAK 24",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tarikcepat-ewa/rekonsiliasi-cut-off-payroll-doa-coretax-psak-24/"
+      },
+      {
+        "title": "Audit WORM Ledger, Keamanan SSO & SLA Infrastruktur",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tarikcepat-ewa/audit-worm-ledger-keamanan-sso-sla-infrastruktur/"
+      }
+    ]
+  },
+  {
+    "id": "ID-019",
+    "name": "KreditUMKM Score",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Underwriting kredit UMKM berbasis arus kas QRIS, POS & e-Faktur",
+    "audience": "Bank daerah (BPD), perusahaan multifinance, dan P2P lending produktif berizin",
+    "pages": [
+      {
+        "title": "Eksekutif Portofolio & Analitik Regional BPD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kreditumkm-score/eksekutif-portofolio-analitik-regional-bpd/"
+      },
+      {
+        "title": "Antrean Underwriting & Meja Skor Arus Kas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kreditumkm-score/antrean-underwriting-meja-skor-arus-kas/"
+      },
+      {
+        "title": "Arsitektur Lakehouse Medallion & Kontrak SQL/dbt",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kreditumkm-score/arsitektur-lakehouse-medallion-kontrak-sql-dbt/"
+      },
+      {
+        "title": "Laboratorium Stres DSCR & Simulator Komite Kredit",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kreditumkm-score/laboratorium-stres-dscr-simulator-komite-kredit/"
+      },
+      {
+        "title": "Tata Kelola OJK, Persetujuan UU PDP & Audit WORM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kreditumkm-score/tata-kelola-ojk-persetujuan-uu-pdp-audit-worm/"
+      }
+    ]
+  },
+  {
+    "id": "ID-020",
+    "name": "RemitNusa Nexus",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Switch remitansi lintas negara biaya rendah untuk PMI ke jaringan BI-FAST",
+    "audience": "Penyelenggara remitansi melayani pekerja migran (PMI) di SG, MY, HK, TW, dan JP",
+    "pages": [
+      {
+        "title": "Ikhtisar Koridor & Kuotasi FX Real-Time",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/remitnusa-nexus/ikhtisar-koridor-kuotasi-fx-real-time/"
+      },
+      {
+        "title": "Buku Besar Transaksi & Inspektor BI-FAST",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/remitnusa-nexus/buku-besar-transaksi-inspektor-bi-fast/"
+      },
+      {
+        "title": "Likuiditas Prefund & Rekonsiliasi Multi-Mata Uang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/remitnusa-nexus/likuiditas-prefund-rekonsiliasi-multi-mata-uang/"
+      },
+      {
+        "title": "Skrining AML/OFAC & Pelaporan PPATK IFTI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/remitnusa-nexus/skrining-aml-ofac-pelaporan-ppatk-ifti/"
+      },
+      {
+        "title": "Topologi ISO 20022 & Telemetri Rel BI-FAST",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/remitnusa-nexus/topologi-iso-20022-telemetri-rel-bi-fast/"
+      }
+    ]
+  },
+  {
+    "id": "ID-021",
+    "name": "TokoSync Omni",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Web SaaS",
+    "subject": "Hub stok, pesanan & rekonsiliasi Tokopedia, TikTok Shop, Shopee & Lazada",
+    "audience": "Brand omnichannel Indonesia, distributor, dan seller bervolume tinggi",
+    "pages": [
+      {
+        "title": "Pusat Kendali Omnichannel & Penjaga Flash Sale",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tokosync-omni/pusat-kendali-omnichannel-penjaga-flash-sale/"
+      },
+      {
+        "title": "Matriks Stok Multi-Channel & Kunci Buffer Redis Lua",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tokosync-omni/matriks-stok-multi-channel-kunci-buffer-redis-lua/"
+      },
+      {
+        "title": "Meja Wave-Picking & Cetak AWB Thermal Massal",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tokosync-omni/meja-wave-picking-cetak-awb-thermal-massal/"
+      },
+      {
+        "title": "Rekonsiliasi Escrow, Margin Waterfall & Sanggah Biaya",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tokosync-omni/rekonsiliasi-escrow-margin-waterfall-sanggah-biaya/"
+      },
+      {
+        "title": "Routing Multi-Gudang & Optimasi Ongkir Nusantara",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tokosync-omni/routing-multi-gudang-optimasi-ongkir-nusantara/"
+      }
+    ]
+  },
+  {
+    "id": "ID-022",
+    "name": "KopiPOS Cloud",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Desktop / WPF",
+    "subject": "POS F&B multi-outlet offline-first, kitchen display & potong resep COGS",
+    "audience": "Jaringan kedai kopi, cloud kitchen, dan kafe multi-outlet Indonesia",
+    "pages": [
+      {
+        "title": "Terminal Kasir Touch POS & Layar QRIS Dinamis",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopipos-cloud/terminal-kasir-touch-pos-layar-qris-dinamis/"
+      },
+      {
+        "title": "Layar Barista & Kitchen Display System (KDS)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopipos-cloud/layar-barista-kitchen-display-system-kds/"
+      },
+      {
+        "title": "Mesin Resep BOM, Potong Gram & Stok FEFO",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopipos-cloud/mesin-resep-bom-potong-gram-stok-fefo/"
+      },
+      {
+        "title": "Settlement Shift Kasir, PB1 10% & Rekonsiliasi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopipos-cloud/settlement-shift-kasir-pb1-10-rekonsiliasi/"
+      },
+      {
+        "title": "Armada Multi-Outlet & SQLite Offline-First Sync",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopipos-cloud/armada-multi-outlet-sqlite-offline-first-sync/"
+      }
+    ]
+  },
+  {
+    "id": "ID-023",
+    "name": "GrosirBahan B2B",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Web SaaS",
+    "subject": "Marketplace pengadaan material konstruksi & bahan bangunan B2B langsung",
+    "audience": "Kontraktor sipil, toko bangunan, dan principal pabrik semen/besi/GRC",
+    "pages": [
+      {
+        "title": "Katalog Principal & Harga Berjenjang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/grosirbahan-b2b/katalog-principal-harga-berjenjang/"
+      },
+      {
+        "title": "Antrean RFQ Instan & Negosiasi Principal",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/grosirbahan-b2b/antrean-rfq-instan-negosiasi-principal/"
+      },
+      {
+        "title": "Kalkulator Tonase Truk & Rencana Muat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/grosirbahan-b2b/kalkulator-tonase-truk-rencana-muat/"
+      },
+      {
+        "title": "Manajemen Kredit TOP, Giro/VA & e-Faktur CoreTax",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/grosirbahan-b2b/manajemen-kredit-top-giro-va-e-faktur-coretax/"
+      },
+      {
+        "title": "Surat Jalan Digital & Bukti Terima Mandor",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/grosirbahan-b2b/surat-jalan-digital-bukti-terima-mandor/"
+      }
+    ]
+  },
+  {
+    "id": "ID-024",
+    "name": "WarungRestock",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Mobile App",
+    "subject": "Aplikasi restock sembako warung & manajemen rute sales sub-distributor",
+    "audience": "Pemilik warung kelontong general trade dan sub-distributor FMCG daerah",
+    "pages": [
+      {
+        "title": "Pusat Kendali Sub-Distributor & Ringkasan Restock",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/warungrestock/pusat-kendali-sub-distributor-ringkasan-restock/"
+      },
+      {
+        "title": "Buku Besar Pesanan Restock & Inspektor Satuan GT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/warungrestock/buku-besar-pesanan-restock-inspektor-satuan-gt/"
+      },
+      {
+        "title": "Pratinjau Aplikasi Android Warung (Offline-First)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/warungrestock/pratinjau-aplikasi-android-warung-offline-first/"
+      },
+      {
+        "title": "Peta Rute Milk-Run Depok-Bogor & Manifest Armada",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/warungrestock/peta-rute-milk-run-depok-bogor-manifest-armada/"
+      },
+      {
+        "title": "Tata Kelola DoA Tempo 7H, Rebate PSAK 72 & CoreTax XML",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/warungrestock/tata-kelola-doa-tempo-7h-rebate-psak-72-coretax-xml/"
+      }
+    ]
+  },
+  {
+    "id": "ID-025",
+    "name": "KatalogLive Studio",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Web SaaS",
+    "subject": "Konsol cue host live-commerce, stok flash & atribusi GMV real-time",
+    "audience": "Operator studio TikTok Shop & Shopee Live, MCN, dan brand konsumen",
+    "pages": [
+      {
+        "title": "Kokpit Siaran & Analitik GMV Real-Time",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/kokpit-siaran-analitik-gmv-real-time/"
+      },
+      {
+        "title": "Workbench Etalase, Stok Flash & Konversi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/workbench-etalase-stok-flash-konversi/"
+      },
+      {
+        "title": "Lineage Medallion ClickHouse & Kontrak SQL/dbt",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/lineage-medallion-clickhouse-kontrak-sql-dbt/"
+      },
+      {
+        "title": "Penjaga ROAS GMV Max, Waterfall & What-If",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/penjaga-roas-gmv-max-waterfall-what-if/"
+      },
+      {
+        "title": "Jadwal Shift 12 Jam, Peringkat Host & Retensi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/jadwal-shift-12-jam-peringkat-host-retensi/"
+      },
+      {
+        "title": "Settlement Bonus, Affiliate & CoreTax XML",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/settlement-bonus-affiliate-coretax-xml/"
+      },
+      {
+        "title": "Persetujuan DoA, UU PDP & Audit WORM SHA-256",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/persetujuan-doa-uu-pdp-audit-worm-sha-256/"
+      },
+      {
+        "title": "Teleprompter Host, Mobile Produser & SignalR API",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kataloglive-studio/teleprompter-host-mobile-produser-signalr-api/"
+      }
+    ]
+  },
+  {
+    "id": "ID-026",
+    "name": "ApotekPOS eResep",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Desktop / WPF",
+    "subject": "POS apotek dengan kontrol batch FEFO, kode KFA BPOM & buku SIPNAP",
+    "audience": "Apotek independen Indonesia, instalasi farmasi klinik, dan jaringan apotek",
+    "pages": [
+      {
+        "title": "Kasir Meja Resep & Pengambilan Batch FEFO",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/kasir-meja-resep-pengambilan-batch-fefo/"
+      },
+      {
+        "title": "Papan Antrean & Dispatch Meja Racik (KDS Farmasi)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/papan-antrean-dispatch-meja-racik-kds-farmasi/"
+      },
+      {
+        "title": "Studio Racikan, Tuslah & Pratinjau Etiket Termal",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/studio-racikan-tuslah-pratinjau-etiket-termal/"
+      },
+      {
+        "title": "Kartu Stok FEFO, Matriks Kedaluwarsa & Denah Rak",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/kartu-stok-fefo-matriks-kedaluwarsa-denah-rak/"
+      },
+      {
+        "title": "Buku Psikotropika, OOT & Pelaporan SIPNAP Kemenkes",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/buku-psikotropika-oot-pelaporan-sipnap-kemenkes/"
+      },
+      {
+        "title": "Settlement Shift Kasir, QRIS/BPJS & CoreTax PPN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/settlement-shift-kasir-qris-bpjs-coretax-ppn/"
+      },
+      {
+        "title": "Skrining Interaksi Obat (DDI), DoA & Audit WORM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/skrining-interaksi-obat-ddi-doa-audit-worm/"
+      },
+      {
+        "title": "Integrasi SATUSEHAT KFA, Perangkat & Kiosk Pasien",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/apotekpos-eresep/integrasi-satusehat-kfa-perangkat-kiosk-pasien/"
+      }
+    ]
+  },
+  {
+    "id": "ID-027",
+    "name": "ReturnGuard ID",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Web SaaS",
+    "subject": "Filter risiko order fiktif COD & workflow reverse logistics RMA",
+    "audience": "Brand D2C dan seller social-commerce dengan volume pengiriman COD tinggi",
+    "pages": [
+      {
+        "title": "Kokpit Eksekutif Risiko COD & Rasio RTS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/kokpit-eksekutif-risiko-cod-rasio-rts/"
+      },
+      {
+        "title": "Triase Order COD & Inspektor WA Business",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/triase-order-cod-inspektor-wa-business/"
+      },
+      {
+        "title": "Papan Kanban RMA & Denah Rak Gudang Retur",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/papan-kanban-rma-denah-rak-gudang-retur/"
+      },
+      {
+        "title": "Forensik Video Packing vs Unboxing Sengketa",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/forensik-video-packing-vs-unboxing-sengketa/"
+      },
+      {
+        "title": "Mesin Aturan Risiko COD & Simulasi What-If",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/mesin-aturan-risiko-cod-simulasi-what-if/"
+      },
+      {
+        "title": "Rekonsiliasi COD 3PL, PSAK & CoreTax XML",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/rekonsiliasi-cod-3pl-psak-coretax-xml/"
+      },
+      {
+        "title": "Persetujuan DoA Maker-Checker & Klaim 3PL",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/persetujuan-doa-maker-checker-klaim-3pl/"
+      },
+      {
+        "title": "Kepatuhan UU PDP, Audit WORM & Webhook 3PL",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/returnguard-id/kepatuhan-uu-pdp-audit-worm-webhook-3pl/"
+      }
+    ]
+  },
+  {
+    "id": "ID-028",
+    "name": "MallLoyalty Pass",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Mobile App",
+    "subject": "Aplikasi member mal multi-tenant dengan OCR struk, poin & parkir QRIS",
+    "audience": "Pengelola pusat perbelanjaan, superblock mixed-use, dan tenant ritel",
+    "pages": [
+      {
+        "title": "Komando Eksekutif & Operasi Multi-Mal",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/komando-eksekutif-operasi-multi-mal/"
+      },
+      {
+        "title": "Workbench Verifikasi Struk OCR & Inspektor PaddleOCR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/workbench-verifikasi-struk-ocr-inspektor-paddleocr/"
+      },
+      {
+        "title": "Komando Parkir ANPR, Peta Basement B2 & Gerbang QRIS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/komando-parkir-anpr-peta-basement-b2-gerbang-qris/"
+      },
+      {
+        "title": "Afinitas Cross-Shopping & Simulasi Liabilitas PSAK 72",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/afinitas-cross-shopping-simulasi-liabilitas-psak-72/"
+      },
+      {
+        "title": "Settlement Tenant, Jurnal PSAK 72 & CoreTax XML e-Faktur",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/settlement-tenant-jurnal-psak-72-coretax-xml-e-faktur/"
+      },
+      {
+        "title": "Matriks DoA Maker-Checker-Approver & Workflow Kampanye",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/matriks-doa-maker-checker-approver-workflow-kampanye/"
+      },
+      {
+        "title": "Kepatuhan UU PDP PP 33/2026, RBAC & Audit WORM SHA-256",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/kepatuhan-uu-pdp-pp-33-2026-rbac-audit-worm-sha-256/"
+      },
+      {
+        "title": "Aplikasi Pengunjung .NET MAUI & Telemetri Integrasi Edge",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mallloyalty-pass/aplikasi-pengunjung-net-maui-telemetri-integrasi-edge/"
+      }
+    ]
+  },
+  {
+    "id": "ID-029",
+    "name": "AlurApprove 80+",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Web SaaS",
+    "subject": "Orkestrator approval dinamis lintas 80+ aplikasi berbasis Elsa Workflow",
+    "audience": "Konglomerasi Indonesia yang menjalankan 50–100+ aplikasi ERP, HR, dan IT terpisah",
+    "pages": [
+      {
+        "title": "Kokpit Eksekutif & SLA 84 Aplikasi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/kokpit-eksekutif-sla-84-aplikasi/"
+      },
+      {
+        "title": "Inbox Eksekutif & Form Key-Value Adaptif",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/inbox-eksekutif-form-key-value-adaptif/"
+      },
+      {
+        "title": "Desainer Alur Elsa Workflow v3 & Simulasi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/desainer-alur-elsa-workflow-v3-simulasi/"
+      },
+      {
+        "title": "Matriks DoA & Substitusi Pejabat Sementara (Pjs)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/matriks-doa-substitusi-pejabat-sementara-pjs/"
+      },
+      {
+        "title": "Anggaran Capex/Opex, PSAK & Kepatuhan CoreTax",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/anggaran-capex-opex-psak-kepatuhan-coretax/"
+      },
+      {
+        "title": "Katalog 84 Aplikasi & RabbitMQ Transactional Outbox",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/katalog-84-aplikasi-rabbitmq-transactional-outbox/"
+      },
+      {
+        "title": "Audit Trail WORM SHA-256, ISO 27001 & UU PDP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/audit-trail-worm-sha-256-iso-27001-uu-pdp/"
+      },
+      {
+        "title": "Companion Mobile Eksekutif, Teams & WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/alurapprove-80/companion-mobile-eksekutif-teams-whatsapp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-030",
+    "name": "CoreTax Bridge",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Web SaaS",
+    "subject": "Studio konversi ERP ke XML e-Faktur & Bukti Potong CoreTax DJP",
+    "audience": "Perusahaan PKP Indonesia, distributor, dan departemen kepatuhan pajak",
+    "pages": [
+      {
+        "title": "Komando Kepatuhan & Posisi SPT Masa",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/komando-kepatuhan-posisi-spt-masa/"
+      },
+      {
+        "title": "Meja Kerja Faktur Keluaran & Inspektor NITKU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/meja-kerja-faktur-keluaran-inspektor-nitku/"
+      },
+      {
+        "title": "Studio Redline XML CoreTax & Validasi XSD v2.4",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/studio-redline-xml-coretax-validasi-xsd-v2-4/"
+      },
+      {
+        "title": "Kalkulator Paritas DPP Nilai Lain 11/12 & Guard Pembulatan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/kalkulator-paritas-dpp-nilai-lain-11-12-guard-pembulatan/"
+      },
+      {
+        "title": "Rekonsiliasi SPT Masa PPN, Retur & BUP-23 Unifikasi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/rekonsiliasi-spt-masa-ppn-retur-bup-23-unifikasi/"
+      },
+      {
+        "title": "Otorisasi Berjenjang (Maker-Checker-Approver) & DoA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/otorisasi-berjenjang-maker-checker-approver-doa/"
+      },
+      {
+        "title": "Audit Trail WORM SHA-256, Kepatuhan DJP & RBAC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/audit-trail-worm-sha-256-kepatuhan-djp-rbac/"
+      },
+      {
+        "title": "Pemindai QR Faktur Masukan & Konsol Integrasi ERP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coretax-bridge/pemindai-qr-faktur-masukan-konsol-integrasi-erp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-031",
+    "name": "GajiNusa HRIS",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Web SaaS",
+    "subject": "Payroll multi-PT Indonesia dengan mesin PPh 21 TER, BPJS & Tapera",
+    "audience": "Holding multi-PT Indonesia, perusahaan outsourcing, dan tim HR menengah",
+    "pages": [
+      {
+        "title": "Kokpit Payroll Multi-PT & Likuiditas Kas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/kokpit-payroll-multi-pt-likuiditas-kas/"
+      },
+      {
+        "title": "Buku Besar Gaji & Inspektor Kalkulasi Staf",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/buku-besar-gaji-inspektor-kalkulasi-staf/"
+      },
+      {
+        "title": "Mesin PPh 21 TER & Rekonsiliasi Desember Ps. 17",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/mesin-pph-21-ter-rekonsiliasi-desember-ps-17/"
+      },
+      {
+        "title": "Plafon BPJS, Tapera & Kepatuhan UMP/UMK 38 Provinsi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/plafon-bpjs-tapera-kepatuhan-ump-umk-38-provinsi/"
+      },
+      {
+        "title": "Jurnal GL ERP, Bank H2H & Payload CoreTax XML",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/jurnal-gl-erp-bank-h2h-payload-coretax-xml/"
+      },
+      {
+        "title": "Otorisasi CFO, DoA & Triage Selisih >5%",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/otorisasi-cfo-doa-triage-selisih-5/"
+      },
+      {
+        "title": "Kepatuhan UU PDP, Vault Enkripsi & Audit WORM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/kepatuhan-uu-pdp-vault-enkripsi-audit-worm/"
+      },
+      {
+        "title": "Portal ESS Mobile, Slip QuestPDF & Sinkron Biometrik",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gajinusa-hris/portal-ess-mobile-slip-questpdf-sinkron-biometrik/"
+      }
+    ]
+  },
+  {
+    "id": "ID-032",
+    "name": "ColdGate 18",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Desktop / WPF",
+    "subject": "Desktop ERP stok cold-chain, audit kebersihan & KPI pimpinan 18 cabang",
+    "audience": "Distributor pangan beku nasional dan operator FMCG multi-cabang",
+    "pages": [
+      {
+        "title": "Kokpit Eksekutif & Peta KPI 18 Cabang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/kokpit-eksekutif-peta-kpi-18-cabang/"
+      },
+      {
+        "title": "Grid Operasional 18 Cabang & Inspektor Pimpinan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/grid-operasional-18-cabang-inspektor-pimpinan/"
+      },
+      {
+        "title": "Denah Gudang Dingin & Telemetri Sensor HACCP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/denah-gudang-dingin-telemetri-sensor-haccp/"
+      },
+      {
+        "title": "Stock-Taking Per Batch, FEFO & Selisih Opname",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/stock-taking-per-batch-fefo-selisih-opname/"
+      },
+      {
+        "title": "Audit Kebersihan HACCP & Bukti Foto Lapangan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/audit-kebersihan-haccp-bukti-foto-lapangan/"
+      },
+      {
+        "title": "Berita Acara Pemusnahan & Matriks DoA Pusat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/berita-acara-pemusnahan-matriks-doa-pusat/"
+      },
+      {
+        "title": "Jurnal PSAK 14, Valuasi Stok & Pajak CoreTax",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/jurnal-psak-14-valuasi-stok-pajak-coretax/"
+      },
+      {
+        "title": "Impor Excel EPPlus, WORM SHA-256 & Sync Cabang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/coldgate-18/impor-excel-epplus-worm-sha-256-sync-cabang/"
+      }
+    ]
+  },
+  {
+    "id": "ID-033",
+    "name": "eTender BUMN",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Web SaaS",
+    "subject": "Portal prakualifikasi vendor & pengadaan penawaran tertutup transparan",
+    "audience": "BUMN, kontraktor pertambangan, dan korporasi besar",
+    "pages": [
+      {
+        "title": "Cockpit Pengadaan & Pagu RKAP BUMN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/cockpit-pengadaan-pagu-rkap-bumn/"
+      },
+      {
+        "title": "Meja Kerja Tender & Matriks Evaluasi TKDN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/meja-kerja-tender-matriks-evaluasi-tkdn/"
+      },
+      {
+        "title": "Ruang Pembukaan Penawaran Tertutup (RSA-4096 Vault)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/ruang-pembukaan-penawaran-tertutup-rsa-4096-vault/"
+      },
+      {
+        "title": "Forensik Anti-Kolusi & Graf Afiliasi Vendor",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/forensik-anti-kolusi-graf-afiliasi-vendor/"
+      },
+      {
+        "title": "Simulasi Skoring Teknis-Komersial & Kalkulator HEA TKDN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/simulasi-skoring-teknis-komersial-kalkulator-hea-tkdn/"
+      },
+      {
+        "title": "Prakualifikasi Vendor OSS-RBA, TKDN & Integrasi SAP/CoreTax",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/prakualifikasi-vendor-oss-rba-tkdn-integrasi-sap-coretax/"
+      },
+      {
+        "title": "Matriks DoA, Persetujuan Berjenjang & Elsa Workflow",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/matriks-doa-persetujuan-berjenjang-elsa-workflow/"
+      },
+      {
+        "title": "Audit BPK WORM SHA-256 & Pendamping Mobile Komite/Vendor",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etender-bumn/audit-bpk-worm-sha-256-pendamping-mobile-komite-vendor/"
+      }
+    ]
+  },
+  {
+    "id": "ID-034",
+    "name": "AsetTrack QR",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Desktop / WPF",
+    "subject": "Manajemen aset tetap, penyusutan PSAK/Fiskal & opname QR/RFID",
+    "audience": "Tim General Affairs (GA), rumah sakit, universitas, dan perusahaan multi-lokasi",
+    "pages": [
+      {
+        "title": "Kokpit Aset Tetap & Opname Q4 2026",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/kokpit-aset-tetap-opname-q4-2026/"
+      },
+      {
+        "title": "Register Aset Tetap & Inspektor Kartu Aset",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/register-aset-tetap-inspektor-kartu-aset/"
+      },
+      {
+        "title": "Peta Fasilitas UHF RFID & Rekonsiliasi Opname",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/peta-fasilitas-uhf-rfid-rekonsiliasi-opname/"
+      },
+      {
+        "title": "Mesin Penyusutan Ganda PSAK 16 vs Fiskal UU PPh",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/mesin-penyusutan-ganda-psak-16-vs-fiskal-uu-pph/"
+      },
+      {
+        "title": "Jurnal GL Otomatis, Rekonsiliasi ERP & CoreTax XML",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/jurnal-gl-otomatis-rekonsiliasi-erp-coretax-xml/"
+      },
+      {
+        "title": "BAST Digital, Custody Pemegang & Alur DoA Approval",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/bast-digital-custody-pemegang-alur-doa-approval/"
+      },
+      {
+        "title": "Companion Mobile Opname (.NET MAUI) & Cetak Label Zebra",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/companion-mobile-opname-net-maui-cetak-label-zebra/"
+      },
+      {
+        "title": "Kepatuhan Audit PSAK 16, WORM SHA-256 & Integrasi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/asettrack-qr/kepatuhan-audit-psak-16-worm-sha-256-integrasi/"
+      }
+    ]
+  },
+  {
+    "id": "ID-035",
+    "name": "PabrikMRP Studio",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Desktop / WPF",
+    "subject": "Suite desktop MRP manufaktur diskrit, multi-BOM, work order & OEE mesin",
+    "audience": "Pabrik komponen otomotif Tier-1/2, plastik injeksi, dan kemasan di Karawang/Cikarang",
+    "pages": [
+      {
+        "title": "Jadwal Produksi & WO",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pabrikmrp-studio/jadwal-produksi-wo/"
+      },
+      {
+        "title": "Skematik Lini & OEE Live",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pabrikmrp-studio/skematik-lini-oee-live/"
+      },
+      {
+        "title": "Papan Work Order Lantai",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pabrikmrp-studio/papan-work-order-lantai/"
+      },
+      {
+        "title": "Laporan Kawasan Berikat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pabrikmrp-studio/laporan-kawasan-berikat/"
+      }
+    ]
+  },
+  {
+    "id": "ID-036",
+    "name": "ShiftKerja Ops",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Web SaaS",
+    "subject": "Perencana jadwal shift multi-lokasi, absensi geofence & batas lembur UU",
+    "audience": "Jaringan rumah sakit, outsourcing pengamanan, ritel, dan site tambang",
+    "pages": [
+      {
+        "title": "Jadwal Shift Mingguan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/shiftkerja-ops/jadwal-shift-mingguan/"
+      },
+      {
+        "title": "Gantt Lembur & Batas 18j",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/shiftkerja-ops/gantt-lembur-batas-18j/"
+      },
+      {
+        "title": "Notifikasi Shift WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/shiftkerja-ops/notifikasi-shift-whatsapp/"
+      },
+      {
+        "title": "Matriks Kebijakan Shift",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/shiftkerja-ops/matriks-kebijakan-shift/"
+      }
+    ]
+  },
+  {
+    "id": "ID-037",
+    "name": "LegalMeterai Hub",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Web SaaS",
+    "subject": "Vault kontrak korporat dengan pembubuhan Peruri e-Meterai & tanda tangan BSrE",
+    "audience": "Tim legal Indonesia, HR onboarding, dan sales ops B2B",
+    "pages": [
+      {
+        "title": "Ruang TTD & e-Meterai",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/legalmeterai-hub/ruang-ttd-e-meterai/"
+      },
+      {
+        "title": "Antrean Bulk PKWT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/legalmeterai-hub/antrean-bulk-pkwt/"
+      },
+      {
+        "title": "Dossier Validasi LTV WORM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/legalmeterai-hub/dossier-validasi-ltv-worm/"
+      },
+      {
+        "title": "Inspektor API Peruri",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/legalmeterai-hub/inspektor-api-peruri/"
+      }
+    ]
+  },
+  {
+    "id": "ID-038",
+    "name": "KlinikSatu EMR",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "EMR rawat jalan terintegrasi SATUSEHAT HL7 FHIR & BPJS VClaim",
+    "audience": "Klinik pratama, poliklinik spesialis, dan rumah sakit daerah Indonesia",
+    "pages": [
+      {
+        "title": "EMR Pasien, SOAP & Resep",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kliniksatu-emr/emr-pasien-soap-resep/"
+      },
+      {
+        "title": "Jadwal Poli & Antrean",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kliniksatu-emr/jadwal-poli-antrean/"
+      },
+      {
+        "title": "Bridge SATUSEHAT FHIR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kliniksatu-emr/bridge-satusehat-fhir/"
+      },
+      {
+        "title": "Kepatuhan Rekam Medis",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kliniksatu-emr/kepatuhan-rekam-medis/"
+      }
+    ]
+  },
+  {
+    "id": "ID-039",
+    "name": "AntreSehat RS",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "Penjadwal poliklinik RS, bridging Mobile JKN Task 1–7 & slot kamar operasi",
+    "audience": "Rumah sakit Tipe B/C dan pusat spesialis di seluruh Indonesia",
+    "pages": [
+      {
+        "title": "Jadwal Kamar OK & Poli",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/antresehat-rs/jadwal-kamar-ok-poli/"
+      },
+      {
+        "title": "Papan Antrean Task ID 1–7",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/antresehat-rs/papan-antrean-task-id-1-7/"
+      },
+      {
+        "title": "Pengingat Pasien WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/antresehat-rs/pengingat-pasien-whatsapp/"
+      },
+      {
+        "title": "Analitik Waktu Tunggu RS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/antresehat-rs/analitik-waktu-tunggu-rs/"
+      }
+    ]
+  },
+  {
+    "id": "ID-040",
+    "name": "LabNet LIS",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "Bridge analyzer laboratorium patologi klinik & alarm nilai kritis (panic value)",
+    "audience": "Jaringan laboratorium diagnostik dan instalasi patologi klinik rumah sakit",
+    "pages": [
+      {
+        "title": "Validasi Hasil & Panic K+",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labnet-lis/validasi-hasil-panic-k/"
+      },
+      {
+        "title": "Papan Sampel Analyzer",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labnet-lis/papan-sampel-analyzer/"
+      },
+      {
+        "title": "Inspektor ASTM / HL7",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labnet-lis/inspektor-astm-hl7/"
+      },
+      {
+        "title": "Kendali Mutu Westgard QC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labnet-lis/kendali-mutu-westgard-qc/"
+      }
+    ]
+  },
+  {
+    "id": "ID-041",
+    "name": "InhealthClaim Ops",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "Meja pre-authorization & ajudikasi klaim asuransi kesehatan managed-care",
+    "audience": "Asuransi kesehatan Indonesia, TPA, dan pengelola dana kesehatan korporat",
+    "pages": [
+      {
+        "title": "Inbox Penerbitan GL Klaim",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inhealthclaim-ops/inbox-penerbitan-gl-klaim/"
+      },
+      {
+        "title": "Audit Tarif & COB BPJS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inhealthclaim-ops/audit-tarif-cob-bpjs/"
+      },
+      {
+        "title": "Dossier Verifikasi Medis",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inhealthclaim-ops/dossier-verifikasi-medis/"
+      },
+      {
+        "title": "Analitik Rasio Klaim",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inhealthclaim-ops/analitik-rasio-klaim/"
+      }
+    ]
+  },
+  {
+    "id": "ID-042",
+    "name": "RadiologiPACS AI",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "Antrean teleradiologi nusantara & viewer DICOM untuk RSUD daerah",
+    "audience": "RSUD di luar Jawa yang kekurangan dokter spesialis radiologi on-site",
+    "pages": [
+      {
+        "title": "Viewer DICOM 4-Panel AI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/radiologipacs-ai/viewer-dicom-4-panel-ai/"
+      },
+      {
+        "title": "Antrean CITO Prioritas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/radiologipacs-ai/antrean-cito-prioritas/"
+      },
+      {
+        "title": "Editor Laporan Expertise",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/radiologipacs-ai/editor-laporan-expertise/"
+      },
+      {
+        "title": "Peta Rujukan 12 RSUD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/radiologipacs-ai/peta-rujukan-12-rsud/"
+      }
+    ]
+  },
+  {
+    "id": "ID-043",
+    "name": "PosyanduCare",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Mobile App",
+    "subject": "Aplikasi lapangan kader Posyandu offline-first untuk pencegahan stunting",
+    "audience": "Kader Posyandu, bidan desa, dan Dinas Kesehatan kabupaten/kota",
+    "pages": [
+      {
+        "title": "Tablet Posyandu Offline",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/posyanducare/tablet-posyandu-offline/"
+      },
+      {
+        "title": "Grafik Z-Score & Balita",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/posyanducare/grafik-z-score-balita/"
+      },
+      {
+        "title": "Alur Imunisasi 3 Langkah",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/posyanducare/alur-imunisasi-3-langkah/"
+      },
+      {
+        "title": "Peta Intervensi Stunting",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/posyanducare/peta-intervensi-stunting/"
+      }
+    ]
+  },
+  {
+    "id": "ID-044",
+    "name": "FarmaChain BPOM",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "IoT / Edge",
+    "subject": "Pemantauan rantai dingin vaksin & obat biologis berstandar CDOB BPOM",
+    "audience": "Pedagang Besar Farmasi (PBF), depo vaksin, dan instalasi farmasi RS",
+    "pages": [
+      {
+        "title": "SCADA Rantai Dingin 2–8°C",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/farmachain-bpom/scada-rantai-dingin-2-8-c/"
+      },
+      {
+        "title": "Denah 32 Probe Chiller",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/farmachain-bpom/denah-32-probe-chiller/"
+      },
+      {
+        "title": "Dossier Sertifikat CDOB",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/farmachain-bpom/dossier-sertifikat-cdob/"
+      },
+      {
+        "title": "Alert Eskursi WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/farmachain-bpom/alert-eskursi-whatsapp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-045",
+    "name": "TrukNusa Dispatch",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "Web SaaS",
+    "subject": "Marketplace trucking B2B, telemetri rute langsung & penagihan e-POD instan",
+    "audience": "Shipper manufaktur, transporter 3PL, dan armada truk koridor Jawa–Sumatra",
+    "pages": [
+      {
+        "title": "Peta Koridor Trans-Jawa",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/truknusa-dispatch/peta-koridor-trans-jawa/"
+      },
+      {
+        "title": "Jadwal Muatan & Backhaul",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/truknusa-dispatch/jadwal-muatan-backhaul/"
+      },
+      {
+        "title": "Rekonsiliasi Uang Jalan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/truknusa-dispatch/rekonsiliasi-uang-jalan/"
+      },
+      {
+        "title": "Tablet e-POD Supir Truk",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/truknusa-dispatch/tablet-e-pod-supir-truk/"
+      }
+    ]
+  },
+  {
+    "id": "ID-046",
+    "name": "PelabuhanGate",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "Web SaaS",
+    "subject": "Penjadwalan slot truk terminal kontainer & optimasi turnaround pelabuhan",
+    "audience": "Operator terminal, perusahaan pelayaran, forwarder EMKL, dan depo kontainer",
+    "pages": [
+      {
+        "title": "Denah Yard Kontainer",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pelabuhangate/denah-yard-kontainer/"
+      },
+      {
+        "title": "Jadwal Sandar & Dual-Tx",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pelabuhangate/jadwal-sandar-dual-tx/"
+      },
+      {
+        "title": "Pas Gerbang SP2 / T-ID",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pelabuhangate/pas-gerbang-sp2-t-id/"
+      },
+      {
+        "title": "Analitik Dwelling Time",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pelabuhangate/analitik-dwelling-time/"
+      }
+    ]
+  },
+  {
+    "id": "ID-047",
+    "name": "ReeferWatch ID",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "IoT / Edge",
+    "subject": "Monitor suhu HACCP truk berpendingin (reefer) & ruang beku cold-chain",
+    "audience": "Distributor makanan beku, eksportir ikan/dairy, dan 3PL cold-chain",
+    "pages": [
+      {
+        "title": "SCADA Suhu Truk Reefer",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/reeferwatch-id/scada-suhu-truk-reefer/"
+      },
+      {
+        "title": "Peta Armada Berpendingin",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/reeferwatch-id/peta-armada-berpendingin/"
+      },
+      {
+        "title": "Papan Alert Pintu & Suhu",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/reeferwatch-id/papan-alert-pintu-suhu/"
+      },
+      {
+        "title": "Dossier Audit HACCP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/reeferwatch-id/dossier-audit-haccp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-048",
+    "name": "BeaCukai Desk",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "Web SaaS",
+    "subject": "Dossier kepabeanan PIB/PEB, cek tarif HS-Code BTKI & bridge CEISA 4.0",
+    "audience": "Importir, eksportir, PPJK kepabeanan, dan manufaktur Kawasan Berikat",
+    "pages": [
+      {
+        "title": "Wizard PIB/PEB & BTKI HS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/beacukai-desk/wizard-pib-peb-btki-hs/"
+      },
+      {
+        "title": "Inspektor API CEISA 4.0",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/beacukai-desk/inspektor-api-ceisa-4-0/"
+      },
+      {
+        "title": "Dossier Lartas & MPN-G3",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/beacukai-desk/dossier-lartas-mpn-g3/"
+      },
+      {
+        "title": "Jurnal Bea Masuk & PDRI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/beacukai-desk/jurnal-bea-masuk-pdri/"
+      }
+    ]
+  },
+  {
+    "id": "ID-049",
+    "name": "GudangWMS Pro",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "Desktop / WPF",
+    "subject": "Desktop ERP manajemen gudang (WMS): slotting, RF picking & billing 3PL",
+    "audience": "Pusat fulfillment 3PL, depo FMCG, dan gudang besar e-commerce",
+    "pages": [
+      {
+        "title": "Denah Slot Bin Gudang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gudangwms-pro/denah-slot-bin-gudang/"
+      },
+      {
+        "title": "Papan Wave Picking #22",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gudangwms-pro/papan-wave-picking-22/"
+      },
+      {
+        "title": "Tablet Scanner Inbound",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gudangwms-pro/tablet-scanner-inbound/"
+      },
+      {
+        "title": "Billing Penyimpanan 3PL",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gudangwms-pro/billing-penyimpanan-3pl/"
+      }
+    ]
+  },
+  {
+    "id": "ID-050",
+    "name": "ArmadaDash Telematics",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "IoT / Edge",
+    "subject": "Telematika dashcam 4G, deteksi kantuk sopir & sensor pencurian BBM",
+    "audience": "Operator PO Bus antar-kota, truk tangki BBM/CPO, dan armada jarak jauh",
+    "pages": [
+      {
+        "title": "Radar Deteksi Siphon BBM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadadash-telematics/radar-deteksi-siphon-bbm/"
+      },
+      {
+        "title": "Kamera Dashcam & Fatigue",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadadash-telematics/kamera-dashcam-fatigue/"
+      },
+      {
+        "title": "Peta Jalur Pantura Live",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadadash-telematics/peta-jalur-pantura-live/"
+      },
+      {
+        "title": "Jadwal Servis PM Armada",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadadash-telematics/jadwal-servis-pm-armada/"
+      }
+    ]
+  },
+  {
+    "id": "ID-051",
+    "name": "KurirLastMile",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "Mobile App",
+    "subject": "Aplikasi kurir sortir paket, optimasi rute gang & QRIS COD di pintu",
+    "audience": "Jaringan kurir regional, pengantaran farmasi, dan armada internal brand D2C",
+    "pages": [
+      {
+        "title": "Alur Antar & QRIS COD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kurirlastmile/alur-antar-qris-cod/"
+      },
+      {
+        "title": "Peta Optimasi 46 Titik",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kurirlastmile/peta-optimasi-46-titik/"
+      },
+      {
+        "title": "Konfirmasi Penerima WA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kurirlastmile/konfirmasi-penerima-wa/"
+      },
+      {
+        "title": "Setoran COD Hub Sore",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kurirlastmile/setoran-cod-hub-sore/"
+      }
+    ]
+  },
+  {
+    "id": "ID-052",
+    "name": "KargoKapal RoRo",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "Web SaaS",
+    "subject": "Penjadwalan pelayaran kargo antar-pulau, slot TEU & manifes Syahbandar",
+    "audience": "Pelayaran domestik, operator Tol Laut, dan pengirim kargo Indonesia Timur",
+    "pages": [
+      {
+        "title": "Peta Pelayaran Nusantara",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kargokapal-roro/peta-pelayaran-nusantara/"
+      },
+      {
+        "title": "Jadwal Pelabuhan & Kapal",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kargokapal-roro/jadwal-pelabuhan-kapal/"
+      },
+      {
+        "title": "Denah Muatan TEU & Reefer",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kargokapal-roro/denah-muatan-teu-reefer/"
+      },
+      {
+        "title": "Manifes & Subsidi Tol Laut",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kargokapal-roro/manifes-subsidi-tol-laut/"
+      }
+    ]
+  },
+  {
+    "id": "ID-053",
+    "name": "LubeGuard Pit",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "Desktop / WPF",
+    "subject": "ERP manajemen pelumas alat berat, hasil lab oli SOS & jadwal PM HM tambang",
+    "audience": "Kontraktor tambang batubara, nikel, dan tembaga berarmada Caterpillar/Komatsu",
+    "pages": [
+      {
+        "title": "Jadwal PM 184 Alat Berat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lubeguard-pit/jadwal-pm-184-alat-berat/"
+      },
+      {
+        "title": "Papan Work Order Bengkel",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lubeguard-pit/papan-work-order-bengkel/"
+      },
+      {
+        "title": "Tablet Mekanik Lube Truck",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lubeguard-pit/tablet-mekanik-lube-truck/"
+      },
+      {
+        "title": "Analitik Availability PA/MTBF",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lubeguard-pit/analitik-availability-pa-mtbf/"
+      }
+    ]
+  },
+  {
+    "id": "ID-054",
+    "name": "TambangMeal & QC",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "Mobile App",
+    "subject": "Sistem katering camp tambang terpencil, hak makan & inspeksi QC dapur",
+    "audience": "Operasional camp tambang emas, tembaga, nikel, dan migas terpencil",
+    "pages": [
+      {
+        "title": "Kartu RFID & Kuota Makan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambangmeal-qc/kartu-rfid-kuota-makan/"
+      },
+      {
+        "title": "Papan Produksi Dapur Camp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambangmeal-qc/papan-produksi-dapur-camp/"
+      },
+      {
+        "title": "Kasir Katering Site",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambangmeal-qc/kasir-katering-site/"
+      },
+      {
+        "title": "Audit Higienitas Mess",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambangmeal-qc/audit-higienitas-mess/"
+      }
+    ]
+  },
+  {
+    "id": "ID-055",
+    "name": "NikelSmelter SCADA",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "IoT / Edge",
+    "subject": "SCADA tanur smelter nikel RKEF, beban listrik & emisi CEMS KLHK SISPEK",
+    "audience": "Operator smelter hilirisasi nikel di Morowali, Weda Bay, dan Konawe",
+    "pages": [
+      {
+        "title": "SCADA Tanur RKEF Line 3",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nikelsmelter-scada/scada-tanur-rkef-line-3/"
+      },
+      {
+        "title": "Kamera Termal & Kiln",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nikelsmelter-scada/kamera-termal-kiln/"
+      },
+      {
+        "title": "Papan Alarm Proses",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nikelsmelter-scada/papan-alarm-proses/"
+      },
+      {
+        "title": "Pelaporan Emisi SISPEK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nikelsmelter-scada/pelaporan-emisi-sispek/"
+      }
+    ]
+  },
+  {
+    "id": "ID-056",
+    "name": "RKAB & SIMBARA Hub",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "Web SaaS",
+    "subject": "Pelacak kuota produksi RKAB ESDM, royalti e-PNBP & kepatuhan tongkang",
+    "audience": "Pemegang IUP/IUPK pertambangan batubara, nikel, timah, dan bauksit",
+    "pages": [
+      {
+        "title": "Dossier Kuota RKAB & e-PNBP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rkab-simbara-hub/dossier-kuota-rkab-e-pnbp/"
+      },
+      {
+        "title": "Jadwal Tongkang & Blending",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rkab-simbara-hub/jadwal-tongkang-blending/"
+      },
+      {
+        "title": "Jurnal Royalti Minerba",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rkab-simbara-hub/jurnal-royalti-minerba/"
+      },
+      {
+        "title": "Wizard Pengajuan SIMBARA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rkab-simbara-hub/wizard-pengajuan-simbara/"
+      }
+    ]
+  },
+  {
+    "id": "ID-057",
+    "name": "SafetyK3 Zero",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "Web SaaS",
+    "subject": "Papan izin kerja HSE (PTW), laporan bahaya KTA/TTA & penjaga SIMOPS",
+    "audience": "Site tambang, proyek konstruksi EPC, kilang migas, dan pembangkit listrik",
+    "pages": [
+      {
+        "title": "Papan Izin Kerja (PTW)",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/safetyk3-zero/papan-izin-kerja-ptw/"
+      },
+      {
+        "title": "Denah Konflik SIMOPS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/safetyk3-zero/denah-konflik-simops/"
+      },
+      {
+        "title": "Tablet Inspeksi KTA/TTA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/safetyk3-zero/tablet-inspeksi-kta-tta/"
+      },
+      {
+        "title": "Dossier Audit SMKP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/safetyk3-zero/dossier-audit-smkp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-058",
+    "name": "HaulRoad Radar",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "IoT / Edge",
+    "subject": "Optimasi cycle-time dump truck pit terbuka, antrean shovel & jalan tambang",
+    "audience": "Superintendent dispatch tambang terbuka batubara dan mineral",
+    "pages": [
+      {
+        "title": "Peta Kontur Pit & Bench",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/haulroad-radar/peta-kontur-pit-bench/"
+      },
+      {
+        "title": "Papan Antrean Crusher",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/haulroad-radar/papan-antrean-crusher/"
+      },
+      {
+        "title": "Analitik Produksi BCM/Shift",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/haulroad-radar/analitik-produksi-bcm-shift/"
+      },
+      {
+        "title": "SCADA Bahan Bakar & Cycle",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/haulroad-radar/scada-bahan-bakar-cycle/"
+      }
+    ]
+  },
+  {
+    "id": "ID-059",
+    "name": "SawitMill Ops",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "IoT / Edge",
+    "subject": "Operasional PKS sawit: jembatan timbang, sortasi TBS & jejak EUDR",
+    "audience": "Pabrik Kelapa Sawit (PKS), kilang CPO, dan tim keberlanjutan ISPO/RSPO",
+    "pages": [
+      {
+        "title": "SCADA Sterilizer & CPO Mill",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sawitmill-ops/scada-sterilizer-cpo-mill/"
+      },
+      {
+        "title": "Kasir Jembatan Timbang TBS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sawitmill-ops/kasir-jembatan-timbang-tbs/"
+      },
+      {
+        "title": "Peta Poligon Kebun EUDR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sawitmill-ops/peta-poligon-kebun-eudr/"
+      },
+      {
+        "title": "Dossier Ketelusuran RSPO",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sawitmill-ops/dossier-ketelusuran-rspo/"
+      }
+    ]
+  },
+  {
+    "id": "ID-060",
+    "name": "WargaRT Civic",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Mobile App",
+    "subject": "Platform RT/RW mobile-first: data warga, transparansi kas RT & UMKM lokal",
+    "audience": "Pengurus RT/RW Indonesia, klaster perumahan, dan warga lingkungan",
+    "pages": [
+      {
+        "title": "Aplikasi Warga & Iuran QRIS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wargart-civic/aplikasi-warga-iuran-qris/"
+      },
+      {
+        "title": "Buku Kas RT Transparan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wargart-civic/buku-kas-rt-transparan/"
+      },
+      {
+        "title": "Surat Pengantar & WA Bot",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wargart-civic/surat-pengantar-wa-bot/"
+      },
+      {
+        "title": "Katalog UMKM Warga",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wargart-civic/katalog-umkm-warga/"
+      }
+    ]
+  },
+  {
+    "id": "ID-061",
+    "name": "INAPass Vault",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Portal identitas digital warga (DPI), SSO & kontrol persetujuan UU PDP",
+    "audience": "Instansi layanan publik yang berkonsolidasi di bawah INA Digital DPI",
+    "pages": [
+      {
+        "title": "Kartu Identitas Digital IKD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inapass-vault/kartu-identitas-digital-ikd/"
+      },
+      {
+        "title": "Wizard Layanan Publik SSO",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inapass-vault/wizard-layanan-publik-sso/"
+      },
+      {
+        "title": "Log Persetujuan UU PDP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inapass-vault/log-persetujuan-uu-pdp/"
+      },
+      {
+        "title": "Matriks Izin Berbagi Data",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/inapass-vault/matriks-izin-berbagi-data/"
+      }
+    ]
+  },
+  {
+    "id": "ID-062",
+    "name": "DanaDesa Open",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Transparansi anggaran APBDes & pelacak progres fisik infrastruktur desa",
+    "audience": "Pemerintah desa (75.000+ Desa), BPD, dan masyarakat desa",
+    "pages": [
+      {
+        "title": "Ringkasan APBDes Publik",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/danadesa-open/ringkasan-apbdes-publik/"
+      },
+      {
+        "title": "Jurnal Realisasi Dana Desa",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/danadesa-open/jurnal-realisasi-dana-desa/"
+      },
+      {
+        "title": "Papan Proyek Infrastruktur",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/danadesa-open/papan-proyek-infrastruktur/"
+      },
+      {
+        "title": "Audit Penyaluran BLT Desa",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/danadesa-open/audit-penyaluran-blt-desa/"
+      }
+    ]
+  },
+  {
+    "id": "ID-063",
+    "name": "BanjirSense Jakarta",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "IoT / Edge",
+    "subject": "Peta peringatan dini tinggi muka air sungai, pintu air & pompa banjir DKI",
+    "audience": "BPBD, operator rumah pompa Dinas SDA, dan ruang komando pemerintah kota",
+    "pages": [
+      {
+        "title": "Peta Banjir DAS Ciliwung",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/banjirsense-jakarta/peta-banjir-das-ciliwung/"
+      },
+      {
+        "title": "SCADA Pintu Air & Pompa",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/banjirsense-jakarta/scada-pintu-air-pompa/"
+      },
+      {
+        "title": "Siaran Peringatan Dini WA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/banjirsense-jakarta/siaran-peringatan-dini-wa/"
+      },
+      {
+        "title": "Papan Evakuasi Posko RT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/banjirsense-jakarta/papan-evakuasi-posko-rt/"
+      }
+    ]
+  },
+  {
+    "id": "ID-064",
+    "name": "OSS-RBA Assist",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Navigator perizinan berusaha berbasis risiko OSS-RBA, KBLI 2020 & LKPM",
+    "audience": "Pelaku usaha UMKM, investor PMA, dan konsultan perizinan korporat",
+    "pages": [
+      {
+        "title": "Wizard KBLI 2020 & OSS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/oss-rba-assist/wizard-kbli-2020-oss/"
+      },
+      {
+        "title": "Peta Kesesuaian RDTR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/oss-rba-assist/peta-kesesuaian-rdtr/"
+      },
+      {
+        "title": "Dossier PB-UMKU & LKPM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/oss-rba-assist/dossier-pb-umku-lkpm/"
+      },
+      {
+        "title": "Papan Progress Perizinan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/oss-rba-assist/papan-progress-perizinan/"
+      }
+    ]
+  },
+  {
+    "id": "ID-065",
+    "name": "LaporKota 311",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Triase aduan warga kota, deduplikasi spasial & penugasan kru dinas",
+    "audience": "Command Center Smart City Pemkot/Pemkab dan dinas pekerjaan umum",
+    "pages": [
+      {
+        "title": "Papan Triase Aduan Dinas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laporkota-311/papan-triase-aduan-dinas/"
+      },
+      {
+        "title": "Peta Sebaran Laporan Kota",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laporkota-311/peta-sebaran-laporan-kota/"
+      },
+      {
+        "title": "Inbox Eskalasi SLA Camat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laporkota-311/inbox-eskalasi-sla-camat/"
+      },
+      {
+        "title": "Analitik Respons 14 Dinas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laporkota-311/analitik-respons-14-dinas/"
+      }
+    ]
+  },
+  {
+    "id": "ID-066",
+    "name": "LapasCare & Visitor",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Desktop / WPF",
+    "subject": "Kios check-in pengunjung biometrik/RFID & dompet cashless warga binaan",
+    "audience": "Lembaga Pemasyarakatan (Lapas/Rutan) dan gedung instansi keamanan tinggi",
+    "pages": [
+      {
+        "title": "Kiosk Kunjungan & RFID",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lapascare-visitor/kiosk-kunjungan-rfid/"
+      },
+      {
+        "title": "Pas Kunjungan Digital QR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lapascare-visitor/pas-kunjungan-digital-qr/"
+      },
+      {
+        "title": "Verifikasi e-KTP & Kuota",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lapascare-visitor/verifikasi-e-ktp-kuota/"
+      },
+      {
+        "title": "Audit Log Pengunjung",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/lapascare-visitor/audit-log-pengunjung/"
+      }
+    ]
+  },
+  {
+    "id": "ID-067",
+    "name": "ProtoBridge Gateway",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "API / Middleware",
+    "subject": "Studio adapter protokol enterprise dari SOAP/AS400 legacy ke REST/gRPC",
+    "audience": "Arsitek perbankan, asuransi, dan BUMN yang mengintegrasikan core legacy",
+    "pages": [
+      {
+        "title": "Inspektor SOAP -> REST",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/protobridge-gateway/inspektor-soap-rest/"
+      },
+      {
+        "title": "DAG Transformasi YARP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/protobridge-gateway/dag-transformasi-yarp/"
+      },
+      {
+        "title": "Diff Kontrak WCF / BAPI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/protobridge-gateway/diff-kontrak-wcf-bapi/"
+      },
+      {
+        "title": "RBAC & Canary Routing",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/protobridge-gateway/rbac-canary-routing/"
+      }
+    ]
+  },
+  {
+    "id": "ID-068",
+    "name": "SchemaDrift Guard",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "API / Middleware",
+    "subject": "Linter migrasi SQL Server & PostgreSQL zero-downtime untuk gerbang CI",
+    "audience": "Tim backend pengelola database SQL Server dan PostgreSQL trafik tinggi",
+    "pages": [
+      {
+        "title": "Lint Migrasi & Lock Diff",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/schemadrift-guard/lint-migrasi-lock-diff/"
+      },
+      {
+        "title": "DAG Pipeline CI Database",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/schemadrift-guard/dag-pipeline-ci-database/"
+      },
+      {
+        "title": "Audit Kolom PII UU PDP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/schemadrift-guard/audit-kolom-pii-uu-pdp/"
+      },
+      {
+        "title": "Kebijakan Gate Produksi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/schemadrift-guard/kebijakan-gate-produksi/"
+      }
+    ]
+  },
+  {
+    "id": "ID-069",
+    "name": "FHIRLint ID",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "API / Middleware",
+    "subject": "Validator payload HL7 FHIR R4 SATUSEHAT & simulator bundle lokal",
+    "audience": "Vendor SIMRS, startup healthtech, dan engineer integrasi rumah sakit",
+    "pages": [
+      {
+        "title": "Validator JSON FHIR R4",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fhirlint-id/validator-json-fhir-r4/"
+      },
+      {
+        "title": "Generator DTO C# / TS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fhirlint-id/generator-dto-c-ts/"
+      },
+      {
+        "title": "DAG Mapping KFA & ICD-10",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fhirlint-id/dag-mapping-kfa-icd-10/"
+      },
+      {
+        "title": "Dossier Kesiapan SATUSEHAT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fhirlint-id/dossier-kesiapan-satusehat/"
+      }
+    ]
+  },
+  {
+    "id": "ID-070",
+    "name": "EventMesh Inspector",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "API / Middleware",
+    "subject": "Konsol inspeksi & replay terkendali Dead-Letter Queue RabbitMQ/Kafka",
+    "audience": "Distributed systems engineer pengelola platform event-driven .NET/Go",
+    "pages": [
+      {
+        "title": "DAG Outbox & Replay DLQ",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventmesh-inspector/dag-outbox-replay-dlq/"
+      },
+      {
+        "title": "Inspektor Payload Dead-Letter",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventmesh-inspector/inspektor-payload-dead-letter/"
+      },
+      {
+        "title": "Terminal Rate-Limit Replay",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventmesh-inspector/terminal-rate-limit-replay/"
+      },
+      {
+        "title": "Kebijakan Retensi Antrean",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventmesh-inspector/kebijakan-retensi-antrean/"
+      }
+    ]
+  },
+  {
+    "id": "ID-071",
+    "name": "FormCraft MAUI",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "Mobile App",
+    "subject": "Builder dynamic form JSON ke kontrol native .NET MAUI dengan dukungan RTL",
+    "audience": "Tim mobile enterprise pembangun aplikasi inspeksi, survei, dan approval",
+    "pages": [
+      {
+        "title": "Editor Schema JSON & Diff",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/formcraft-maui/editor-schema-json-diff/"
+      },
+      {
+        "title": "Pratinjau 3 Layar Mobile RTL",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/formcraft-maui/pratinjau-3-layar-mobile-rtl/"
+      },
+      {
+        "title": "Inspektor API OTA Update",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/formcraft-maui/inspektor-api-ota-update/"
+      },
+      {
+        "title": "Papan Rilis Multi-Bahasa",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/formcraft-maui/papan-rilis-multi-bahasa/"
+      }
+    ]
+  },
+  {
+    "id": "ID-072",
+    "name": "NuGetVault Private",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "API / Middleware",
+    "subject": "Registry privat paket .NET & npm lengkap dengan SBOM & gerbang CVE",
+    "audience": "Organisasi engineering .NET enterprise yang menstandardisasi library internal",
+    "pages": [
+      {
+        "title": "Matriks Keamanan NuGet v3",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nugetvault-private/matriks-keamanan-nuget-v3/"
+      },
+      {
+        "title": "Diff Upgrade Paket & CVE",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nugetvault-private/diff-upgrade-paket-cve/"
+      },
+      {
+        "title": "Dossier SBOM Enterprise",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nugetvault-private/dossier-sbom-enterprise/"
+      },
+      {
+        "title": "DAG Mirror Registry Privat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nugetvault-private/dag-mirror-registry-privat/"
+      }
+    ]
+  },
+  {
+    "id": "ID-073",
+    "name": "WebhookRelay ID",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "API / Middleware",
+    "subject": "Broker ingest webhook, verifikasi HMAC & retry terjamin untuk API Indonesia",
+    "audience": "Tim SaaS dan e-commerce yang mengintegrasikan callback Midtrans, Xendit, JNE, dan TikTok",
+    "pages": [
+      {
+        "title": "Debugger Webhook & HMAC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/webhookrelay-id/debugger-webhook-hmac/"
+      },
+      {
+        "title": "DAG Buffer & Retry Backoff",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/webhookrelay-id/dag-buffer-retry-backoff/"
+      },
+      {
+        "title": "Terminal Lonjakan Callback",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/webhookrelay-id/terminal-lonjakan-callback/"
+      },
+      {
+        "title": "Kunci Secret Midtrans/Xendit",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/webhookrelay-id/kunci-secret-midtrans-xendit/"
+      }
+    ]
+  },
+  {
+    "id": "ID-074",
+    "name": "LoadTest Nusantara",
+    "sector": "devtools",
+    "sectorName": "DevTools & API",
+    "platform": "Web SaaS",
+    "subject": "Simulator trafik terdistribusi & bottleneck flash-sale Harbolnas dan gajian",
+    "audience": "Tim SRE e-commerce, bank digital, dan platform tiket jelang puncak trafik",
+    "pages": [
+      {
+        "title": "Terminal Beban Harbolnas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/loadtest-nusantara/terminal-beban-harbolnas/"
+      },
+      {
+        "title": "DAG Skenario k6 Multi-Node",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/loadtest-nusantara/dag-skenario-k6-multi-node/"
+      },
+      {
+        "title": "Laporan Kesiapan Go/No-Go",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/loadtest-nusantara/laporan-kesiapan-go-no-go/"
+      },
+      {
+        "title": "Diff Index SQL Bottleneck",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/loadtest-nusantara/diff-index-sql-bottleneck/"
+      }
+    ]
+  },
+  {
+    "id": "ID-075",
+    "name": "PDPShield Vault",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "Web SaaS",
+    "subject": "Ledger persetujuan UU PDP No. 27/2022, deteksi PII & meja respons insiden 3x24 jam",
+    "audience": "Data Protection Officer (DPO), fintech, rumah sakit, dan perusahaan SaaS di Indonesia",
+    "pages": [
+      {
+        "title": "Dossier Kepatuhan UU PDP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pdpshield-vault/dossier-kepatuhan-uu-pdp/"
+      },
+      {
+        "title": "Papan Permohonan DSAR 3x24j",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pdpshield-vault/papan-permohonan-dsar-3x24j/"
+      },
+      {
+        "title": "Naskah RoPA & SCC Lintas Batas",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pdpshield-vault/naskah-ropa-scc-lintas-batas/"
+      },
+      {
+        "title": "Matriks Retensi & Akses PII",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pdpshield-vault/matriks-retensi-akses-pii/"
+      }
+    ]
+  },
+  {
+    "id": "ID-076",
+    "name": "SovereignCloud FinOps",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "Web SaaS",
+    "subject": "Konsol FinOps Rupiah untuk cloud multi-region Jakarta, GPU & beban kerja idle",
+    "audience": "CTO, pimpinan platform engineering, dan enterprise pengguna cloud di Indonesia",
+    "pages": [
+      {
+        "title": "Ringkasan Multi-Cloud IDR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sovereigncloud-finops/ringkasan-multi-cloud-idr/"
+      },
+      {
+        "title": "Jadwal Mati Otomatis Staging",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sovereigncloud-finops/jadwal-mati-otomatis-staging/"
+      },
+      {
+        "title": "Jurnal Alokasi Biaya Squad",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sovereigncloud-finops/jurnal-alokasi-biaya-squad/"
+      },
+      {
+        "title": "Kebijakan Anggaran & Kurs",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sovereigncloud-finops/kebijakan-anggaran-kurs/"
+      }
+    ]
+  },
+  {
+    "id": "ID-077",
+    "name": "KubeHarbor Gate",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "API / Middleware",
+    "subject": "Signing container Harbor privat, gerbang CVE Trivy & controller deploy air-gapped",
+    "audience": "Engineer DevSecOps pengelola Docker/Kubernetes on-prem dan registry Harbor",
+    "pages": [
+      {
+        "title": "Diff Kebijakan Cosign & Trivy",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kubeharbor-gate/diff-kebijakan-cosign-trivy/"
+      },
+      {
+        "title": "DAG Promosi Air-Gapped",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kubeharbor-gate/dag-promosi-air-gapped/"
+      },
+      {
+        "title": "Dossier Readback Digest",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kubeharbor-gate/dossier-readback-digest/"
+      },
+      {
+        "title": "RBAC Registry Harbor",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kubeharbor-gate/rbac-registry-harbor/"
+      }
+    ]
+  },
+  {
+    "id": "ID-078",
+    "name": "NetWatch SOC",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "Web SaaS",
+    "subject": "Meja triase alert Wazuh/SIEM & containment otomatis untuk enterprise Indonesia",
+    "audience": "Tim SOC menengah-besar, universitas, rumah sakit, dan tim keamanan fintech",
+    "pages": [
+      {
+        "title": "Terminal Triase Insiden SOC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwatch-soc/terminal-triase-insiden-soc/"
+      },
+      {
+        "title": "Papan Containment MITRE",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwatch-soc/papan-containment-mitre/"
+      },
+      {
+        "title": "DAG Playbook Wazuh Active",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwatch-soc/dag-playbook-wazuh-active/"
+      },
+      {
+        "title": "Dossier Laporan BSSN CSIRT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwatch-soc/dossier-laporan-bssn-csirt/"
+      }
+    ]
+  },
+  {
+    "id": "ID-079",
+    "name": "DCMonitor PUE",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "IoT / Edge",
+    "subject": "Telemetri pendinginan, UPS & PUE rak data center Tier-III/IV Jakarta",
+    "audience": "Operator data center Jakarta/Cikarang/Batam dan tenant kolokasi enterprise",
+    "pages": [
+      {
+        "title": "Denah Rak AI-GPU & PUE",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dcmonitor-pue/denah-rak-ai-gpu-pue/"
+      },
+      {
+        "title": "SCADA Chiller CRAC & UPS A/B",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dcmonitor-pue/scada-chiller-crac-ups-a-b/"
+      },
+      {
+        "title": "Papan Alert Termal Hall",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dcmonitor-pue/papan-alert-termal-hall/"
+      },
+      {
+        "title": "Laporan SLA Daya Tenant",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dcmonitor-pue/laporan-sla-daya-tenant/"
+      }
+    ]
+  },
+  {
+    "id": "ID-080",
+    "name": "ZeroTrust Bastion",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "API / Middleware",
+    "subject": "Persetujuan akses SSH & database produksi just-in-time dengan rekaman sesi",
+    "audience": "Bank, payment gateway, dan organisasi rekayasa berstandar ISO 27001",
+    "pages": [
+      {
+        "title": "Inbox Persetujuan JIT SSH/DB",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/zerotrust-bastion/inbox-persetujuan-jit-ssh-db/"
+      },
+      {
+        "title": "Matriks Akses Ephemeral",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/zerotrust-bastion/matriks-akses-ephemeral/"
+      },
+      {
+        "title": "Terminal Audit Query SQL",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/zerotrust-bastion/terminal-audit-query-sql/"
+      },
+      {
+        "title": "Dossier Review ISO 27001",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/zerotrust-bastion/dossier-review-iso-27001/"
+      }
+    ]
+  },
+  {
+    "id": "ID-081",
+    "name": "ReleaseTrain Ops",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "Web SaaS",
+    "subject": "Kalender rilis multi-environment, TestFlight/Play & papan rollback CAB",
+    "audience": "Release manager yang mengoordinasikan rilis web, API, iOS TestFlight, dan Google Play",
+    "pages": [
+      {
+        "title": "Gantt Kereta Rilis CAB",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/releasetrain-ops/gantt-kereta-rilis-cab/"
+      },
+      {
+        "title": "Papan Gerbang TestFlight/Play",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/releasetrain-ops/papan-gerbang-testflight-play/"
+      },
+      {
+        "title": "Kalender Freeze Hari Raya",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/releasetrain-ops/kalender-freeze-hari-raya/"
+      },
+      {
+        "title": "Bukti Readback Pasca-Deploy",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/releasetrain-ops/bukti-readback-pasca-deploy/"
+      }
+    ]
+  },
+  {
+    "id": "ID-082",
+    "name": "NusaLakehouse",
+    "sector": "data",
+    "sectorName": "Data & BI",
+    "platform": "Web SaaS",
+    "subject": "Workbench pipeline SQL Medallion mandiri & SLA kesegaran data untuk mid-market",
+    "audience": "Perusahaan menengah Indonesia yang beralih dari laporan Excel manual",
+    "pages": [
+      {
+        "title": "DAG Lineage Bronze->Gold",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusalakehouse/dag-lineage-bronze-gold/"
+      },
+      {
+        "title": "Diff Model SQL & Kontrak",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusalakehouse/diff-model-sql-kontrak/"
+      },
+      {
+        "title": "Ringkasan SLA 07:00 WIB",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusalakehouse/ringkasan-sla-07-00-wib/"
+      },
+      {
+        "title": "Konektor ERP & Hak Akses",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusalakehouse/konektor-erp-hak-akses/"
+      }
+    ]
+  },
+  {
+    "id": "ID-083",
+    "name": "FMCG Pulse 38",
+    "sector": "data",
+    "sectorName": "Data & BI",
+    "platform": "Web SaaS",
+    "subject": "BI distribusi general trade 38 provinsi, sell-out & kinerja salesman lapangan",
+    "audience": "Prinsipal FMCG, direktur penjualan nasional, dan tim trade-marketing",
+    "pages": [
+      {
+        "title": "BI Distribusi 38 Provinsi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fmcg-pulse-38/bi-distribusi-38-provinsi/"
+      },
+      {
+        "title": "Peta Heatmap OOS & DOH",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fmcg-pulse-38/peta-heatmap-oos-doh/"
+      },
+      {
+        "title": "Matriks 42 Sub-Distributor",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fmcg-pulse-38/matriks-42-sub-distributor/"
+      },
+      {
+        "title": "Rekonsiliasi Promo Trade",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/fmcg-pulse-38/rekonsiliasi-promo-trade/"
+      }
+    ]
+  },
+  {
+    "id": "ID-084",
+    "name": "SurveyField Sync",
+    "sector": "data",
+    "sectorName": "Data & BI",
+    "platform": "Mobile App",
+    "subject": "Mesin sinkronisasi sensus lapangan, audit ritel & riset pasar offline-first",
+    "audience": "Agensi riset pasar, perusahaan audit ritel, dan enumerator lapangan LSM",
+    "pages": [
+      {
+        "title": "Tablet Survei Offline-First",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/surveyfield-sync/tablet-survei-offline-first/"
+      },
+      {
+        "title": "Peta Kuota Kecamatan GPS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/surveyfield-sync/peta-kuota-kecamatan-gps/"
+      },
+      {
+        "title": "Alur Wawancara 3 Langkah",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/surveyfield-sync/alur-wawancara-3-langkah/"
+      },
+      {
+        "title": "Audit Anti-Fabrikasi QA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/surveyfield-sync/audit-anti-fabrikasi-qa/"
+      }
+    ]
+  },
+  {
+    "id": "ID-085",
+    "name": "SentimentNusa NLP",
+    "sector": "data",
+    "sectorName": "Data & BI",
+    "platform": "Web SaaS",
+    "subject": "Radar intelijen sentimen merek Bahasa Indonesia di media sosial, berita & suara",
+    "audience": "Tim komunikasi korporat, brand manager, dan PR bank konsumen",
+    "pages": [
+      {
+        "title": "Radar Krisis & Sarkasme",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sentimentnusa-nlp/radar-krisis-sarkasme/"
+      },
+      {
+        "title": "Ringkasan Sentimen Media",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sentimentnusa-nlp/ringkasan-sentimen-media/"
+      },
+      {
+        "title": "Utas Eskalasi PR & CS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sentimentnusa-nlp/utas-eskalasi-pr-cs/"
+      },
+      {
+        "title": "DAG Filter Bot & IndoBERT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sentimentnusa-nlp/dag-filter-bot-indobert/"
+      }
+    ]
+  },
+  {
+    "id": "ID-086",
+    "name": "DataQuality Gate",
+    "sector": "data",
+    "sectorName": "Data & BI",
+    "platform": "API / Middleware",
+    "subject": "CLI otomatis kontrak skema, lonjakan null & rekonsiliasi data finansial",
+    "audience": "Data engineer dan tim analitik penjaga pipeline BI serta AI hilir",
+    "pages": [
+      {
+        "title": "Kontrak YAML & Circuit Diff",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dataquality-gate/kontrak-yaml-circuit-diff/"
+      },
+      {
+        "title": "DAG Validasi Pra-Power BI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dataquality-gate/dag-validasi-pra-power-bi/"
+      },
+      {
+        "title": "Inspektor API Alert Data",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dataquality-gate/inspektor-api-alert-data/"
+      },
+      {
+        "title": "Dossier Paritas Integer Rp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dataquality-gate/dossier-paritas-integer-rp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-087",
+    "name": "BranchScore KPI",
+    "sector": "data",
+    "sectorName": "Data & BI",
+    "platform": "Web SaaS",
+    "subject": "Analitik leaderboard KPI multi-cabang waralaba, ritel & distribusi nasional",
+    "audience": "Jaringan ritel nasional, klinik, bengkel, dan distributor multi-cabang",
+    "pages": [
+      {
+        "title": "Leaderboard 24 Cabang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/branchscore-kpi/leaderboard-24-cabang/"
+      },
+      {
+        "title": "Matriks Skor 4 Pilar",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/branchscore-kpi/matriks-skor-4-pilar/"
+      },
+      {
+        "title": "Inbox Coaching Cabang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/branchscore-kpi/inbox-coaching-cabang/"
+      },
+      {
+        "title": "Jurnal Insentif & Bonus",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/branchscore-kpi/jurnal-insentif-bonus/"
+      }
+    ]
+  },
+  {
+    "id": "ID-088",
+    "name": "SwapGrid EV",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "IoT / Edge",
+    "subject": "Telemetri kabinet tukar baterai motor listrik & jaringan pengendara ojol",
+    "audience": "Produsen motor listrik Indonesia, operator kabinet swap, dan lessor armada ojol",
+    "pages": [
+      {
+        "title": "Denah 12-Slot Baterai LFP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swapgrid-ev/denah-12-slot-baterai-lfp/"
+      },
+      {
+        "title": "Peta Stasiun Swap Ojol",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swapgrid-ev/peta-stasiun-swap-ojol/"
+      },
+      {
+        "title": "Aplikasi Reservasi Swap QR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swapgrid-ev/aplikasi-reservasi-swap-qr/"
+      },
+      {
+        "title": "SCADA Kesehatan Sel BMS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/swapgrid-ev/scada-kesehatan-sel-bms/"
+      }
+    ]
+  },
+  {
+    "id": "ID-089",
+    "name": "KarbonIDX Ledger",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "Web SaaS",
+    "subject": "Akuntansi karbon korporat Scope 1-2-3 & registri kredit IDXCarbon",
+    "audience": "Emiten tercatat BEI (Tbk), industri tambang/semen, dan tim ESG korporat",
+    "pages": [
+      {
+        "title": "Inventori GRK Scope 1-2-3",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/karbonidx-ledger/inventori-grk-scope-1-2-3/"
+      },
+      {
+        "title": "Dossier OJK POJK 51 & CBAM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/karbonidx-ledger/dossier-ojk-pojk-51-cbam/"
+      },
+      {
+        "title": "Jurnal Retirement IDXCarbon",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/karbonidx-ledger/jurnal-retirement-idxcarbon/"
+      },
+      {
+        "title": "Wizard Input Faktor ESDM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/karbonidx-ledger/wizard-input-faktor-esdm/"
+      }
+    ]
+  },
+  {
+    "id": "ID-090",
+    "name": "SuryaGrid Rooftop",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "IoT / Edge",
+    "subject": "Monitor hasil inverter PLTS Atap komersial, kerugian debu & penghematan kWh PLN",
+    "audience": "EPC surya atap industri, pabrik manufaktur, dan pengembang solar-leasing",
+    "pages": [
+      {
+        "title": "SCADA Inverter & Zero-Export",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suryagrid-rooftop/scada-inverter-zero-export/"
+      },
+      {
+        "title": "Denah 16 String DC Array",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suryagrid-rooftop/denah-16-string-dc-array/"
+      },
+      {
+        "title": "Jadwal Cuci Panel & O&M",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suryagrid-rooftop/jadwal-cuci-panel-o-m/"
+      },
+      {
+        "title": "Tagihan PPA & Hemat PLN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/suryagrid-rooftop/tagihan-ppa-hemat-pln/"
+      }
+    ]
+  },
+  {
+    "id": "ID-091",
+    "name": "DaurBank Waste",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "Mobile App",
+    "subject": "Pengumpulan plastik EPR, Bank Sampah & ledger resin daur ulang terverifikasi",
+    "audience": "Produsen FMCG di bawah mandat EPR KLHK, jaringan Bank Sampah, dan pendaur ulang",
+    "pages": [
+      {
+        "title": "Aplikasi Nasabah & Saldo PET",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/daurbank-waste/aplikasi-nasabah-saldo-pet/"
+      },
+      {
+        "title": "Kasir Timbang BLE Digital",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/daurbank-waste/kasir-timbang-ble-digital/"
+      },
+      {
+        "title": "Alur Setor & Tukar QRIS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/daurbank-waste/alur-setor-tukar-qris/"
+      },
+      {
+        "title": "Sertifikat EPR KLHK P.75",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/daurbank-waste/sertifikat-epr-klhk-p-75/"
+      }
+    ]
+  },
+  {
+    "id": "ID-092",
+    "name": "MangroveMRV",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "Web SaaS",
+    "subject": "MRV restorasi mangrove karbon biru & pemantau plot drone pesisir",
+    "audience": "LSM restorasi pesisir, pengembang proyek blue-carbon, dan tim CSR korporat",
+    "pages": [
+      {
+        "title": "Peta Plot Drone Mangrove",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mangrovemrv/peta-plot-drone-mangrove/"
+      },
+      {
+        "title": "Dossier Verra VM0033 MRV",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mangrovemrv/dossier-verra-vm0033-mrv/"
+      },
+      {
+        "title": "Tablet Cek Bibit Pesisir",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mangrovemrv/tablet-cek-bibit-pesisir/"
+      },
+      {
+        "title": "Pencairan Bonus Kelompok Tani",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mangrovemrv/pencairan-bonus-kelompok-tani/"
+      }
+    ]
+  },
+  {
+    "id": "ID-093",
+    "name": "ArmadaEV Charge",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "Web SaaS",
+    "subject": "Penjadwal smart charging OCPP untuk depot bus & van listrik komersial",
+    "audience": "Depot bus listrik publik (TransJakarta/BRT), van EV logistik, dan armada bandara",
+    "pages": [
+      {
+        "title": "Gantt Charging Malam LWBP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadaev-charge/gantt-charging-malam-lwbp/"
+      },
+      {
+        "title": "Denah 18 Bay Fast Charger",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadaev-charge/denah-18-bay-fast-charger/"
+      },
+      {
+        "title": "SCADA Beban Trafo OCPP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadaev-charge/scada-beban-trafo-ocpp/"
+      },
+      {
+        "title": "Jadwal Keberangkatan 05:00",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/armadaev-charge/jadwal-keberangkatan-05-00/"
+      }
+    ]
+  },
+  {
+    "id": "ID-094",
+    "name": "MBG SupplyChain",
+    "sector": "agritech",
+    "sectorName": "Pangan & Agri",
+    "platform": "Web SaaS",
+    "subject": "Pelacak pasokan dapur sentral MBG, standar gizi & keamanan pangan HACCP",
+    "audience": "Dapur sentral SPPG, mitra katering, dan koordinator ketahanan pangan daerah",
+    "pages": [
+      {
+        "title": "Papan Dapur & Retensi 72j",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mbg-supplychain/papan-dapur-retensi-72j/"
+      },
+      {
+        "title": "Jadwal Menu Gizi Mingguan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mbg-supplychain/jadwal-menu-gizi-mingguan/"
+      },
+      {
+        "title": "Peta Kirim 14 SD/SMP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mbg-supplychain/peta-kirim-14-sd-smp/"
+      },
+      {
+        "title": "Audit Biaya & HACCP BGN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/mbg-supplychain/audit-biaya-haccp-bgn/"
+      }
+    ]
+  },
+  {
+    "id": "ID-095",
+    "name": "TambakSmart IoT",
+    "sector": "agritech",
+    "sectorName": "Pangan & Agri",
+    "platform": "IoT / Edge",
+    "subject": "Telemetri DO/pH/salinitas tambak udang vaname & SCADA kincir otomatis",
+    "audience": "Petambak udang vaname intensif di Lampung, Jawa Timur, Sumbawa, dan Sulawesi",
+    "pages": [
+      {
+        "title": "Denah 12 Kolam & Kincir",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambaksmart-iot/denah-12-kolam-kincir/"
+      },
+      {
+        "title": "SCADA Oksigen DO & Relay",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambaksmart-iot/scada-oksigen-do-relay/"
+      },
+      {
+        "title": "Papan Alarm Dini Hari",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambaksmart-iot/papan-alarm-dini-hari/"
+      },
+      {
+        "title": "Analitik Biomassa & FCR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tambaksmart-iot/analitik-biomassa-fcr/"
+      }
+    ]
+  },
+  {
+    "id": "ID-096",
+    "name": "KopiTrace Origin",
+    "sector": "agritech",
+    "sectorName": "Pangan & Agri",
+    "platform": "Web SaaS",
+    "subject": "Paspor ketelusuran Arabika single-origin Indonesia & ekspor EUDR",
+    "audience": "Koperasi kopi spesialti (Gayo, Toraja, Flores, Kintamani) dan eksportir kopi",
+    "pages": [
+      {
+        "title": "Paspor Ekspor & EUDR DDS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopitrace-origin/paspor-ekspor-eudr-dds/"
+      },
+      {
+        "title": "Peta 64 Poligon Kebun Kopi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopitrace-origin/peta-64-poligon-kebun-kopi/"
+      },
+      {
+        "title": "Katalog Micro-Lot & Cupping",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopitrace-origin/katalog-micro-lot-cupping/"
+      },
+      {
+        "title": "Transparansi Harga Petani",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopitrace-origin/transparansi-harga-petani/"
+      }
+    ]
+  },
+  {
+    "id": "ID-097",
+    "name": "NelayanCatch",
+    "sector": "agritech",
+    "sectorName": "Pangan & Agri",
+    "platform": "Desktop / WPF",
+    "subject": "Terminal lelang ikan TPI pesisir, alokasi es & e-Logbook KKP",
+    "audience": "Tempat Pelelangan Ikan (TPI), eksportir tuna, dan koperasi pelabuhan perikanan",
+    "pages": [
+      {
+        "title": "Kiosk Lelang Ikan TPI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nelayancatch/kiosk-lelang-ikan-tpi/"
+      },
+      {
+        "title": "Papan Grading Tuna Sashimi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nelayancatch/papan-grading-tuna-sashimi/"
+      },
+      {
+        "title": "Bagi Hasil Awak & Es Balok",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nelayancatch/bagi-hasil-awak-es-balok/"
+      },
+      {
+        "title": "Sertifikat SHTI Bebas IUU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nelayancatch/sertifikat-shti-bebas-iuu/"
+      }
+    ]
+  },
+  {
+    "id": "ID-098",
+    "name": "PupukSubsidi Gate",
+    "sector": "agritech",
+    "sectorName": "Pangan & Agri",
+    "platform": "Web SaaS",
+    "subject": "Portal penebusan pupuk bersubsidi ber-GPS & kontrol stok kios desa",
+    "audience": "Kios pupuk resmi desa, koperasi tani, dan tim pengawas penyaluran kabupaten",
+    "pages": [
+      {
+        "title": "Wizard Tebus NIK e-RDKK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pupuksubsidi-gate/wizard-tebus-nik-e-rdkk/"
+      },
+      {
+        "title": "Kasir Kunci HET Pupuk",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pupuksubsidi-gate/kasir-kunci-het-pupuk/"
+      },
+      {
+        "title": "Peta Stok Kios Kabupaten",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pupuksubsidi-gate/peta-stok-kios-kabupaten/"
+      },
+      {
+        "title": "Audit Anti-Bocor Subsidi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pupuksubsidi-gate/audit-anti-bocor-subsidi/"
+      }
+    ]
+  },
+  {
+    "id": "ID-099",
+    "name": "HalalAudit BPJPH",
+    "sector": "lifestyle",
+    "sectorName": "Syariah, Ed & Travel",
+    "platform": "Web SaaS",
+    "subject": "Workbench kesiapan sertifikasi Halal SJPH end-to-end & auditor LPH",
+    "audience": "Produsen F&B Indonesia, merek kosmetik, RPH, dan auditor LPH",
+    "pages": [
+      {
+        "title": "Dossier 5 Kriteria SJPH",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/halalaudit-bpjph/dossier-5-kriteria-sjph/"
+      },
+      {
+        "title": "Papan Masa Berlaku Bahan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/halalaudit-bpjph/papan-masa-berlaku-bahan/"
+      },
+      {
+        "title": "Tablet Inspeksi LPH Pabrik",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/halalaudit-bpjph/tablet-inspeksi-lph-pabrik/"
+      },
+      {
+        "title": "Naskah Manual SIHALAL",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/halalaudit-bpjph/naskah-manual-sihalal/"
+      }
+    ]
+  },
+  {
+    "id": "ID-100",
+    "name": "UmrahOps Suite",
+    "sector": "lifestyle",
+    "sectorName": "Syariah, Ed & Travel",
+    "platform": "Web SaaS",
+    "subject": "Manajemen visa ibadah, manifes pesawat, hotel Madinah/Makkah & roster muthawwif",
+    "audience": "Biro perjalanan Umrah PPIU dan Haji Khusus PIHK berizin di Indonesia",
+    "pages": [
+      {
+        "title": "Jadwal Kloter & Muthawwif",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/umrahops-suite/jadwal-kloter-muthawwif/"
+      },
+      {
+        "title": "Alokasi Kamar Makkah/Madinah",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/umrahops-suite/alokasi-kamar-makkah-madinah/"
+      },
+      {
+        "title": "E-Pass Jamaah & Visa Nusuk",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/umrahops-suite/e-pass-jamaah-visa-nusuk/"
+      },
+      {
+        "title": "Kalkulasi Margin IDR-SAR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/umrahops-suite/kalkulasi-margin-idr-sar/"
+      }
+    ]
+  },
+  {
+    "id": "ID-101",
+    "name": "PesantrenPay OS",
+    "sector": "lifestyle",
+    "sectorName": "Syariah, Ed & Travel",
+    "platform": "Mobile App",
+    "subject": "SPP Pondok Pesantren, kartu kantin RFID cashless & aplikasi Wali Santri",
+    "audience": "Pondok Pesantren, madrasah berasrama, dan Wali Santri di seluruh Indonesia",
+    "pages": [
+      {
+        "title": "Kartu RFID & Batas Jajan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pesantrenpay-os/kartu-rfid-batas-jajan/"
+      },
+      {
+        "title": "Aplikasi Wali & Tahfidz",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pesantrenpay-os/aplikasi-wali-tahfidz/"
+      },
+      {
+        "title": "Kasir Kantin Cashless",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pesantrenpay-os/kasir-kantin-cashless/"
+      },
+      {
+        "title": "Tagihan SPP Virtual Account",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/pesantrenpay-os/tagihan-spp-virtual-account/"
+      }
+    ]
+  },
+  {
+    "id": "ID-102",
+    "name": "VokasiLab ID",
+    "sector": "lifestyle",
+    "sectorName": "Syariah, Ed & Travel",
+    "platform": "Web SaaS",
+    "subject": "Hub kohort vokasi berbasis industri, rubrik praktik & perekrutan perusahaan",
+    "audience": "Jaringan SMK vokasi, bootcamp rekayasa, dan akademi talenta korporat",
+    "pages": [
+      {
+        "title": "Simulasi Uji & Rubrik SKKNI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/vokasilab-id/simulasi-uji-rubrik-skkni/"
+      },
+      {
+        "title": "Review PR & Kode Peserta",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/vokasilab-id/review-pr-kode-peserta/"
+      },
+      {
+        "title": "Papan Sprint Kohort 8 Pekan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/vokasilab-id/papan-sprint-kohort-8-pekan/"
+      },
+      {
+        "title": "Katalog Talenta Siap Kerja",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/vokasilab-id/katalog-talenta-siap-kerja/"
+      }
+    ]
+  },
+  {
+    "id": "ID-103",
+    "name": "VillaBali PMS",
+    "sector": "lifestyle",
+    "sectorName": "Syariah, Ed & Travel",
+    "platform": "Web SaaS",
+    "subject": "Channel manager vila & hotel butik, housekeeping & PMS pajak PB1",
+    "audience": "Operator vila butik dan grup PMS di Bali, Lombok, Yogyakarta, dan Labuan Bajo",
+    "pages": [
+      {
+        "title": "Tape Chart 18 Vila & 4 OTA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/villabali-pms/tape-chart-18-vila-4-ota/"
+      },
+      {
+        "title": "Papan Turnaround Housekeeping",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/villabali-pms/papan-turnaround-housekeeping/"
+      },
+      {
+        "title": "Laporan P&L Pemilik & PB1",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/villabali-pms/laporan-p-l-pemilik-pb1/"
+      },
+      {
+        "title": "Check-In Paspor & APOA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/villabali-pms/check-in-paspor-apoa/"
+      }
+    ]
+  },
+  {
+    "id": "ID-104",
+    "name": "CreatorEscrow ID",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "Web SaaS",
+    "subject": "Broker brief kampanye influencer, QA deliverable & payout escrow bertahap",
+    "audience": "Merek Indonesia, agensi digital, dan kreator nano/mikro/makro TikTok & Instagram",
+    "pages": [
+      {
+        "title": "Direktori & Escrow 28 KOL",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/creatorescrow-id/direktori-escrow-28-kol/"
+      },
+      {
+        "title": "Ruang Review Draft Video",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/creatorescrow-id/ruang-review-draft-video/"
+      },
+      {
+        "title": "Inbox Pencairan BI-FAST",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/creatorescrow-id/inbox-pencairan-bi-fast/"
+      },
+      {
+        "title": "Rekap Bukti Potong PPh 21",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/creatorescrow-id/rekap-bukti-potong-pph-21/"
+      }
+    ]
+  },
+  {
+    "id": "ID-105",
+    "name": "WABiz Flow",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "AI / Agentic",
+    "subject": "Router resmi WhatsApp Business API untuk commerce, OTP & CS multi-agen",
+    "audience": "Klinik, bank, peritel, dan perusahaan Indonesia yang bertumpu pada WhatsApp",
+    "pages": [
+      {
+        "title": "Inbox WhatsApp Business API",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wabiz-flow/inbox-whatsapp-business-api/"
+      },
+      {
+        "title": "DAG Router Flow & QRIS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wabiz-flow/dag-router-flow-qris/"
+      },
+      {
+        "title": "Inspektor Webhook Meta",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wabiz-flow/inspektor-webhook-meta/"
+      },
+      {
+        "title": "Audit Biaya & Opt-Out PDP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wabiz-flow/audit-biaya-opt-out-pdp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-106",
+    "name": "BengkelBay OS",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "Desktop / WPF",
+    "subject": "Kiosk bay servis otomotif, stok suku cadang & inspeksi digital bengkel",
+    "audience": "Bengkel mobil multi-cabang, jaringan ban/oli, dan pusat perawatan armada",
+    "pages": [
+      {
+        "title": "Denah 8 Lift Bay Bengkel",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bengkelbay-os/denah-8-lift-bay-bengkel/"
+      },
+      {
+        "title": "Estimasi Foto via WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bengkelbay-os/estimasi-foto-via-whatsapp/"
+      },
+      {
+        "title": "Kasir PKB & Suku Cadang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bengkelbay-os/kasir-pkb-suku-cadang/"
+      },
+      {
+        "title": "Jadwal Booking Servis",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bengkelbay-os/jadwal-booking-servis/"
+      }
+    ]
+  },
+  {
+    "id": "ID-107",
+    "name": "WakafTransparan",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "Web SaaS",
+    "subject": "Ledger dana wakaf produktif & zakat dengan bukti penyaluran teraudit",
+    "audience": "Lembaga Nazhir Wakaf berizin, LAZ zakat, dan yayasan masjid",
+    "pages": [
+      {
+        "title": "Laporan Publik Wakaf PSAK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wakaftransparan/laporan-publik-wakaf-psak/"
+      },
+      {
+        "title": "Jurnal Dana Abadi & 8 Asnaf",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wakaftransparan/jurnal-dana-abadi-8-asnaf/"
+      },
+      {
+        "title": "Dossier Batas Nazhir 10%",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wakaftransparan/dossier-batas-nazhir-10/"
+      },
+      {
+        "title": "Sertifikat BSZ Pajak",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wakaftransparan/sertifikat-bsz-pajak/"
+      }
+    ]
+  },
+  {
+    "id": "ID-108",
+    "name": "NotarisChain Vault",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "Web SaaS",
+    "subject": "Ruang transaksi Sertipikat Elektronik pertanahan & akta korporasi PPAT",
+    "audience": "Kantor Notaris/PPAT Indonesia, bank penyalur KPR, dan pengembang properti",
+    "pages": [
+      {
+        "title": "Ruang Akad & Draft AJB",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/notarischain-vault/ruang-akad-draft-ajb/"
+      },
+      {
+        "title": "Checklist Cek BPN & BPHTB",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/notarischain-vault/checklist-cek-bpn-bphtb/"
+      },
+      {
+        "title": "Papan Progress Balik Nama",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/notarischain-vault/papan-progress-balik-nama/"
+      },
+      {
+        "title": "Verifikasi Hash Sertipikat-el",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/notarischain-vault/verifikasi-hash-sertipikat-el/"
+      }
+    ]
+  },
+  {
+    "id": "ID-109",
+    "name": "WhooshLink Intermoda",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "Mobile App",
+    "subject": "Tiket terpadu Kereta Cepat Whoosh, KRL, MRT, LRT & feeder dalam satu QR",
+    "audience": "Komuter koridor Jakarta–Bandung dan operator transportasi publik terpadu",
+    "pages": [
+      {
+        "title": "E-Boarding Pass QR Intermoda",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/whooshlink-intermoda/e-boarding-pass-qr-intermoda/"
+      },
+      {
+        "title": "Pilih Kursi Gerbong Whoosh",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/whooshlink-intermoda/pilih-kursi-gerbong-whoosh/"
+      },
+      {
+        "title": "Peta Koridor 350 km/jam",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/whooshlink-intermoda/peta-koridor-350-km-jam/"
+      },
+      {
+        "title": "Alur Pesan 3 Langkah",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/whooshlink-intermoda/alur-pesan-3-langkah/"
+      }
+    ]
+  },
+  {
+    "id": "ID-110",
+    "name": "NusaGame LiveOps",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "Web SaaS",
+    "subject": "Telemetri LiveOps, anti-cheat & top-up lokal untuk studio game Indonesia",
+    "audience": "Studio game lokal Indonesia, publisher regional, dan tim LiveOps",
+    "pages": [
+      {
+        "title": "Terminal CCU & Anti-Cheat",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusagame-liveops/terminal-ccu-anti-cheat/"
+      },
+      {
+        "title": "Toko Event & Battle Pass",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusagame-liveops/toko-event-battle-pass/"
+      },
+      {
+        "title": "Jadwal Rilis Event Musiman",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusagame-liveops/jadwal-rilis-event-musiman/"
+      },
+      {
+        "title": "Inspektor API Top-Up QRIS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/nusagame-liveops/inspektor-api-top-up-qris/"
+      }
+    ]
+  },
+  {
+    "id": "ID-111",
+    "name": "KlinikHewan VetOS",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "EMR klinik hewan, jadwal vaksinasi, rawat inap & stok obat veteriner",
+    "audience": "Klinik dokter hewan, rumah sakit hewan, dan pet-care multi-cabang",
+    "pages": [
+      {
+        "title": "Rekam Medis & Vaksin Hewan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/klinikhewan-vetos/rekam-medis-vaksin-hewan/"
+      },
+      {
+        "title": "Denah Ruang Periksa & Hotel",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/klinikhewan-vetos/denah-ruang-periksa-hotel/"
+      },
+      {
+        "title": "Jadwal Grooming & Dokter",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/klinikhewan-vetos/jadwal-grooming-dokter/"
+      },
+      {
+        "title": "Pengingat Vaksin WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/klinikhewan-vetos/pengingat-vaksin-whatsapp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-112",
+    "name": "KoperasiSimpan Cloud",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Desktop / WPF",
+    "subject": "Core system Koperasi Simpan Pinjam (KSP), hitung SHU otomatis & laporan RAT",
+    "audience": "Koperasi Simpan Pinjam (KSP/KSPPS), koperasi karyawan BUMN, dan credit union",
+    "pages": [
+      {
+        "title": "Buku Besar Simpan Pinjam",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/koperasisimpan-cloud/buku-besar-simpan-pinjam/"
+      },
+      {
+        "title": "Simulasi Pinjaman & SHU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/koperasisimpan-cloud/simulasi-pinjaman-shu/"
+      },
+      {
+        "title": "Wizard Pengajuan Anggota",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/koperasisimpan-cloud/wizard-pengajuan-anggota/"
+      },
+      {
+        "title": "Dossier Rapat Anggota RAT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/koperasisimpan-cloud/dossier-rapat-anggota-rat/"
+      }
+    ]
+  },
+  {
+    "id": "ID-113",
+    "name": "EventNusa Tiket",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Web SaaS",
+    "subject": "Ticketing konser & expo anti-calo dengan QR berotasi dan waiting room",
+    "audience": "Promotor konser musik, penyelenggara pameran ICE BSD/JIExpo, dan liga olahraga",
+    "pages": [
+      {
+        "title": "Peta Kursi Stadion GBK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventnusa-tiket/peta-kursi-stadion-gbk/"
+      },
+      {
+        "title": "E-Tiket QR Dinamis 30 Detik",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventnusa-tiket/e-tiket-qr-dinamis-30-detik/"
+      },
+      {
+        "title": "Papan Aliran Pintu A–H",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventnusa-tiket/papan-aliran-pintu-a-h/"
+      },
+      {
+        "title": "Rekonsiliasi Resale & PB1",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/eventnusa-tiket/rekonsiliasi-resale-pb1/"
+      }
+    ]
+  },
+  {
+    "id": "ID-114",
+    "name": "BimbelUTBK Adaptive",
+    "sector": "lifestyle",
+    "sectorName": "Syariah, Ed & Travel",
+    "platform": "Mobile App",
+    "subject": "Tryout adaptif SNBT/UTBK berbasis IRT & analisis peluang masuk PTN",
+    "audience": "Siswa SMA kelas 12 di seluruh Indonesia dan lembaga bimbingan belajar",
+    "pages": [
+      {
+        "title": "Simulator Tryout CBT IRT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bimbelutbk-adaptive/simulator-tryout-cbt-irt/"
+      },
+      {
+        "title": "Aplikasi Belajar & Skor PTN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bimbelutbk-adaptive/aplikasi-belajar-skor-ptn/"
+      },
+      {
+        "title": "Analitik Kelemahan Subtes",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bimbelutbk-adaptive/analitik-kelemahan-subtes/"
+      },
+      {
+        "title": "Jadwal Drill Mingguan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bimbelutbk-adaptive/jadwal-drill-mingguan/"
+      }
+    ]
+  },
+  {
+    "id": "ID-115",
+    "name": "IKN SmartGrid Twin",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "IoT / Edge",
+    "subject": "Digital twin energi terbarukan, air minum & penerangan cerdas kota mandiri",
+    "audience": "Pengelola kawasan kota pintar IKN, BSD, Cikarang, dan kawasan industri hijau",
+    "pages": [
+      {
+        "title": "SCADA Microgrid PLTS & Air",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ikn-smartgrid-twin/scada-microgrid-plts-air/"
+      },
+      {
+        "title": "Peta Utilitas Digital Twin",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ikn-smartgrid-twin/peta-utilitas-digital-twin/"
+      },
+      {
+        "title": "Denah Sektor BESS & PJU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ikn-smartgrid-twin/denah-sektor-bess-pju/"
+      },
+      {
+        "title": "Laporan Emisi & ISO 37120",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ikn-smartgrid-twin/laporan-emisi-iso-37120/"
+      }
+    ]
+  },
+  {
+    "id": "ID-116",
+    "name": "PropertiKPR Desk",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Simulasi & perbandingan KPR Konvensional/Syariah + DSR SLIK multi-bank",
+    "audience": "Developer perumahan, broker properti, dan pembeli rumah pertama di Indonesia",
+    "pages": [
+      {
+        "title": "Wizard Pre-Scoring & DSCR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/propertikpr-desk/wizard-pre-scoring-dscr/"
+      },
+      {
+        "title": "Inbox Banding 7 Bank KPR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/propertikpr-desk/inbox-banding-7-bank-kpr/"
+      },
+      {
+        "title": "Simulasi Cicilan & Bunga",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/propertikpr-desk/simulasi-cicilan-bunga/"
+      },
+      {
+        "title": "Draft Akad & Jadwal PPAT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/propertikpr-desk/draft-akad-jadwal-ppat/"
+      }
+    ]
+  },
+  {
+    "id": "ID-117",
+    "name": "LaundryKilat Franchise",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Desktop / WPF",
+    "subject": "POS outlet laundry kiloan/satuan berbasis RFID tag, mesin IoT & notif WA",
+    "audience": "Pemilik jaringan franchise laundry, binatu hotel, dan laundry ekspres perkotaan",
+    "pages": [
+      {
+        "title": "Kasir RFID & Antrean Cuci",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laundrykilat-franchise/kasir-rfid-antrean-cuci/"
+      },
+      {
+        "title": "Papan Mesin Cuci & Setrika",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laundrykilat-franchise/papan-mesin-cuci-setrika/"
+      },
+      {
+        "title": "Notifikasi Selesai WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laundrykilat-franchise/notifikasi-selesai-whatsapp/"
+      },
+      {
+        "title": "Rekap Royalti 14 Outlet",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/laundrykilat-franchise/rekap-royalti-14-outlet/"
+      }
+    ]
+  },
+  {
+    "id": "ID-118",
+    "name": "PenerbitNusa Royalty",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "Web SaaS",
+    "subject": "Manajemen ISBN Perpusnas, cetak ulang & ledger royalti penulis Indonesia",
+    "audience": "Penerbit buku Indonesia, percetakan, agensi literasi, dan penulis",
+    "pages": [
+      {
+        "title": "Katalog ISBN & Cetak Ulang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/penerbitnusa-royalty/katalog-isbn-cetak-ulang/"
+      },
+      {
+        "title": "Kontrak Penulis & Hak Cipta",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/penerbitnusa-royalty/kontrak-penulis-hak-cipta/"
+      },
+      {
+        "title": "Jurnal Royalti & PPh 23",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/penerbitnusa-royalty/jurnal-royalti-pph-23/"
+      },
+      {
+        "title": "Analitik Penjualan Toko/DRM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/penerbitnusa-royalty/analitik-penjualan-toko-drm/"
+      }
+    ]
+  },
+  {
+    "id": "ID-119",
+    "name": "CateringCorp B2B",
+    "sector": "agritech",
+    "sectorName": "Pangan & Agri",
+    "platform": "Web SaaS",
+    "subject": "Langganan katering kantor & pabrik harian dengan kontrol limbah pangan",
+    "audience": "Perusahaan manufaktur, perkantoran SCBD/TB Simatupang, dan vendor katering B2B",
+    "pages": [
+      {
+        "title": "Jadwal Rotasi Menu & Shift",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/cateringcorp-b2b/jadwal-rotasi-menu-shift/"
+      },
+      {
+        "title": "Papan Masak & Packing Box",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/cateringcorp-b2b/papan-masak-packing-box/"
+      },
+      {
+        "title": "Analitik Sisa Pangan Waste",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/cateringcorp-b2b/analitik-sisa-pangan-waste/"
+      },
+      {
+        "title": "Penagihan B2B & PPh 23",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/cateringcorp-b2b/penagihan-b2b-pph-23/"
+      }
+    ]
+  },
+  {
+    "id": "ID-120",
+    "name": "SiberAudit SPBE",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Asesmen indeks keamanan SPBE, kesiapan ISO 27001 & audit BSSN instansi",
+    "audience": "Diskominfo Pemda, kementerian, lembaga pemerintah, dan BUMN",
+    "pages": [
+      {
+        "title": "Dossier Evaluasi 47 Indikator",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siberaudit-spbe/dossier-evaluasi-47-indikator/"
+      },
+      {
+        "title": "Simulasi Asesmen Mandiri",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siberaudit-spbe/simulasi-asesmen-mandiri/"
+      },
+      {
+        "title": "Papan Tindak Lanjut OPD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siberaudit-spbe/papan-tindak-lanjut-opd/"
+      },
+      {
+        "title": "Matriks Arsitektur & RBAC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siberaudit-spbe/matriks-arsitektur-rbac/"
+      }
+    ]
+  },
+  {
+    "id": "ID-121",
+    "name": "GatewayMesh ID",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "API / Middleware",
+    "subject": "Orkestrator multi-payment gateway & optimasi fee lintas Xendit, Midtrans, DOKU & Finpay",
+    "audience": "Tim engineering e-commerce, platform SaaS, dan marketplace volume tinggi di Indonesia",
+    "pages": [
+      {
+        "title": "DAG Routing & Failover PG",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gatewaymesh-id/dag-routing-failover-pg/"
+      },
+      {
+        "title": "Inspektor API Multi-Gateway",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gatewaymesh-id/inspektor-api-multi-gateway/"
+      },
+      {
+        "title": "Rekonsiliasi Settlement 5 PG",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gatewaymesh-id/rekonsiliasi-settlement-5-pg/"
+      },
+      {
+        "title": "Kunci Vault & Rule MDR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/gatewaymesh-id/kunci-vault-rule-mdr/"
+      }
+    ]
+  },
+  {
+    "id": "ID-122",
+    "name": "PaymentID Ready",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "API / Middleware",
+    "subject": "Pipeline kesiapan BSPI 2030 Payment ID, BI-Payment Info & migrasi BI-RTGS Gen III",
+    "audience": "Bank buku/KBMI, BPD, lembaga pembayaran, dan tim kepatuhan Bank Indonesia",
+    "pages": [
+      {
+        "title": "Diff Migrasi ISO 20022",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/paymentid-ready/diff-migrasi-iso-20022/"
+      },
+      {
+        "title": "Harness Uji BI-RTGS Gen III",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/paymentid-ready/harness-uji-bi-rtgs-gen-iii/"
+      },
+      {
+        "title": "DAG Lineage Payment ID",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/paymentid-ready/dag-lineage-payment-id/"
+      },
+      {
+        "title": "Dossier Kesiapan Bank ID",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/paymentid-ready/dossier-kesiapan-bank-id/"
+      }
+    ]
+  },
+  {
+    "id": "ID-123",
+    "name": "LanggananID",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Mesin penagihan langganan metode lokal Indonesia (QRIS/VA) & WhatsApp dunning otomatis",
+    "audience": "Vendor SaaS B2B/B2C, gym, sekolah, penerbit media, dan layanan berlangganan Indonesia",
+    "pages": [
+      {
+        "title": "Dunning & QRIS via WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/langgananid/dunning-qris-via-whatsapp/"
+      },
+      {
+        "title": "Buku Besar MRR & PSAK 72",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/langgananid/buku-besar-mrr-psak-72/"
+      },
+      {
+        "title": "Analitik Retensi & Churn",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/langgananid/analitik-retensi-churn/"
+      },
+      {
+        "title": "Aturan Siklus Gajian 25–1",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/langgananid/aturan-siklus-gajian-25-1/"
+      }
+    ]
+  },
+  {
+    "id": "ID-124",
+    "name": "TagihSantun",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Orkestrasi penagihan kredit patuh OJK & UU PDP dengan guardrail etika & restrukturisasi",
+    "audience": "Platform P2P lending berizin OJK, multifinance, bank digital, dan penyedia BNPL",
+    "pages": [
+      {
+        "title": "Papan Restrukturisasi DPD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tagihsantun/papan-restrukturisasi-dpd/"
+      },
+      {
+        "title": "Percakapan Etis WhatsApp",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tagihsantun/percakapan-etis-whatsapp/"
+      },
+      {
+        "title": "Audit Kepatuhan POJK/AFPI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tagihsantun/audit-kepatuhan-pojk-afpi/"
+      },
+      {
+        "title": "Jadwal Jam Kontak WIB/WIT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tagihsantun/jadwal-jam-kontak-wib-wit/"
+      }
+    ]
+  },
+  {
+    "id": "ID-125",
+    "name": "BukuJujur Audit",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Ledger bukti pendapatan & buku pinjaman anti-manipulasi terverifikasi rekening koran",
+    "audience": "Startup scale-up agritech/fintech, investor VC/PE, auditor eksternal, dan kreditur bank",
+    "pages": [
+      {
+        "title": "Buku Besar 3-Way Bank Recon",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bukujujur-audit/buku-besar-3-way-bank-recon/"
+      },
+      {
+        "title": "Radar Transaksi Shell/Round",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bukujujur-audit/radar-transaksi-shell-round/"
+      },
+      {
+        "title": "Dossier Hash Due Diligence",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bukujujur-audit/dossier-hash-due-diligence/"
+      },
+      {
+        "title": "Inbox Tinjauan Anomali",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bukujujur-audit/inbox-tinjauan-anomali/"
+      }
+    ]
+  },
+  {
+    "id": "ID-126",
+    "name": "PolisTempel SDK",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "API / Middleware",
+    "subject": "SDK asuransi mikro tertanam (embedded) sekali pasang untuk e-commerce, travel & logistik",
+    "audience": "Aplikasi e-commerce, OTA travel, ekspedisi, dan fintech yang ingin monetisasi asuransi mikro",
+    "pages": [
+      {
+        "title": "Inspektor SDK Quote & Bind",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/polistempel-sdk/inspektor-sdk-quote-bind/"
+      },
+      {
+        "title": "Alur Beli & Klaim 3 Langkah",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/polistempel-sdk/alur-beli-klaim-3-langkah/"
+      },
+      {
+        "title": "Katalog Produk Asuransi Mikro",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/polistempel-sdk/katalog-produk-asuransi-mikro/"
+      },
+      {
+        "title": "DAG Klaim Parametrik BI-FAST",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/polistempel-sdk/dag-klaim-parametrik-bi-fast/"
+      }
+    ]
+  },
+  {
+    "id": "ID-127",
+    "name": "KriptoPatuh OJK",
+    "sector": "fintech",
+    "sectorName": "Fintech & BI",
+    "platform": "Web SaaS",
+    "subject": "Meja kepatuhan Travel Rule, screening dompet AML & pelaporan bursa kripto POJK 27/2024",
+    "audience": "Pedagang Aset Keuangan Digital (PAKD), bursa kripto, kustodian, dan proyek tokenisasi OJK",
+    "pages": [
+      {
+        "title": "Terminal AML & Mixer On-Chain",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kriptopatuh-ojk/terminal-aml-mixer-on-chain/"
+      },
+      {
+        "title": "Inspektor Travel Rule IVMS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kriptopatuh-ojk/inspektor-travel-rule-ivms/"
+      },
+      {
+        "title": "Rekonsiliasi Proof-of-Reserve",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kriptopatuh-ojk/rekonsiliasi-proof-of-reserve/"
+      },
+      {
+        "title": "Dossier Pelaporan OJK/PPATK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kriptopatuh-ojk/dossier-pelaporan-ojk-ppatk/"
+      }
+    ]
+  },
+  {
+    "id": "ID-128",
+    "name": "PPN12 Kalkulator",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "API / Middleware",
+    "subject": "Mesin aturan PPN 12% PMK 11/2025 (DPP Nilai Lain & Besaran Tertentu) siap pasang untuk POS/ERP",
+    "audience": "Vendor POS, developer ERP, jaringan ritel/F&B, dan platform e-commerce Indonesia",
+    "pages": [
+      {
+        "title": "Wizard Simulasi PPN 12% DPP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ppn12-kalkulator/wizard-simulasi-ppn-12-dpp/"
+      },
+      {
+        "title": "Playground API & Kode Faktur",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ppn12-kalkulator/playground-api-kode-faktur/"
+      },
+      {
+        "title": "Diff Versi Aturan 2024 vs 2025",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ppn12-kalkulator/diff-versi-aturan-2024-vs-2025/"
+      },
+      {
+        "title": "Jurnal Pajak Keluaran/Retur",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ppn12-kalkulator/jurnal-pajak-keluaran-retur/"
+      }
+    ]
+  },
+  {
+    "id": "ID-129",
+    "name": "ClearanceMine",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "Web SaaS",
+    "subject": "Otomatisasi workflow Tax Clearance DJP × Ditjen Minerba untuk persetujuan RKAB tambang",
+    "audience": "Perusahaan tambang IUP/IUPK batu bara, nikel, emas, dan konsultan kepatuhan ESDM",
+    "pages": [
+      {
+        "title": "Naskah & Checklist RKAB",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/clearancemine/naskah-checklist-rkab/"
+      },
+      {
+        "title": "Dossier Tax Clearance DJP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/clearancemine/dossier-tax-clearance-djp/"
+      },
+      {
+        "title": "Gantt Jadwal Submit ESDM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/clearancemine/gantt-jadwal-submit-esdm/"
+      },
+      {
+        "title": "Rekonsiliasi Royalti e-PNBP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/clearancemine/rekonsiliasi-royalti-e-pnbp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-130",
+    "name": "BansosVerify 100M",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Mesin deduplikasi penerima DTKS/P3KE, verifikasi lapangan & audit penyaluran Himbara VA",
+    "audience": "Kemensos, pemda, bank penyalur Himbara, auditor BPKP, dan pengelola program bansos digital",
+    "pages": [
+      {
+        "title": "Analitik DTKS/P3KE Nasional",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bansosverify-100m/analitik-dtks-p3ke-nasional/"
+      },
+      {
+        "title": "Peta Sebaran KPM & Wilayah 3T",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bansosverify-100m/peta-sebaran-kpm-wilayah-3t/"
+      },
+      {
+        "title": "Tablet Verifikasi Lapangan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bansosverify-100m/tablet-verifikasi-lapangan/"
+      },
+      {
+        "title": "Jurnal Pencairan Himbara VA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bansosverify-100m/jurnal-pencairan-himbara-va/"
+      }
+    ]
+  },
+  {
+    "id": "ID-131",
+    "name": "KatalogPatuh LKPP",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Suite kepatuhan penyedia e-Katalog v6, aturan Perlem LKPP 2/2026 & verifikasi TKDN",
+    "audience": "Vendor/penyedia e-Katalog LKPP, PPK/Pokja kementerian/pemda, dan konsultan pengadaan",
+    "pages": [
+      {
+        "title": "Inbox Verifikasi SKU & HPS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogpatuh-lkpp/inbox-verifikasi-sku-hps/"
+      },
+      {
+        "title": "Dossier TKDN & Perlem 2/26",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogpatuh-lkpp/dossier-tkdn-perlem-2-26/"
+      },
+      {
+        "title": "Kontrak e-Meterai & BAST",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogpatuh-lkpp/kontrak-e-meterai-bast/"
+      },
+      {
+        "title": "Katalog Produk Tayang v6",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/katalogpatuh-lkpp/katalog-produk-tayang-v6/"
+      }
+    ]
+  },
+  {
+    "id": "ID-132",
+    "name": "KopdesMerahPutih ERP",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "Web SaaS",
+    "subject": "Sistem operasi terpadu untuk 80.000+ Koperasi Desa/Kelurahan Merah Putih di Indonesia",
+    "audience": "Pengurus Kopdes/Kel Merah Putih, Kemenkop, pendamping desa, dan bank penyalur KUR",
+    "pages": [
+      {
+        "title": "Kasir Gerai Sembako & LPG",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopdesmerahputih-erp/kasir-gerai-sembako-lpg/"
+      },
+      {
+        "title": "Buku Besar Simpan Pinjam/SHU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopdesmerahputih-erp/buku-besar-simpan-pinjam-shu/"
+      },
+      {
+        "title": "Tablet Offtake Gabah Petani",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopdesmerahputih-erp/tablet-offtake-gabah-petani/"
+      },
+      {
+        "title": "Ringkasan RAT & Unit Usaha",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kopdesmerahputih-erp/ringkasan-rat-unit-usaha/"
+      }
+    ]
+  },
+  {
+    "id": "ID-133",
+    "name": "SiskeudesBridge",
+    "sector": "govtech",
+    "sectorName": "GovTech & Publik",
+    "platform": "API / Middleware",
+    "subject": "Konektor standar Siskeudes <-> CMS Bank Daerah (BPD) & rekonsiliasi SP2D Dana Desa",
+    "audience": "Bank Pembangunan Daerah (BPD), pemerintah kabupaten, dan operator keuangan desa",
+    "pages": [
+      {
+        "title": "DAG Siskeudes <-> CMS BPD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siskeudesbridge/dag-siskeudes-cms-bpd/"
+      },
+      {
+        "title": "Inbox Maker-Checker SP2D",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siskeudesbridge/inbox-maker-checker-sp2d/"
+      },
+      {
+        "title": "Rekonsiliasi 184 Rekening RKD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siskeudesbridge/rekonsiliasi-184-rekening-rkd/"
+      },
+      {
+        "title": "Matriks Otorisasi Kades/BPD",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/siskeudesbridge/matriks-otorisasi-kades-bpd/"
+      }
+    ]
+  },
+  {
+    "id": "ID-134",
+    "name": "KRIS & iDRG Studio",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "Simulator renovasi kelas rawat inap standar (KRIS) & transisi billing grouper iDRG rumah sakit",
+    "audience": "Direksi RSUD & RS swasta, tim casemix, dan vendor SIMRS menghadapi reformasi tarif BPJS",
+    "pages": [
+      {
+        "title": "Denah Bangsal 12 Kriteria KRIS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kris-idrg-studio/denah-bangsal-12-kriteria-kris/"
+      },
+      {
+        "title": "Simulasi Margin INA-CBG vs iDRG",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kris-idrg-studio/simulasi-margin-ina-cbg-vs-idrg/"
+      },
+      {
+        "title": "Gantt Renovasi Bangsal Bertahap",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kris-idrg-studio/gantt-renovasi-bangsal-bertahap/"
+      },
+      {
+        "title": "Dossier Kesiapan Kepmenkes 177",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kris-idrg-studio/dossier-kesiapan-kepmenkes-177/"
+      }
+    ]
+  },
+  {
+    "id": "ID-135",
+    "name": "KhanzaCare Shield",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "Lapisan kepatuhan, bridging SATUSEHAT/BPJS & backup anti-ransomware untuk SIMRS Khanza",
+    "audience": "Ratusan RSUD & RS swasta Indonesia pengguna SIMRS open-source Khanza (YASKI)",
+    "pages": [
+      {
+        "title": "Matriks Keamanan & Backup DR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/khanzacare-shield/matriks-keamanan-backup-dr/"
+      },
+      {
+        "title": "DAG Sidecar SATUSEHAT/BPJS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/khanzacare-shield/dag-sidecar-satusehat-bpjs/"
+      },
+      {
+        "title": "Terminal Log Akses Rekam Medis",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/khanzacare-shield/terminal-log-akses-rekam-medis/"
+      },
+      {
+        "title": "Dossier Kepatuhan UU PDP RS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/khanzacare-shield/dossier-kepatuhan-uu-pdp-rs/"
+      }
+    ]
+  },
+  {
+    "id": "ID-136",
+    "name": "TelePatuh Health",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "Web SaaS",
+    "subject": "Kit kepatuhan regulasi platform telemedisin, verifikasi SIP/STR dokter & transparansi tarif",
+    "audience": "Platform telemedisin, klinik digital, aplikasi kesehatan, dan peserta Sandbox Kesehatan Kemenkes",
+    "pages": [
+      {
+        "title": "Profil Klinisi & Verifikasi SIP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/telepatuh-health/profil-klinisi-verifikasi-sip/"
+      },
+      {
+        "title": "Jadwal Praktik & Batas 3 SIP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/telepatuh-health/jadwal-praktik-batas-3-sip/"
+      },
+      {
+        "title": "Dossier Sandbox Kemenkes",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/telepatuh-health/dossier-sandbox-kemenkes/"
+      },
+      {
+        "title": "Wizard Onboarding Dokter",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/telepatuh-health/wizard-onboarding-dokter/"
+      }
+    ]
+  },
+  {
+    "id": "ID-137",
+    "name": "TTAC Trace 2D",
+    "sector": "healthcare",
+    "sectorName": "Kesehatan & RS",
+    "platform": "IoT / Edge",
+    "subject": "Serialisasi 2D-barcode BPOM TTAC, agregasi lini pabrik & pelacakan tarik produk",
+    "audience": "Pabrik farmasi, produsen pangan olahan, kosmetik, dan distributor PBF pemegang izin edar BPOM",
+    "pages": [
+      {
+        "title": "SCADA Serialisasi 2D Lini 3",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ttac-trace-2d/scada-serialisasi-2d-lini-3/"
+      },
+      {
+        "title": "Kamera Vision Grade Cetak 2D",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ttac-trace-2d/kamera-vision-grade-cetak-2d/"
+      },
+      {
+        "title": "Inspektor Pelaporan BPOM TTAC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ttac-trace-2d/inspektor-pelaporan-bpom-ttac/"
+      },
+      {
+        "title": "Peta Recall Cepat Apotek/PBF",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/ttac-trace-2d/peta-recall-cepat-apotek-pbf/"
+      }
+    ]
+  },
+  {
+    "id": "ID-138",
+    "name": "EtikaAI Watermark",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "AI / Agentic",
+    "subject": "Audit etika AI, watermarking C2PA konten generatif & kepatuhan Permen Komdigi 18/2026",
+    "audience": "Pengembang aplikasi AI generatif, media, bank pengguna scoring AI, dan tim kepatuhan Komdigi",
+    "pages": [
+      {
+        "title": "Dossier Audit Etika & C2PA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etikaai-watermark/dossier-audit-etika-c2pa/"
+      },
+      {
+        "title": "DAG Signing Watermark Media",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etikaai-watermark/dag-signing-watermark-media/"
+      },
+      {
+        "title": "Diff Uji Bias & Model Card",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etikaai-watermark/diff-uji-bias-model-card/"
+      },
+      {
+        "title": "Gerbang Rilis Model Produksi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/etikaai-watermark/gerbang-rilis-model-produksi/"
+      }
+    ]
+  },
+  {
+    "id": "ID-139",
+    "name": "SahabatOps Sovereign",
+    "sector": "ai",
+    "sectorName": "AI & Agents",
+    "platform": "AI / Agentic",
+    "subject": "Platform MLOps & serving model lokal Indonesia (Sahabat-AI 70B) di infrastruktur GPU domestik",
+    "audience": "Enterprise BUMN, perbankan, telko, dan startup AI yang membutuhkan kedaulatan model Bahasa Indonesia",
+    "pages": [
+      {
+        "title": "Terminal Throughput 70B GPU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sahabatops-sovereign/terminal-throughput-70b-gpu/"
+      },
+      {
+        "title": "Simulasi Evaluasi IndoEval",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sahabatops-sovereign/simulasi-evaluasi-indoeval/"
+      },
+      {
+        "title": "DAG Serving VPC Tanpa Egress",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sahabatops-sovereign/dag-serving-vpc-tanpa-egress/"
+      },
+      {
+        "title": "FinOps Biaya Rupiah per 1M Tok",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/sahabatops-sovereign/finops-biaya-rupiah-per-1m-tok/"
+      }
+    ]
+  },
+  {
+    "id": "ID-140",
+    "name": "DPO Sewa Desk",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "Web SaaS",
+    "subject": "Layanan PPDP/DPO eksternal, tracker tenggat PP 33/2026 & war-room insiden 3×24 jam",
+    "audience": "Perusahaan menengah, klinik, sekolah, dan startup yang wajib memiliki fungsi PPDP/DPO tanpa tim penuh",
+    "pages": [
+      {
+        "title": "Papan Kesiapan PP 33/2026",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dpo-sewa-desk/papan-kesiapan-pp-33-2026/"
+      },
+      {
+        "title": "Naskah DPIA & DPA Vendor",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dpo-sewa-desk/naskah-dpia-dpa-vendor/"
+      },
+      {
+        "title": "War-Room Insiden 3x24 Jam",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dpo-sewa-desk/war-room-insiden-3x24-jam/"
+      },
+      {
+        "title": "Dossier Retainer 14 Klien",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dpo-sewa-desk/dossier-retainer-14-klien/"
+      }
+    ]
+  },
+  {
+    "id": "ID-141",
+    "name": "BentengUMKM DR",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "Desktop / WPF",
+    "subject": "Paket backup immutable anti-ransomware, MFA & pemulihan 1-klik pasca-PDNS untuk UMKM/Klinik",
+    "audience": "Klinik, sekolah, koperasi, pabrik skala menengah, dan UMKM pengguna server lokal/NAS",
+    "pages": [
+      {
+        "title": "Papan Restore Drill & WORM",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bentengumkm-dr/papan-restore-drill-worm/"
+      },
+      {
+        "title": "Matriks Hardening RDP & MFA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bentengumkm-dr/matriks-hardening-rdp-mfa/"
+      },
+      {
+        "title": "Dossier Kesiapan Anti-Ransom",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bentengumkm-dr/dossier-kesiapan-anti-ransom/"
+      },
+      {
+        "title": "Jadwal Snapshot Harian 02:00",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bentengumkm-dr/jadwal-snapshot-harian-02-00/"
+      }
+    ]
+  },
+  {
+    "id": "ID-142",
+    "name": "WajahAsli eKYC",
+    "sector": "cloudsec",
+    "sectorName": "Cloud & SecOps",
+    "platform": "AI / Agentic",
+    "subject": "Detektor deepfake, kamera injeksi virtual & pemalsuan e-KTP untuk onboarding bank/fintech",
+    "audience": "Bank digital, P2P lending, dompet digital, bursa kripto, dan platform onboarding KYC Indonesia",
+    "pages": [
+      {
+        "title": "Forensik Deepfake 4-Panel",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wajahasli-ekyc/forensik-deepfake-4-panel/"
+      },
+      {
+        "title": "Terminal Blokir Emulator Farm",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wajahasli-ekyc/terminal-blokir-emulator-farm/"
+      },
+      {
+        "title": "Alur Liveness Mobile 3 Tahap",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wajahasli-ekyc/alur-liveness-mobile-3-tahap/"
+      },
+      {
+        "title": "Inspektor SDK Verifikasi KTP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/wajahasli-ekyc/inspektor-sdk-verifikasi-ktp/"
+      }
+    ]
+  },
+  {
+    "id": "ID-143",
+    "name": "LabaLintas Profit",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Web SaaS",
+    "subject": "Analitik laba bersih aktual per SKU lintas Shopee, TikTok Shop, Tokopedia & Lazada",
+    "audience": "Owner brand D2C, penjual marketplace besar, aggregator, dan konsultan keuangan e-commerce",
+    "pages": [
+      {
+        "title": "Bento Laba Bersih Aktual SKU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labalintas-profit/bento-laba-bersih-aktual-sku/"
+      },
+      {
+        "title": "Jurnal Escrow & Potongan Fee",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labalintas-profit/jurnal-escrow-potongan-fee/"
+      },
+      {
+        "title": "Katalog Margin & Bleeding SKU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labalintas-profit/katalog-margin-bleeding-sku/"
+      },
+      {
+        "title": "Papan Aksi Koreksi Harga",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/labalintas-profit/papan-aksi-koreksi-harga/"
+      }
+    ]
+  },
+  {
+    "id": "ID-144",
+    "name": "KasirPatuh Tax",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Desktop / WPF",
+    "subject": "Lapisan kepatuhan POS -> PPN 12% DPP Nilai Lain -> e-Faktur CoreTax & tutup kasir harian",
+    "audience": "Jaringan restoran/F&B, ritel waralaba, dan vendor POS yang butuh kepatuhan faktur pajak otomatis",
+    "pages": [
+      {
+        "title": "Kasir Split PB1 vs PPN 12%",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirpatuh-tax/kasir-split-pb1-vs-ppn-12/"
+      },
+      {
+        "title": "Jurnal Digunggung CoreTax",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirpatuh-tax/jurnal-digunggung-coretax/"
+      },
+      {
+        "title": "Wizard e-Faktur Mandiri QR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirpatuh-tax/wizard-e-faktur-mandiri-qr/"
+      },
+      {
+        "title": "Audit Tutup Shift 12 Outlet",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kasirpatuh-tax/audit-tutup-shift-12-outlet/"
+      }
+    ]
+  },
+  {
+    "id": "ID-145",
+    "name": "BateraiTrace EV",
+    "sector": "industrial",
+    "sectorName": "Tambang & Industri",
+    "platform": "Web SaaS",
+    "subject": "Paspor ketelusuran nikel -> smelter -> sel baterai EV 15 GWh & jejak karbon EU Battery Reg",
+    "audience": "Penambang nikel, smelter HPAL/RKEF, pabrik prekursor/sel baterai (CATL/IBC), dan eksportir EV",
+    "pages": [
+      {
+        "title": "Paspor Digital Baterai EV",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bateraitrace-ev/paspor-digital-baterai-ev/"
+      },
+      {
+        "title": "Peta Rantai Nikel -> Karawang",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bateraitrace-ev/peta-rantai-nikel-karawang/"
+      },
+      {
+        "title": "SCADA Energi & Intensitas kWh",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bateraitrace-ev/scada-energi-intensitas-kwh/"
+      },
+      {
+        "title": "Dossier Uji Tuntas IRMA/EU",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/bateraitrace-ev/dossier-uji-tuntas-irma-eu/"
+      }
+    ]
+  },
+  {
+    "id": "ID-146",
+    "name": "MeterMind AMI",
+    "sector": "climate",
+    "sectorName": "Iklim & EV",
+    "platform": "IoT / Edge",
+    "subject": "Analitik smart-meter AMI 1 juta+ pelanggan, deteksi susut/pencurian & demand-response SCADA",
+    "audience": "Unit utilitas PLN, pengelola kawasan industri listrik swasta, dan konsumen C&I besar",
+    "pages": [
+      {
+        "title": "Peta Padam Last-Gasp & Gardu",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/metermind-ami/peta-padam-last-gasp-gardu/"
+      },
+      {
+        "title": "SCADA Profil Beban & Cos Phi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/metermind-ami/scada-profil-beban-cos-phi/"
+      },
+      {
+        "title": "Radar Deteksi Susut/Bypass",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/metermind-ami/radar-deteksi-susut-bypass/"
+      },
+      {
+        "title": "Denah Gardu Distribusi AMI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/metermind-ami/denah-gardu-distribusi-ami/"
+      }
+    ]
+  },
+  {
+    "id": "ID-147",
+    "name": "HR Adil Guard",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "AI / Agentic",
+    "subject": "Guardrail anti-diskriminasi AI rekrutmen, uji bias ATS & ledger persetujuan pelamar",
+    "audience": "Tim HR enterprise, vendor ATS/HRIS, dan perusahaan besar yang memakai penyaringan CV berbasis AI",
+    "pages": [
+      {
+        "title": "Inbox Tinjauan Manusia ATS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/hr-adil-guard/inbox-tinjauan-manusia-ats/"
+      },
+      {
+        "title": "Uji Rubrik & Keadilan Skor",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/hr-adil-guard/uji-rubrik-keadilan-skor/"
+      },
+      {
+        "title": "Dossier Anti-Diskriminasi AI",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/hr-adil-guard/dossier-anti-diskriminasi-ai/"
+      },
+      {
+        "title": "Kebijakan Masking & Retensi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/hr-adil-guard/kebijakan-masking-retensi/"
+      }
+    ]
+  },
+  {
+    "id": "ID-148",
+    "name": "KosOps Coliving",
+    "sector": "lifestyle",
+    "sectorName": "Syariah, Ed & Travel",
+    "platform": "Mobile App",
+    "subject": "Sistem operasi kos & coliving: KYC IKD, smart-lock PIN, tagihan QRIS & tiket perbaikan",
+    "audience": "Operator kos eksklusif, pengelola coliving Bali/Jakarta/Bandung/Makassar, dan pemilik properti",
+    "pages": [
+      {
+        "title": "Kartu Smart-Lock & Akses PIN",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kosops-coliving/kartu-smart-lock-akses-pin/"
+      },
+      {
+        "title": "Aplikasi Penghuni & Lapor AC",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kosops-coliving/aplikasi-penghuni-lapor-ac/"
+      },
+      {
+        "title": "Denah 84 Kamar & Okupansi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kosops-coliving/denah-84-kamar-okupansi/"
+      },
+      {
+        "title": "Tape Chart Sewa & Check-Out",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/kosops-coliving/tape-chart-sewa-check-out/"
+      }
+    ]
+  },
+  {
+    "id": "ID-149",
+    "name": "RumahSubsidi 3M",
+    "sector": "enterprise",
+    "sectorName": "Enterprise ERP",
+    "platform": "Web SaaS",
+    "subject": "Pipeline pengembang, bank & notaris untuk program 3 Juta Rumah FLPP dan KUR Perumahan",
+    "audience": "Pengembang perumahan subsidi (REI/Apersi), bank penyalur FLPP/Tapera, dan notaris akad massal",
+    "pages": [
+      {
+        "title": "Wizard Skrining MBR & SLIK",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rumahsubsidi-3m/wizard-skrining-mbr-slik/"
+      },
+      {
+        "title": "Papan Akad Massal Bank-PPAT",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rumahsubsidi-3m/papan-akad-massal-bank-ppat/"
+      },
+      {
+        "title": "Tablet Cek Fisik Unit GPS",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rumahsubsidi-3m/tablet-cek-fisik-unit-gps/"
+      },
+      {
+        "title": "Jadwal Akad Massal Mingguan",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/rumahsubsidi-3m/jadwal-akad-massal-mingguan/"
+      }
+    ]
+  },
+  {
+    "id": "ID-150",
+    "name": "TolNirhenti MLFF",
+    "sector": "logistics",
+    "sectorName": "Logistik",
+    "platform": "IoT / Edge",
+    "subject": "Billing tol armada Multi-Lane Free Flow (MLFF), rekonsiliasi ANPR & manajemen OBU truk",
+    "audience": "Operator jalan tol (BUJT), perusahaan logistik armada besar, dan pengelola transportasi koridor",
+    "pages": [
+      {
+        "title": "Peta Koridor & Gantry MLFF",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tolnirhenti-mlff/peta-koridor-gantry-mlff/"
+      },
+      {
+        "title": "Inbox Sanggah Salah Baca ANPR",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tolnirhenti-mlff/inbox-sanggah-salah-baca-anpr/"
+      },
+      {
+        "title": "Jurnal Alokasi Tol per DO",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tolnirhenti-mlff/jurnal-alokasi-tol-per-do/"
+      },
+      {
+        "title": "Pas e-OBU & Status Armada",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/tolnirhenti-mlff/pas-e-obu-status-armada/"
+      }
+    ]
+  },
+  {
+    "id": "ID-151",
+    "name": "NetWarga ISP",
+    "sector": "emerging",
+    "sectorName": "Kreator & Emerging",
+    "platform": "Web SaaS",
+    "subject": "Platform OSS/BSS ISP lokal, RT/RW-net & Starlink desa: MikroTik auto-isolir & bayar QRIS",
+    "audience": "Operator ISP lokal berizin, pengelola RT/RW-net, BUMDes internet desa, dan mitra Starlink 3T",
+    "pages": [
+      {
+        "title": "Denah Topologi OLT & ODP",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwarga-isp/denah-topologi-olt-odp/"
+      },
+      {
+        "title": "Peta Titik LOS & Starlink 3T",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwarga-isp/peta-titik-los-starlink-3t/"
+      },
+      {
+        "title": "Auto-Tagih & Reconnect WA",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwarga-isp/auto-tagih-reconnect-wa/"
+      },
+      {
+        "title": "Buku Besar Bagi Hasil Agen",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/netwarga-isp/buku-besar-bagi-hasil-agen/"
+      }
+    ]
+  },
+  {
+    "id": "ID-152",
+    "name": "DapurLaba F&B",
+    "sector": "commerce",
+    "sectorName": "Commerce & POS",
+    "platform": "Web SaaS",
+    "subject": "Analitik HPP resep, kontrol wastage bahan baku & dapur sentral jaringan kopi/F&B modern",
+    "audience": "Jaringan kedai kopi (skala Fore/Kopken), cloud kitchen, restoran multi-outlet, dan dapur sentral",
+    "pages": [
+      {
+        "title": "Bento HPP & Wastage 42 Gerai",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dapurlaba-f-b/bento-hpp-wastage-42-gerai/"
+      },
+      {
+        "title": "Papan Produksi Dapur Sentral",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dapurlaba-f-b/papan-produksi-dapur-sentral/"
+      },
+      {
+        "title": "Jadwal Kirim & PO Bahan H+1",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dapurlaba-f-b/jadwal-kirim-po-bahan-h-1/"
+      },
+      {
+        "title": "Jurnal Variance Susu & Kopi",
+        "href": "https://hernanda-git.github.io/portfolio-hernanda/dapurlaba-f-b/jurnal-variance-susu-kopi/"
+      }
+    ]
+  }
+]

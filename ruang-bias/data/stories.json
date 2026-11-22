@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "datagate", "title": "DataGate", "number":"01", "company":"PT Sukanda Djaya", "field":"Operasi rantai dingin", "surface":"confluence",
+    "line": "Menilai 18 cabang dari laporan yang bisa dibaca bersama.",
+    "opening":"Satu laporan cabang bisa dimulai dari lembar Excel, penghitungan stok, atau catatan kebersihan gudang. Di Sukanda Djaya, saya mengembangkan dan memelihara DataGate, tempat catatan itu dipakai untuk membaca kinerja cabang.",
+    "sections":[["Dari gudang ke laporan bulanan", "Saya mengerjakan laporan stok, kebersihan gudang, pemusnahan barang, pemeringkatan cabang bulanan, dan impor data Excel. Sistem mencakup 18 cabang; angka ini menunjukkan cakupan pekerjaan, bukan peningkatan kinerja."], ["Nol bukan berarti belum ada data", "Jika satu cabang melaporkan nol dan cabang lain belum mengirim laporan, keduanya tidak boleh terlihat sama. Itu prinsip desain yang saya gunakan untuk membaca kasus ini, bukan klaim tentang tampilan DataGate yang dipakai di produksi."]]
+  },
+  {
+    "slug": "approval-enterprise", "title":"Alur persetujuan enterprise", "number":"02", "company":"PT Tiara Marga Trakindo / Mitra Solusi Telematika", "field":"Workflow enterprise", "surface":"branch",
+    "line":"Satu tempat untuk menyetujui pengajuan dari 80+ aplikasi, tanpa satu aturan untuk semua.",
+    "opening":"Persetujuan cuti dan pengadaan menggambarkan masalahnya: dua jenis pengajuan tidak harus mengikuti rute yang sama. Saya merancang dan menyerahkan sistem persetujuan terpusat dengan alur yang dapat dikonfigurasi untuk aplikasi-aplikasi enterprise.",
+    "sections":[["Yang saya kerjakan", "Arsitekturnya berupa modular monolith dengan Elsa Workflow, RabbitMQ, dan API Gateway. Pekerjaan saya juga meliputi formulir dan skema dinamis, pencatatan terstruktur, dan autentikasi terintegrasi."], ["Aturannya berubah; tindakan berikutnya harus tetap jelas", "Pengguna tidak perlu tahu bagaimana aturan disimpan. Mereka perlu tahu siapa yang harus bertindak berikutnya. Angka 80+ menunjukkan lingkup yang tercatat, bukan jumlah adopsi yang telah diaudit."]]
+  },
+  {
+    "slug":"warga-digital", "title":"Warga Digital", "number":"03", "company":"Warga Digital", "field":"Teknologi kewargaan", "surface":"print",
+    "line":"Agar warga bisa membaca pergerakan kas RT dari ponsel.",
+    "opening":"Saya memulai Warga Digital untuk membantu pengurus RT mengelola data warga dan membuat catatan kas lebih mudah dibaca. Saya mengerjakan arsitektur, backend, frontend, hingga peluncuran.",
+    "sections":[["Mulai dari layar yang paling sering dipakai", "Antarmuka ditujukan untuk warga dan pengurus nonteknis yang mengaksesnya dari ponsel. Implementasinya memakai Supabase dan autentikasi JWT kustom."], ["Saldo perlu penjelasan", "Jumlah, tanggal, dan keterangan transaksi membantu orang memahami mengapa saldo berubah. Tidak ada data warga, rincian transaksi asli, atau angka adopsi yang ditampilkan di sini."]]
+  }
+]

@@ -1,0 +1,119 @@
+{
+  "name": "Muhammad Hernanda",
+  "email": "m.hernanda95@gmail.com",
+  "linkedin": "https://linkedin.com/in/m-hernanda",
+  "experience": [
+    {
+      "id": "exp-grcboard",
+      "role": "Inference Engineer",
+      "company": "PT. Mitra Seribu Saudara (GRC Board)",
+      "period": "Mei 2026 – Sekarang",
+      "sector": "Infrastruktur AI & Distribusi Enterprise"
+    },
+    {
+      "id": "exp-wargadigital",
+      "role": "Founder",
+      "company": "Warga Digital (warga-digital.com)",
+      "period": "Mei 2026 – Sekarang",
+      "sector": "Civic Tech & SaaS Lingkungan RT/RW"
+    },
+    {
+      "id": "exp-trakindo",
+      "role": "Software Engineer",
+      "company": "PT. Tiara Marga Trakindo (Mitra Solusi Telematika)",
+      "period": "Januari 2026 – Mei 2026",
+      "sector": "Konglomerasi Enterprise & Industri"
+    },
+    {
+      "id": "exp-mindsoci",
+      "role": "AI Tech Lead",
+      "company": "MindSoci Singapore",
+      "period": "Januari 2026 – Sekarang",
+      "sector": "Konsultansi AI & MLOps"
+    },
+    {
+      "id": "exp-inhealth",
+      "role": "Software Engineer",
+      "company": "PT. Asuransi Jiwa Inhealth Indonesia (Mandiri Inhealth)",
+      "period": "Mei 2025 – Desember 2025",
+      "sector": "Asuransi Kesehatan & Healthcare"
+    },
+    {
+      "id": "exp-delmon",
+      "role": "Freelance Mobile Developer (Digital Task Management)",
+      "company": "Delmon Group of Companies",
+      "period": "Mei 2025 – Juni 2025",
+      "sector": "Enterprise Mobile & Produktivitas Lapangan"
+    },
+    {
+      "id": "exp-360adaro",
+      "role": "Software Architect",
+      "company": "PT. 360 Consulting",
+      "period": "Januari 2025 – April 2025",
+      "sector": "Pertambangan Batubara & Alat Berat"
+    },
+    {
+      "id": "exp-amman",
+      "role": "Senior .NET Engineer",
+      "company": "PT. Akal Karya Indonesia & PT. MSBU Konsultan Indonesia",
+      "period": "Februari 2023 – Januari 2025",
+      "sector": "Pertambangan Emas & Tembaga"
+    },
+    {
+      "id": "exp-ocbc",
+      "role": "Freelance API Developer (OCBC File Encryption)",
+      "company": "Total eBiz Solutions",
+      "period": "Januari 2023 – Februari 2023",
+      "sector": "Perbankan & Keamanan Finansial"
+    },
+    {
+      "id": "exp-sipatuh",
+      "role": "Freelance Software Developer",
+      "company": "Sipatuh Gelang Indonesia",
+      "period": "Agustus 2022 – November 2022",
+      "sector": "Travel Haji & Umrah + Investasi Emas"
+    },
+    {
+      "id": "exp-traxia",
+      "role": "Senior .NET Developer",
+      "company": "PT Digitalinstincts Teknologi (Traxia)",
+      "period": "September 2021 – Februari 2023",
+      "sector": "Software Studio Multi-Produk & AI"
+    },
+    {
+      "id": "exp-trop",
+      "role": ".NET Developer",
+      "company": "PT Solusi Teknologi Transportasi (TROP Indonesia)",
+      "period": "Agustus 2019 – September 2021",
+      "sector": "Logistik & Marketplace Trucking"
+    },
+    {
+      "id": "exp-reycom",
+      "role": "Freelance Software Developer",
+      "company": "PT Reycom Document Solusi",
+      "period": "Januari 2019 – Februari 2019",
+      "sector": "Otomasi Dokumen & Percetakan"
+    },
+    {
+      "id": "exp-codelabs",
+      "role": "Freelance Software Developer",
+      "company": "PT Digital Angkasa Indonesia (CodeLabs Indonesia)",
+      "period": "September 2018 – Desember 2018",
+      "sector": "Kesehatan & Otomotif Digital"
+    },
+    {
+      "id": "exp-sukanda",
+      "role": "Senior Staff Software Engineer",
+      "company": "PT Sukanda Djaya (Diamond Cold Storage)",
+      "period": "Februari 2018 – September 2018",
+      "sector": "Distribusi FMCG Cold-Chain"
+    },
+    {
+      "id": "exp-inet",
+      "role": ".NET Developer",
+      "company": "PT Inet Global Indo",
+      "period": "Mei 2016 – Januari 2018",
+      "sector": "Pemerintahan, Kepolisian, ERP & POS"
+    }
+  ]
+}
