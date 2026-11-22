@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-const ROOT = 'C:/Workspace/portfolio-hernanda';
+const ROOT = path.resolve(import.meta.dirname, '../..');
 const LEDGER_PATH = path.join(ROOT, 'docs/enterprise-upgrade-ledger.json');
 const idArg = process.argv.find((a) => a.startsWith('--id='));
 const shaArg = process.argv.find((a) => a.startsWith('--sha='));

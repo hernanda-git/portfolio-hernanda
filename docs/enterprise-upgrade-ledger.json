@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-22T05:51:37.610Z",
+  "updatedAt": "2026-11-22T08:09:33.744Z",
   "totalProjects": 152,
-  "verifiedCount": 7,
-  "pendingCount": 145,
-  "nextTargetId": "ID-008",
+  "verifiedCount": 12,
+  "pendingCount": 140,
+  "nextTargetId": "ID-013",
   "projects": {
     "ID-001": {
       "id": "ID-001",
@@ -151,65 +151,100 @@
       "name": "LokalEdge Vision",
       "sector": "ai",
       "platform": "IoT / Edge",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "Ignition SCADA Perspective + OSIsoft PI Vision",
+      "blueprint": "tools/enterprise-studio/projects/ID-008.mjs",
+      "verifiedAt": "2026-11-22T08:09:33.689Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Ruang Kontrol SCADA & Grid RTSP Real-Time",
+        "Inventaris 16 Kanal RTSP & Inspektor Kamera",
+        "Kalibrasi Poligon Zona ROI & Topologi Edge-PLC",
+        "Inspeksi Mutu Konveyor QA & OEE Jalur Kemas",
+        "Scorecard K3 Shift, Bukti Anonim & Klaster Edge"
+      ]
     },
     "ID-009": {
       "id": "ID-009",
       "name": "KatalogAI Studio",
       "sector": "ai",
       "platform": "Web SaaS",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "Shopify Plus Merchant Admin + Tokopedia Seller Enterprise",
+      "blueprint": "tools/enterprise-studio/projects/ID-009.mjs",
+      "verifiedAt": "2026-11-22T08:09:33.701Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Pusat Kesiapan Katalog & Sinkronisasi Multi-Channel",
+        "Katalog Master SKU & Inspektor Kepatuhan",
+        "Studio Copywriting AI & Linter Klaim BPOM/TikTok",
+        "Kalkulator Margin Bersih & Waterfall Biaya Kanal",
+        "Validator Regulasi BPOM/Halal & Sinkronisasi Feed"
+      ]
     },
     "ID-010": {
       "id": "ID-010",
       "name": "TaniPredict AI",
       "sector": "ai",
       "platform": "Web SaaS",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "SAP S/4HANA Fiori Horizon + PostGIS Enterprise GIS",
+      "blueprint": "tools/enterprise-studio/projects/ID-010.mjs",
+      "verifiedAt": "2026-11-22T08:09:33.713Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Komando Kebun, Prakiraan TBS 30h & Neraca PKS",
+        "Matriks 18 Blok Agronomi & Inspektor Anomali NDVI",
+        "Peta Spasial NDVI Sentinel-2, BMKG & Alih Rute",
+        "Kepatuhan Poligon EUDR Pasca-2020 & Otorisasi DoA",
+        "Inspeksi Agronom Offline & Kalibrasi Model Yield"
+      ]
     },
     "ID-011": {
       "id": "ID-011",
       "name": "TapNusa QRIS",
       "sector": "fintech",
       "platform": "Mobile App",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "SAP S/4HANA Fiori Horizon + Workday Financial Management",
+      "blueprint": "tools/enterprise-studio/projects/ID-011.mjs",
+      "verifiedAt": "2026-11-22T08:09:33.727Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Ikhtisar Kliring QRIS Tap, Likuiditas BI-FAST & SLA Transit",
+        "Buku Besar Transaksi & Inspektor APDU / Double-Entry",
+        "Pratinjau Aplikasi Mobile Komuter (.NET MAUI 9 + Kotlin HCE)",
+        "Persetujuan Settlement DoA (Maker-Checker) & Rekonsiliasi FX",
+        "Kepatuhan Bank Indonesia (SNAP BI, PMK 69 & CoreTax XML)"
+      ]
     },
     "ID-012": {
       "id": "ID-012",
       "name": "KasirTreasury BI",
       "sector": "fintech",
       "platform": "Web SaaS",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "Kyriba Treasury Workstation + Bloomberg Treasury & Risk",
+      "blueprint": "tools/enterprise-studio/projects/ID-012.mjs",
+      "verifiedAt": "2026-11-22T08:09:33.744Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Posisi Kas & Cutoff Multi-Bank",
+        "Rekonsiliasi Virtual Account & Piutang ERP",
+        "Pencairan BI-FAST & Otorisasi Berjenjang",
+        "Konektivitas SNAP BI & Kontrol Host-to-Host",
+        "Proyeksi Likuiditas 5 Hari & Sensitivitas USD"
+      ]
     },
     "ID-013": {
       "id": "ID-013",

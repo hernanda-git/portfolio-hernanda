@@ -179,33 +179,63 @@ export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {
       'Kertas Kerja Auditor & Ekspor CoreTax XML',
     ]
   ),
-  'ID-008': plan('industrial-steel', 'industrial-condensed', 'Plant K3 Lead · Cikarang',
-    ['CCTV Vision Quad 4-Zona', 'dicom-radiology-pacs'],
-    ['Denah Zona APD Pabrik', 'floorplan-bay-grid'],
-    ['Skematik Interlock PLC', 'scada-plant-blueprint'],
-    ['Papan Tindak Lanjut K3', 'kds-kitchen-board']),
-  'ID-009': plan('retail-coral', 'swiss-geometric', 'Brand Merch · NusaKopi',
-    ['Katalog SKU Multi-Kanal', 'social-creator-marketplace'],
-    ['Antrean Validasi BPOM', 'kanban-sprint-board'],
-    ['Analitik Margin & Iklan', 'executive-bento-brief'],
-    ['Sinkronisasi Feed API', 'api-postman-inspector']),
-  'ID-010': plan('agro-forest', 'industrial-condensed', 'Agronomist · Kalteng',
-    ['Peta GIS Blok & NDVI', 'geo-dispatch-map'],
-    ['Tablet Mandor Kebun', 'mobile-field-tablet-split'],
-    ['Jadwal Pemupukan Blok', 'gantt-tape-chart'],
-    ['Dossier Poligon EUDR', 'audit-compliance-dossier']),
+  'ID-008': enterprisePlan(
+    'Ignition SCADA Perspective + OSIsoft PI Vision',
+    'Ir. Hendra Kusuma, S.T. · Kepala K3L & Otomasi · Plant Cikarang B',
+    [
+      'Ruang Kontrol SCADA & Grid RTSP Real-Time',
+      'Inventaris 16 Kanal RTSP & Inspektor Kamera',
+      'Kalibrasi Poligon Zona ROI & Topologi Edge-PLC',
+      'Inspeksi Mutu Konveyor QA & OEE Jalur Kemas',
+      'Scorecard K3 Shift, Bukti Anonim & Klaster Edge',
+    ]
+  ),
+  'ID-009': enterprisePlan(
+    'Shopify Plus Merchant Admin + Tokopedia Seller Enterprise',
+    'Nadia Kusuma · Head of Marketplace Merchandising · PT NusaKopi',
+    [
+      'Pusat Kesiapan Katalog & Sinkronisasi Multi-Channel',
+      'Katalog Master SKU & Inspektor Kepatuhan',
+      'Studio Copywriting AI & Linter Klaim BPOM/TikTok',
+      'Kalkulator Margin Bersih & Waterfall Biaya Kanal',
+      'Validator Regulasi BPOM/Halal & Sinkronisasi Feed',
+    ]
+  ),
+  'ID-010': enterprisePlan(
+    'SAP S/4HANA Fiori Horizon + PostGIS Enterprise GIS',
+    'Ir. Hendra Wijaya · Kepala Agronomi & GIS · PT Rimba Sawit Nusantara Tbk',
+    [
+      'Komando Kebun, Prakiraan TBS 30h & Neraca PKS',
+      'Matriks 18 Blok Agronomi & Inspektor Anomali NDVI',
+      'Peta Spasial NDVI Sentinel-2, BMKG & Alih Rute',
+      'Kepatuhan Poligon EUDR Pasca-2020 & Otorisasi DoA',
+      'Inspeksi Agronom Offline & Kalibrasi Model Yield',
+    ]
+  ),
 
   // SEKTOR 2: FINTECH & PERBANKAN (ID-011 .. ID-020)
-  'ID-011': plan('teenage-hardware', 'swiss-geometric', 'Komuter · MRT Dukuh Atas',
-    ['Kartu NFC & Dompet Tap', 'mobile-hero-nfc-card'],
-    ['Alur Tap 3 Langkah', 'mobile-trio-journey'],
-    ['Pas Perjalanan QR ASEAN', 'mobile-boarding-ticket'],
-    ['Inspektor SNAP QRIS API', 'api-postman-inspector']),
-  'ID-012': plan('swiss-mono', 'swiss-geometric', 'Group Treasurer · 5 Bank',
-    ['Buku Besar Multi-Bank', 'accounting-ledger-sheet'],
-    ['Inbox Persetujuan BI-FAST', 'email-approval-inbox'],
-    ['Ringkasan Likuiditas IDR', 'executive-bento-brief'],
-    ['Matriks Otorisasi DoA', 'settings-rbac-matrix']),
+  'ID-011': enterprisePlan(
+    'SAP S/4HANA Fiori Horizon + Workday Financial Management',
+    'R. Kusuma · VP Settlement & Treasury · PT TapNusa Pembayaran Nusantara (PJP-I)',
+    [
+      'Ikhtisar Kliring QRIS Tap, Likuiditas BI-FAST & SLA Transit',
+      'Buku Besar Transaksi & Inspektor APDU / Double-Entry',
+      'Pratinjau Aplikasi Mobile Komuter (.NET MAUI 9 + Kotlin HCE)',
+      'Persetujuan Settlement DoA (Maker-Checker) & Rekonsiliasi FX',
+      'Kepatuhan Bank Indonesia (SNAP BI, PMK 69 & CoreTax XML)',
+    ]
+  ),
+  'ID-012': enterprisePlan(
+    'Kyriba Treasury Workstation + Bloomberg Treasury & Risk',
+    'Ratih Pradipta · Group Treasurer · PT Sagara Logistik Nusantara',
+    [
+      'Posisi Kas & Cutoff Multi-Bank',
+      'Rekonsiliasi Virtual Account & Piutang ERP',
+      'Pencairan BI-FAST & Otorisasi Berjenjang',
+      'Konektivitas SNAP BI & Kontrol Host-to-Host',
+      'Proyeksi Likuiditas 5 Hari & Sensitivitas USD',
+    ]
+  ),
   'ID-013': plan('sharia-sand', 'editorial-serif', 'Escrow Officer · BSI VA',
     ['Naskah Akad & BAST', 'document-redline-editor'],
     ['Inbox Pencairan Termin', 'email-approval-inbox'],

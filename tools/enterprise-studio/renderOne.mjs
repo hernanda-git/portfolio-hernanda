@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import http from 'node:http';
 import net from 'node:net';
 import { pathToFileURL } from 'node:url';
 import { spawn, execFileSync } from 'node:child_process';
@@ -16,7 +15,7 @@ function getFreePort() {
   });
 }
 
-const ROOT = 'C:/Workspace/portfolio-hernanda';
+const ROOT = path.resolve(import.meta.dirname, '../..');
 const OUT_DIR = path.join(ROOT, 'public/screenshots');
 const PROJECTS_DIR = path.join(ROOT, 'tools/enterprise-studio/projects');
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
@@ -37,7 +36,6 @@ if (targetIds.length === 0) {
 fs.mkdirSync(OUT_DIR, { recursive: true });
 
 const jobs = [];
-const htmlByKey = new Map();
 
 for (const id of targetIds) {
   const modPath = path.join(PROJECTS_DIR, `${id}.mjs`);
@@ -54,26 +52,11 @@ for (const id of targetIds) {
   }
   for (const pg of pages) {
     const fileBase = pg.slug === 'p1' ? id : `${id}-${pg.slug}`;
-    htmlByKey.set(fileBase, pg.html);
-    jobs.push({ id, slug: pg.slug, title: pg.title, fileBase });
+    jobs.push({ title: pg.title, fileBase, html: pg.html });
   }
 }
 
-const server = http.createServer((req, res) => {
-  const key = (req.url || '/').replace(/^\//, '').split('?')[0];
-  const html = htmlByKey.get(key);
-  if (!html) {
-    res.writeHead(404);
-    res.end('not found');
-    return;
-  }
-  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-  res.end(html);
-});
-
 const PORT_CDP = await getFreePort();
-await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-const PORT_HTTP = server.address().port;
 
 fs.mkdirSync('C:/Workspace/.cache', { recursive: true });
 const userDataDir = path.join(
@@ -123,7 +106,6 @@ await new Promise((resolve, reject) => {
 
 let seq = 0;
 const pending = new Map();
-let loadResolver = null;
 
 ws.addEventListener('message', (ev) => {
   const msg = JSON.parse(ev.data.toString());
@@ -133,11 +115,6 @@ ws.addEventListener('message', (ev) => {
     pending.delete(msg.id);
     if (msg.error) reject(new Error(msg.error.message));
     else resolve(msg.result);
-  }
-  if (msg.method === 'Page.loadEventFired' && loadResolver) {
-    const fn = loadResolver;
-    loadResolver = null;
-    fn();
   }
 });
 
@@ -220,15 +197,11 @@ try {
     deviceScaleFactor: 2,
     mobile: false,
   });
+  const { frameTree } = await send('Page.getFrameTree');
 
   for (const job of jobs) {
-    const loaded = new Promise((resolve) => {
-      const t = setTimeout(() => { loadResolver = null; resolve(); }, 8000);
-      loadResolver = () => { clearTimeout(t); resolve(); };
-    });
-    await send('Page.navigate', { url: `http://127.0.0.1:${PORT_HTTP}/${job.fileBase}` });
-    await loaded;
-    await new Promise((r) => setTimeout(r, 40));
+    await send('Page.setDocumentContent', { frameId: frameTree.frame.id, html: job.html });
+    await send('Runtime.evaluate', { expression: 'document.fonts.ready.then(() => undefined)', awaitPromise: true });
 
     const evalRes = await send('Runtime.evaluate', {
       expression: AUDIT_EXPR,
@@ -270,7 +243,6 @@ try {
       chrome.kill();
     }
   } catch {}
-  server.close();
   try {
     fs.rmSync(userDataDir, { recursive: true, force: true });
   } catch {}

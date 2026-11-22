@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = 'C:/Workspace/portfolio-hernanda';
+const ROOT = path.resolve(import.meta.dirname, '../..');
 const LEDGER_PATH = path.join(ROOT, 'docs/enterprise-upgrade-ledger.json');
 
 const { PROJECTS_PART_1 } = await import('../../src/data/projectsPart1.ts');
