@@ -31,7 +31,7 @@ export default defineConfig({
   base: base ? `/${base}/` : '/',
   build: {
     outDir: 'dist',
-    copyPublicDir: false,
+    copyPublicDir: true,
     sourcemap: false,
     chunkSizeWarningLimit: 900,
   },

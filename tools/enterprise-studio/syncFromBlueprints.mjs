@@ -41,7 +41,7 @@ for (const file of files) {
   }
 
   // Remove stale extra -pN.webp beyond current page count
-  for (let n = meta.pages.length + 1; n <= 8; n++) {
+  for (let n = meta.pages.length + 1; n <= 12; n++) {
     const stale = path.join(SHOTS_DIR, `${id}-p${n}.webp`);
     if (fs.existsSync(stale)) fs.unlinkSync(stale);
   }

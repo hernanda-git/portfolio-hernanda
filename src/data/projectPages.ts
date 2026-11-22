@@ -34,7 +34,9 @@ export type LayoutId =
   | 'mobile-chat-commerce'
   | 'mobile-biometric-wallet';
 
-export type ProjectPageSlug = 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6' | 'p7' | 'p8';
+export type ProjectPageSlug =
+  | 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6'
+  | 'p7' | 'p8' | 'p9' | 'p10' | 'p11' | 'p12';
 
 export interface ProjectPageSpec {
   slug: ProjectPageSlug;
@@ -79,7 +81,10 @@ function enterprisePlan(
   persona: string,
   titles: string[]
 ): ProjectArtPlan {
-  const slugs: ProjectPageSlug[] = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'];
+  const slugs: ProjectPageSlug[] = [
+    'p1', 'p2', 'p3', 'p4', 'p5', 'p6',
+    'p7', 'p8', 'p9', 'p10', 'p11', 'p12',
+  ];
   return {
     theme: 'enterprise-bespoke',
     font: 'enterprise-bespoke',
@@ -93,6 +98,11 @@ function enterprisePlan(
       layout: 'enterprise-bespoke',
     })),
   };
+}
+
+export function getPageScreenshotUrl(projectId: string, slug: ProjectPageSlug): string {
+  const base = (import.meta.env?.BASE_URL ?? '/').replace(/\/?$/, '/');
+  return slug === 'p1' ? `${base}screenshots/${projectId}.webp` : `${base}screenshots/${projectId}-${slug}.webp`;
 }
 
 export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {
