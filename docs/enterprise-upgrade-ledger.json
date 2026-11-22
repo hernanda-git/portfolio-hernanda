@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-22T02:46:54.249Z",
+  "updatedAt": "2026-11-22T04:03:52.406Z",
   "totalProjects": 152,
-  "verifiedCount": 1,
-  "pendingCount": 151,
-  "nextTargetId": "ID-002",
+  "verifiedCount": 4,
+  "pendingCount": 148,
+  "nextTargetId": "ID-005",
   "projects": {
     "ID-001": {
       "id": "ID-001",
@@ -31,39 +31,60 @@
       "name": "NusaRAG Legal",
       "sector": "ai",
       "platform": "Web SaaS",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "Thomson Reuters Practical Law + RelativityOne Legal Review Workbench",
+      "blueprint": "tools/enterprise-studio/projects/ID-002.mjs",
+      "verifiedAt": "2026-11-22T04:03:52.381Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Matriks Audit Klausul & Register Kontrak",
+        "Komparator Redline Dwibahasa EN-ID",
+        "Checklist DPA UU PDP & Batas 3x24 Jam",
+        "Korpus JDIH & Mesin Hybrid RAG pgvector",
+        "Memo Risiko Hukum, Partner Sign-Off & e-Meterai"
+      ]
     },
     "ID-003": {
       "id": "ID-003",
       "name": "SuaraCS QA",
       "sector": "ai",
       "platform": "AI / Agentic",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "LangSmith Enterprise + Genesys Cloud CX Quality + Datadog Telemetry",
+      "blueprint": "tools/enterprise-studio/projects/ID-003.mjs",
+      "verifiedAt": "2026-11-22T04:03:52.403Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Pusat Kendali Audit & Telemetri ASR Dialek",
+        "Antrean Audit Panggilan & Inspektor Cepat",
+        "Studio Forensik Audio, Diarization & Sensor PII",
+        "Pipeline AI, Guardrail OJK & Atribusi Biaya",
+        "Antrean Coaching <5 Menit & Kepatuhan WORM PDP"
+      ]
     },
     "ID-004": {
       "id": "ID-004",
       "name": "SwarmForge CLI",
       "sector": "ai",
       "platform": "AI / Agentic",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "JetBrains Rider + GitHub Enterprise + Linear Dark",
+      "blueprint": "tools/enterprise-studio/projects/ID-004.mjs",
+      "verifiedAt": "2026-11-22T04:03:52.406Z",
+      "commitSha": null,
+      "pageTitles": [
+        "TUI Operator Shell & Orkestrasi Worktree Swarm",
+        "Antrean Migrasi Modul & Inspektor Kontrak",
+        "Inspektor Diff AST Roslyn & Paritas Replay",
+        "Topologi Git Worktree & Pipeline Verify Gate",
+        "Transkrip Audit Deterministik & Review PR"
+      ]
     },
     "ID-005": {
       "id": "ID-005",

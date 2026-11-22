@@ -1,8 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
+import net from 'node:net';
 import { pathToFileURL } from 'node:url';
 import { spawn, execFileSync } from 'node:child_process';
+
+function getFreePort() {
+  return new Promise((resolve, reject) => {
+    const s = net.createServer();
+    s.listen(0, '127.0.0.1', () => {
+      const p = s.address().port;
+      s.close(() => resolve(p));
+    });
+    s.on('error', reject);
+  });
+}
 
 const ROOT = 'C:/Workspace/portfolio-hernanda';
 const OUT_DIR = path.join(ROOT, 'public/screenshots');
@@ -59,18 +71,26 @@ const server = http.createServer((req, res) => {
   res.end(html);
 });
 
-const PORT_CDP = 9300 + Math.floor(Math.random() * 500);
+const PORT_CDP = await getFreePort();
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
 const PORT_HTTP = server.address().port;
 
 fs.mkdirSync('C:/Workspace/.cache', { recursive: true });
-const userDataDir = path.join('C:/Workspace/.cache', `chrome-ent-${Date.now()}`);
+const userDataDir = path.join(
+  'C:/Workspace/.cache',
+  `chrome-ent-${process.pid}-${Date.now()}-${Math.floor(Math.random() * 1e6)}`
+);
 const chrome = spawn(
   CHROME,
   [
     '--headless=new',
     '--disable-gpu',
     '--no-sandbox',
+    '--no-first-run',
+    '--no-default-browser-check',
+    '--disable-extensions',
+    '--disable-background-networking',
+    '--disable-sync',
     `--remote-debugging-port=${PORT_CDP}`,
     `--user-data-dir=${userDataDir}`,
     'about:blank',
@@ -79,7 +99,7 @@ const chrome = spawn(
 );
 
 async function waitForBrowser() {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 80; i++) {
     try {
       const r = await fetch(`http://127.0.0.1:${PORT_CDP}/json/version`);
       const v = await r.json();
@@ -95,7 +115,11 @@ await waitForBrowser();
 const r = await fetch(`http://127.0.0.1:${PORT_CDP}/json/new?about:blank`, { method: 'PUT' });
 const tab = await r.json();
 const ws = new WebSocket(tab.webSocketDebuggerUrl);
-await new Promise((resolve) => ws.addEventListener('open', resolve));
+await new Promise((resolve, reject) => {
+  const t = setTimeout(() => reject(new Error('WebSocket open timeout')), 10000);
+  ws.addEventListener('open', () => { clearTimeout(t); resolve(); });
+  ws.addEventListener('error', (e) => { clearTimeout(t); reject(new Error('WebSocket error: ' + e.message)); });
+});
 
 let seq = 0;
 const pending = new Map();
@@ -104,7 +128,8 @@ let loadResolver = null;
 ws.addEventListener('message', (ev) => {
   const msg = JSON.parse(ev.data.toString());
   if (msg.id && pending.has(msg.id)) {
-    const { resolve, reject } = pending.get(msg.id);
+    const { resolve, reject, timer } = pending.get(msg.id);
+    clearTimeout(timer);
     pending.delete(msg.id);
     if (msg.error) reject(new Error(msg.error.message));
     else resolve(msg.result);
@@ -119,7 +144,11 @@ ws.addEventListener('message', (ev) => {
 const send = (method, params = {}) =>
   new Promise((resolve, reject) => {
     const id = ++seq;
-    pending.set(id, { resolve, reject });
+    const timer = setTimeout(() => {
+      pending.delete(id);
+      reject(new Error(`CDP timeout on ${method}`));
+    }, 25000);
+    pending.set(id, { resolve, reject, timer });
     ws.send(JSON.stringify({ id, method, params }));
   });
 
@@ -194,7 +223,8 @@ try {
 
   for (const job of jobs) {
     const loaded = new Promise((resolve) => {
-      loadResolver = resolve;
+      const t = setTimeout(() => { loadResolver = null; resolve(); }, 8000);
+      loadResolver = () => { clearTimeout(t); resolve(); };
     });
     await send('Page.navigate', { url: `http://127.0.0.1:${PORT_HTTP}/${job.fileBase}` });
     await loaded;

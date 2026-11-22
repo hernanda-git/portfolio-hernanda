@@ -113,21 +113,39 @@ export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {
       'Developer SDK & Diff Redaksi Prompt',
     ]
   ),
-  'ID-002': plan('paper-editorial', 'editorial-serif', 'Corporate Counsel · SCBD',
-    ['Editor Redline Dwibahasa', 'document-redline-editor'],
-    ['Antrean Review Kontrak', 'email-approval-inbox'],
-    ['Skor Kepatuhan UU PDP', 'audit-compliance-dossier'],
-    ['Alur RAG Korpus JDIH', 'dag-pipeline-canvas']),
-  'ID-003': plan('clinical-mint', 'humanist-friendly', 'QA Supervisor · BPO JKT',
-    ['Triase Panggilan & Coaching', 'whatsapp-inbox-flow'],
-    ['Papan Eskalasi QA Live', 'kanban-sprint-board'],
-    ['Ringkasan Rubrik OJK', 'executive-bento-brief'],
-    ['Dossier Audit Suara', 'audit-compliance-dossier']),
-  'ID-004': plan('nord-dev', 'technical-mono', 'Principal .NET · Migrasi',
-    ['Diff Roslyn .NET 4.8 -> 9', 'ide-code-diff-workbench'],
-    ['DAG Orkestrasi Worktree', 'dag-pipeline-canvas'],
-    ['Papan Migrasi Modul', 'kanban-sprint-board'],
-    ['Konfigurasi Gate CI/CD', 'settings-rbac-matrix']),
+  'ID-002': enterprisePlan(
+    'Thomson Reuters Practical Law + RelativityOne Legal Review Workbench',
+    'R. Suryadi, S.H., LL.M. · Senior Legal Counsel · PT Bank Nusantara Tbk',
+    [
+      'Matriks Audit Klausul & Register Kontrak',
+      'Komparator Redline Dwibahasa EN-ID',
+      'Checklist DPA UU PDP & Batas 3x24 Jam',
+      'Korpus JDIH & Mesin Hybrid RAG pgvector',
+      'Memo Risiko Hukum, Partner Sign-Off & e-Meterai',
+    ]
+  ),
+  'ID-003': enterprisePlan(
+    'LangSmith Enterprise + Genesys Cloud CX Quality + Datadog Telemetry',
+    'D. Kusuma · Lead QA & Compliance Supervisor · PT Bank Nusantara Mandiri',
+    [
+      'Pusat Kendali Audit & Telemetri ASR Dialek',
+      'Antrean Audit Panggilan & Inspektor Cepat',
+      'Studio Forensik Audio, Diarization & Sensor PII',
+      'Pipeline AI, Guardrail OJK & Atribusi Biaya',
+      'Antrean Coaching <5 Menit & Kepatuhan WORM PDP',
+    ]
+  ),
+  'ID-004': enterprisePlan(
+    'JetBrains Rider + GitHub Enterprise + Linear Dark',
+    'R. Wijaya · Staff .NET Architect · Divisi Core Banking PT Bank Nusantara',
+    [
+      'TUI Operator Shell & Orkestrasi Worktree Swarm',
+      'Antrean Migrasi Modul & Inspektor Kontrak',
+      'Inspektor Diff AST Roslyn & Paritas Replay',
+      'Topologi Git Worktree & Pipeline Verify Gate',
+      'Transkrip Audit Deterministik & Review PR',
+    ]
+  ),
   'ID-005': plan('kyoto-matcha', 'humanist-friendly', 'dr. Hendra, Sp.PD · Poli',
     ['Rekam SOAP & e-Resep', 'clinical-emr-chart'],
     ['Jadwal Dokter & Poli', 'calendar-schedule-week'],

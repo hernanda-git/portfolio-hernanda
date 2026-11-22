@@ -21,6 +21,7 @@ export const meta = {
   id: 'ID-001',
   name: 'GarudaRouter',
   reference: 'Datadog + Cloudflare Enterprise',
+  persona: 'H. Pratama · Principal AI Infra · GRC Holding Group',
   pages: [
     { slug: 'p1', title: 'Command Center & Kesehatan Pool' },
     { slug: 'p2', title: 'Telemetri Request & Inspektor Trace' },
