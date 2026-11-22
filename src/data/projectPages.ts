@@ -146,21 +146,39 @@ export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {
       'Transkrip Audit Deterministik & Review PR',
     ]
   ),
-  'ID-005': plan('kyoto-matcha', 'humanist-friendly', 'dr. Hendra, Sp.PD · Poli',
-    ['Rekam SOAP & e-Resep', 'clinical-emr-chart'],
-    ['Jadwal Dokter & Poli', 'calendar-schedule-week'],
-    ['Validasi Payload FHIR', 'api-postman-inspector'],
-    ['Tablet Visite Offline', 'mobile-field-tablet-split']),
-  'ID-006': plan('cyber-noir', 'technical-mono', 'AI Red-Team · SecOps',
-    ['Radar Serangan Prompt', 'trading-fraud-terminal'],
-    ['DAG Firewall & Tool ACL', 'dag-pipeline-canvas'],
-    ['Uji Payload Adversarial', 'api-postman-inspector'],
-    ['Kebijakan Guardrail LLM', 'settings-rbac-matrix']),
-  'ID-007': plan('swiss-mono', 'editorial-serif', 'Tax Manager · KKP JKT',
-    ['Wizard Klasifikasi PPh', 'form-wizard-onboarding'],
-    ['Naskah & Rujukan PMK', 'document-redline-editor'],
-    ['Jurnal Potong PPh 23/26', 'accounting-ledger-sheet'],
-    ['Audit Kepatuhan DGT', 'audit-compliance-dossier']),
+  'ID-005': enterprisePlan(
+    'Epic Systems Hyperspace (StoryBoard + NoteWriter) + Nuance DAX Copilot',
+    'dr. Ratna Kusuma, Sp.PD-KEMD · Poli Penyakit Dalam · RSUPN Dr. Cipto Mangunkusumo',
+    [
+      'Ruang Konsultasi & Dikte SOAP Real-Time',
+      'Antrean Poliklinik Shift & Meja Koder ICD-10',
+      'Integrasi SIMRS & Inspektor SATUSEHAT FHIR R4',
+      'Privasi Audio Zero-Retention & Audit UU PDP',
+      'Pendamping Tablet Dokter & Analitik Beban Kerja Poli',
+    ]
+  ),
+  'ID-006': enterprisePlan(
+    'CrowdStrike Falcon + SentinelOne Singularity AI-SOC',
+    'R. Kusuma · Lead AI SecOps · CISO Office PT Bank Nusantara Digital',
+    [
+      'Meja Ancaman LLM Runtime & Matriks OWASP',
+      'Antrean Triase Insiden & Inspektor Payload Adversarial',
+      'Firewall Tool-Call Inline & Mesin Kebijakan Agen',
+      'Pemindai Indirect Injection RAG & Korpus Red-Team ID',
+      'Kepatuhan OWASP LLM, UU PDP & Kesiapan Audit BSSN',
+    ]
+  ),
+  'ID-007': enterprisePlan(
+    'LangSmith Enterprise + Bloomberg Tax Advisory Workbench',
+    'R. Wibisono, BKP · Head of Tax Compliance · PT Nusantara Energi Holding',
+    [
+      'Klasifikasi Faktur & Objek Potong CoreTax',
+      'Orkestrasi Agent RAG & Evaluasi Sitasi PMK',
+      'Simulator PPh 26 Lintas Negara & Tax Treaty DGT',
+      'Korpus Regulasi & Graf Pasal UU HPP / PMK',
+      'Kertas Kerja Auditor & Ekspor CoreTax XML',
+    ]
+  ),
   'ID-008': plan('industrial-steel', 'industrial-condensed', 'Plant K3 Lead · Cikarang',
     ['CCTV Vision Quad 4-Zona', 'dicom-radiology-pacs'],
     ['Denah Zona APD Pabrik', 'floorplan-bay-grid'],

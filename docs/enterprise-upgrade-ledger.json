@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-22T04:03:52.406Z",
+  "updatedAt": "2026-11-22T05:51:37.610Z",
   "totalProjects": 152,
-  "verifiedCount": 4,
-  "pendingCount": 148,
-  "nextTargetId": "ID-005",
+  "verifiedCount": 7,
+  "pendingCount": 145,
+  "nextTargetId": "ID-008",
   "projects": {
     "ID-001": {
       "id": "ID-001",
@@ -91,39 +91,60 @@
       "name": "DokterScribe ID",
       "sector": "ai",
       "platform": "Web SaaS",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "Epic Systems Hyperspace (StoryBoard + NoteWriter) + Nuance DAX Copilot",
+      "blueprint": "tools/enterprise-studio/projects/ID-005.mjs",
+      "verifiedAt": "2026-11-22T05:51:37.596Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Ruang Konsultasi & Dikte SOAP Real-Time",
+        "Antrean Poliklinik Shift & Meja Koder ICD-10",
+        "Integrasi SIMRS & Inspektor SATUSEHAT FHIR R4",
+        "Privasi Audio Zero-Retention & Audit UU PDP",
+        "Pendamping Tablet Dokter & Analitik Beban Kerja Poli"
+      ]
     },
     "ID-006": {
       "id": "ID-006",
       "name": "BasaGuard RedTeam",
       "sector": "ai",
       "platform": "AI / Agentic",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "CrowdStrike Falcon + SentinelOne Singularity AI-SOC",
+      "blueprint": "tools/enterprise-studio/projects/ID-006.mjs",
+      "verifiedAt": "2026-11-22T05:51:37.603Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Meja Ancaman LLM Runtime & Matriks OWASP",
+        "Antrean Triase Insiden & Inspektor Payload Adversarial",
+        "Firewall Tool-Call Inline & Mesin Kebijakan Agen",
+        "Pemindai Indirect Injection RAG & Korpus Red-Team ID",
+        "Kepatuhan OWASP LLM, UU PDP & Kesiapan Audit BSSN"
+      ]
     },
     "ID-007": {
       "id": "ID-007",
       "name": "PajakCopilot",
       "sector": "ai",
       "platform": "AI / Agentic",
-      "status": "LEGACY_V6",
-      "pages": 4,
-      "resolution": "1280x800@1x",
-      "designReference": null,
-      "blueprint": null,
-      "verifiedAt": null,
-      "commitSha": null
+      "status": "ENTERPRISE_VERIFIED",
+      "pages": 5,
+      "resolution": "1600x1000@2x",
+      "designReference": "LangSmith Enterprise + Bloomberg Tax Advisory Workbench",
+      "blueprint": "tools/enterprise-studio/projects/ID-007.mjs",
+      "verifiedAt": "2026-11-22T05:51:37.610Z",
+      "commitSha": null,
+      "pageTitles": [
+        "Klasifikasi Faktur & Objek Potong CoreTax",
+        "Orkestrasi Agent RAG & Evaluasi Sitasi PMK",
+        "Simulator PPh 26 Lintas Negara & Tax Treaty DGT",
+        "Korpus Regulasi & Graf Pasal UU HPP / PMK",
+        "Kertas Kerja Auditor & Ekspor CoreTax XML"
+      ]
     },
     "ID-008": {
       "id": "ID-008",
