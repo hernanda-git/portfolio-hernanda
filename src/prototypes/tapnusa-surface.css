@@ -1,0 +1,43 @@
+.tapnusa-surface { display: grid; gap: 16px; }
+.tapnusa-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.tapnusa-panel,.tapnusa-metrics > div { min-width: 0; padding: 18px; border: 1px solid var(--ui-line); border-radius: 8px; background: var(--ui-surface); }
+.tapnusa-panel header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.tapnusa-panel h2,.tapnusa-panel h3 { margin: 0 0 12px; font-size: 17px; }
+.tapnusa-panel header h2,.tapnusa-form h2 { margin: 0; }
+.tapnusa-panel p { color: var(--ui-text-2); }
+.tapnusa-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.tapnusa-metrics > div { display: grid; gap: 5px; }
+.tapnusa-metrics span,.tapnusa-wallet small { color: var(--ui-text-2); }
+.tapnusa-metrics strong { font-size: clamp(17px, 2vw, 25px); }
+.tapnusa-metrics strong,.tapnusa-balance { font-variant-numeric: tabular-nums; }
+.tapnusa-scroll { overflow-x: auto; }
+.tapnusa-panel table { width: 100%; min-width: 410px; border-collapse: collapse; }
+.tapnusa-metrics + .tapnusa-panel table { min-width: 0; }
+.tapnusa-panel th,.tapnusa-panel td { padding: 10px 8px; text-align: left; border-bottom: 1px solid var(--ui-line); }
+.tapnusa-panel th { font-weight: 600; }
+.tapnusa-panel td:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tapnusa-panel thead th { color: var(--ui-text-2); background: var(--ui-surface-2); }
+.tapnusa-panel ul { list-style: none; margin: 0; padding: 0; }
+.tapnusa-panel ol { margin: 0; padding-left: 20px; }
+.tapnusa-panel ol li { padding: 8px 0; border-bottom: 1px solid var(--ui-line); }
+.tapnusa-panel ul li,.tapnusa-panel dl > div { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--ui-line); }
+.tapnusa-panel ul b { white-space: nowrap; }
+.tapnusa-panel dd { margin: 0; text-align: right; font-weight: 600; }
+.tapnusa-panel dt { color: var(--ui-text-2); }
+.tapnusa-wallet { background: var(--ui-accent-soft); }
+.tapnusa-balance { display: block; margin: 2px 0 20px; font-size: clamp(28px, 4vw, 42px); letter-spacing: -.03em; color: var(--ui-accent-ink); }
+.tapnusa-form { display: grid; gap: 14px; }
+.tapnusa-form label { display: grid; gap: 5px; font-weight: 600; }
+.tapnusa-panel select,.tapnusa-panel input,.tapnusa-action,.tapnusa-link { min-height: 42px; border-radius: 5px; }
+.tapnusa-panel select,.tapnusa-panel input { padding: 6px 9px; background: var(--ui-surface); color: var(--ui-text); border: 1px solid var(--ui-line-strong); max-width: 100%; }
+.tapnusa-form p { margin: 0; }
+.tapnusa-form output { color: var(--ui-text-2); }
+.tapnusa-form output:empty { display: none; }
+.tapnusa-action,.tapnusa-link { cursor: pointer; font-weight: 600; }
+.tapnusa-action { padding: 7px 13px; border: 1px solid transparent; background: var(--ui-accent); color: var(--ui-surface); }
+.tapnusa-action:disabled { opacity: .6; cursor: not-allowed; }
+.tapnusa-link { padding: 5px 8px; border: 1px solid transparent; background: var(--ui-surface-2); color: var(--ui-accent-ink); }
+.tapnusa-link[aria-pressed='true'],.tapnusa-link:hover { border-color: var(--ui-line-strong); }
+.tapnusa-confirm button + button { margin-left: 8px; }
+@media (max-width: 1060px) { .tapnusa-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 540px) { .tapnusa-metrics { grid-template-columns: minmax(0, 1fr); } .tapnusa-panel { padding: 14px; } }

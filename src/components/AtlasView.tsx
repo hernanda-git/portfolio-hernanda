@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import type { ConceptProject } from '../data/projects';
-import { PROJECT_PAGES } from '../data/projectPages';
+import { projectPath } from '../routes';
 import {
   ARCHETYPE_LABELS,
   CURATED_LENSES,
@@ -10,12 +10,12 @@ import {
   type SectorId,
 } from '../data/sectors';
 import { IconClose, IconFilter, IconGrid, IconLayers, IconSearch, IconTable } from './Icons';
+import { ProjectCard } from './ProjectCard';
 
 interface AtlasViewProps {
   projects: ConceptProject[];
   initialSector: SectorId | 'all';
   onSectorConsumed: () => void;
-  onOpenProject: (project: ConceptProject, contextList: ConceptProject[]) => void;
 }
 
 type ViewMode = 'gallery' | 'matrix' | 'ecosystem';
@@ -49,7 +49,6 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
   projects,
   initialSector,
   onSectorConsumed,
-  onOpenProject,
 }) => {
   const [search, setSearch] = useState('');
   const [selectedSector, setSelectedSector] = useState<SectorId | 'all'>(initialSector);
@@ -213,7 +212,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                 onClick={() => setViewMode('gallery')}
               >
                 <IconGrid size={13} />
-                Galeri Visual
+                Kartu
               </button>
               <button
                 type="button"
@@ -383,43 +382,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
           ) : viewMode === 'gallery' ? (
             <>
               <div className="project-grid">
-                {shownGallery.map((project) => {
-                  const art = PROJECT_PAGES[project.id];
-                  const pageCount = art?.pages.length ?? 4;
-                  return (
-                    <button
-                      type="button"
-                      key={project.id}
-                      className="project-card"
-                      onClick={() => onOpenProject(project, filtered)}
-                    >
-                      <div className="project-card-shot">
-                        <img
-                          src={`./screenshots/${project.id}.webp`}
-                          alt={`Tampilan UI/UX produk ${project.name}`}
-                          className="project-card-img"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="project-card-body">
-                        <div className="project-card-top">
-                          <span className="project-id">{project.id}</span>
-                          <div style={{ display: 'flex', gap: '4px' }}>
-                            {art?.enterpriseVerified && <span className="tag tag-ok">Enterprise</span>}
-                            {!art?.enterpriseVerified && project.cvLink && <span className="tag tag-ok">Domain CV</span>}
-                            <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
-                          </div>
-                        </div>
-                        <h3 className="project-name">{project.name}</h3>
-                        <p className="project-tagline">{project.tagline}</p>
-                        <div className="project-card-foot">
-                          <span>{project.standards[0]} · {pageCount} Hal</span>
-                          <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka {pageCount} Halaman -&gt;</span>
-                        </div>
-                      </div>
-                    </button>
-                  );
-                })}
+                {shownGallery.map(project => <ProjectCard key={project.id} project={project} />)}
               </div>
 
               {visibleLimit < filtered.length && (
@@ -459,10 +422,10 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                   {filtered.map((p) => {
                     const sec = SECTORS.find((s) => s.id === p.sector);
                     return (
-                      <tr key={p.id} onClick={() => onOpenProject(p, filtered)}>
+                      <tr key={p.id}>
                         <td style={{ fontFamily: 'var(--ui-mono)', color: 'var(--ui-text-muted)', whiteSpace: 'nowrap' }}>{p.id}</td>
                         <td>
-                          <div style={{ fontWeight: 600 }}>{p.name}</div>
+                          <a href={projectPath(p)} style={{ fontWeight: 600 }}>{p.name}</a>
                           <div style={{ fontSize: '11px', color: 'var(--ui-text-2)' }}>{p.tagline}</div>
                         </td>
                         <td style={{ whiteSpace: 'nowrap' }}>{sec?.shortName}</td>
@@ -492,11 +455,10 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                     </div>
                     <div className="ecosystem-tiles">
                       {group.map((p) => (
-                        <button
-                          type="button"
+                        <a
                           key={p.id}
                           className="ecosystem-tile"
-                          onClick={() => onOpenProject(p, filtered)}
+                          href={projectPath(p)}
                         >
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <span style={{ fontFamily: 'var(--ui-mono)', fontSize: '10.5px', color: 'var(--ui-text-muted)' }}>{p.id}</span>
@@ -507,7 +469,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                           <div style={{ marginTop: 'auto', paddingTop: '4px', fontFamily: 'var(--ui-mono)', fontSize: '10px', color: 'var(--ui-accent-ink)' }}>
                             {p.standards[0]}
                           </div>
-                        </button>
+                        </a>
                       ))}
                     </div>
                   </section>

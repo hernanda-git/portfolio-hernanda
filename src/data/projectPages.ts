@@ -1,5 +1,4 @@
-// Per-project 4-page storyboard & bespoke visual art direction for all 120 concepts.
-// Single Source of Truth consumed by both React UI (PrototypeStudio) and Screen Foundry (renderAll.mjs).
+// Storyboards for interactive prototype routes and offline design renderers.
 
 export type LayoutId =
   | 'pos-touch-register'
@@ -94,10 +93,6 @@ function enterprisePlan(
       layout: 'enterprise-bespoke',
     })),
   };
-}
-
-export function getPageScreenshotPath(projectId: string, slug: ProjectPageSlug): string {
-  return slug === 'p1' ? `./screenshots/${projectId}.webp` : `./screenshots/${projectId}-${slug}.webp`;
 }
 
 export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {

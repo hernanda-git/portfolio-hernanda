@@ -1,11 +1,11 @@
 # Muhammad Hernanda — Portofolio & Atlas Produk Digital Indonesia
 
-Portofolio rekayasa perangkat lunak dan **Atlas 152 Konsep Produk Digital Indonesia (608 Halaman UI/UX)** untuk **Muhammad Hernanda** (Principal Software Engineer, Solution Architect & Inference Engineer, Jakarta) dalam Bahasa Indonesia dengan istilah teknis, standar, dan protokol tetap utuh.
+Portofolio rekayasa perangkat lunak dan **Atlas 152 Konsep Produk Digital Indonesia** oleh **Muhammad Hernanda** (Principal Software Engineer, Solution Architect & Inference Engineer, Jakarta).
 
 ## Struktur & Batas Kredibilitas
 
 - **Karier Produksi Terverifikasi (2016–2026):** 16 pengalaman kerja nyata dan matriks kapabilitas teknis yang bersumber langsung dari CV (`Resume of Muhammad Hernanda (September 2026).pdf`).
-- **Atlas Konsep Produk Indonesia (152 Konsep · 608 Halaman UI/UX):** Eksplorasi konseptual berlabel jelas (`Konsep Desain · Belum Deploy`) lintas **15 sektor pasar Indonesia**, **6 kelas platform**, dan **18 arketipe UI**, termasuk 32 konsep riset pasar Indonesia 2025–2027 dari sesi Hermes (`ID-121`–`ID-152`). Setiap proyek memiliki **4 halaman UI/UX berbeda** beresolusi tinggi `1280×800` WebP (total **608 layar**) yang dirender melalui `tools/screen-foundry/` dengan **32 arsitektur halaman nyata** (Touch POS, KDS, Peta Kursi Stadion/Kereta, Gantt Tape Chart, DICOM 4-Panel, Editor Redline, IDE Code Diff, API Inspector, Live-Commerce 9:16, WhatsApp Omnichannel, Kanban, GIS Map, SCADA P&ID, Floorplan Bay, CBT Exam, Marketplace, Ledger Akuntansi, Approval Inbox, DAG Canvas, Form Wizard, Fraud Terminal, Clinical EMR, Kalender Mingguan, Bento Eksekutif, Dossier Audit, RBAC Matrix, dan 6 komposisi mobile/hardware berbeda), **24 tema visual**, dan **6 pasangan tipografi**.
+- **Atlas Konsep Produk Indonesia:** Prototipe interaktif lintas 15 sektor pasar Indonesia, termasuk 32 konsep riset Indonesia 2025–2027 (`ID-121`–`ID-152`). Skenario memakai data contoh dan berjalan lokal di browser, bukan di sistem produksi.
 - **Filter Faset Dinamis:** Seluruh angka di menu sidebar Atlas (`Sektor Pasar`, `Kelas Platform`, `Arketipe UI`) dan lensa kurasi dihitung secara dinamis lintas faset (*cross-facet*) dan sejajar rapi dengan `tabular-nums`.
 
 ## Perintah
@@ -13,10 +13,16 @@ Portofolio rekayasa perangkat lunak dan **Atlas 152 Konsep Produk Digital Indone
 ```bash
 npm install
 npm run dev                               # server pengembangan lokal
-node tools/screen-foundry/renderAll.mjs   # render ulang 120 screenshot WebP 1280x800
+npm run typecheck                         # pemeriksaan tipe TypeScript
 npm run build                             # tsc + build produksi Vite di dist/
 npm run preview                           # pratinjau lokal hasil build dist/
 ```
+
+## Rute Prototipe & Publikasi
+
+Setiap proyek dan halaman bisa dibuka langsung dengan URL `/{nama-proyek}/{nama-halaman}`. Coba [rekonsiliasi VA KasirTreasury](https://hernanda-git.github.io/portfolio-hernanda/kasirtreasury-bi/rekonsiliasi-virtual-account-piutang-erp/) atau [pembayaran transit TapNusa](https://hernanda-git.github.io/portfolio-hernanda/tapnusa-qris/pratinjau-aplikasi-mobile-komuter-net-maui-9-kotlin-hce/). Skenario tersimpan per proyek di browser dan dapat di-reset.
+
+Build menyiapkan `index.html` untuk setiap rute, sehingga tautan langsung dan refresh bekerja di host statis tanpa aturan rewrite. Workflow GitHub Pages meneruskan base path repositori ke `PORTFOLIO_BASE`; build lokal tanpa variabel itu berjalan di root. Blueprint dan screenshot arsip tetap di repositori, tidak dikirim ke situs.
 
 ## Referensi Desain (`unslop-ui`)
 

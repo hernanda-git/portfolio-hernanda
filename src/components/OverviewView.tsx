@@ -4,17 +4,16 @@ import type { ConceptProject } from '../data/projects';
 import { PROJECT_PAGES } from '../data/projectPages';
 import { ARCHETYPE_LABELS, SECTORS, type SectorId } from '../data/sectors';
 import { IconArrowRight, IconShield } from './Icons';
+import { ProjectCard } from './ProjectCard';
 
 interface OverviewViewProps {
   projects: ConceptProject[];
-  onOpenProject: (project: ConceptProject) => void;
   onExploreAtlas: (sector?: SectorId) => void;
   onOpenExperience: () => void;
 }
 
 export const OverviewView: React.FC<OverviewViewProps> = ({
   projects,
-  onOpenProject,
   onExploreAtlas,
   onOpenExperience,
 }) => {
@@ -36,7 +35,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
     {
       label: 'Atlas Konsep Produk',
       value: `${projects.length} Konsep`,
-      detail: `${totalScreens} halaman UI/UX · ${SECTORS.length} sektor pasar`,
+      detail: `${totalScreens} halaman interaktif · ${SECTORS.length} sektor pasar`,
     },
     {
       label: 'Skala Sistem Utama',
@@ -110,12 +109,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       {/* Featured Product Concepts */}
       <section style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '12px', gap: '12px', flexWrap: 'wrap' }}>
-          <div>
-            <h2 className="section-title">Konsep Produk Unggulan Lintas 6 Disiplin UI/UX</h2>
-            <p className="section-desc">
-              Klik tangkapan layar produk mana saja untuk meninjau desain UI/UX penuh 1280×800, ringkasan pasar Indonesia, dan arsitektur sistem berlapisnya.
-            </p>
-          </div>
+          <h2 className="section-title">Prototipe Unggulan</h2>
           <button type="button" className="btn btn-sm" onClick={() => onExploreAtlas()}>
             Lihat seluruh {projects.length} konsep
             <IconArrowRight size={13} />
@@ -123,41 +117,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
         </div>
 
         <div className="featured-grid">
-          {featured.map((project) => {
-            const art = PROJECT_PAGES[project.id];
-            const pageCount = art?.pages.length ?? 4;
-            return (
-              <button
-                type="button"
-                key={project.id}
-                className="project-card"
-                onClick={() => onOpenProject(project)}
-              >
-                <div className="project-card-shot">
-                  <img
-                    src={`./screenshots/${project.id}.webp`}
-                    alt={`Tampilan UI/UX ${project.name}`}
-                    className="project-card-img"
-                  />
-                </div>
-                <div className="project-card-body">
-                  <div className="project-card-top">
-                    <span className="project-id">{project.id}</span>
-                    <div style={{ display: 'flex', gap: '4px' }}>
-                      {art?.enterpriseVerified && <span className="tag tag-ok">Enterprise</span>}
-                      <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
-                    </div>
-                  </div>
-                  <h3 className="project-name">{project.name}</h3>
-                  <p className="project-tagline">{project.tagline}</p>
-                  <div className="project-card-foot">
-                    <span>{project.platform} · {pageCount} Halaman UI</span>
-                    <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka {pageCount} Halaman -&gt;</span>
-                  </div>
-                </div>
-              </button>
-            );
-          })}
+          {featured.map(project => <ProjectCard key={project.id} project={project} />)}
         </div>
       </section>
 
