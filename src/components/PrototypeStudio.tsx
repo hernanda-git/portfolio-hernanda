@@ -24,11 +24,13 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
   const [studioTab, setStudioTab] = useState<'ui' | 'brief' | 'architecture'>('ui');
   const [pageIdx, setPageIdx] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState<'fit' | '100' | '150'>('fit');
 
   useEffect(() => {
     setStudioTab('ui');
     setPageIdx(0);
     setZoomOpen(false);
+    setZoomLevel('fit');
   }, [project?.id]);
 
   const currentIdx = project ? listContext.findIndex((p) => p.id === project.id) : -1;
@@ -40,6 +42,8 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
     { slug: 'p1' as const, title: 'Halaman Utama', layout: 'executive-bento-brief' as const },
   ];
   const activePage = pages[pageIdx] ?? pages[0];
+  const isEnterprise = Boolean(artPlan?.enterpriseVerified);
+  const resLabel = artPlan?.resolution ?? '1280×800';
 
   useEffect(() => {
     if (!project) return;
@@ -47,12 +51,15 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
       if (e.key === 'Escape') {
         if (zoomOpen) setZoomOpen(false);
         else onClose();
-      } else if (e.key >= '1' && e.key <= '4') {
+      } else if (e.key >= '1' && e.key <= '8') {
         const idx = parseInt(e.key, 10) - 1;
         if (idx < pages.length) setPageIdx(idx);
       } else if (zoomOpen) {
         if (e.key === 'ArrowLeft') setPageIdx((i) => (i > 0 ? i - 1 : pages.length - 1));
         else if (e.key === 'ArrowRight') setPageIdx((i) => (i + 1) % pages.length);
+        else if (e.key === '+' || e.key === '=') setZoomLevel((z) => (z === 'fit' ? '100' : '150'));
+        else if (e.key === '-') setZoomLevel((z) => (z === '150' ? '100' : 'fit'));
+        else if (e.key === '0') setZoomLevel('fit');
       } else if (e.key === 'ArrowLeft' && prevProject) {
         onSelectProject(prevProject);
       } else if (e.key === 'ArrowRight' && nextProject) {
@@ -83,7 +90,11 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
             <span className="tag tag-mono">{project.id}</span>
             <h2 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>{project.name}</h2>
             <span className="tag tag-warn">Konsep Desain · Belum Deploy</span>
-            <span className="tag tag-accent">{pages.length} Halaman UI/UX</span>
+            {isEnterprise ? (
+              <span className="tag tag-ok">Enterprise Verified · {pages.length} Hal</span>
+            ) : (
+              <span className="tag tag-accent">{pages.length} Halaman UI/UX</span>
+            )}
             <span className="tag">{project.platform}</span>
           </div>
 
@@ -139,7 +150,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
             </button>
           </div>
           <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)', padding: '6px 0' }}>
-            {sectorMeta?.name} · Tombol 1–4 ganti halaman · Panah ganti konsep ({listContext.length})
+            {sectorMeta?.name} · Tombol 1–{pages.length} ganti halaman · Panah ganti konsep ({listContext.length})
           </div>
         </div>
 
@@ -147,7 +158,12 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
           {studioTab === 'ui' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               {/* Page Switcher Bar */}
-              <div className="page-switcher-bar" role="tablist" aria-label="Daftar halaman produk">
+              <div
+                className="page-switcher-bar"
+                style={{ ['--page-cols' as string]: String(pages.length) }}
+                role="tablist"
+                aria-label="Daftar halaman produk"
+              >
                 {pages.map((pg, idx) => (
                   <button
                     type="button"
@@ -163,7 +179,7 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                 ))}
               </div>
 
-              {/* Active 1280x800 Viewport */}
+              {/* Active Retina Viewport */}
               <div className="screenshot-stage">
                 <div className="screenshot-stage-bar">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -171,7 +187,12 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                     <strong style={{ fontSize: '12.5px' }}>
                       Halaman 0{pageIdx + 1}: {activePage.title}
                     </strong>
-                    <span className="tag tag-mono">{project.preview.envTag}</span>
+                    <span className="tag tag-mono">{resLabel}</span>
+                    {artPlan?.designReference ? (
+                      <span className="tag">Ref: {artPlan.designReference}</span>
+                    ) : (
+                      <span className="tag tag-mono">{project.preview.envTag}</span>
+                    )}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <button
@@ -194,10 +215,13 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                     <button
                       type="button"
                       className="btn btn-sm"
-                      onClick={() => setZoomOpen(true)}
+                      onClick={() => {
+                        setZoomLevel('fit');
+                        setZoomOpen(true);
+                      }}
                     >
                       <IconExternal size={12} />
-                      Perbesar
+                      Zoom &amp; Inspeksi
                     </button>
                   </div>
                 </div>
@@ -205,20 +229,26 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                 <button
                   type="button"
                   className="screenshot-img-btn"
-                  onClick={() => setZoomOpen(true)}
-                  title="Klik untuk memperbesar tampilan UI/UX penuh 1280×800"
+                  onClick={() => {
+                    setZoomLevel('fit');
+                    setZoomOpen(true);
+                  }}
+                  title={`Klik untuk membuka mode Zoom Fit/100%/150% (${resLabel})`}
                 >
                   <img
                     key={activeShotSrc}
                     src={activeShotSrc}
-                    alt={`${project.name} — ${activePage.title} (1280×800)`}
+                    alt={`${project.name} — ${activePage.title} (${resLabel})`}
                     className="screenshot-img-full"
                   />
                 </button>
               </div>
 
-              {/* 4-Page Visual Filmstrip Thumbnails */}
-              <div className="page-thumb-strip">
+              {/* Multi-Page Visual Filmstrip Thumbnails */}
+              <div
+                className="page-thumb-strip"
+                style={{ ['--page-cols' as string]: String(pages.length) }}
+              >
                 {pages.map((pg, idx) => {
                   const thumbSrc = getPageScreenshotPath(project.id, pg.slug);
                   return (
@@ -427,9 +457,22 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
           <div className="lightbox-frame" onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-bar">
               <span className="tag-mono" style={{ fontSize: '12px' }}>
-                {project.id} · {project.name} — 0{pageIdx + 1}/{pages.length}: {activePage.title} (1280×800)
+                {project.id} · {project.name} — 0{pageIdx + 1}/{pages.length}: {activePage.title} ({resLabel})
               </span>
-              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+                <div className="segmented" role="group" aria-label="Level zoom">
+                  {(['fit', '100', '150'] as const).map((lvl) => (
+                    <button
+                      key={lvl}
+                      type="button"
+                      className={`seg-btn ${zoomLevel === lvl ? 'is-active' : ''}`}
+                      style={{ height: '24px', padding: '0 8px', fontSize: '11px' }}
+                      onClick={() => setZoomLevel(lvl)}
+                    >
+                      {lvl === 'fit' ? 'Fit' : `${lvl}%`}
+                    </button>
+                  ))}
+                </div>
                 <button
                   type="button"
                   className="btn btn-sm"
@@ -452,11 +495,13 @@ export const PrototypeStudio: React.FC<PrototypeStudioProps> = ({
                 </button>
               </div>
             </div>
-            <img
-              src={activeShotSrc}
-              alt={`Desain UI/UX resolusi penuh ${project.name} — ${activePage.title}`}
-              className="lightbox-img"
-            />
+            <div className={`lightbox-viewport is-zoom-${zoomLevel}`}>
+              <img
+                src={activeShotSrc}
+                alt={`Desain UI/UX resolusi penuh ${project.name} — ${activePage.title}`}
+                className="lightbox-img"
+              />
+            </div>
           </div>
         </div>
       )}

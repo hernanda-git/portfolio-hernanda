@@ -838,11 +838,14 @@ select:focus-visible,
 
 .lightbox-frame {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1480px;
+  max-height: calc(100vh - 32px);
   background: var(--ui-surface);
   border: 1px solid var(--ui-line-strong);
   border-radius: var(--ui-r-4);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .lightbox-bar {
@@ -853,6 +856,24 @@ select:focus-visible,
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.lightbox-viewport {
+  flex: 1;
+  min-height: 0;
+  max-height: calc(100vh - 92px);
+  overflow: auto;
+  background: #0d1016;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-viewport.is-zoom-100,
+.lightbox-viewport.is-zoom-150 {
+  display: block;
 }
 
 .lightbox-img {
@@ -860,7 +881,18 @@ select:focus-visible,
   max-height: calc(100vh - 96px);
   object-fit: contain;
   display: block;
-  background: #0d1016;
+}
+
+.lightbox-viewport.is-zoom-100 .lightbox-img {
+  width: 1600px;
+  max-width: none;
+  max-height: none;
+}
+
+.lightbox-viewport.is-zoom-150 .lightbox-img {
+  width: 2400px;
+  max-width: none;
+  max-height: none;
 }
 
 .project-card-body {
@@ -1197,10 +1229,10 @@ select:focus-visible,
   margin-bottom: 6px;
 }
 
-/* Multi-Page Switcher & 4-Page Thumbnail Filmstrip */
+/* Multi-Page Switcher & Thumbnail Filmstrip (4 to 6 pages dynamically) */
 .page-switcher-bar {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--page-cols, 4), minmax(0, 1fr));
   gap: var(--ui-space-2);
 }
 
@@ -1256,7 +1288,7 @@ select:focus-visible,
 
 .page-thumb-strip {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--page-cols, 4), minmax(0, 1fr));
   gap: var(--ui-space-3);
 }
 

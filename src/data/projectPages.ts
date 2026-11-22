@@ -35,17 +35,22 @@ export type LayoutId =
   | 'mobile-chat-commerce'
   | 'mobile-biometric-wallet';
 
+export type ProjectPageSlug = 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6' | 'p7' | 'p8';
+
 export interface ProjectPageSpec {
-  slug: 'p1' | 'p2' | 'p3' | 'p4';
+  slug: ProjectPageSlug;
   title: string;
-  layout: LayoutId;
+  layout: LayoutId | 'enterprise-bespoke';
 }
 
 export interface ProjectArtPlan {
   theme: string;
   font: string;
   persona: string;
-  pages: [ProjectPageSpec, ProjectPageSpec, ProjectPageSpec, ProjectPageSpec];
+  enterpriseVerified?: boolean;
+  designReference?: string;
+  resolution?: string;
+  pages: ProjectPageSpec[];
 }
 
 function plan(
@@ -70,17 +75,44 @@ function plan(
   };
 }
 
-export function getPageScreenshotPath(projectId: string, slug: 'p1' | 'p2' | 'p3' | 'p4'): string {
+function enterprisePlan(
+  designReference: string,
+  persona: string,
+  titles: string[]
+): ProjectArtPlan {
+  const slugs: ProjectPageSlug[] = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'];
+  return {
+    theme: 'enterprise-bespoke',
+    font: 'enterprise-bespoke',
+    persona,
+    enterpriseVerified: true,
+    designReference,
+    resolution: '1600×1000 @ 2x',
+    pages: titles.map((title, idx) => ({
+      slug: slugs[idx],
+      title,
+      layout: 'enterprise-bespoke',
+    })),
+  };
+}
+
+export function getPageScreenshotPath(projectId: string, slug: ProjectPageSlug): string {
   return slug === 'p1' ? `./screenshots/${projectId}.webp` : `./screenshots/${projectId}-${slug}.webp`;
 }
 
 export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {
   // SEKTOR 1: AI & AGEN OTONOM (ID-001 .. ID-010)
-  'ID-001': plan('blueprint-cobalt', 'swiss-geometric', 'Inference Lead · GRC Group',
-    ['DAG Routing Inference', 'dag-pipeline-canvas'],
-    ['Inspektor API & Token', 'api-postman-inspector'],
-    ['Kepatuhan Masking UU PDP', 'audit-compliance-dossier'],
-    ['RBAC & Kuota Pool', 'settings-rbac-matrix']),
+  'ID-001': enterprisePlan(
+    'Datadog + Cloudflare Enterprise',
+    'H. Pratama · Principal AI Infra · GRC Holding Group',
+    [
+      'Command Center & Kesehatan Pool',
+      'Telemetri Request & Inspektor Trace',
+      'Topologi Routing & Aturan Failover',
+      'Kepatuhan UU PDP PP 33/2026 & RBAC',
+      'Developer SDK & Diff Redaksi Prompt',
+    ]
+  ),
   'ID-002': plan('paper-editorial', 'editorial-serif', 'Corporate Counsel · SCBD',
     ['Editor Redline Dwibahasa', 'document-redline-editor'],
     ['Antrean Review Kontrak', 'email-approval-inbox'],

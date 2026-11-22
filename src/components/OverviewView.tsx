@@ -1,6 +1,7 @@
 import React from 'react';
 import { EXPERIENCES, PROFILE } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
+import { PROJECT_PAGES } from '../data/projectPages';
 import { ARCHETYPE_LABELS, SECTORS, type SectorId } from '../data/sectors';
 import { IconArrowRight, IconShield } from './Icons';
 
@@ -19,7 +20,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
 }) => {
   const featured = projects.filter((p) => p.featured).slice(0, 6);
   const archetypeCount = Object.keys(ARCHETYPE_LABELS).length;
-  const totalScreens = projects.length * 4;
+  const totalScreens = projects.reduce((sum, p) => sum + (PROJECT_PAGES[p.id]?.pages.length ?? 4), 0);
 
   const stats = [
     {
@@ -122,34 +123,41 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
         </div>
 
         <div className="featured-grid">
-          {featured.map((project) => (
-            <button
-              type="button"
-              key={project.id}
-              className="project-card"
-              onClick={() => onOpenProject(project)}
-            >
-              <div className="project-card-shot">
-                <img
-                  src={`./screenshots/${project.id}.webp`}
-                  alt={`Tampilan UI/UX ${project.name}`}
-                  className="project-card-img"
-                />
-              </div>
-              <div className="project-card-body">
-                <div className="project-card-top">
-                  <span className="project-id">{project.id}</span>
-                  <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
+          {featured.map((project) => {
+            const art = PROJECT_PAGES[project.id];
+            const pageCount = art?.pages.length ?? 4;
+            return (
+              <button
+                type="button"
+                key={project.id}
+                className="project-card"
+                onClick={() => onOpenProject(project)}
+              >
+                <div className="project-card-shot">
+                  <img
+                    src={`./screenshots/${project.id}.webp`}
+                    alt={`Tampilan UI/UX ${project.name}`}
+                    className="project-card-img"
+                  />
                 </div>
-                <h3 className="project-name">{project.name}</h3>
-                <p className="project-tagline">{project.tagline}</p>
-                <div className="project-card-foot">
-                  <span>{project.platform} · 4 Halaman UI</span>
-                  <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka 4 Halaman -&gt;</span>
+                <div className="project-card-body">
+                  <div className="project-card-top">
+                    <span className="project-id">{project.id}</span>
+                    <div style={{ display: 'flex', gap: '4px' }}>
+                      {art?.enterpriseVerified && <span className="tag tag-ok">Enterprise</span>}
+                      <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
+                    </div>
+                  </div>
+                  <h3 className="project-name">{project.name}</h3>
+                  <p className="project-tagline">{project.tagline}</p>
+                  <div className="project-card-foot">
+                    <span>{project.platform} · {pageCount} Halaman UI</span>
+                    <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka {pageCount} Halaman -&gt;</span>
+                  </div>
                 </div>
-              </div>
-            </button>
-          ))}
+              </button>
+            );
+          })}
         </div>
       </section>
 

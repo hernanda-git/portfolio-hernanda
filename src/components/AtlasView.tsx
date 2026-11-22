@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import type { ConceptProject } from '../data/projects';
+import { PROJECT_PAGES } from '../data/projectPages';
 import {
   ARCHETYPE_LABELS,
   CURATED_LENSES,
@@ -382,38 +383,43 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
           ) : viewMode === 'gallery' ? (
             <>
               <div className="project-grid">
-                {shownGallery.map((project) => (
-                  <button
-                    type="button"
-                    key={project.id}
-                    className="project-card"
-                    onClick={() => onOpenProject(project, filtered)}
-                  >
-                    <div className="project-card-shot">
-                      <img
-                        src={`./screenshots/${project.id}.webp`}
-                        alt={`Tampilan UI/UX produk ${project.name}`}
-                        className="project-card-img"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="project-card-body">
-                      <div className="project-card-top">
-                        <span className="project-id">{project.id}</span>
-                        <div style={{ display: 'flex', gap: '4px' }}>
-                          {project.cvLink && <span className="tag tag-ok">Domain CV</span>}
-                          <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
+                {shownGallery.map((project) => {
+                  const art = PROJECT_PAGES[project.id];
+                  const pageCount = art?.pages.length ?? 4;
+                  return (
+                    <button
+                      type="button"
+                      key={project.id}
+                      className="project-card"
+                      onClick={() => onOpenProject(project, filtered)}
+                    >
+                      <div className="project-card-shot">
+                        <img
+                          src={`./screenshots/${project.id}.webp`}
+                          alt={`Tampilan UI/UX produk ${project.name}`}
+                          className="project-card-img"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="project-card-body">
+                        <div className="project-card-top">
+                          <span className="project-id">{project.id}</span>
+                          <div style={{ display: 'flex', gap: '4px' }}>
+                            {art?.enterpriseVerified && <span className="tag tag-ok">Enterprise</span>}
+                            {!art?.enterpriseVerified && project.cvLink && <span className="tag tag-ok">Domain CV</span>}
+                            <span className="tag">{ARCHETYPE_LABELS[project.archetype]}</span>
+                          </div>
+                        </div>
+                        <h3 className="project-name">{project.name}</h3>
+                        <p className="project-tagline">{project.tagline}</p>
+                        <div className="project-card-foot">
+                          <span>{project.standards[0]} · {pageCount} Hal</span>
+                          <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka {pageCount} Halaman -&gt;</span>
                         </div>
                       </div>
-                      <h3 className="project-name">{project.name}</h3>
-                      <p className="project-tagline">{project.tagline}</p>
-                      <div className="project-card-foot">
-                        <span>{project.standards[0]} · 4 Hal</span>
-                        <span style={{ color: 'var(--ui-accent-ink)', fontWeight: 500 }}>Buka 4 Halaman -&gt;</span>
-                      </div>
-                    </div>
-                  </button>
-                ))}
+                    </button>
+                  );
+                })}
               </div>
 
               {visibleLimit < filtered.length && (
