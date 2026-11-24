@@ -55,7 +55,7 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
             <div>
               <strong style={{ color: 'var(--ui-text)' }}>2. Pemanfaatan AI Pragmatis (~20%), Kendali Arsitektur Tetap di Engineer</strong>
               <p style={{ margin: '4px 0 0' }}>
-                {PROFILE.summary[2]} Setiap sistem produksi wajib melalui verifikasi build, test, dan runtime yang teramati — bukan keluaran generatif tanpa pembuktian.
+                {PROFILE.summary[3]} Setiap sistem produksi wajib melalui verifikasi build, test, dan runtime yang teramati — bukan keluaran generatif tanpa pembuktian.
               </p>
             </div>
             <div>

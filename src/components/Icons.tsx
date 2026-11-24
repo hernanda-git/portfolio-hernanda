@@ -118,3 +118,9 @@ export const IconExternal: React.FC<IconProps> = ({ size = 14, className }) => (
     <path d="M9.5 2.5h4v4M13.5 2.5L7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3" />
   </svg>
 );
+
+export const IconDownload: React.FC<IconProps> = ({ size = 14, className }) => (
+  <svg {...baseProps(size, className)}>
+    <path d="M8 2.5v7.5M5 7.5L8 10.5l3-3M2.8 11.5v1.5a1 1 0 0 0 1 1h8.4a1 1 0 0 0 1-1v-1.5" />
+  </svg>
+);

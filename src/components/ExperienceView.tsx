@@ -1,7 +1,13 @@
 import React, { useMemo, useState } from 'react';
-import { EXPERIENCES, PROFILE, SKILL_GROUPS, type ExperienceItem } from '../data/profile';
+import {
+  EXPERIENCES,
+  PROFILE,
+  SKILL_GROUPS,
+  VERBATIM_RESUME_MARKDOWN,
+  type ExperienceItem,
+} from '../data/profile';
 import { PROJECTS_BY_ID, type ConceptProject } from '../data/projects';
-import { IconArrowRight, IconShield } from './Icons';
+import { IconArrowRight, IconCheck, IconCopy, IconDownload, IconShield } from './Icons';
 
 interface ExperienceViewProps {
   highlightExpId: string | null;
@@ -22,28 +28,79 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
   onOpenProject,
 }) => {
   const [typeFilter, setTypeFilter] = useState<'Semua' | ExperienceItem['employmentType']>('Semua');
+  const [copied, setCopied] = useState(false);
 
   const items = useMemo(() => {
     if (typeFilter === 'Semua') return EXPERIENCES;
     return EXPERIENCES.filter((e) => e.employmentType === typeFilter);
   }, [typeFilter]);
 
+  const totalBullets = EXPERIENCES.reduce((sum, e) => sum + e.highlights.length, 0);
+
+  const copyVerbatim = async () => {
+    try {
+      await navigator.clipboard.writeText(VERBATIM_RESUME_MARKDOWN);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  const downloadVerbatim = () => {
+    const blob = new Blob([VERBATIM_RESUME_MARKDOWN], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Muhammad_Hernanda_Resume_Verbatim.md';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  };
+
   return (
-    <div>
-      <div className="panel" style={{ marginBottom: '16px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      {/* Verbatim CV Header & Controls */}
+      <div className="panel">
         <div className="panel-header">
           <div>
-            <h1 className="section-title" style={{ fontSize: '20px' }}>
-              Riwayat Karier Produksi Terverifikasi (2016 – 2026)
-            </h1>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+              <h1 className="section-title" style={{ fontSize: '20px' }}>
+                {PROFILE.name} — {PROFILE.title}
+              </h1>
+              <span className="tag tag-ok">
+                <IconShield size={12} />
+                100% Verbatim CV
+              </span>
+              <span className="tag tag-mono">
+                {EXPERIENCES.length} Peran · {totalBullets} Poin · {SKILL_GROUPS.length} Skill Groups
+              </span>
+            </div>
             <p className="section-desc">
-              Bersumber langsung dari CV {PROFILE.name} — {EXPERIENCES.length} pengalaman nyata lintas AI inference, SaaS kewargaan, workflow approval enterprise, pertambangan, perbankan, asuransi, logistik, dan instansi pemerintah.
+              Reproduksi teks lengkap kata-per-kata dari <code>{PROFILE.sourceFile}</code> (tanpa diringkas): {PROFILE.location} · {PROFILE.phone} · {PROFILE.email} · {PROFILE.linkedinLabel}
             </p>
           </div>
-          <span className="tag tag-ok">
-            <IconShield size={12} />
-            Terverifikasi CV
-          </span>
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+            <button type="button" className="btn btn-sm" onClick={copyVerbatim}>
+              {copied ? <IconCheck size={12} /> : <IconCopy size={12} />}
+              {copied ? 'CV Verbatim Tersalin' : 'Salin CV Verbatim (.md)'}
+            </button>
+            <button type="button" className="btn btn-sm btn-primary" onClick={downloadVerbatim}>
+              <IconDownload size={12} />
+              Unduh .md Verbatim
+            </button>
+          </div>
+        </div>
+
+        {/* Summary (4 Verbatim Paragraphs) */}
+        <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--ui-line)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div className="brief-label" style={{ margin: 0 }}>SUMMARY (VERBATIM)</div>
+          {PROFILE.summary.map((para, idx) => (
+            <p key={idx} style={{ margin: 0, fontSize: '13px', lineHeight: 1.52, color: 'var(--ui-text-2)' }}>
+              {para}
+            </p>
+          ))}
         </div>
 
         <div style={{ padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', background: 'var(--ui-surface-2)' }}>
@@ -64,6 +121,7 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
         </div>
       </div>
 
+      {/* Works & Project Experiences (Left) + Technical Skills (Right) */}
       <div className="exp-layout">
         <div className="exp-list">
           {items.map((exp) => {
@@ -80,9 +138,9 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
               >
                 <div className="exp-head">
                   <div>
-                    <h2 className="exp-role">{exp.role}</h2>
+                    <h2 className="exp-role">{exp.verbatimHeader}</h2>
                     <div className="exp-company">
-                      {exp.company}
+                      {exp.role} · {exp.company}
                       {exp.clientContext ? ` · ${exp.clientContext}` : ''}
                     </div>
                   </div>
@@ -95,13 +153,9 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
                   </div>
                 </div>
 
-                <p style={{ margin: '10px 0 8px', fontSize: '13px', color: 'var(--ui-text)' }}>
-                  {exp.summary}
-                </p>
-
-                <ul className="exp-bullets">
-                  {exp.highlights.map((h) => (
-                    <li key={h}>{h}</li>
+                <ul className="exp-bullets" style={{ marginTop: '10px' }}>
+                  {exp.highlights.map((h, i) => (
+                    <li key={`${exp.id}-${i}`}>{h}</li>
                   ))}
                 </ul>
 
@@ -141,18 +195,16 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
         <aside className="skill-panel">
           <div className="panel-header">
             <div>
-              <h2 className="section-title" style={{ fontSize: '15px' }}>Matriks Kapabilitas Teknis</h2>
-              <p className="section-desc">Stack produksi inti (2016–2026)</p>
+              <h2 className="section-title" style={{ fontSize: '15px' }}>Technical Skills (Verbatim)</h2>
+              <p className="section-desc">{SKILL_GROUPS.length} kategori sesuai CV sumber</p>
             </div>
           </div>
 
           {SKILL_GROUPS.map((grp) => (
             <div className="skill-group" key={grp.category}>
               <div className="skill-cat">{grp.category}</div>
-              <div className="tag-wrap">
-                {grp.items.map((item) => (
-                  <span className="tag" key={item}>{item}</span>
-                ))}
+              <div style={{ fontSize: '12px', color: 'var(--ui-text-2)', lineHeight: 1.45 }}>
+                {grp.verbatimLine}
               </div>
             </div>
           ))}
