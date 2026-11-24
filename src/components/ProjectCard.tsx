@@ -8,13 +8,21 @@ import { projectPath } from '../routes';
 import { IconArrowRight } from './Icons';
 
 const BESPOKE_IDS = new Set(['ID-011', 'ID-012']);
+const LIVE_ENGINE_ARCHETYPES = new Set([
+  'ai-agent-workbench',
+  'fintech-ledger',
+  'kanban-workflow',
+  'clinical-emr',
+  'geo-dispatch',
+  'iot-scada',
+]);
 
 export function ProjectCard({ project }: { project: ConceptProject }) {
   const { lang } = useLanguage();
   const copy = UI_COPY[lang].atlas;
   const plan = PROJECT_PAGES[project.id];
   const count = plan.pages.length;
-  const isBespoke = BESPOKE_IDS.has(project.id);
+  const isBespoke = BESPOKE_IDS.has(project.id) || LIVE_ENGINE_ARCHETYPES.has(project.archetype);
   const isDeepBlueprint = Boolean(plan.enterpriseVerified);
   const thumbUrl = getCardThumbnailUrl(project.id);
 
@@ -62,7 +70,7 @@ export function ProjectCard({ project }: { project: ConceptProject }) {
           <span className="project-id">{project.id}</span>
           <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
             {isBespoke ? (
-              <span className="tag tag-ok">{lang === 'en' ? 'Bespoke Demo' : 'Demo Kustom'}</span>
+              <span className="tag tag-ok">{lang === 'en' ? 'Interactive App' : 'Aplikasi Interaktif'}</span>
             ) : isDeepBlueprint ? (
               <span className="tag tag-accent">{lang === 'en' ? 'Deep Blueprint' : 'Blueprint Lengkap'}</span>
             ) : null}

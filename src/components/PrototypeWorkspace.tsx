@@ -9,11 +9,27 @@ import { projectPath, SECTION_PATHS } from '../routes';
 import { IconArrowLeft, IconArrowRight, IconClose, IconExternal, IconMoon, IconSearch, IconSun } from './Icons';
 import '../styles/prototype.css';
 
+import type { ArchetypeId } from '../data/sectors';
+
 const AtlasSurface = lazy(() => import('../prototypes/AtlasSurface'));
 const TreasurySurface = lazy(() => import('../prototypes/TreasurySurface'));
 const TapNusaSurface = lazy(() => import('../prototypes/TapNusaSurface'));
+const AiWorkbenchEngine = lazy(() => import('../prototypes/engines/AiWorkbenchEngine'));
+const FintechLedgerEngine = lazy(() => import('../prototypes/engines/FintechLedgerEngine'));
+const WorkflowApprovalEngine = lazy(() => import('../prototypes/engines/WorkflowApprovalEngine'));
+const ClinicalEmrEngine = lazy(() => import('../prototypes/engines/ClinicalEmrEngine'));
+const GeoDispatchEngine = lazy(() => import('../prototypes/engines/GeoDispatchEngine'));
+const IndustrialScadaEngine = lazy(() => import('../prototypes/engines/IndustrialScadaEngine'));
 
 const BESPOKE_INTERACTIVE_IDS = new Set(['ID-011', 'ID-012']);
+const DOMAIN_ENGINE_BY_ARCHETYPE: Partial<Record<ArchetypeId, typeof AtlasSurface>> = {
+  'ai-agent-workbench': AiWorkbenchEngine,
+  'fintech-ledger': FintechLedgerEngine,
+  'kanban-workflow': WorkflowApprovalEngine,
+  'clinical-emr': ClinicalEmrEngine,
+  'geo-dispatch': GeoDispatchEngine,
+  'iot-scada': IndustrialScadaEngine,
+};
 
 interface Props {
   project: ConceptProject;
@@ -33,8 +49,14 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
   const pages = plan.pages;
   const position = pages.indexOf(page);
   const isEnterprise = Boolean(plan.enterpriseVerified);
-  const hasBespokeInteractive = BESPOKE_INTERACTIVE_IDS.has(project.id);
-  const Surface = project.id === 'ID-012' ? TreasurySurface : project.id === 'ID-011' ? TapNusaSurface : AtlasSurface;
+  const domainEngine = DOMAIN_ENGINE_BY_ARCHETYPE[project.archetype];
+  const hasBespokeInteractive = BESPOKE_INTERACTIVE_IDS.has(project.id) || Boolean(domainEngine);
+  const Surface =
+    project.id === 'ID-012'
+      ? TreasurySurface
+      : project.id === 'ID-011'
+        ? TapNusaSurface
+        : domainEngine ?? AtlasSurface;
   const previous = pages[position - 1];
   const next = pages[position + 1];
   const experience = project.cvLink && EXPERIENCES.find((entry) => entry.id === project.cvLink);
