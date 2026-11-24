@@ -100,7 +100,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     category: { en: 'UI & Component Libraries', id: 'UI & Component Library' },
-    items: ['Tailwind CSS', 'Bootstrap', 'Telerik', 'DevExpress', 'Syncfusion', 'Community Toolkit', 'Bunifu', 'Uranium'],
+    items: ['Tailwind CSS', 'Bootstrap', 'Telerik', 'DevExpress', 'Syncfusion', 'Community Toolkit'],
   },
   {
     category: { en: 'Databases & Data Modeling', id: 'Database & Data Modeling' },
@@ -116,7 +116,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     category: { en: 'Design, Planning & Delivery', id: 'Desain, Perencanaan & Delivery' },
-    items: ['Figma', 'Miro', 'Notion', 'Draw.io', 'Visio', 'Visual Paradigm', 'Balsamiq', 'Jira', 'Trello', 'Power BI', 'Tableau'],
+    items: ['Figma', 'Miro', 'Notion', 'Draw.io', 'Visio', 'Visual Paradigm', 'Jira', 'Power BI', 'Tableau'],
   },
   {
     category: { en: 'Version Control & Mobile Release', id: 'Version Control & Mobile Release' },
@@ -124,7 +124,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     category: { en: 'Additional Ecosystems', id: 'Ekosistem Tambahan' },
-    items: ['Laravel', 'CodeIgniter', 'Flutter', 'React Native', 'Ionic', 'Android Studio', 'Xcode', 'WordPress'],
+    items: ['Laravel', 'Flutter', 'React Native', 'Android Studio', 'Xcode'],
   },
 ];
 
@@ -431,7 +431,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     employmentType: 'Konsultan / Penempatan',
     highlights: {
       en: [
-        'Placed at PT Amman Mineral Nusa Tenggara, Indonesia second-largest gold and copper mining operation, across nearly two years of continuous delivery.',
+        'Placed at PT Amman Mineral Nusa Tenggara, Indonesia\'s second-largest gold and copper mining operation, across nearly two years of continuous delivery.',
         'Architected database schemas, Figma UI mockups, and full web/mobile solutions for Meals Online and QC Inspection while also stabilizing legacy production systems.',
         'Delivered production web apps on .NET 6 and migrated them to .NET 8 LTS alongside .NET MAUI mobile apps, speeding up UI delivery with a curated frontend template.',
         'Configured Azure DevOps CI/CD with vulnerability scanning, integrated Azure AD and Azure B2C employee authentication, and managed Production/Development environment swaps on Windows Server.',
@@ -541,7 +541,7 @@ export const EXPERIENCES: ExperienceItem[] = [
         'Led a three-person team delivering TheSocialClub Indonesia (influencer marketplace) on .NET 6 and Xamarin while working directly with the client CTO on product bottlenecks.',
         'Built and maintained Survee (field data collection with offline-online sync and Google subscriptions) and RoadTek (GPS fleet tracking and dashcam management).',
         'Extended Traxia-6 public microservices for media processing and integrated a Python AI worker (PyTorch, NumPy, Matplotlib) for text and voice sentiment analysis.',
-        'Introduced the company first adoption of Docker Compose containerization and Kubernetes orchestration, created shared internal NuGet packages, and brought in TDD unit testing.',
+        'Introduced the company\'s first adoption of Docker Compose containerization and Kubernetes orchestration, created shared internal NuGet packages, and brought in TDD unit testing.',
         'Mentored junior developers, refactored legacy modules to modern .NET syntax, and maintained client-facing web platforms.',
       ],
       id: [

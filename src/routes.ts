@@ -5,6 +5,7 @@ const mountPath = (import.meta.env?.BASE_URL ?? '/').replace(/\/$/, '');
 
 export const SECTION_PATHS = {
   overview: `${mountPath}/`,
+  caseStudies: `${mountPath}/karya`,
   atlas: `${mountPath}/atlas`,
   experience: `${mountPath}/karier`,
   architecture: `${mountPath}/arsitektur`,

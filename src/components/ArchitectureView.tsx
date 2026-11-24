@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import type { DiagramId } from '../data/caseStudies';
 import { EXPERIENCES, PROFILE } from '../data/profile';
 import type { SectorId } from '../data/sectors';
 import { useLanguage, type Language } from '../i18n/LanguageContext';
 import { UI_COPY } from '../i18n/uiCopy';
+import { ArchitectureDiagram } from './ArchitectureDiagrams';
 import { IconArrowRight, IconCheck, IconCopy, IconExternal, IconShield } from './Icons';
 
 interface ArchitectureViewProps {
@@ -34,6 +36,21 @@ interface StandardRow {
   scope: Record<Language, string>;
   atlasFilter: { sector?: SectorId; query?: string };
 }
+
+const FEATURED_DIAGRAMS: Array<{ id: DiagramId; label: Record<Language, string> }> = [
+  {
+    id: 'grc-ai-gateway',
+    label: { en: '01 Sovereign .NET AI Gateway', id: '01 Sovereign .NET AI Gateway' },
+  },
+  {
+    id: 'trakindo-hub',
+    label: { en: '02 80+ App Approval Monolith', id: '02 Approval Monolith 80+ App' },
+  },
+  {
+    id: 'mining-offline-suite',
+    label: { en: '03 Offline-First Mining MAUI', id: '03 Mobile Tambang Offline-First' },
+  },
+];
 
 const PIPELINE_STAGES: PipelineStage[] = [
   {
@@ -323,6 +340,7 @@ export const ArchitectureView: React.FC<ArchitectureViewProps> = ({
 }) => {
   const { lang } = useLanguage();
   const copy = UI_COPY[lang].architecture;
+  const [activeDiagramId, setActiveDiagramId] = useState<DiagramId>('grc-ai-gateway');
   const [activeStageIdx, setActiveStageIdx] = useState(0);
   const [copied, setCopied] = useState(false);
 
@@ -375,22 +393,100 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
         </div>
 
         <div className="arch-jump-bar">
-          <button type="button" className="lens-chip" onClick={() => scrollToSection('arch-pipeline')}>
-            01 {copy.quickJumpPipeline}
+          <button type="button" className="lens-chip" onClick={() => scrollToSection('arch-diagrams')}>
+            01 {lang === 'en' ? 'System Diagrams' : 'Diagram Sistem'}
           </button>
           <button type="button" className="lens-chip" onClick={() => scrollToSection('arch-decisions')}>
             02 {copy.quickJumpDecisions}
           </button>
+          <button type="button" className="lens-chip" onClick={() => scrollToSection('arch-pipeline')}>
+            03 {copy.quickJumpPipeline}
+          </button>
           <button type="button" className="lens-chip" onClick={() => scrollToSection('arch-standards')}>
-            03 {copy.quickJumpStandards}
+            04 {copy.quickJumpStandards}
           </button>
           <button type="button" className="lens-chip" onClick={() => scrollToSection('arch-contact')}>
-            04 {copy.quickJumpContact}
+            05 {copy.quickJumpContact}
           </button>
         </div>
       </section>
 
-      {/* 2. Interactive AI-Native Engineering Pipeline */}
+      {/* 2. Interactive Production Reference Architecture Diagrams */}
+      <section className="panel" id="arch-diagrams">
+        <div className="panel-header">
+          <div>
+            <h2 className="section-title">
+              {lang === 'en' ? 'Interactive System Architecture Blueprints' : 'Blueprint Arsitektur Sistem Interaktif'}
+            </h2>
+            <p className="section-desc">
+              {lang === 'en'
+                ? 'Select a production architecture below and click any node to inspect its protocol, ownership, and failure boundary.'
+                : 'Pilih arsitektur produksi di bawah lalu klik node mana saja untuk memeriksa protokol, peran komponen, dan batas kegagalannya.'}
+            </p>
+          </div>
+          <a
+            href={PROFILE.githubAiLibrary}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-sm"
+          >
+            AI Knowledge Library (GitHub)
+            <IconExternal size={11} />
+          </a>
+        </div>
+
+        <div className="diagram-tab-bar" role="tablist" aria-label="Architecture blueprints">
+          {FEATURED_DIAGRAMS.map((d) => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeDiagramId === d.id}
+              key={d.id}
+              className={`lens-chip ${activeDiagramId === d.id ? 'is-active' : ''}`}
+              onClick={() => setActiveDiagramId(d.id)}
+            >
+              {d.label[lang]}
+            </button>
+          ))}
+        </div>
+
+        <div style={{ padding: '16px' }}>
+          <ArchitectureDiagram key={activeDiagramId} diagramId={activeDiagramId} />
+        </div>
+      </section>
+
+      {/* 3. Architecture Decision Playbook */}
+      <section className="panel" id="arch-decisions">
+        <div className="panel-header">
+          <div>
+            <h2 className="section-title">{copy.decisionsTitle}</h2>
+            <p className="section-desc">{copy.decisionsDesc}</p>
+          </div>
+          <span className="tag tag-mono">{DECISION_PATTERNS.length} Playbook Rules</span>
+        </div>
+
+        <div className="decision-grid">
+          {DECISION_PATTERNS.map((pat) => (
+            <article className="decision-card" key={pat.id}>
+              <div className="decision-card-top">
+                <span className="tag tag-accent">{pat.tag[lang]}</span>
+              </div>
+              <h3 className="decision-title">{pat.title[lang]}</h3>
+              <div className="decision-rule">
+                <div className="brief-label" style={{ marginBottom: '4px' }}>{copy.whenToUseLabel}</div>
+                <p style={{ margin: 0 }}>{pat.rule[lang]}</p>
+              </div>
+              <p className="decision-rationale">{pat.rationale[lang]}</p>
+              <div className="decision-anchor">
+                <span className="decision-anchor-label">{copy.productionAnchorLabel}:</span>
+                <span>{pat.anchor[lang]}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. Interactive AI-Native Engineering Pipeline */}
       <section className="panel" id="arch-pipeline">
         <div className="panel-header">
           <div>
@@ -467,38 +563,7 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
         </div>
       </section>
 
-      {/* 3. Architecture Decision Playbook */}
-      <section className="panel" id="arch-decisions">
-        <div className="panel-header">
-          <div>
-            <h2 className="section-title">{copy.decisionsTitle}</h2>
-            <p className="section-desc">{copy.decisionsDesc}</p>
-          </div>
-          <span className="tag tag-mono">{DECISION_PATTERNS.length} Playbook Rules</span>
-        </div>
-
-        <div className="decision-grid">
-          {DECISION_PATTERNS.map((pat) => (
-            <article className="decision-card" key={pat.id}>
-              <div className="decision-card-top">
-                <span className="tag tag-accent">{pat.tag[lang]}</span>
-              </div>
-              <h3 className="decision-title">{pat.title[lang]}</h3>
-              <div className="decision-rule">
-                <div className="brief-label" style={{ marginBottom: '4px' }}>{copy.whenToUseLabel}</div>
-                <p style={{ margin: 0 }}>{pat.rule[lang]}</p>
-              </div>
-              <p className="decision-rationale">{pat.rationale[lang]}</p>
-              <div className="decision-anchor">
-                <span className="decision-anchor-label">{copy.productionAnchorLabel}:</span>
-                <span>{pat.anchor[lang]}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Interactive Enterprise & Indonesian DPI Standards Matrix */}
+      {/* 5. Interactive Enterprise & Indonesian DPI Standards Matrix */}
       <section className="panel" id="arch-standards">
         <div className="panel-header">
           <div>
@@ -542,7 +607,7 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
         </div>
       </section>
 
-      {/* 5. Direct Contact & Copyable Executive Brief */}
+      {/* 6. Direct Contact & Copyable Executive Brief */}
       <section className="panel" id="arch-contact">
         <div className="panel-header">
           <div>

@@ -9,6 +9,7 @@ export interface UiCopy {
   navAriaLabel: string;
   nav: {
     overview: string;
+    caseStudies: string;
     atlas: string;
     experience: string;
     architecture: string;
@@ -209,6 +210,7 @@ export const UI_COPY: Record<Language, UiCopy> = {
     navAriaLabel: 'Main navigation',
     nav: {
       overview: 'Overview',
+      caseStudies: 'Case Studies',
       atlas: 'Product Atlas',
       experience: 'Career',
       architecture: 'Architecture',
@@ -310,10 +312,10 @@ export const UI_COPY: Record<Language, UiCopy> = {
       skillsDesc: (count) => `${count} core capability groups`,
       employmentTypeLabels: {
         'Full-Time': 'Full-Time',
-        Founder: 'Founder',
-        Leadership: 'Leadership',
+        Founder: 'Independent Venture',
+        Leadership: 'Part-Time Advisory',
         'Konsultan / Penempatan': 'Consultant / Placement',
-        Freelance: 'Freelance',
+        Freelance: 'Short-Term Contract',
       },
     },
 
@@ -375,8 +377,8 @@ export const UI_COPY: Record<Language, UiCopy> = {
     prototype: {
       pagesNavAria: 'Prototype screens',
       viewModeAria: 'Case study view mode',
-      enterpriseVerifiedTag: (count) => `Enterprise Verified | ${count} Screens`,
-      enterpriseDesignTab: (res) => `Enterprise Design (${res})`,
+      enterpriseVerifiedTag: (count) => `Deep Blueprint | ${count} Screens`,
+      enterpriseDesignTab: (res) => `UI Blueprint (${res})`,
       uiDesignTab: 'UI/UX Design',
       interactiveProtoTab: 'Interactive Prototype',
       interactiveSimTab: 'Interactive Simulation',
@@ -422,6 +424,7 @@ export const UI_COPY: Record<Language, UiCopy> = {
     navAriaLabel: 'Navigasi utama',
     nav: {
       overview: 'Ringkasan',
+      caseStudies: 'Studi Kasus',
       atlas: 'Atlas Konsep',
       experience: 'Karier',
       architecture: 'Arsitektur',
@@ -523,10 +526,10 @@ export const UI_COPY: Record<Language, UiCopy> = {
       skillsDesc: (count) => `${count} kelompok kapabilitas teknis`,
       employmentTypeLabels: {
         'Full-Time': 'Full-Time',
-        Founder: 'Founder',
-        Leadership: 'Leadership',
+        Founder: 'Usaha Mandiri',
+        Leadership: 'Advisory Paruh Waktu',
         'Konsultan / Penempatan': 'Konsultan / Penempatan',
-        Freelance: 'Freelance',
+        Freelance: 'Kontrak Singkat',
       },
     },
 
@@ -588,8 +591,8 @@ export const UI_COPY: Record<Language, UiCopy> = {
     prototype: {
       pagesNavAria: 'Halaman prototipe',
       viewModeAria: 'Mode tampilan studi kasus',
-      enterpriseVerifiedTag: (count) => `Enterprise Verified | ${count} Hal`,
-      enterpriseDesignTab: (res) => `Desain Enterprise (${res})`,
+      enterpriseVerifiedTag: (count) => `Blueprint Lengkap | ${count} Hal`,
+      enterpriseDesignTab: (res) => `Blueprint UI (${res})`,
       uiDesignTab: 'Desain UI/UX',
       interactiveProtoTab: 'Prototipe Interaktif',
       interactiveSimTab: 'Simulasi Interaktif',

@@ -1,4 +1,5 @@
 import React from 'react';
+import { PRODUCTION_CASE_STUDIES } from '../data/caseStudies';
 import { EXPERIENCES, PROFILE } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
 import { PROJECT_PAGES } from '../data/projectPages';
@@ -18,12 +19,14 @@ interface OverviewViewProps {
   projects: ConceptProject[];
   onExploreAtlas: (sector?: SectorId) => void;
   onOpenExperience: () => void;
+  onOpenCaseStudies: (slug?: string) => void;
 }
 
 export const OverviewView: React.FC<OverviewViewProps> = ({
   projects,
   onExploreAtlas,
   onOpenExperience,
+  onOpenCaseStudies,
 }) => {
   const { lang } = useLanguage();
   const copy = UI_COPY[lang].overview;
@@ -39,19 +42,19 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       detail: copy.stats.prodEngDetail(PROFILE.activeSince),
     },
     {
-      label: copy.stats.expLabel,
-      value: copy.stats.expVal(EXPERIENCES.length),
-      detail: copy.stats.expDetail,
-    },
-    {
-      label: copy.stats.atlasLabel,
-      value: copy.stats.atlasVal(projects.length),
-      detail: copy.stats.atlasDetail(totalScreens, SECTORS.length),
+      label: lang === 'en' ? 'Production Case Studies' : 'Studi Kasus Produksi',
+      value: `${PRODUCTION_CASE_STUDIES.length} ${lang === 'en' ? 'Deep Dives' : 'Sistem'}`,
+      detail: lang === 'en' ? 'Trakindo, GRC, Amman, Adaro, OCBC, Inhealth' : 'Trakindo, GRC, Amman, Adaro, OCBC, Inhealth',
     },
     {
       label: copy.stats.scaleLabel,
       value: copy.stats.scaleVal,
       detail: copy.stats.scaleDetail,
+    },
+    {
+      label: lang === 'en' ? 'Architecture Lab (R&D)' : 'Lab Arsitektur (R&D)',
+      value: copy.stats.atlasVal(projects.length),
+      detail: copy.stats.atlasDetail(totalScreens, SECTORS.length),
     },
   ];
 
@@ -69,14 +72,18 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
               <span>|</span>
               <span>{copy.heroDomain}</span>
             </div>
-            <h1 className="hero-title">{copy.heroTitle(projects.length)}</h1>
+            <h1 className="hero-title">
+              {lang === 'en'
+                ? 'Principal .NET & AI systems architect shipping enterprise platforms across Indonesia and SEA.'
+                : 'Principal .NET & AI systems architect yang membangun sistem enterprise tangguh di Indonesia dan Asia Tenggara.'}
+            </h1>
             <p className="hero-lead">{PROFILE.summary[lang][0]}</p>
-            <p className="hero-lead">{PROFILE.summary[lang][1]}</p>
+            <p className="hero-lead">{PROFILE.summary[lang][2]}</p>
           </div>
 
           <div className="hero-cta-row">
-            <button type="button" className="btn btn-primary" onClick={() => onExploreAtlas()}>
-              {copy.exploreAtlasBtn(projects.length)}
+            <button type="button" className="btn btn-primary" onClick={() => onOpenCaseStudies()}>
+              {lang === 'en' ? 'Inspect 6 Production Case Studies' : 'Lihat 6 Studi Kasus Produksi'}
               <IconArrowRight size={14} />
             </button>
             <button type="button" className="btn" onClick={onOpenExperience}>
@@ -115,10 +122,69 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
         </aside>
       </section>
 
-      {/* Featured Product Concepts */}
+      {/* PRIMARY PROOF: 6 Deep Production Case Studies */}
+      <section style={{ marginBottom: '28px' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '12px', gap: '12px', flexWrap: 'wrap' }}>
+          <div>
+            <h2 className="section-title">
+              {lang === 'en' ? 'Selected Production Case Studies' : 'Studi Kasus Produksi Pilihan'}
+            </h2>
+            <p className="section-desc">
+              {lang === 'en'
+                ? 'Deployed enterprise platforms, mining field systems, banking encryption, and internal AI infrastructure with NDA-safe architecture blueprints.'
+                : 'Platform enterprise produksi, aplikasi lapangan tambang, enkripsi perbankan, dan infrastruktur AI internal lengkap dengan blueprint arsitektur aman NDA.'}
+            </p>
+          </div>
+          <button type="button" className="btn btn-sm btn-primary" onClick={() => onOpenCaseStudies()}>
+            {lang === 'en' ? 'Open full case study dossier' : 'Buka dossier studi kasus lengkap'}
+            <IconArrowRight size={13} />
+          </button>
+        </div>
+
+        <div className="cs-home-grid">
+          {PRODUCTION_CASE_STUDIES.map((cs) => (
+            <button
+              type="button"
+              key={cs.id}
+              className="cs-home-card"
+              onClick={() => onOpenCaseStudies(cs.slug)}
+            >
+              <div className="cs-home-card-top">
+                <span className="tag tag-ok">{cs.code}</span>
+                <span className="tag tag-mono">{cs.headlineMetric[lang]}</span>
+              </div>
+              <h3 className="cs-home-title">{cs.title[lang]}</h3>
+              <div className="cs-home-client">{cs.client}</div>
+              <p className="cs-home-desc">{cs.summary[lang]}</p>
+              <div className="cs-home-foot">
+                <div className="tag-wrap">
+                  {cs.stack.slice(0, 3).map((tech) => (
+                    <span className="tag tag-mono" style={{ fontSize: '10px' }} key={tech}>{tech}</span>
+                  ))}
+                </div>
+                <span className="cs-home-cta">
+                  {lang === 'en' ? 'Architecture & details' : 'Arsitektur & detail'}
+                  <IconArrowRight size={12} />
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* SECONDARY R&D LAB: Featured Product Atlas Blueprints */}
       <section style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '12px', gap: '12px', flexWrap: 'wrap' }}>
-          <h2 className="section-title">{copy.featuredHeading}</h2>
+          <div>
+            <h2 className="section-title">
+              {lang === 'en' ? 'Product Architecture Lab (Exploratory Blueprints)' : 'Lab Arsitektur Produk (Blueprint Eksplorasi)'}
+            </h2>
+            <p className="section-desc">
+              {lang === 'en'
+                ? 'Selected interactive concept blueprints from the 152-product Indonesian Digital Economy Atlas (not deployed client work).'
+                : 'Blueprint konsep interaktif pilihan dari 152 produk Atlas Ekonomi Digital Indonesia (eksplorasi R&D, bukan deployment klien).'}
+            </p>
+          </div>
           <button type="button" className="btn btn-sm" onClick={() => onExploreAtlas()}>
             {copy.viewAllConceptsBtn(projects.length)}
             <IconArrowRight size={13} />

@@ -1,11 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { ArchitectureView } from './components/ArchitectureView';
 import { AtlasView } from './components/AtlasView';
+import { CaseStudiesView } from './components/CaseStudiesView';
 import { CommandPalette } from './components/CommandPalette';
 import { ExperienceView } from './components/ExperienceView';
 import { OverviewView } from './components/OverviewView';
 import { PrototypeWorkspace } from './components/PrototypeWorkspace';
 import { TopBar } from './components/TopBar';
+import { PRODUCTION_CASE_STUDIES } from './data/caseStudies';
 import { EXPERIENCES, PROFILE } from './data/profile';
 import { PROJECTS, type ConceptProject } from './data/projects';
 import { getLocalizedPageTitle, localizeProject, localizeProjects } from './data/projectsEn';
@@ -26,6 +28,7 @@ export const App: React.FC = () => {
   });
   const [pendingSector, setPendingSector] = useState<SectorId | 'all'>('all');
   const [pendingSearch, setPendingSearch] = useState<string>('');
+  const [pendingCaseStudySlug, setPendingCaseStudySlug] = useState<string | null>(null);
   const [highlightExpId, setHighlightExpId] = useState<string | null>(null);
   const [commandOpen, setCommandOpen] = useState(false);
 
@@ -105,6 +108,11 @@ export const App: React.FC = () => {
     navigate(SECTION_PATHS.atlas);
   }, [navigate]);
 
+  const jumpToCaseStudies = useCallback((slug?: string) => {
+    setPendingCaseStudySlug(slug ?? null);
+    navigate(SECTION_PATHS.caseStudies);
+  }, [navigate]);
+
   const jumpToExperience = useCallback((expId?: string) => {
     setHighlightExpId(expId ?? null);
     navigate(SECTION_PATHS.experience);
@@ -128,6 +136,7 @@ export const App: React.FC = () => {
         <TopBar
           activeTab={route.kind === 'section' ? route.section : 'atlas'}
           onSelectTab={(tab) => navigate(SECTION_PATHS[tab])}
+          totalCaseStudies={PRODUCTION_CASE_STUDIES.length}
           totalProjects={localizedProjects.length}
           totalExperiences={EXPERIENCES.length}
           theme={theme}
@@ -142,6 +151,16 @@ export const App: React.FC = () => {
             projects={localizedProjects}
             onExploreAtlas={jumpToAtlas}
             onOpenExperience={() => jumpToExperience()}
+            onOpenCaseStudies={jumpToCaseStudies}
+          />
+        )}
+
+        {route.kind === 'section' && route.section === 'caseStudies' && (
+          <CaseStudiesView
+            initialSlug={pendingCaseStudySlug}
+            projectsById={localizedProjectsById}
+            onOpenProject={openProject}
+            onJumpToExperience={jumpToExperience}
           />
         )}
 

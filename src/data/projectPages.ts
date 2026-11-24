@@ -105,6 +105,11 @@ export function getPageScreenshotUrl(projectId: string, slug: ProjectPageSlug): 
   return slug === 'p1' ? `${base}screenshots/${projectId}.webp` : `${base}screenshots/${projectId}-${slug}.webp`;
 }
 
+export function getCardThumbnailUrl(projectId: string): string {
+  const base = (import.meta.env?.BASE_URL ?? '/').replace(/\/?$/, '/');
+  return `${base}screenshots/thumbs/${projectId}.webp`;
+}
+
 export const PROJECT_PAGES: Record<string, ProjectArtPlan> = {
   // SEKTOR 1: AI & AGEN OTONOM (ID-001 .. ID-010)
   'ID-001': enterprisePlan(

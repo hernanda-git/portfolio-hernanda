@@ -174,6 +174,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
                   <span className="status-dot ok" />
                   <strong>{pCopy.pageBadge(String(position + 1).padStart(2, '0'), String(pages.length).padStart(2, '0'))}</strong>
                   <span className="tag tag-mono">{resLabel}</span>
+                  {lang === 'en' && <span className="tag">ID Regulatory Mockup</span>}
                   <span className="tag tag-mono">{plan.persona}</span>
                 </div>
                 <button

@@ -4,11 +4,12 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { UI_COPY } from '../i18n/uiCopy';
 import { IconMoon, IconSearch, IconSun } from './Icons';
 
-export type NavTab = 'overview' | 'atlas' | 'experience' | 'architecture';
+export type NavTab = 'overview' | 'caseStudies' | 'atlas' | 'experience' | 'architecture';
 
 interface TopBarProps {
   activeTab: NavTab;
   onSelectTab: (tab: NavTab) => void;
+  totalCaseStudies: number;
   totalProjects: number;
   totalExperiences: number;
   theme: 'light' | 'dark';
@@ -19,6 +20,7 @@ interface TopBarProps {
 export const TopBar: React.FC<TopBarProps> = ({
   activeTab,
   onSelectTab,
+  totalCaseStudies,
   totalProjects,
   totalExperiences,
   theme,
@@ -48,11 +50,11 @@ export const TopBar: React.FC<TopBarProps> = ({
         </button>
         <button
           type="button"
-          className={`nav-tab ${activeTab === 'atlas' ? 'is-active' : ''}`}
-          onClick={() => onSelectTab('atlas')}
+          className={`nav-tab ${activeTab === 'caseStudies' ? 'is-active' : ''}`}
+          onClick={() => onSelectTab('caseStudies')}
         >
-          {copy.nav.atlas}
-          <span className="nav-count">{totalProjects}</span>
+          {copy.nav.caseStudies}
+          <span className="nav-count">{totalCaseStudies}</span>
         </button>
         <button
           type="button"
@@ -69,13 +71,21 @@ export const TopBar: React.FC<TopBarProps> = ({
         >
           {copy.nav.architecture}
         </button>
+        <button
+          type="button"
+          className={`nav-tab ${activeTab === 'atlas' ? 'is-active' : ''}`}
+          onClick={() => onSelectTab('atlas')}
+        >
+          {copy.nav.atlas}
+          <span className="nav-count">{totalProjects}</span>
+        </button>
       </nav>
 
       <div className="topbar-actions">
         <button type="button" className="cmd-trigger" onClick={onOpenCommand} aria-label={copy.openQuickSearch}>
           <IconSearch size={13} />
-          <span className="cmd-trigger-label">{copy.searchConceptsPlaceholder(totalProjects)}</span>
-          <span className="kbd">Ctrl K</span>
+          <span className="cmd-trigger-label">{lang === 'en' ? 'Search' : 'Cari'}</span>
+          <span className="kbd kbd-desktop">Ctrl K</span>
         </button>
 
         <div className="lang-switch" role="group" aria-label={copy.switchLanguageAria}>
