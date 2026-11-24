@@ -62,7 +62,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
     return () => window.removeEventListener('keydown', onKey);
   }, [zoomOpen]);
 
-  const resLabel = plan.resolution ?? '1280×800';
+  const resLabel = plan.resolution ?? '1280x800';
   const activeShotUrl = getPageScreenshotUrl(project.id, page.slug);
 
   const navigation = (
@@ -83,7 +83,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
           <span aria-hidden="true">/</span>
           <span>{project.name}</span>
           <span className="prototype-project-id">{project.id}</span>
-          {isEnterprise && <span className="tag tag-ok">Enterprise Verified · {pages.length} Hal</span>}
+          {isEnterprise && <span className="tag tag-ok">Enterprise Verified | {pages.length} Hal</span>}
         </div>
         <div className="prototype-header-actions">
           <div className="segmented" role="tablist" aria-label="Mode tampilan studi kasus">
@@ -165,7 +165,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
                 <img
                   key={activeShotUrl}
                   src={activeShotUrl}
-                  alt={`${project.name} — ${page.title} (${resLabel})`}
+                  alt={`${project.name} - ${page.title} (${resLabel})`}
                   className="proto-shot-img"
                 />
               </button>
@@ -198,7 +198,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
             </div>
           </div>
         ) : (
-          <Suspense fallback={<p className="prototype-loading" role="status">Memuat prototipe…</p>}>
+          <Suspense fallback={<p className="prototype-loading" role="status">Memuat prototipe...</p>}>
             <Surface project={project} page={page} />
           </Suspense>
         )}
@@ -222,8 +222,8 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
             <dl>{([
               ['Klien', project.architecture.client], ['Gateway', project.architecture.edge],
               ['Domain', project.architecture.core], ['Integrasi', project.architecture.integration],
-              ['Penyimpanan', project.architecture.storage], ['Stack', project.stack.join(' · ')],
-              ['Standar', project.standards.join(' · ')],
+              ['Penyimpanan', project.architecture.storage], ['Stack', project.stack.join(' | ')],
+              ['Standar', project.standards.join(' | ')],
             ]).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
             {experience && <button type="button" className="btn" onClick={() => onJumpToExperience(experience.id)}>Pengalaman terkait: {experience.company}</button>}
           </div>
@@ -236,12 +236,12 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
           onClick={() => setZoomOpen(false)}
           role="dialog"
           aria-modal="true"
-          aria-label={`Inspeksi Zoom ${project.name} — ${page.title}`}
+          aria-label={`Inspeksi Zoom ${project.name} - ${page.title}`}
         >
           <div className="proto-lightbox-frame" onClick={(e) => e.stopPropagation()}>
             <div className="proto-lightbox-bar">
               <span className="tag-mono" style={{ fontSize: '12px' }}>
-                {project.id} · {project.name} — {String(position + 1).padStart(2, '0')}/{String(pages.length).padStart(2, '0')}: {page.title} ({resLabel})
+                {project.id} | {project.name} - {String(position + 1).padStart(2, '0')}/{String(pages.length).padStart(2, '0')}: {page.title} ({resLabel})
               </span>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
                 <div className="segmented" role="group" aria-label="Level zoom">
@@ -275,7 +275,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
             <div className={`proto-lightbox-viewport is-zoom-${zoomLevel}`}>
               <img
                 src={activeShotUrl}
-                alt={`Resolusi penuh ${project.name} — ${page.title}`}
+                alt={`Resolusi penuh ${project.name} - ${page.title}`}
                 className="proto-lightbox-img"
               />
             </div>

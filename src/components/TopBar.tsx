@@ -29,7 +29,7 @@ export const TopBar: React.FC<TopBarProps> = ({
         <span className="brand-mark">{PROFILE.monogram}</span>
         <span className="brand-text">
           <span className="brand-name">{PROFILE.name}</span>
-          <span className="brand-sub">Principal .NET, Solution Architect &amp; AI Inference · Jakarta</span>
+          <span className="brand-sub">Principal .NET, Solution Architect &amp; AI Inference | Jakarta</span>
         </span>
       </button>
 

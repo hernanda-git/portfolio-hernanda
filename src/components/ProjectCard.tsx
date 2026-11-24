@@ -29,7 +29,7 @@ export function ProjectCard({ project }: { project: ConceptProject }) {
         <h3 className="project-name">{project.name}</h3>
         <p className="project-tagline">{project.tagline}</p>
         <div className="project-card-foot">
-          <span>{count} halaman · {project.platform}</span>
+          <span>{count} halaman | {project.platform}</span>
           <span>Buka studi kasus <IconArrowRight size={14} /></span>
         </div>
       </div>

@@ -1,4 +1,4 @@
-/* unslop-ui baseline tokens — Reference: Stripe Dashboard + Linear
+/* unslop-ui baseline tokens - Reference: Stripe Dashboard + Linear
    Light default. Single accent (Jakarta Cobalt). Flat surfaces, 1 hairline level. */
 
 :root {
@@ -61,7 +61,7 @@
   --ui-size-6: 32px;    /* editorial display */
   --ui-leading: 1.42;
 
-  /* radius: disciplined 2px–8px */
+  /* radius: disciplined 2px-8px */
   --ui-r-1: 2px;
   --ui-r-2: 3px;
   --ui-r-3: 4px;

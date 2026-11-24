@@ -431,7 +431,7 @@ export const AtlasView: React.FC<AtlasViewProps> = ({
                         <td style={{ whiteSpace: 'nowrap' }}>{sec?.shortName}</td>
                         <td style={{ whiteSpace: 'nowrap' }}><span className="tag">{p.platform}</span></td>
                         <td style={{ whiteSpace: 'nowrap' }}><span className="tag tag-accent">{ARCHETYPE_LABELS[p.archetype]}</span></td>
-                        <td style={{ fontFamily: 'var(--ui-mono)', fontSize: '11px' }}>{p.standards.slice(0, 2).join(' · ')}</td>
+                        <td style={{ fontFamily: 'var(--ui-mono)', fontSize: '11px' }}>{p.standards.slice(0, 2).join(' | ')}</td>
                         <td style={{ fontSize: '11px', color: 'var(--ui-text-2)' }}>{p.stack.slice(0, 2).join(', ')}</td>
                       </tr>
                     );

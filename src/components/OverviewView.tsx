@@ -25,7 +25,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
     {
       label: 'Rekayasa Produksi',
       value: '10+ Thn',
-      detail: `${PROFILE.activeSince}–2026 lintas enterprise & startup`,
+      detail: `${PROFILE.activeSince}-2026 lintas enterprise & startup`,
     },
     {
       label: 'Pengalaman CV Valid',
@@ -35,7 +35,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
     {
       label: 'Atlas Konsep Produk',
       value: `${projects.length} Konsep`,
-      detail: `${totalScreens} halaman interaktif · ${SECTORS.length} sektor pasar`,
+      detail: `${totalScreens} halaman interaktif | ${SECTORS.length} sektor pasar`,
     },
     {
       label: 'Skala Sistem Utama',
@@ -52,11 +52,11 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
           <div>
             <div className="hero-kicker">
               <span className="status-dot ok" />
-              <span>{PROFILE.location} · {PROFILE.timezone}</span>
-              <span>·</span>
+              <span>{PROFILE.location} | {PROFILE.timezone}</span>
+              <span>|</span>
               <span>Aktif Sejak {PROFILE.activeSince}</span>
-              <span>·</span>
-              <span>.NET · Solution Architecture · AI Inference</span>
+              <span>|</span>
+              <span>.NET | Solution Architecture | AI Inference</span>
             </div>
             <h1 className="hero-title">
               Merancang perangkat lunak enterprise yang tangguh &amp; memetakan {projects.length} produk digital untuk ekonomi Indonesia.
@@ -71,7 +71,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
               <IconArrowRight size={14} />
             </button>
             <button type="button" className="btn" onClick={onOpenExperience}>
-              Lihat Karier Terverifikasi (2016–2026)
+              Lihat Karier Terverifikasi (2016-2026)
             </button>
             <a className="btn" href={`mailto:${PROFILE.email}`}>
               Diskusi Langsung
@@ -125,12 +125,12 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <section className="panel">
         <div className="panel-header">
           <div>
-            <h2 className="section-title">Atlas Ekonomi Digital Indonesia — {SECTORS.length} Sektor Pasar</h2>
+            <h2 className="section-title">Atlas Ekonomi Digital Indonesia - {SECTORS.length} Sektor Pasar</h2>
             <p className="section-desc">
-              Setiap sektor memetakan standar infrastruktur nyata Indonesia 2025–2026 (QRIS Tap, BI-FAST, SATUSEHAT, CoreTax, UU PDP, RKAB/SIMBARA, IDXCarbon, BPJPH, SPBE). Klik sektor mana saja untuk menyaring konsepnya.
+              Setiap sektor memetakan standar infrastruktur nyata Indonesia 2025-2026 (QRIS Tap, BI-FAST, SATUSEHAT, CoreTax, UU PDP, RKAB/SIMBARA, IDXCarbon, BPJPH, SPBE). Klik sektor mana saja untuk menyaring konsepnya.
             </p>
           </div>
-          <span className="tag tag-mono">{projects.length} Konsep · {archetypeCount} Arketipe UI</span>
+          <span className="tag tag-mono">{projects.length} Konsep | {archetypeCount} Arketipe UI</span>
         </div>
 
         <div className="sector-radar-grid">

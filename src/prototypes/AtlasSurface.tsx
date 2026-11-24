@@ -60,7 +60,7 @@ function ScenarioSurface({ project, page }: Props) {
     apply: (action, code = selected.code) => {
       const at = new Date().toISOString();
       setScenario((current) => changeWork(current, code, page.slug, action, at));
-      setNotice(`${code} · ${action.label}`);
+      setNotice(`${code} | ${action.label}`);
     },
   };
 
@@ -132,7 +132,7 @@ function RecordSelect({ work }: { work: Workspace }) {
     <label className="atlas-field atlas-record-select">
       <span>Rekaman</span>
       <select value={work.selected.code} onChange={(event) => work.select(event.target.value)}>
-        {work.items.map((item) => <option key={item.code} value={item.code}>{item.code} · {item.title}</option>)}
+        {work.items.map((item) => <option key={item.code} value={item.code}>{item.code} | {item.title}</option>)}
       </select>
     </label>
   );
@@ -160,7 +160,7 @@ function RecordFacts({ item, record }: { item: PreviewItem; record: RecordWork }
         {item.meta && <div><dt>Rujukan</dt><dd>{item.meta}</dd></div>}
         {record.linkedCode && <div><dt>Rekaman tertaut</dt><dd className="atlas-code">{record.linkedCode}</dd></div>}
         {record.assignedRole && <div><dt>Peran tertugas</dt><dd>{record.assignedRole}</dd></div>}
-        {record.slot && <div><dt>Slot lokal</dt><dd>{days[record.slot.day]} · {periods[record.slot.period]}</dd></div>}
+        {record.slot && <div><dt>Slot lokal</dt><dd>{days[record.slot.day]} | {periods[record.slot.period]}</dd></div>}
         {record.allocation && <div><dt>Tempat dialokasikan</dt><dd>{record.allocation}</dd></div>}
       </dl>
       {record.calculation && <div className="atlas-evidence"><strong>Hasil hitung tersimpan</strong><p>{record.calculation}</p></div>}
@@ -191,7 +191,7 @@ function ActivityLog({ work, all = false }: { work: Workspace; all?: boolean }) 
         <ol>
           {entries.map((entry) => (
             <li key={entry.id}>
-              <span className="atlas-code">{all ? `${entry.code} · ` : ''}{entry.page.toUpperCase()} · {datetime.format(new Date(entry.at))}</span>
+              <span className="atlas-code">{all ? `${entry.code} | ` : ''}{entry.page.toUpperCase()} | {datetime.format(new Date(entry.at))}</span>
               <strong>{entry.label}</strong>
               {entry.detail && <p>{entry.detail}</p>}
             </li>
@@ -383,7 +383,7 @@ function TopologyView({ work, map, link }: { work: Workspace; map: boolean; link
                     <span className="atlas-node-meta"><span className="atlas-code">{item.code}</span><small>{map ? `Z${index + 1}` : `0${index + 1}`}</small></span>
                     <strong>{item.title}</strong>
                     <Badge tone={item.tone}>{item.status}</Badge>
-                    {record.linkedCode && <span className="atlas-code">→ {record.linkedCode}</span>}
+                    {record.linkedCode && <span className="atlas-code">-> {record.linkedCode}</span>}
                     {linked === item.code && <Badge tone="accent">Tujuan relasi terpilih</Badge>}
                   </button>
                 );
@@ -415,11 +415,11 @@ function LinkForm({ work, label }: { work: Workspace; label: string }) {
   const save = (event: FormEvent) => {
     event.preventDefault();
     if (target === oldLink || cycle) return;
-    work.apply({ label: target ? 'Relasi lokal disimpan' : 'Relasi lokal dilepas', detail: target ? `${work.selected.code} → ${target}` : `${work.selected.code} × ${oldLink}`, patch: { linkedCode: target || undefined } });
+    work.apply({ label: target ? 'Relasi lokal disimpan' : 'Relasi lokal dilepas', detail: target ? `${work.selected.code} -> ${target}` : `${work.selected.code} x ${oldLink}`, patch: { linkedCode: target || undefined } });
   };
   return (
     <form className="atlas-form atlas-inline-form" onSubmit={save}>
-      <label className="atlas-field"><span>{label}</span><select value={target} onChange={(event) => setTarget(event.target.value)}><option value="">Tidak ditautkan</option>{work.items.filter((item) => item.code !== work.selected.code).map((item) => <option key={item.code} value={item.code}>{item.code} · {item.title}</option>)}</select></label>
+      <label className="atlas-field"><span>{label}</span><select value={target} onChange={(event) => setTarget(event.target.value)}><option value="">Tidak ditautkan</option>{work.items.filter((item) => item.code !== work.selected.code).map((item) => <option key={item.code} value={item.code}>{item.code} | {item.title}</option>)}</select></label>
       <button className="atlas-button" type="submit" disabled={target === oldLink || cycle}>Simpan relasi</button>
       {cycle && <p className="atlas-help" role="alert">Relasi ini membentuk alur melingkar. Pilih rekaman lain.</p>}
     </form>
@@ -495,7 +495,7 @@ function AuditForm({ work, checks }: { work: Workspace; checks: readonly string[
       </fieldset>
       <div className="atlas-inline">
         <button className="atlas-button" type="button" disabled={!changed} onClick={() => work.apply({ label: 'Checklist disimpan', detail: `${checked.length}/${checks.length} butir`, patch })}>Simpan checklist</button>
-        <button className="atlas-button" data-kind="primary" type="button" disabled={!complete || (record.stage === 'done' && !changed)} onClick={() => work.apply({ label: 'Pemeriksaan lokal diselesaikan', detail: checks.join(' · '), patch: { ...patch, stage: 'done' } })}>Selesaikan pemeriksaan</button>
+        <button className="atlas-button" data-kind="primary" type="button" disabled={!complete || (record.stage === 'done' && !changed)} onClick={() => work.apply({ label: 'Pemeriksaan lokal diselesaikan', detail: checks.join(' | '), patch: { ...patch, stage: 'done' } })}>Selesaikan pemeriksaan</button>
       </div>
     </div>
   );
@@ -521,7 +521,7 @@ function WizardView({ work }: { work: Workspace }) {
             }}>
               {step === 0 && <RecordSelect work={work} />}
               {step === 1 && <label className="atlas-field"><span>Temuan dan tindak lanjut</span><textarea required rows={5} maxLength={1200} value={note} onChange={(event) => setNote(event.target.value)} /></label>}
-              {step === 2 && <div className="atlas-evidence"><strong>{work.selected.code} · {work.selected.title}</strong><p>{note.trim()}</p></div>}
+              {step === 2 && <div className="atlas-evidence"><strong>{work.selected.code} | {work.selected.title}</strong><p>{note.trim()}</p></div>}
               <div className="atlas-inline">
                 {step > 0 && <button className="atlas-button" type="button" onClick={() => setStep(step - 1)}>Kembali</button>}
                 <button className="atlas-button" type="submit" data-kind="primary" disabled={step > 0 && !note.trim()}>{step === 2 ? 'Kirim ke review lokal' : 'Lanjut'}</button>
@@ -541,7 +541,7 @@ function MobileView({ work }: { work: Workspace }) {
     <div className="atlas-split atlas-mobile-layout">
       <Panel title="Kartu rekaman" className="atlas-phone">
         <div className="atlas-pad atlas-stack">
-          <div className="atlas-wallet-card"><span className="atlas-code">{work.selected.code} · CONTOH</span><strong>{work.selected.value}</strong><span>{work.selected.title}</span><Badge tone={work.selected.tone}>{work.selected.status}</Badge></div>
+          <div className="atlas-wallet-card"><span className="atlas-code">{work.selected.code} | CONTOH</span><strong>{work.selected.value}</strong><span>{work.selected.title}</span><Badge tone={work.selected.tone}>{work.selected.status}</Badge></div>
           <button className="atlas-button" type="button" aria-expanded={detail} onClick={() => setDetail(!detail)}>{detail ? 'Tutup detail kartu' : 'Lihat detail kartu'}</button>
           {detail && <div className="atlas-stack"><RecordFacts item={work.selected} record={getWork(work.scenario, work.selected.code)} /><PhaseButton work={work} code={work.selected.code} /></div>}
         </div>
@@ -605,7 +605,7 @@ function RoleForm({ work }: { work: Workspace }) {
       event.preventDefault();
       if (role && role !== record.assignedRole) work.apply({ label: 'Peran penanggung jawab disimpan', detail: role, patch: { assignedRole: role } });
     }}>
-      <fieldset className="atlas-role-grid"><legend>Pilih peran skenario</legend>{roles.map((name) => <label className="atlas-role" key={name} data-selected={role === name}><span><input type="radio" name="atlas-role" value={name} checked={role === name} onChange={() => setRole(name)} />{name}</span><small>{roleScopes[name].join(' · ')}</small></label>)}</fieldset>
+      <fieldset className="atlas-role-grid"><legend>Pilih peran skenario</legend>{roles.map((name) => <label className="atlas-role" key={name} data-selected={role === name}><span><input type="radio" name="atlas-role" value={name} checked={role === name} onChange={() => setRole(name)} />{name}</span><small>{roleScopes[name].join(' | ')}</small></label>)}</fieldset>
       <button className="atlas-button" type="submit" data-kind="primary" disabled={!role || role === record.assignedRole}>Simpan penugasan</button>
     </form>
   );
@@ -630,7 +630,7 @@ function JournalView({ work }: { work: Workspace }) {
             <table className="atlas-table atlas-journal">
               <thead><tr><th scope="col">Rekaman / memo</th><th scope="col">Akun</th><th scope="col">Debit</th><th scope="col">Kredit</th></tr></thead>
               {work.scenario.journal.map((entry) => (
-                <tbody key={entry.id}><tr><th scope="rowgroup" rowSpan={2}><button type="button" className="atlas-row-button" onClick={() => work.select(entry.code)}><span className="atlas-code">{entry.code} · {datetime.format(new Date(entry.at))}</span><span>{entry.memo}</span></button></th><td>{entry.debit}</td><td>{format(entry.amount)}</td><td>—</td></tr><tr><td>{entry.credit}</td><td>—</td><td>{format(entry.amount)}</td></tr></tbody>
+                <tbody key={entry.id}><tr><th scope="rowgroup" rowSpan={2}><button type="button" className="atlas-row-button" onClick={() => work.select(entry.code)}><span className="atlas-code">{entry.code} | {datetime.format(new Date(entry.at))}</span><span>{entry.memo}</span></button></th><td>{entry.debit}</td><td>{format(entry.amount)}</td><td>-</td></tr><tr><td>{entry.credit}</td><td>-</td><td>{format(entry.amount)}</td></tr></tbody>
               ))}
               <tfoot><tr><th scope="row" colSpan={2}>Total</th><td>{format(total)}</td><td>{format(total)}</td></tr></tfoot>
             </table>
@@ -655,13 +655,13 @@ function JournalForm({ work, grams, format }: { work: Workspace; grams: boolean;
     event.preventDefault();
     if (!ready) return;
     if (!preview) { setPreview(true); return; }
-    work.apply({ label: 'Pasangan jurnal diposting', detail: `${format(amount)} · ${memo.trim()}`, entry: { debit: debit.trim(), credit: credit.trim(), amount, memo: memo.trim() } });
+    work.apply({ label: 'Pasangan jurnal diposting', detail: `${format(amount)} | ${memo.trim()}`, entry: { debit: debit.trim(), credit: credit.trim(), amount, memo: memo.trim() } });
     setPreview(false); setSize(''); setMemo('');
   };
   return (
     <form className="atlas-pad atlas-form" onSubmit={submit}>
-      <p className="atlas-help"><span className="atlas-code">{work.selected.code}</span> · {work.selected.title}</p>
-      {preview ? <div className="atlas-evidence"><strong>Pratinjau pasangan seimbang</strong><dl className="atlas-facts"><div><dt>Debit · {debit.trim()}</dt><dd>{format(amount)}</dd></div><div><dt>Kredit · {credit.trim()}</dt><dd>{format(amount)}</dd></div></dl><p>{memo.trim()}</p></div> : (
+      <p className="atlas-help"><span className="atlas-code">{work.selected.code}</span> | {work.selected.title}</p>
+      {preview ? <div className="atlas-evidence"><strong>Pratinjau pasangan seimbang</strong><dl className="atlas-facts"><div><dt>Debit | {debit.trim()}</dt><dd>{format(amount)}</dd></div><div><dt>Kredit | {credit.trim()}</dt><dd>{format(amount)}</dd></div></dl><p>{memo.trim()}</p></div> : (
         <>
           <div className="atlas-form-grid">
             <label className="atlas-field"><span>Akun debit</span><input required value={debit} maxLength={50} onChange={(event) => setDebit(event.target.value)} /></label>
@@ -699,16 +699,16 @@ function ScheduleView({ work }: { work: Workspace }) {
             <thead><tr><th scope="col">Slot</th>{days.map((name) => <th key={name} scope="col">{name}</th>)}</tr></thead>
             <tbody>{periods.map((time, row) => <tr key={time}><th scope="row">{time}</th>{days.map((name, col) => {
               const item = booked(col, row);
-              return <td key={name}><button type="button" className="atlas-slot" data-booked={!!item} aria-label={`${name} ${time}${item ? ` · ${item.code}` : ' · kosong'}`} aria-pressed={day === col && period === row} onClick={() => setChoice({ day: col, period: row })}>{item ? item.code : '+'}</button></td>;
+              return <td key={name}><button type="button" className="atlas-slot" data-booked={!!item} aria-label={`${name} ${time}${item ? ` | ${item.code}` : ' | kosong'}} aria-pressed={day === col && period === row} onClick={() => setChoice({ day: col, period: row })}>{item ? item.code : '+'}</button></td>;
             })}</tr>)}</tbody>
           </table>
         </div>
         <div className="atlas-pad atlas-stack">
-          {choice && <p className="atlas-help">{days[choice.day]} · {periods[choice.period]}{occupied ? ` · sudah ditempati ${occupied.code}` : ' · kosong'}</p>}
+          {choice && <p className="atlas-help">{days[choice.day]} | {periods[choice.period]}{occupied ? ` | sudah ditempati ${occupied.code}` : ' | kosong'}</p>}
           <div className="atlas-inline">
             <button type="button" className="atlas-button" data-kind="primary" disabled={!choice || !!occupied} onClick={() => {
               if (!choice || occupied) return;
-              work.apply({ label: 'Slot lokal dijadwalkan', detail: `${days[choice.day]} · ${periods[choice.period]}`, patch: { slot: choice } });
+              work.apply({ label: 'Slot lokal dijadwalkan', detail: `${days[choice.day]} | ${periods[choice.period]}`, patch: { slot: choice } });
               setChoice(undefined);
             }}>Simpan jadwal</button>
             <button type="button" className="atlas-button" disabled={!record.slot} onClick={() => work.apply({ label: 'Slot lokal dilepas', patch: { slot: undefined } })}>Lepas jadwal rekaman</button>
@@ -749,12 +749,12 @@ function AllocationView({ work }: { work: Workspace }) {
               type="button"
               className="atlas-slot"
               data-booked={locations.has(location)}
-              aria-label={`${unit} ${location} · ${locations.get(location) ?? 'kosong'}`}
+              aria-label={`${unit} ${location} | ${locations.get(location) ?? 'kosong'}`}
               aria-pressed={choice === location}
               onClick={() => setChoice(location)}
             ><strong>{location}</strong><small>{locations.get(location) ?? 'Kosong'}</small></button>))}
           </div>
-          {choice && <p className="atlas-help">{unit} {choice} · {owner ? `dialokasikan untuk ${owner}` : `siap dialokasikan ke ${work.selected.code}`}</p>}
+          {choice && <p className="atlas-help">{unit} {choice} | {owner ? `dialokasikan untuk ${owner}` : `siap dialokasikan ke ${work.selected.code}`}</p>}
           <div className="atlas-inline">
             <button type="button" className="atlas-button" data-kind="primary" disabled={!choice || !!owner} onClick={() => {
               if (!choice || owner) return;
@@ -793,7 +793,7 @@ function CalculatorForm({ work, model }: { work: Workspace; model: 'tax' | 'marg
       ['Harga jual', currency.format(amount)], ['Biaya produk', currency.format(total)], ['Biaya kanal', currency.format(fee)],
       ['Margin bersih', `${currency.format(amount - total - fee)} (${numbers.format((amount - total - fee) / amount * 100)}%)`],
     ];
-    setResult({ rows, detail: rows.map(([name, value]) => `${name}: ${value}`).join(' · ') });
+    setResult({ rows, detail: rows.map(([name, value]) => `${name}: ${value}`).join(' | ') });
   };
   return (
     <form className="atlas-form" onSubmit={run}>

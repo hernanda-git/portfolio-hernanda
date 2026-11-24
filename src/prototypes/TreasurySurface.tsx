@@ -15,8 +15,8 @@ type RunCommand = (command: Command) => void;
 const integer = new Intl.NumberFormat('id-ID');
 const billion = new Intl.NumberFormat('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const tickFormat = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 1 });
-const idr = (amount: number) => `${amount < 0 ? '−' : ''}Rp ${integer.format(Math.abs(amount))}`;
-const compact = (amount: number) => `${amount < 0 ? '−' : ''}Rp ${billion.format(Math.abs(amount) / 1e9)} miliar`;
+const idr = (amount: number) => `${amount < 0 ? '-' : ''}Rp ${integer.format(Math.abs(amount))}`;
+const compact = (amount: number) => `${amount < 0 ? '-' : ''}Rp ${billion.format(Math.abs(amount) / 1e9)} miliar`;
 const usd = (amount: number) => `USD ${integer.format(amount)}`;
 const signed = (amount: number) => `${amount > 0 ? '+' : ''}${idr(amount)}`;
 
@@ -78,7 +78,7 @@ function AuditTrail({ state, type }: { state: TreasuryState; type: 'batch' | 're
       ? <p className="treasury-empty">{type === 'batch' ? 'Belum ada tindakan atas batch.' : 'Belum ada posting ke ERP lokal.'}</p>
       : <ol className="treasury-audit">{events.map(event => <li key={event.sequence}>
         <span className="treasury-code">#{String(event.sequence).padStart(2, '0')}</span>
-        <div><strong>{event.actor} · {event.subject}</strong><p>{event.description}</p></div>
+        <div><strong>{event.actor} | {event.subject}</strong><p>{event.description}</p></div>
       </li>)}</ol>}
   </Panel>;
 }
@@ -135,9 +135,9 @@ function CashPage({ state }: { state: TreasuryState }) {
   const stage = batchStages[state.stage];
   return <>
     <dl className="treasury-metrics">
-      <Metric label="Saldo buku · IDR" value={compact(cash.booked)} note={`${banks.length} bank · ${idr(cash.booked)}`} />
-      <Metric label="Dana operasional" value={compact(cash.available)} note={`${idr(cash.holds)} ditahan bank`} tone="accent" />
-      <Metric label="Saldo kas · USD" value={usd(cash.usd)} note={`Setara ${idr(cash.usd * state.assumptions.rate)}`} />
+      <Metric label="Saldo buku | IDR" value={compact(cash.booked)} note={`${banks.length} bank | ${idr(cash.booked)}`} />
+      <Metric label="Dana operasional" value={compact(cash.available)} note={${idr(cash.holds)} ditahan bank} tone="accent" />
+      <Metric label="Saldo kas | USD" value={usd(cash.usd)} note={`Setara ${idr(cash.usd * state.assumptions.rate)}`} />
       <Metric label={`Batch ${batch.ref}`} value={idr(batch.debit)} note={<Badge tone={stage.tone}>{stage.label}</Badge>} />
     </dl>
     <div className="treasury-split">
@@ -156,14 +156,14 @@ function CashPage({ state }: { state: TreasuryState }) {
               const position = bankPosition(bank, state.stage);
               return <DataRow key={bank.name} columns={cashColumns} selected={selected.name === bank.name} cells={[
                 <><InspectButton label={`Periksa rekening ${bank.name}`} selected={selected.name === bank.name} onClick={() => { setBankName(bank.name); inspection.current?.focus(); }}>{bank.name}</InspectButton><small>{bank.account}</small></>,
-                bank.channel, idr(position.booked), idr(position.available), bank.usd ? usd(bank.usd) : '—',
+                bank.channel, idr(position.booked), idr(position.available), bank.usd ? usd(bank.usd) : '-',
               ]} />;
             })}
           </DataTable>
         </Panel>
         <Panel title="Pergerakan kas intrahari" meta="IDR miliar">
           <LiquidityChart labels={cashTimes} series={[{ label: 'Saldo buku', values: chart, color: 'base' }]}
-            caption={`${cashTimes[0]} ${idr(chart[0])} → ${cashTimes[cashTimes.length - 1]} ${idr(cash.booked)}`} />
+            caption={`${cashTimes[0]} ${idr(chart[0])} -> ${cashTimes[cashTimes.length - 1]} ${idr(cash.booked)}`} />
           <details className="treasury-chart-details">
             <summary>Lihat data saldo intrahari</summary>
             <DataTable label="Data saldo buku intrahari" columns={intradayColumns}>
@@ -178,8 +178,8 @@ function CashPage({ state }: { state: TreasuryState }) {
             <div className="treasury-keyline"><span className="treasury-code">{selected.name} {selected.account}</span><strong>{idr(selectedPosition.available)}</strong><p>Dana bebas pakai saat ini</p></div>
             <Fields items={[
               ['Saldo buku IDR', idr(selectedPosition.booked)], ['Ditahan bank', idr(selected.hold)],
-              ['Cadangan BI-FAST', idr(selectedPosition.reserve)], ['Saldo USD', selected.usd ? usd(selected.usd) : '—'],
-              ['Posisi sumber', `${selected.stamp} WIB`], ['Cutoff simulasi', `${selected.cutoff} WIB`],
+              ['Cadangan BI-FAST', idr(selectedPosition.reserve)], ['Saldo USD', selected.usd ? usd(selected.usd) : '-'],
+              ['Posisi sumber', ${selected.stamp} WIB], ['Cutoff simulasi', `${selected.cutoff} WIB`],
             ]} />
             {selected.name === fundingBank.name && <p className="treasury-note">{state.stage === 'released'
               ? `${idr(batch.debit)} telah didebit dari Mandiri dalam simulasi.`
@@ -220,15 +220,15 @@ function ReceiptDetail({ receipt, state, run }: { receipt: Receipt; state: Treas
   const difference = invoice ? receipt.paid - invoice.amount : null;
   const manual = receipt.expected !== receipt.paid;
   return <div className="treasury-padded">
-    <div className="treasury-keyline"><span className="treasury-code">{receipt.ref} / {receipt.bank}</span><strong>{receipt.payer}</strong><p>{receipt.time} WIB · Kredit sudah tercermin di saldo bank.</p></div>
+    <div className="treasury-keyline"><span className="treasury-code">{receipt.ref} / {receipt.bank}</span><strong>{receipt.payer}</strong><p>{receipt.time} WIB | Kredit sudah tercermin di saldo bank.</p></div>
     {!post && <p className="treasury-note" data-tone={manual ? 'warn' : undefined}>{receipt.invoiceRef === null
       ? 'Referensi faktur belum ditemukan. Pilih piutang pembayar ini sebelum memposting.'
       : manual ? 'Nominal berbeda. Kurang bayar menyisakan piutang; lebih bayar menjadi kredit belum dialokasikan.'
         : 'Referensi dan nominal cocok. Posting melunasi piutang tanpa menambah saldo bank lagi.'}</p>}
     <Fields items={[
       ['Kredit dari bank', idr(receipt.paid)],
-      ['Nilai faktur', invoice ? idr(invoice.amount) : '—'],
-      ['Kredit − faktur', difference === null ? '—' : signed(difference)],
+      ['Nilai faktur', invoice ? idr(invoice.amount) : '-'],
+      ['Kredit - faktur', difference === null ? '-' : signed(difference)],
       ...(post ? [
         ['Faktur ERP', post.invoice.ref], ['Dialokasikan', idr(post.applied)],
         ['Sisa piutang', idr(post.remaining)], ['Kredit belum dialokasikan', idr(post.unapplied)],
@@ -239,7 +239,7 @@ function ReceiptDetail({ receipt, state, run }: { receipt: Receipt; state: Treas
       if (invoice) run({ type: 'post', receiptRef: receipt.ref, invoiceRef: invoice.ref, note });
     }}>
       {receipt.invoiceRef === null ? <label>Faktur ERP<select required value={invoiceRef} onChange={event => setInvoiceRef(event.target.value)}>
-        <option value="">Pilih faktur…</option>{options.map(option => <option key={option.ref} value={option.ref}>{option.ref} · {idr(option.amount)}</option>)}
+        <option value="">Pilih faktur...</option>{options.map(option => <option key={option.ref} value={option.ref}>{option.ref} | {idr(option.amount)}</option>)}
       </select></label> : <p>Faktur ERP: <span className="treasury-code">{receipt.invoiceRef}</span></p>}
       {manual && <label>Catatan keputusan<textarea required maxLength={200} rows={2} value={note} onChange={event => setNote(event.target.value)} /></label>}
       <button type="submit" className="treasury-button primary" disabled={!invoice || (manual && !note.trim())}>Posting ke ERP lokal</button>
@@ -266,8 +266,8 @@ function ReconciliationPage({ state, run }: { state: TreasuryState; run: RunComm
   const applied = posted.reduce((total, post) => total + post.applied, 0);
   return <>
     <dl className="treasury-metrics">
-      <Metric label="Mutasi masuk" value={idr(receiptCash)} note={`${receipts.length} kredit kas · VA-1811`} />
-      <Metric label="Dialokasikan ke piutang" value={idr(applied)} note={`${posted.length} mutasi diposting ke ERP`} tone="ok" />
+      <Metric label="Mutasi masuk" value={idr(receiptCash)} note={`${receipts.length} kredit kas | VA-1811`} />
+      <Metric label="Dialokasikan ke piutang" value={idr(applied)} note={${posted.length} mutasi diposting ke ERP} tone="ok" />
       <Metric label="Cocok tanpa selisih" value={exactCount} note="Siap diposting otomatis" tone="accent" />
       <Metric label="Eksepsi terbuka" value={openExceptions} note="Butuh pemeriksaan atau faktur" tone={openExceptions ? 'warn' : 'ok'} />
     </dl>
@@ -291,7 +291,7 @@ function ReconciliationPage({ state, run }: { state: TreasuryState; run: RunComm
               const isSelected = selected?.ref === receipt.ref;
               return <DataRow key={receipt.ref} columns={receiptColumns} selected={isSelected} cells={[
                 <><InspectButton label={`Periksa ${receipt.ref}`} selected={isSelected} onClick={() => { setActiveRef(receipt.ref); inspection.current?.focus(); }}>{receipt.ref}</InspectButton><small>{receipt.payer}</small></>,
-                <>{receipt.bank}<small>{receipt.time}</small></>, state.posts[receipt.ref]?.invoice.ref ?? receipt.invoiceRef ?? '—', idr(receipt.paid),
+                <>{receipt.bank}<small>{receipt.time}</small></>, state.posts[receipt.ref]?.invoice.ref ?? receipt.invoiceRef ?? '-', idr(receipt.paid),
                 <Badge tone={status.tone}>{status.label}</Badge>,
               ]} />;
             })}
@@ -325,14 +325,14 @@ function PayoutPage({ state, run }: { state: TreasuryState; run: RunCommand }) {
         const done = index < status.count;
         const active = index === status.count;
         return <li key={key} data-active={active || undefined} aria-current={active ? 'step' : undefined}>
-          <span className="treasury-code">0{index + 1} / {actor.label}</span><strong>{actor.person} · {actor.team}</strong>
+          <span className="treasury-code">0{index + 1} / {actor.label}</span><strong>{actor.person} | {actor.team}</strong>
           <Badge tone={done ? 'ok' : active ? 'accent' : 'neutral'}>{done ? 'Selesai' : active ? 'Giliran saat ini' : 'Menunggu'}</Badge>
         </li>;
       })}
     </ol>
     <dl className="treasury-metrics">
-      <Metric label="Total debit batch" value={idr(batch.debit)} note={`${transfers.length} instruksi · termasuk biaya`} />
-      <Metric label="Dana bebas pakai Mandiri" value={idr(position.available)} note={`${idr(position.reserve)} cadangan batch`} tone="accent" />
+      <Metric label="Total debit batch" value={idr(batch.debit)} note={`${transfers.length} instruksi | termasuk biaya`} />
+      <Metric label="Dana bebas pakai Mandiri" value={idr(position.available)} note={${idr(position.reserve)} cadangan batch} tone="accent" />
       <Metric label="Dana setelah rilis" value={idr(afterRelease)} note={state.stage === 'released' ? 'Sudah diposting ke saldo lokal' : 'Proyeksi jika seluruh batch dirilis'} />
       <Metric label="Status batch" value={<Badge tone={status.tone}>{status.label}</Badge>} note={`Cutoff Mandiri ${fundingBank.cutoff} WIB`} />
     </dl>
@@ -348,9 +348,9 @@ function PayoutPage({ state, run }: { state: TreasuryState; run: RunCommand }) {
             {state.stage === 'released' ? <p className="treasury-note" data-tone="ok">Debit selesai. Batch ini tidak dapat dirilis ulang. Tidak ada dana atau instruksi yang dikirim ke bank.</p>
               : <div className="treasury-form">
                 <label>Peran simulasi<select value={role} onChange={event => { setRole(event.target.value as Role); setConfirmed(false); }}>
-                  {roleOrder.map(key => <option key={key} value={key}>{roles[key].label} · {roles[key].person}</option>)}
+                  {roleOrder.map(key => <option key={key} value={key}>{roles[key].label} | {roles[key].person}</option>)}
                 </select></label>
-                {!actionable && status.role && <p className="treasury-note">Pilih {roles[status.role].label} · {roles[status.role].person} untuk menjalankan tahap ini.</p>}
+                {!actionable && status.role && <p className="treasury-note">Pilih {roles[status.role].label} | {roles[status.role].person} untuk menjalankan tahap ini.</p>}
                 {state.stage === 'draft' && <button type="button" className="treasury-button primary" disabled={!actionable || !canFundBatch()} onClick={() => {
                   if (role === 'maker') { run({ type: 'submit', role }); authorization.current?.focus(); }
                 }}>Ajukan batch</button>}
@@ -397,9 +397,9 @@ function ConnectivityPage() {
   const event = events.find(entry => entry.id === eventId) ?? events[0];
   return <>
     <dl className="treasury-metrics">
-      <Metric label="Jalur SNAP BI" value="4 bank" note="Respons saldo REST · contoh lokal" />
-      <Metric label="File host-to-host" value="1 bank" note="OCBC · contoh file terjadwal" />
-      <Metric label="Konektor dalam SLA" value={`${banks.filter(item => dataAge(item) <= item.maxAge).length} / ${banks.length}`} note="Usia dihitung dari waktu snapshot" tone="ok" />
+      <Metric label="Jalur SNAP BI" value="4 bank" note="Respons saldo REST | contoh lokal" />
+      <Metric label="File host-to-host" value="1 bank" note="OCBC | contoh file terjadwal" />
+      <Metric label="Konektor dalam SLA" value={${banks.filter(item => dataAge(item) <= item.maxAge).length} / ${banks.length}} note="Usia dihitung dari waktu snapshot" tone="ok" />
       <Metric label="Mode jaringan" value="Nonaktif" note="Tidak memanggil API atau server bank" tone="accent" />
     </dl>
     <div className="treasury-split">
@@ -427,7 +427,7 @@ function ConnectivityPage() {
       <aside aria-label="Detail konektor dan bukti kontrol">
         <Panel title="Inspektor konektivitas" meta={bank.channel} headingRef={inspection}>
           <div className="treasury-padded">
-            <div className="treasury-keyline"><span className="treasury-code">{bank.name} / {event.artifact}</span><strong>{event.title}</strong><p>{event.time} WIB · {event.result}</p></div>
+            <div className="treasury-keyline"><span className="treasury-code">{bank.name} / {event.artifact}</span><strong>{event.title}</strong><p>{event.time} WIB | {event.result}</p></div>
             <p className="treasury-note" data-tone={event.tone}>{event.detail}</p>
             <Fields items={[
               ['Sumber saldo', isFile ? 'File saldo H2H' : 'Ringkasan SNAP BI'],
@@ -470,7 +470,7 @@ function ForecastPage({ state, onSave }: { state: TreasuryState; onSave: (assump
     <dl className="treasury-metrics">
       <Metric label="Kas IDR awal" value={compact(model.opening)} note={openingNote} />
       <Metric label="Buffer minimum" value={compact(model.floor)} note="Batas kas internal dari skenario" />
-      <Metric label="Titik terendah · stres" value={compact(model.trough.stress)} note={`${model.trough.date} · penerimaan tertunda`} tone={model.gap ? 'warn' : 'ok'} />
+      <Metric label="Titik terendah | stres" value={compact(model.trough.stress)} note={`${model.trough.date} | penerimaan tertunda`} tone={model.gap ? 'warn' : 'ok'} />
       <Metric label="Dana tambahan" value={idr(model.gap)} note={model.firstBreach ? `Di bawah buffer mulai ${model.firstBreach.date}` : 'Kas stres tetap di atas atau sama dengan buffer'} tone={model.gap ? 'bad' : 'ok'} />
     </dl>
     <div className="treasury-split treasury-split-leading">
@@ -492,11 +492,11 @@ function ForecastPage({ state, onSave }: { state: TreasuryState; onSave: (assump
         </Panel>
       </aside>
       <div className="treasury-stack">
-        <Panel title="Proyeksi kas bebas pakai" meta="IDR miliar · D+0 sampai D+5">
+        <Panel title="Proyeksi kas bebas pakai" meta="IDR miliar | D+0 sampai D+5">
           <LiquidityChart labels={model.rows.map(row => row.date)} series={[
             { label: 'Dasar', values: model.rows.map(row => row.base), color: 'base' },
             { label: 'Stres penerimaan', values: model.rows.map(row => row.stress), color: 'stress' },
-          ]} floor={model.floor} caption={`Buffer ${idr(model.floor)} · titik stres terendah ${idr(model.trough.stress)}`} />
+          ]} floor={model.floor} caption={`Buffer ${idr(model.floor)} | titik stres terendah ${idr(model.trough.stress)}`} />
         </Panel>
         <Panel title="Arus kas per hari kerja" meta="Skenario, bukan saldo aktual">
           <DataTable label="Rincian proyeksi likuiditas lima hari" columns={forecastColumns}>
@@ -566,7 +566,7 @@ export default function TreasurySurface({ page }: { page: ProjectPageSpec }) {
   return <div className="treasury-surface" data-treasury-page={page.slug}>
     <div className="treasury-utility">
       <span className="treasury-code">{SNAPSHOT}</span>
-      <div><span className="treasury-storage">{saved ? 'Data fiktif · tersimpan di peramban ini' : 'Penyimpanan tidak tersedia · perubahan hanya untuk sesi ini'}</span>
+      <div><span className="treasury-storage">{saved ? 'Data fiktif | tersimpan di peramban ini' : 'Penyimpanan tidak tersedia | perubahan hanya untuk sesi ini'}</span>
         <button type="button" className="treasury-button secondary" ref={resetButton} aria-expanded={confirmReset} onClick={() => setConfirmReset(current => !current)}>Reset simulasi</button></div>
     </div>
     {confirmReset && <div className="treasury-reset" role="group" aria-label="Konfirmasi reset simulasi">

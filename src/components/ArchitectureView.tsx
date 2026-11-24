@@ -9,7 +9,7 @@ interface ArchitectureViewProps {
 export const ArchitectureView: React.FC<ArchitectureViewProps> = ({ totalProjects }) => {
   const [copied, setCopied] = useState(false);
 
-  const briefText = `# ${PROFILE.name} — Ringkasan Eksekutif Teknis
+  const briefText = `# ${PROFILE.name} - Ringkasan Eksekutif Teknis
 Peran: ${PROFILE.title}
 Lokasi: ${PROFILE.location} (${PROFILE.timezone})
 Pengalaman: 10+ Tahun (Sejak ${PROFILE.activeSince}, ${EXPERIENCES.length} pengalaman terverifikasi CV)
@@ -29,7 +29,7 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
 
   const dpiReadiness = [
     { standard: 'Bank Indonesia SNAP BI & BI-FAST', scope: 'Signing asimetris RSA-SHA256 / HMAC, rekonsiliasi Virtual Account, switch payout instan, dan kriptografi host-to-host perbankan.' },
-    { standard: 'Kemenkes SATUSEHAT & Bridging BPJS', scope: 'Pemetaan HL7 FHIR R4 (Encounter/Condition/MedicationRequest), kode obat KFA, VClaim SEP, serta Antrean Online Task ID 1–7.' },
+    { standard: 'Kemenkes SATUSEHAT & Bridging BPJS', scope: 'Pemetaan HL7 FHIR R4 (Encounter/Condition/MedicationRequest), kode obat KFA, VClaim SEP, serta Antrean Online Task ID 1-7.' },
     { standard: 'DJP CoreTax & Peruri e-Meterai', scope: 'Validasi NPWP-16 / NITKU, tahunanisasi PPh 21 TER, gerbang validasi skema XML, dan pembubuhan meterai elektronik LTV.' },
     { standard: 'UU PDP No. 27/2022 & Sovereign AI', scope: 'Residensi data Jakarta, masking NIK/NPWP sebelum egress di AI Gateway, ledger persetujuan, dan playbook insiden 3x24 jam.' },
     { standard: 'Operasional Tambang & Cold-Chain Industri', scope: 'Aplikasi lapangan .NET MAUI offline-first, Azure AD/B2C, ERP KPI multi-cabang, telemetri SCADA, dan kesiapan RKAB/SIMBARA.' },
@@ -55,7 +55,7 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
             <div>
               <strong style={{ color: 'var(--ui-text)' }}>2. Pemanfaatan AI Pragmatis (~20%), Kendali Arsitektur Tetap di Engineer</strong>
               <p style={{ margin: '4px 0 0' }}>
-                {PROFILE.summary[3]} Setiap sistem produksi wajib melalui verifikasi build, test, dan runtime yang teramati — bukan keluaran generatif tanpa pembuktian.
+                {PROFILE.summary[3]} Setiap sistem produksi wajib melalui verifikasi build, test, dan runtime yang teramati - bukan keluaran generatif tanpa pembuktian.
               </p>
             </div>
             <div>
@@ -73,7 +73,7 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
               <h2 className="section-title" style={{ fontSize: '18px' }}>Kontak Langsung &amp; Diskusi Teknis</h2>
               <p className="section-desc">Terbuka untuk diskusi arsitektur secara langsung sebelum tahapan wawancara formal</p>
             </div>
-            <span className="tag tag-ok">Jakarta · Remote / Hybrid</span>
+            <span className="tag tag-ok">Jakarta | Remote / Hybrid</span>
           </div>
 
           <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -118,7 +118,7 @@ Kontak: ${PROFILE.email} | ${PROFILE.phone} | ${PROFILE.linkedin}`;
           </div>
           <span className="tag">
             <IconShield size={12} />
-            Lanskap Indonesia 2025–2026
+            Lanskap Indonesia 2025-2026
           </span>
         </div>
 

@@ -1,12 +1,12 @@
 export const STORAGE_KEY = 'portfolio.treasury.v1';
-export const SNAPSHOT = '18 Nov 2026 · 14:33 WIB';
+export const SNAPSHOT = '18 Nov 2026 | 14:33 WIB';
 
 export const banks = [
-  { name: 'BCA', channel: 'SNAP BI', account: '•• 2910', idr: 4_682_000_000, hold: 110_000_000, usd: 92_400, cutoff: '16:30', stamp: '14:32:56', maxAge: 60 },
-  { name: 'Mandiri', channel: 'SNAP BI', account: '•• 4073', idr: 3_985_000_000, hold: 325_000_000, usd: 47_100, cutoff: '16:00', stamp: '14:32:55', maxAge: 60 },
-  { name: 'BNI', channel: 'SNAP BI', account: '•• 1752', idr: 2_196_000_000, hold: 0, usd: 0, cutoff: '15:30', stamp: '14:32:48', maxAge: 90 },
-  { name: 'BRI', channel: 'SNAP BI', account: '•• 8356', idr: 1_274_000_000, hold: 42_000_000, usd: 0, cutoff: '15:30', stamp: '14:32:52', maxAge: 90 },
-  { name: 'OCBC', channel: 'File H2H', account: '•• 5601', idr: 2_683_000_000, hold: 60_000_000, usd: 18_500, cutoff: '15:00', stamp: '14:30:00', maxAge: 300 },
+  { name: 'BCA', channel: 'SNAP BI', account: '** 2910', idr: 4_682_000_000, hold: 110_000_000, usd: 92_400, cutoff: '16:30', stamp: '14:32:56', maxAge: 60 },
+  { name: 'Mandiri', channel: 'SNAP BI', account: '** 4073', idr: 3_985_000_000, hold: 325_000_000, usd: 47_100, cutoff: '16:00', stamp: '14:32:55', maxAge: 60 },
+  { name: 'BNI', channel: 'SNAP BI', account: '** 1752', idr: 2_196_000_000, hold: 0, usd: 0, cutoff: '15:30', stamp: '14:32:48', maxAge: 90 },
+  { name: 'BRI', channel: 'SNAP BI', account: '** 8356', idr: 1_274_000_000, hold: 42_000_000, usd: 0, cutoff: '15:30', stamp: '14:32:52', maxAge: 90 },
+  { name: 'OCBC', channel: 'File H2H', account: '** 5601', idr: 2_683_000_000, hold: 60_000_000, usd: 18_500, cutoff: '15:00', stamp: '14:30:00', maxAge: 300 },
 ] as const;
 
 export type Bank = (typeof banks)[number];
@@ -91,7 +91,7 @@ export const batchStages = {
 
 export const assumptionFields = [
   { key: 'rate', label: 'Kurs USD/IDR (Rp per USD)', min: 10_000, max: 25_000 },
-  { key: 'shock', label: 'Guncangan kurs (± Rp)', min: 0, max: 5_000 },
+  { key: 'shock', label: 'Guncangan kurs (+/- Rp)', min: 0, max: 5_000 },
   { key: 'delay', label: 'Bagian piutang berisiko tertunda (%)', min: 0, max: 100 },
   { key: 'floor', label: 'Buffer minimum (Rp juta)', min: 0, max: 20_000 },
 ] as const;
@@ -188,8 +188,8 @@ export function applyCommand(state: TreasuryState, command: Command): TreasurySt
       const note = command.note.trim();
       if (!invoice || note.length > 200 || (receipt.expected !== receipt.paid && !note)) return state;
       const post = postingFor(receipt, invoice, note || 'Pencocokan tepat dikonfirmasi.');
-      const description = post.remaining ? `Pembayaran parsial → ${invoice.ref}; sisa piutang terbuka.` : post.unapplied
-        ? `Pembayaran → ${invoice.ref}; kelebihan masuk kredit belum dialokasikan.` : `Pembayaran diposting → ${invoice.ref}; faktur lunas.`;
+      const description = post.remaining ? `Pembayaran parsial -> ${invoice.ref}; sisa piutang terbuka.` : post.unapplied
+        ? `Pembayaran -> ${invoice.ref}; kelebihan masuk kredit belum dialokasikan.` : `Pembayaran diposting -> ${invoice.ref}; faktur lunas.`;
       return record(state, command, { posts: { ...state.posts, [receipt.ref]: post } }, { type: 'receipt', subject: receipt.ref, actor: 'Treasury Ops', description });
     }
   }

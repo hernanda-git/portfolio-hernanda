@@ -67,18 +67,18 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
               <h1 className="section-title" style={{ fontSize: '20px' }}>
-                {PROFILE.name} — {PROFILE.title}
+                {PROFILE.name} - {PROFILE.title}
               </h1>
               <span className="tag tag-ok">
                 <IconShield size={12} />
                 100% Verbatim CV
               </span>
               <span className="tag tag-mono">
-                {EXPERIENCES.length} Peran · {totalBullets} Poin · {SKILL_GROUPS.length} Skill Groups
+                {EXPERIENCES.length} Peran | {totalBullets} Poin | {SKILL_GROUPS.length} Skill Groups
               </span>
             </div>
             <p className="section-desc">
-              Reproduksi teks lengkap kata-per-kata dari <code>{PROFILE.sourceFile}</code> (tanpa diringkas): {PROFILE.location} · {PROFILE.phone} · {PROFILE.email} · {PROFILE.linkedinLabel}
+              Reproduksi teks lengkap kata-per-kata dari <code>{PROFILE.sourceFile}</code> (tanpa diringkas): {PROFILE.location} | {PROFILE.phone} | {PROFILE.email} | {PROFILE.linkedinLabel}
             </p>
           </div>
           <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
@@ -140,8 +140,8 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
                   <div>
                     <h2 className="exp-role">{exp.verbatimHeader}</h2>
                     <div className="exp-company">
-                      {exp.role} · {exp.company}
-                      {exp.clientContext ? ` · ${exp.clientContext}` : ''}
+                      {exp.role} | {exp.company}
+                      {exp.clientContext ? ` | ${exp.clientContext}` : ''}
                     </div>
                   </div>
                   <div style={{ textAlign: 'right' }}>

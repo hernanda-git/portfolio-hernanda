@@ -13,9 +13,9 @@ const STORAGE = 'portfolio:tapnusa:v1';
 const LIMIT = 500_000;
 const RATE = 3_750;
 const sources = [
-  { name: 'MRT · Dukuh Atas → Blok M', amount: 8_000 },
-  { name: 'KRL · Sudirman → Bogor', amount: 6_000 },
-  { name: 'TransJakarta · Koridor 1', amount: 3_500 },
+  { name: 'MRT | Dukuh Atas -> Blok M', amount: 8_000 },
+  { name: 'KRL | Sudirman -> Bogor', amount: 6_000 },
+  { name: 'TransJakarta | Koridor 1', amount: 3_500 },
 ];
 const initial: Wallet = {
   entries: [
@@ -69,7 +69,7 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
   const inspected = lines.find(entry => entry.id === selected) ?? lines[0];
   const myr = Number(subtotal);
   const amount = rail === 'Tap transit' ? sources[station].amount : rail === 'QR lintas negara' ? Math.round(myr * RATE) : Number(topUp);
-  const merchant = rail === 'Tap transit' ? sources[station].name : rail === 'QR lintas negara' ? 'Kedai Sentral · Kuala Lumpur' : 'Isi saldo simulasi';
+  const merchant = rail === 'Tap transit' ? sources[station].name : rail === 'QR lintas negara' ? 'Kedai Sentral | Kuala Lumpur' : 'Isi saldo simulasi';
 
   function addEntry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -78,24 +78,24 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
       return;
     }
     if (rail === 'Isi saldo' ? amount + balance > LIMIT : amount > balance) {
-      setFeedback(rail === 'Isi saldo' ? `Saldo setelah isi ulang melebihi batas ${money(LIMIT)}.` : 'Saldo tidak cukup. Isi saldo sebelum mencoba lagi.');
+      setFeedback(rail === 'Isi saldo' ? Saldo setelah isi ulang melebihi batas ${money(LIMIT)}. : 'Saldo tidak cukup. Isi saldo sebelum mencoba lagi.');
       return;
     }
     const id = (wallet.entries.at(-1)?.id ?? 0) + 1;
-    setWallet({ ...wallet, entries: [...wallet.entries, { id, merchant, amount, rail }], audit: [...wallet.audit, `${ref(id)} · ${rail} · ${money(amount)}`] });
-    setFeedback(`${ref(id)} · ${rail === 'Isi saldo' ? 'Saldo ditambahkan' : 'Pembayaran simulasi berhasil'}.`);
+    setWallet({ ...wallet, entries: [...wallet.entries, { id, merchant, amount, rail }], audit: [...wallet.audit, `${ref(id)} | ${rail} | ${money(amount)}`] });
+    setFeedback(`${ref(id)} | ${rail === 'Isi saldo' ? 'Saldo ditambahkan' : 'Pembayaran simulasi berhasil'}.`);
   }
 
   function advanceSettlement() {
     if (!active) {
       if (!queued.length) return;
       const id = (wallet.batches.at(-1)?.id ?? 0) + 1;
-      setWallet({ ...wallet, batches: [...wallet.batches, { id, entries: queued.map(entry => entry.id), step: 'review' }], audit: [...wallet.audit, `${batchRef(id)} · Maker mengajukan ${queued.length} pembayaran`] });
+      setWallet({ ...wallet, batches: [...wallet.batches, { id, entries: queued.map(entry => entry.id), step: 'review' }], audit: [...wallet.audit, `${batchRef(id)} | Maker mengajukan ${queued.length} pembayaran`] });
       return;
     }
     const step = active.step === 'review' ? 'release' : 'posted';
     const message = step === 'release' ? 'Checker menyetujui batch' : 'Releaser menyelesaikan batch secara lokal';
-    setWallet({ ...wallet, batches: wallet.batches.map(batch => batch.id === active.id ? { ...batch, step } : batch), audit: [...wallet.audit, `${batchRef(active.id)} · ${message}`] });
+    setWallet({ ...wallet, batches: wallet.batches.map(batch => batch.id === active.id ? { ...batch, step } : batch), audit: [...wallet.audit, `${batchRef(active.id)} | ${message}`] });
   }
 
   const metric = (label: string, value: string | number) => <div><span>{label}</span><strong>{value}</strong></div>;
@@ -118,11 +118,11 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
     {page.slug === 'p2' && <div className="tapnusa-grid">
       <section className="tapnusa-panel">
         <header><h2>Buku besar</h2><label>Kanal <select value={filter} onChange={e => setFilter(e.target.value)}>{['Semua kanal', 'Tap transit', 'QR lintas negara', 'Isi saldo'].map(value => <option key={value}>{value}</option>)}</select></label></header>
-        {lines.length ? <div className="tapnusa-scroll" tabIndex={0} aria-label="Tabel buku besar"><table><thead><tr><th scope="col">Referensi</th><th scope="col">Tujuan</th><th scope="col">Perubahan saldo</th></tr></thead><tbody>{lines.map(entry => <tr key={entry.id}><th scope="row"><button type="button" className="tapnusa-link" aria-pressed={inspected?.id === entry.id} onClick={() => setSelected(entry.id)}>{ref(entry.id)}</button></th><td>{entry.merchant}</td><td>{isPayment(entry) ? '−' : '+'}{money(entry.amount)}</td></tr>)}</tbody></table></div> : <p>Tidak ada transaksi pada kanal ini.</p>}
+        {lines.length ? <div className="tapnusa-scroll" tabIndex={0} aria-label="Tabel buku besar"><table><thead><tr><th scope="col">Referensi</th><th scope="col">Tujuan</th><th scope="col">Perubahan saldo</th></tr></thead><tbody>{lines.map(entry => <tr key={entry.id}><th scope="row"><button type="button" className="tapnusa-link" aria-pressed={inspected?.id === entry.id} onClick={() => setSelected(entry.id)}>{ref(entry.id)}</button></th><td>{entry.merchant}</td><td>{isPayment(entry) ? '-' : '+'}{money(entry.amount)}</td></tr>)}</tbody></table></div> : <p>Tidak ada transaksi pada kanal ini.</p>}
       </section>
       <section className="tapnusa-panel">
         <h2>Detail transaksi</h2>
-        {inspected ? <dl><div><dt>Referensi</dt><dd>{ref(inspected.id)}</dd></div><div><dt>Status</dt><dd>{status(inspected)}</dd></div><div><dt>Debit · {isPayment(inspected) ? 'Dompet komuter' : 'Kas simulasi'}</dt><dd>{money(inspected.amount)}</dd></div><div><dt>Kredit · {isPayment(inspected) ? 'Utang ke merchant' : 'Dompet komuter'}</dt><dd>{money(inspected.amount)}</dd></div></dl> : <p>Pilih kanal yang berisi transaksi.</p>}
+        {inspected ? <dl><div><dt>Referensi</dt><dd>{ref(inspected.id)}</dd></div><div><dt>Status</dt><dd>{status(inspected)}</dd></div><div><dt>Debit | {isPayment(inspected) ? 'Dompet komuter' : 'Kas simulasi'}</dt><dd>{money(inspected.amount)}</dd></div><div><dt>Kredit | {isPayment(inspected) ? 'Utang ke merchant' : 'Dompet komuter'}</dt><dd>{money(inspected.amount)}</dd></div></dl> : <p>Pilih kanal yang berisi transaksi.</p>}
       </section>
     </div>}
 
@@ -131,15 +131,15 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
         <h2>Dompet komuter</h2>
         <small>Saldo tersedia</small><strong className="tapnusa-balance">{money(balance)}</strong>
         <h3>Aktivitas terakhir</h3>
-        <ul>{[...wallet.entries].reverse().slice(0, 4).map(entry => <li key={entry.id}><span>{entry.merchant}</span><b>{isPayment(entry) ? '−' : '+'}{money(entry.amount)}</b></li>)}</ul>
+        <ul>{[...wallet.entries].reverse().slice(0, 4).map(entry => <li key={entry.id}><span>{entry.merchant}</span><b>{isPayment(entry) ? '-' : '+'}{money(entry.amount)}</b></li>)}</ul>
       </section>
       <form className="tapnusa-panel tapnusa-form" onSubmit={addEntry}>
         <h2>Simulasi pembayaran</h2>
         <label>Jenis transaksi<select value={rail} onChange={event => { setRail(event.target.value as typeof rail); setFeedback(''); }}><option>Tap transit</option><option>QR lintas negara</option><option>Isi saldo</option></select></label>
-        {rail === 'Tap transit' && <label>Perjalanan<select value={station} onChange={e => setStation(Number(e.target.value))}>{sources.map((source, index) => <option key={source.name} value={index}>{source.name} · {money(source.amount)}</option>)}</select></label>}
-        {rail === 'QR lintas negara' && <><label>Nominal merchant (MYR)<input required type="number" min="0.01" max="100" step="0.01" value={subtotal} onChange={e => setSubtotal(e.target.value)} /></label><p>{merchant} · Kurs tetap {money(RATE)} / MYR{Number.isFinite(myr) && myr > 0 ? ` · MYR ${myrFormat.format(myr)}` : ''}</p></>}
+        {rail === 'Tap transit' && <label>Perjalanan<select value={station} onChange={e => setStation(Number(e.target.value))}>{sources.map((source, index) => <option key={source.name} value={index}>{source.name} | {money(source.amount)}</option>)}</select></label>}
+        {rail === 'QR lintas negara' && <><label>Nominal merchant (MYR)<input required type="number" min="0.01" max="100" step="0.01" value={subtotal} onChange={e => setSubtotal(e.target.value)} /></label><p>{merchant} | Kurs tetap {money(RATE)} / MYR{Number.isFinite(myr) && myr > 0 ?  | MYR ${myrFormat.format(myr)} : ''}</p></>}
         {rail === 'Isi saldo' && <label>Nominal isi saldo (IDR)<input required type="number" min="1" max={LIMIT} step="1" value={topUp} onChange={e => setTopUp(e.target.value)} /></label>}
-        <button type="submit" className="tapnusa-action">{rail === 'Tap transit' ? 'Simulasikan tap' : rail === 'Isi saldo' ? 'Tambahkan saldo' : 'Bayar QR'}{amount > 0 ? ` · ${money(amount)}` : ''}</button>
+        <button type="submit" className="tapnusa-action">{rail === 'Tap transit' ? 'Simulasikan tap' : rail === 'Isi saldo' ? 'Tambahkan saldo' : 'Bayar QR'}{amount > 0 ?  | ${money(amount)} : ''}</button>
         <output aria-live="polite">{feedback}</output>
       </form>
     </div>}
@@ -147,13 +147,13 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
     {page.slug === 'p4' && <div className="tapnusa-grid">
       <section className="tapnusa-panel">
         <h2>Antrean kliring</h2>
-        <p>{queued.length} pembayaran baru · {money(total(queued))}</p>
-        {active && <p><b>{batchRef(active.id)}</b> · {stepLabels[active.step]} · {money(total(payments.filter(entry => active.entries.includes(entry.id))))}</p>}
+        <p>{queued.length} pembayaran baru | {money(total(queued))}</p>
+        {active && <p><b>{batchRef(active.id)}</b> | {stepLabels[active.step]} | {money(total(payments.filter(entry => active.entries.includes(entry.id))))}</p>}
         <button type="button" className="tapnusa-action" onClick={advanceSettlement} disabled={!active && !queued.length}>{active ? active.step === 'review' ? 'Setujui sebagai Checker' : 'Selesaikan sebagai Releaser' : 'Ajukan sebagai Maker'}</button>
       </section>
       <section className="tapnusa-panel">
         <h2>Riwayat batch</h2>
-        {wallet.batches.length ? <ul>{[...wallet.batches].reverse().map(batch => <li key={batch.id}><span>{batchRef(batch.id)} · {batch.entries.length} pembayaran</span><b>{stepLabels[batch.step]}</b></li>)}</ul> : <p>Belum ada batch yang diajukan.</p>}
+        {wallet.batches.length ? <ul>{[...wallet.batches].reverse().map(batch => <li key={batch.id}><span>{batchRef(batch.id)} | {batch.entries.length} pembayaran</span><b>{stepLabels[batch.step]}</b></li>)}</ul> : <p>Belum ada batch yang diajukan.</p>}
       </section>
     </div>}
 
@@ -164,7 +164,7 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
       </section>
       <section className="tapnusa-panel">
         <h2>Kontrol simulasi</h2>
-        <dl><div><dt>Batas saldo dompet</dt><dd>{money(LIMIT)}</dd></div><div><dt>Persetujuan settlement</dt><dd>Maker → Checker → Releaser</dd></div><div><dt>Transaksi eksternal</dt><dd>Tidak dikirim</dd></div></dl>
+        <dl><div><dt>Batas saldo dompet</dt><dd>{money(LIMIT)}</dd></div><div><dt>Persetujuan settlement</dt><dd>Maker -> Checker -> Releaser</dd></div><div><dt>Transaksi eksternal</dt><dd>Tidak dikirim</dd></div></dl>
         {!confirmReset ? <button type="button" className="tapnusa-link" onClick={() => setConfirmReset(true)}>Reset simulasi TapNusa</button> : <div className="tapnusa-confirm"><p>Hapus pembayaran dan persetujuan lokal?</p><button type="button" className="tapnusa-action" onClick={() => { setWallet(initial); setSelected(undefined); setFeedback(''); setConfirmReset(false); }}>Ya, reset</button><button type="button" className="tapnusa-link" onClick={() => setConfirmReset(false)}>Batal</button></div>}
       </section>
     </div>}

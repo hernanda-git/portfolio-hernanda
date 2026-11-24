@@ -204,8 +204,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                         }}
                       >
                         <div>
-                          <div style={{ fontSize: '12.5px', fontWeight: 600 }}>{e.role} — {e.company}</div>
-                          <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)' }}>{e.period} · {e.sector}</div>
+                          <div style={{ fontSize: '12.5px', fontWeight: 600 }}>{e.role} - {e.company}</div>
+                          <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)' }}>{e.period} | {e.sector}</div>
                         </div>
                         <span className="tag tag-ok">CV Valid</span>
                       </button>

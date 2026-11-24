@@ -34,8 +34,8 @@ export const App: React.FC = () => {
       setPathname(route.canonical);
     }
     document.title = route.kind === 'prototype'
-      ? `${route.page.title} — ${route.project.name}`
-      : route.kind === 'missing' ? 'Halaman tidak ditemukan — Atlas' : 'Muhammad Hernanda — Portofolio & Atlas Produk Digital';
+      ? `${route.page.title} - ${route.project.name}`
+      : route.kind === 'missing' ? 'Halaman tidak ditemukan - Atlas' : 'Muhammad Hernanda - Portofolio & Atlas Produk Digital';
   }, [pathname, route]);
 
   const navigate = useCallback((path: string) => {
@@ -146,10 +146,10 @@ export const App: React.FC = () => {
       {route.kind !== 'prototype' && <footer className="site-footer">
         <div className="footer-inner">
           <span>
-            {PROFILE.name} — {PROFILE.location} · Riwayat CV Terverifikasi ({EXPERIENCES.length} Pengalaman) dipisahkan tegas dari {PROJECTS.length} Konsep Produk Digital.
+            {PROFILE.name} - {PROFILE.location} | Riwayat CV Terverifikasi ({EXPERIENCES.length} Pengalaman) dipisahkan tegas dari {PROJECTS.length} Konsep Produk Digital.
           </span>
           <span>
-            <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a> · <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">{PROFILE.linkedinLabel}</a>
+            <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a> | <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">{PROFILE.linkedinLabel}</a>
           </span>
         </div>
       </footer>}
