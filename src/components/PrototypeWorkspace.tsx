@@ -1,7 +1,10 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { getPageScreenshotUrl, PROJECT_PAGES, type ProjectPageSpec } from '../data/projectPages';
+import { getLocalizedPageTitle } from '../data/projectsEn';
 import type { ConceptProject } from '../data/projectTypes';
 import { EXPERIENCES } from '../data/profile';
+import { useLanguage } from '../i18n/LanguageContext';
+import { UI_COPY } from '../i18n/uiCopy';
 import { projectPath, SECTION_PATHS } from '../routes';
 import { IconArrowLeft, IconArrowRight, IconClose, IconExternal, IconMoon, IconSearch, IconSun } from './Icons';
 import '../styles/prototype.css';
@@ -22,6 +25,10 @@ interface Props {
 }
 
 export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpenCommand, onJumpToExperience }: Props) {
+  const { lang, setLang } = useLanguage();
+  const copy = UI_COPY[lang];
+  const pCopy = copy.prototype;
+
   const plan = PROJECT_PAGES[project.id];
   const pages = plan.pages;
   const position = pages.indexOf(page);
@@ -30,7 +37,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
   const Surface = project.id === 'ID-012' ? TreasurySurface : project.id === 'ID-011' ? TapNusaSurface : AtlasSurface;
   const previous = pages[position - 1];
   const next = pages[position + 1];
-  const experience = project.cvLink && EXPERIENCES.find(entry => entry.id === project.cvLink);
+  const experience = project.cvLink && EXPERIENCES.find((entry) => entry.id === project.cvLink);
   const heading = useRef<HTMLHeadingElement>(null);
 
   const [viewMode, setViewMode] = useState<'design' | 'interactive'>(() =>
@@ -64,12 +71,16 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
 
   const resLabel = plan.resolution ?? '1280x800';
   const activeShotUrl = getPageScreenshotUrl(project.id, page.slug);
+  const currentTitle = getLocalizedPageTitle(project.id, page, lang);
+  const prevTitle = previous ? getLocalizedPageTitle(project.id, previous, lang) : '';
+  const nextTitle = next ? getLocalizedPageTitle(project.id, next, lang) : '';
 
   const navigation = (
-    <nav className="prototype-pages" aria-label="Halaman prototipe">
+    <nav className="prototype-pages" aria-label={pCopy.pagesNavAria}>
       {pages.map((entry, index) => (
         <a key={entry.slug} href={projectPath(project, entry)} aria-current={entry === page ? 'page' : undefined}>
-          <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{entry.title}
+          <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          {getLocalizedPageTitle(project.id, entry, lang)}
         </a>
       ))}
     </nav>
@@ -83,10 +94,10 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
           <span aria-hidden="true">/</span>
           <span>{project.name}</span>
           <span className="prototype-project-id">{project.id}</span>
-          {isEnterprise && <span className="tag tag-ok">Enterprise Verified | {pages.length} Hal</span>}
+          {isEnterprise && <span className="tag tag-ok">{pCopy.enterpriseVerifiedTag(pages.length)}</span>}
         </div>
         <div className="prototype-header-actions">
-          <div className="segmented" role="tablist" aria-label="Mode tampilan studi kasus">
+          <div className="segmented" role="tablist" aria-label={pCopy.viewModeAria}>
             <button
               type="button"
               role="tab"
@@ -94,7 +105,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
               className={`seg-btn ${viewMode === 'design' ? 'is-active' : ''}`}
               onClick={() => setViewMode('design')}
             >
-              {isEnterprise ? `Desain Enterprise (${resLabel})` : 'Desain UI/UX'}
+              {isEnterprise ? pCopy.enterpriseDesignTab(resLabel) : pCopy.uiDesignTab}
             </button>
             <button
               type="button"
@@ -103,13 +114,37 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
               className={`seg-btn ${viewMode === 'interactive' ? 'is-active' : ''}`}
               onClick={() => setViewMode('interactive')}
             >
-              {hasBespokeInteractive ? 'Prototipe Interaktif' : 'Simulasi Interaktif'}
+              {hasBespokeInteractive ? pCopy.interactiveProtoTab : pCopy.interactiveSimTab}
             </button>
           </div>
-          <button className="icon-btn" type="button" onClick={onOpenCommand} aria-label="Cari prototipe" title="Cari prototipe"><IconSearch size={16} /></button>
-          <button className="icon-btn" type="button" onClick={onToggleTheme}
-            aria-label={theme === 'light' ? 'Ubah ke tema gelap' : 'Ubah ke tema terang'}
-            title={theme === 'light' ? 'Ubah ke tema gelap' : 'Ubah ke tema terang'}>
+          <div className="lang-switch" role="group" aria-label={copy.switchLanguageAria}>
+            <button
+              type="button"
+              className={`lang-btn ${lang === 'en' ? 'is-active' : ''}`}
+              onClick={() => setLang('en')}
+              aria-pressed={lang === 'en'}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              className={`lang-btn ${lang === 'id' ? 'is-active' : ''}`}
+              onClick={() => setLang('id')}
+              aria-pressed={lang === 'id'}
+            >
+              ID
+            </button>
+          </div>
+          <button className="icon-btn" type="button" onClick={onOpenCommand} aria-label={pCopy.searchProtoAria} title={pCopy.searchProtoAria}>
+            <IconSearch size={16} />
+          </button>
+          <button
+            className="icon-btn"
+            type="button"
+            onClick={onToggleTheme}
+            aria-label={theme === 'light' ? copy.switchToDark : copy.switchToLight}
+            title={theme === 'light' ? copy.switchToDark : copy.switchToLight}
+          >
             {theme === 'light' ? <IconMoon size={16} /> : <IconSun size={16} />}
           </button>
         </div>
@@ -118,14 +153,14 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
       <aside className="prototype-sidebar">
         <div className="prototype-pages-desktop">{navigation}</div>
         <details className="prototype-pages-mobile" key={page.slug}>
-          <summary>Halaman {position + 1} dari {pages.length}</summary>
+          <summary>{pCopy.pageOf(position + 1, pages.length)}</summary>
           {navigation}
         </details>
       </aside>
 
       <div className="prototype-content">
         <div className="proto-title-row">
-          <h1 tabIndex={-1} ref={heading}>{page.title}</h1>
+          <h1 tabIndex={-1} ref={heading}>{currentTitle}</h1>
           {plan.designReference && (
             <span className="tag">Ref: {plan.designReference}</span>
           )}
@@ -137,7 +172,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
               <div className="proto-stage-bar">
                 <div className="proto-stage-meta">
                   <span className="status-dot ok" />
-                  <strong>Halaman {String(position + 1).padStart(2, '0')} / {String(pages.length).padStart(2, '0')}</strong>
+                  <strong>{pCopy.pageBadge(String(position + 1).padStart(2, '0'), String(pages.length).padStart(2, '0'))}</strong>
                   <span className="tag tag-mono">{resLabel}</span>
                   <span className="tag tag-mono">{plan.persona}</span>
                 </div>
@@ -150,7 +185,7 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
                   }}
                 >
                   <IconExternal size={13} />
-                  Zoom &amp; Inspeksi
+                  {pCopy.zoomInspectBtn}
                 </button>
               </div>
               <button
@@ -160,12 +195,12 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
                   setZoomLevel('fit');
                   setZoomOpen(true);
                 }}
-                title={`Klik untuk inspeksi Zoom Fit / 100% / 150% (${resLabel})`}
+                title={pCopy.zoomHint(resLabel)}
               >
                 <img
                   key={activeShotUrl}
                   src={activeShotUrl}
-                  alt={`${project.name} - ${page.title} (${resLabel})`}
+                  alt={`${project.name} - ${currentTitle} (${resLabel})`}
                   className="proto-shot-img"
                 />
               </button>
@@ -174,58 +209,68 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
             <div
               className="proto-filmstrip"
               style={{ ['--page-cols' as string]: String(pages.length) }}
-              aria-label="Pratinjau seluruh halaman"
+              aria-label={pCopy.filmstripAria}
             >
-              {pages.map((entry, idx) => (
-                <a
-                  key={entry.slug}
-                  href={projectPath(project, entry)}
-                  className={`proto-thumb ${entry === page ? 'is-active' : ''}`}
-                >
-                  <div className="proto-thumb-frame">
-                    <img
-                      src={getPageScreenshotUrl(project.id, entry.slug)}
-                      alt={`Pratinjau ${entry.title}`}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="proto-thumb-label">
-                    <span className="proto-thumb-num">{String(idx + 1).padStart(2, '0')}</span>
-                    <span className="proto-thumb-text">{entry.title}</span>
-                  </div>
-                </a>
-              ))}
+              {pages.map((entry, idx) => {
+                const entryTitle = getLocalizedPageTitle(project.id, entry, lang);
+                return (
+                  <a
+                    key={entry.slug}
+                    href={projectPath(project, entry)}
+                    className={`proto-thumb ${entry === page ? 'is-active' : ''}`}
+                  >
+                    <div className="proto-thumb-frame">
+                      <img
+                        src={getPageScreenshotUrl(project.id, entry.slug)}
+                        alt={pCopy.previewAlt(entryTitle)}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="proto-thumb-label">
+                      <span className="proto-thumb-num">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="proto-thumb-text">{entryTitle}</span>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         ) : (
-          <Suspense fallback={<p className="prototype-loading" role="status">Memuat prototipe...</p>}>
+          <Suspense fallback={<p className="prototype-loading" role="status">{pCopy.loadingProto}</p>}>
             <Surface project={project} page={page} />
           </Suspense>
         )}
 
-        <nav className="prototype-pager" aria-label="Halaman sebelum dan sesudah">
-          {previous && <a href={projectPath(project, previous)}><IconArrowLeft size={16} /> {previous.title}</a>}
-          {next && <a href={projectPath(project, next)}>{next.title} <IconArrowRight size={16} /></a>}
+        <nav className="prototype-pager" aria-label={pCopy.pagerAria}>
+          {previous && <a href={projectPath(project, previous)}><IconArrowLeft size={16} /> {prevTitle}</a>}
+          {next && <a href={projectPath(project, next)}>{nextTitle} <IconArrowRight size={16} /></a>}
         </nav>
 
         <details className="prototype-about">
-          <summary>Tentang {project.name}</summary>
+          <summary>{pCopy.aboutPrefix(project.name)}</summary>
           <div>
             <p>{project.summary}</p>
-            <h2>Masalah</h2>
+            <h2>{pCopy.problemHeading}</h2>
             <p>{project.problem}</p>
-            <h2>Konteks Indonesia</h2>
+            <h2>{pCopy.contextHeading}</h2>
             <p>{project.indonesiaContext}</p>
-            <h2>Cakupan produk</h2>
-            <ul>{project.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
-            <h2>Arsitektur rujukan</h2>
+            <h2>{pCopy.scopeHeading}</h2>
+            <ul>{project.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+            <h2>{pCopy.refArchHeading}</h2>
             <dl>{([
-              ['Klien', project.architecture.client], ['Gateway', project.architecture.edge],
-              ['Domain', project.architecture.core], ['Integrasi', project.architecture.integration],
-              ['Penyimpanan', project.architecture.storage], ['Stack', project.stack.join(' | ')],
-              ['Standar', project.standards.join(' | ')],
+              [pCopy.archLabels.client, project.architecture.client],
+              [pCopy.archLabels.edge, project.architecture.edge],
+              [pCopy.archLabels.core, project.architecture.core],
+              [pCopy.archLabels.integration, project.architecture.integration],
+              [pCopy.archLabels.storage, project.architecture.storage],
+              [pCopy.archLabels.stack, project.stack.join(' | ')],
+              [pCopy.archLabels.standards, project.standards.join(' | ')],
             ]).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-            {experience && <button type="button" className="btn" onClick={() => onJumpToExperience(experience.id)}>Pengalaman terkait: {experience.company}</button>}
+            {experience && (
+              <button type="button" className="btn" onClick={() => onJumpToExperience(experience.id)}>
+                {pCopy.relatedExpBtn(experience.company)}
+              </button>
+            )}
           </div>
         </details>
       </div>
@@ -236,15 +281,15 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
           onClick={() => setZoomOpen(false)}
           role="dialog"
           aria-modal="true"
-          aria-label={`Inspeksi Zoom ${project.name} - ${page.title}`}
+          aria-label={pCopy.zoomDialogAria(project.name, currentTitle)}
         >
           <div className="proto-lightbox-frame" onClick={(e) => e.stopPropagation()}>
             <div className="proto-lightbox-bar">
               <span className="tag-mono" style={{ fontSize: '12px' }}>
-                {project.id} | {project.name} - {String(position + 1).padStart(2, '0')}/{String(pages.length).padStart(2, '0')}: {page.title} ({resLabel})
+                {project.id} | {project.name} - {String(position + 1).padStart(2, '0')}/{String(pages.length).padStart(2, '0')}: {currentTitle} ({resLabel})
               </span>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-                <div className="segmented" role="group" aria-label="Level zoom">
+                <div className="segmented" role="group" aria-label={pCopy.zoomLevelAria}>
                   {(['fit', '100', '150'] as const).map((lvl) => (
                     <button
                       key={lvl}
@@ -259,23 +304,23 @@ export function PrototypeWorkspace({ project, page, theme, onToggleTheme, onOpen
                 </div>
                 {previous && (
                   <a className="btn btn-sm" href={projectPath(project, previous)}>
-                    <IconArrowLeft size={12} /> Prev
+                    <IconArrowLeft size={12} /> {pCopy.prevBtn}
                   </a>
                 )}
                 {next && (
                   <a className="btn btn-sm" href={projectPath(project, next)}>
-                    Next <IconArrowRight size={12} />
+                    {pCopy.nextBtn} <IconArrowRight size={12} />
                   </a>
                 )}
                 <button type="button" className="btn btn-sm" onClick={() => setZoomOpen(false)}>
-                  <IconClose size={12} /> Tutup (Esc)
+                  <IconClose size={12} /> {pCopy.closeEscBtn}
                 </button>
               </div>
             </div>
             <div className={`proto-lightbox-viewport is-zoom-${zoomLevel}`}>
               <img
                 src={activeShotUrl}
-                alt={`Resolusi penuh ${project.name} - ${page.title}`}
+                alt={pCopy.fullResAlt(project.name, currentTitle)}
                 className="proto-lightbox-img"
               />
             </div>

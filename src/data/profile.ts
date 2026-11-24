@@ -1,460 +1,765 @@
+import type { Language } from '../i18n/LanguageContext';
+
+export interface LocalizedText {
+  en: string;
+  id: string;
+}
+
+export interface LocalizedList {
+  en: string[];
+  id: string[];
+}
+
+export type EmploymentType =
+  | 'Full-Time'
+  | 'Founder'
+  | 'Leadership'
+  | 'Konsultan / Penempatan'
+  | 'Freelance';
+
 export interface ExperienceItem {
   id: string;
-  verbatimHeader: string;
-  role: string;
+  role: LocalizedText;
   company: string;
-  clientContext?: string;
-  period: string;
-  location: string;
-  sector: string;
-  employmentType: 'Full-Time' | 'Founder' | 'Leadership' | 'Konsultan / Penempatan' | 'Freelance';
-  highlights: string[];
+  clientContext?: LocalizedText;
+  period: LocalizedText;
+  location: LocalizedText;
+  sector: LocalizedText;
+  employmentType: EmploymentType;
+  highlights: LocalizedList;
+  link?: {
+    url: string;
+    label: LocalizedText;
+  };
   stack: string[];
   relatedConceptIds: string[];
 }
 
 export interface SkillGroup {
-  category: string;
-  verbatimLine: string;
+  category: LocalizedText;
   items: string[];
 }
 
 export const PROFILE = {
   name: 'Muhammad Hernanda',
   monogram: 'MH',
-  title: 'IT Consultant (10 Years+ Experience)',
-  subtitle: 'A fully multi-role Software Engineer specializing in .NET tech stacks since 2016',
+  title: {
+    en: 'IT Consultant & Principal Software Engineer (10+ Years)',
+    id: 'IT Consultant & Principal Software Engineer (10+ Tahun)',
+  },
+  subtitle: {
+    en: 'Multi-role software engineer specializing in .NET architecture, enterprise systems, and AI engineering workflows since 2016',
+    id: 'Software engineer lintas peran dengan spesialisasi arsitektur .NET, sistem enterprise, dan AI engineering workflow sejak 2016',
+  },
   location: 'Jakarta, Indonesia',
   timezone: 'WIB (UTC+7)',
   email: 'm.hernanda95@gmail.com',
   phone: '+62-81280031995',
   linkedin: 'https://linkedin.com/in/m-hernanda',
   linkedinLabel: 'linkedin.com/in/m-hernanda',
+  githubAiLibrary: 'https://github.com/hernanda-git/ai-knowledge-library',
   activeSince: 2016,
-  sourceFile: 'Resume of Muhammad Hernanda (September 2026).pdf',
-  summary: [
-    "A fully multi-role Software Engineer experienced in responsibilities that intersect with Solution Architect, DevOps, System Analyst, Data Engineer, and Release Manager, since 2016 in Microsoft technologies, specializing in .NET tech stacks.",
-    "I have collaborated on various projects across diverse sectors, including banking, mining, prison, logistic, government, data center, and startups. I'm passionate about creating user-centric application that prioritize the UI/UX and performance without ignoring the architectural integrity including SOLID and KISS principle implementation to ensure cost and time efficiency.",
-    "I actively keep up with the latest advancements in technologies and enjoy sharing insights with clients, ensuring they stay informed about the updates and best practices in software development life-cycle across various platforms, such as websites, mobile apps, and API managements. I have worked in various capacities including freelancing, collaborating within teams and leading projects independently, ensuring me capable to adapt in different work environments and challenges whether I'm working solo or within a team.",
-    "Since AI boom has made the recruitment process unreliable and made it difficult for clients to find reliable talents and profiles, I usually utilize it roughly 20% of my work and activities to make the results still relevant with the needs. To ensure that I am considerable for your needs, you can read my previous experience below, I am open to have a conversation directly before considering me to do interview section due to optimize the time efficiency.",
-  ],
-  credibilityStatement:
-    'Portofolio ini memisahkan secara tegas riwayat karier produksi yang terverifikasi (2016-2026, reproduksi verbatim 100% dari CV) dengan seluruh konsep produk di Atlas Pasar Indonesia yang bersifat eksplorasi desain & arsitektur (belum di-deploy ke produksi).',
+  summary: {
+    en: [
+      'I have been building production software since 2016, centered around the Microsoft and .NET ecosystem while regularly stepping across Solution Architecture, DevOps, System Analysis, Data Engineering, and Release Management.',
+      'My work spans banking, mining, insurance, logistics, government, cold-chain distribution, civic platforms, and early-stage startups. I care about keeping interfaces clean and fast for end users without cutting corners on architectural discipline like SOLID and KISS, because clean structure saves real money and time later.',
+      'Today, most of my delivery runs through a personal AI-assisted engineering workflow and pipeline that speeds up exploration, implementation, and iteration from end to end. Architecture decisions, security boundaries, code review, and runtime verification still stay firmly in my hands, and I stay open to talking through technical problems directly before formal interview rounds.',
+    ],
+    id: [
+      'Saya membangun perangkat lunak produksi sejak 2016 dengan fokus utama di ekosistem Microsoft dan .NET, sambil rutin menangani irisan peran Solution Architect, DevOps, System Analyst, Data Engineer, hingga Release Manager.',
+      'Pengalaman saya mencakup perbankan, pertambangan, asuransi, logistik, pemerintahan, distribusi cold-chain, layanan warga, dan startup tahap awal. Saya terbiasa menjaga UI/UX tetap ringan dan mudah dipakai tanpa mengorbankan integritas arsitektur seperti prinsip SOLID dan KISS agar biaya serta waktu pengembangan tetap efisien.',
+      'Saat ini sebagian besar proses delivery saya berjalan lewat workflow dan pipeline berbasis AI yang saya racik sendiri untuk mempercepat riset, implementasi, dan iterasi secara menyeluruh. Keputusan arsitektur, batas keamanan, review kode, dan verifikasi sistem tetap saya pegang penuh, dan saya terbuka untuk berdiskusi teknis langsung sebelum masuk ke tahap wawancara formal.',
+    ],
+  },
+  credibilityStatement: {
+    en: 'This portfolio keeps verified production experience (2016 to 2026) strictly separate from the Indonesian Digital Product Atlas concepts, which are architecture and UI/UX explorations rather than deployed client systems.',
+    id: 'Portofolio ini memisahkan secara tegas rekam jejak karier produksi (2016 hingga 2026) dari seluruh konsep di Atlas Produk Digital Indonesia yang bersifat eksplorasi arsitektur dan UI/UX, bukan sistem klien yang sudah di-deploy.',
+  },
 };
 
 export const SKILL_GROUPS: SkillGroup[] = [
   {
-    category: "Architectural Design",
-    verbatimLine: "Monolith, Modular Monolith, Microservices",
-    items: ["Monolith", "Modular Monolith", "Microservices"],
+    category: { en: 'Architecture & System Design', id: 'Arsitektur & System Design' },
+    items: ['Monolith', 'Modular Monolith', 'Microservices', 'Event-Driven', 'Offline-First Mobile'],
   },
   {
-    category: "Component Libraries",
-    verbatimLine: "Telerik, DevExpress, SyncFusion, Tailwind, Bootstrap, Bunifu, Uranium, Community Toolkit.",
-    items: ["Telerik", "DevExpress", "SyncFusion", "Tailwind", "Bootstrap", "Bunifu", "Uranium", "Community Toolkit."],
+    category: { en: 'Frameworks & Runtimes', id: 'Framework & Runtime' },
+    items: ['.NET 8 / 9', '.NET Core', '.NET Framework', '.NET MAUI', 'Xamarin', 'WPF', 'WinForms', 'Blazor', 'React', 'Next.js', 'AngularJS'],
   },
   {
-    category: "Frameworks",
-    verbatimLine: ".NET Framework, .NET Core, .NET MAUI, Xamarin, WPF, WinForms, Console, Blazor, AngularJs, ReactJs",
-    items: [".NET Framework", ".NET Core", ".NET MAUI", "Xamarin", "WPF", "WinForms", "Console", "Blazor", "AngularJs", "ReactJs"],
+    category: { en: 'Programming Languages', id: 'Bahasa Pemrograman' },
+    items: ['C#', 'TypeScript', 'JavaScript', 'T-SQL', 'Python', 'Go', 'XAML', 'XML', 'jQuery', 'VB', 'C', 'C++'],
   },
   {
-    category: "Languages",
-    verbatimLine: "C#, Vanilla Javascript, jQuery, XAML, XML, Python, VB, C, C++, Go, TSQL",
-    items: ["C#", "Vanilla Javascript", "jQuery", "XAML", "XML", "Python", "VB", "C", "C++", "Go", "TSQL"],
+    category: { en: 'Backend, Messaging & Workflow', id: 'Backend, Messaging & Workflow' },
+    items: ['RabbitMQ', 'Elsa Workflow', 'SignalR', 'Dapper', 'MediatR', 'AutoMapper', 'Refit', 'EPPlus', 'Aspose', 'Firebase', 'Supabase'],
   },
   {
-    category: "Backend Libraries",
-    verbatimLine: "SignalR, Firebase, Supabase, Refit, EPPlus, Aspose, Dapper, MediatR, AutoMapper.",
-    items: ["SignalR", "Firebase", "Supabase", "Refit", "EPPlus", "Aspose", "Dapper", "MediatR", "AutoMapper."],
+    category: { en: 'AI Engineering & Pipelines', id: 'AI Engineering & Pipeline' },
+    items: ['Custom Inference Gateway', 'RAG Pipelines', 'MLOps', 'Provider Pooling', 'LoRA Fine-Tuning', 'Agentic Workflows'],
   },
   {
-    category: "Logging",
-    verbatimLine: "Serilog, Log4Net, Microsoft.Extension.Logging",
-    items: ["Serilog", "Log4Net", "Microsoft.Extension.Logging"],
+    category: { en: 'UI & Component Libraries', id: 'UI & Component Library' },
+    items: ['Tailwind CSS', 'Bootstrap', 'Telerik', 'DevExpress', 'Syncfusion', 'Community Toolkit', 'Bunifu', 'Uranium'],
   },
   {
-    category: "Database Schema",
-    verbatimLine: "SQL Server, Postgree, MangoDb, SQLite, DbDiagram, Supabase",
-    items: ["SQL Server", "Postgree", "MangoDb", "SQLite", "DbDiagram", "Supabase"],
+    category: { en: 'Databases & Data Modeling', id: 'Database & Data Modeling' },
+    items: ['SQL Server', 'PostgreSQL', 'MongoDB', 'SQLite', 'Supabase', 'Neon', 'dbDiagram'],
   },
   {
-    category: "Planning & Design",
-    verbatimLine: "Figma, Google Stitch, Notion, Miro, Microsoft Visio, Draw.io, Visual Paradigm, Balsamiq.",
-    items: ["Figma", "Google Stitch", "Notion", "Miro", "Microsoft Visio", "Draw.io", "Visual Paradigm", "Balsamiq."],
+    category: { en: 'Cloud, DevOps & Observability', id: 'Cloud, DevOps & Observability' },
+    items: ['Azure App Service', 'Azure Functions', 'Azure Cosmos DB', 'Azure DevOps', 'Azure AD / B2C', 'Docker', 'Kubernetes', '.NET Aspire', 'Serilog', 'Log4Net'],
   },
   {
-    category: "Project Management Tools",
-    verbatimLine: "Jira, Azure DevOps, Trello, Google Sheets, Microsoft Planner, Loop.",
-    items: ["Jira", "Azure DevOps", "Trello", "Google Sheets", "Microsoft Planner", "Loop."],
+    category: { en: 'API, Testing & Quality', id: 'API, Testing & Quality' },
+    items: ['REST', 'gRPC', 'SOAP', 'OAuth2 / JWT', 'xUnit', 'NUnit', 'SonarQube'],
   },
   {
-    category: "Azure Features",
-    verbatimLine: "Azure Function, Azure CosmosDB, Azure DevOps, Azure AppService, Azure Static Web Page, etc.",
-    items: ["Azure Function", "Azure CosmosDB", "Azure DevOps", "Azure AppService", "Azure Static Web Page", "etc."],
+    category: { en: 'Design, Planning & Delivery', id: 'Desain, Perencanaan & Delivery' },
+    items: ['Figma', 'Miro', 'Notion', 'Draw.io', 'Visio', 'Visual Paradigm', 'Balsamiq', 'Jira', 'Trello', 'Power BI', 'Tableau'],
   },
   {
-    category: "Presentation",
-    verbatimLine: "Tableau, Power BI, Figma, Powerpoint.",
-    items: ["Tableau", "Power BI", "Figma", "Powerpoint."],
+    category: { en: 'Version Control & Mobile Release', id: 'Version Control & Mobile Release' },
+    items: ['Git', 'GitLab', 'Bitbucket', 'Azure TFS', 'Apple TestFlight', 'Google Play Console'],
   },
   {
-    category: "API Protocols",
-    verbatimLine: "SOAP, REST, gPRC.",
-    items: ["SOAP", "REST", "gPRC."],
-  },
-  {
-    category: "Team Collaborations & Versionings",
-    verbatimLine: "Git, Azure TFS, Offline TFS, BitBucket, GitLab.",
-    items: ["Git", "Azure TFS", "Offline TFS", "BitBucket", "GitLab."],
-  },
-  {
-    category: "Unit Testings & Vulnerability Detection Tools",
-    verbatimLine: "NUnit, xUnit, SonarQube, .NET Aspire.",
-    items: ["NUnit", "xUnit", "SonarQube", ".NET Aspire."],
-  },
-  {
-    category: "External Services & Orchestration",
-    verbatimLine: "Supabase, Neon, Docker.",
-    items: ["Supabase", "Neon", "Docker."],
-  },
-  {
-    category: "Others",
-    verbatimLine: "Laravel, MIT AppInventor, CodeIgniter, Flutter, React Native, Android Studio, XCode, Ionic, Wordpress",
-    items: ["Laravel", "MIT AppInventor", "CodeIgniter", "Flutter", "React Native", "Android Studio", "XCode", "Ionic", "Wordpress"],
+    category: { en: 'Additional Ecosystems', id: 'Ekosistem Tambahan' },
+    items: ['Laravel', 'CodeIgniter', 'Flutter', 'React Native', 'Ionic', 'Android Studio', 'Xcode', 'WordPress'],
   },
 ];
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    id: "exp-grcboard",
-    verbatimHeader: "Senior Backend Engineer - PT. Mitra Seribu Saudara (GRC Board)",
-    role: "Senior Backend Engineer",
-    company: "PT. Mitra Seribu Saudara (GRC Board)",
-    period: "May 2026 - Present",
-    location: "Jakarta, Indonesia",
-    sector: "Infrastruktur AI & Distribusi Enterprise",
-    employmentType: "Full-Time",
-    highlights: [
-      "Implementing my self-learn knowledge to this company.",
-      "https://github.com/hernanda-git/ai-knowledge-library",
-      "Including self built inference (.NET Built from scratch, not fork), company own hermes agent (forked from nousresearch and rework) which supports continuous updates, reverse engineer obsidian to make ourself replica of it named Tourmaline, and support web deployment, also provider pooling, model mixtures, context compressions, benchmaxxing qwen, making LoRA by myself, vector 4d memory caching, sensitive information concrete wall, RBAC provider usage, agent vision, camofox integration (I'm not using the primitive playwright things. too old...), new style of git branch local-remote workspace and governance to support concurrent multi-session parallel swarm, architect loop, bot profile managements, skill curating, MiTM, 24/7 agentic blue team SecOps, company chat bot, antigravity oauth proxy, monitors all the top github repos to improve all these stuff. I built them all alone with a help of top tier harnesses and SoTA models.",
-      "Email me, I'll teach you everything from scratch for FREE.",
-      "Also, beside all of these stuff, I'm actually dedicated, or in charged as a backend developer to support B2B and B2C products. So, the 80% of the whole job desc is all of my initiatives, and thankfully, the company supported my work.",
-      "I also rework company meeting room reservation system, including car reservation system. I also build from scratch the entire company budget management and budget tracking system for calculating expenses grouped by multiple options. applying complex math to make a forecasting of future company expenses by probabilities percentages using linear algebra.",
-    ],
-    stack: [".NET", "C#", "B2B/B2C Backend", "AI Gateway", "Hermes Agent", "Tourmaline", "LoRA", "Camofox", "Linear Algebra Forecasting"],
-    relatedConceptIds: ["ID-001", "ID-004", "ID-006", "ID-077"],
+    id: 'exp-grcboard',
+    role: {
+      en: 'Senior Backend Engineer',
+      id: 'Senior Backend Engineer',
+    },
+    company: 'PT. Mitra Seribu Saudara (GRC Board)',
+    period: {
+      en: 'May 2026 - Present',
+      id: 'Mei 2026 - Sekarang',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'Enterprise Distribution & Internal AI Infrastructure',
+      id: 'Distribusi Enterprise & Infrastruktur AI Internal',
+    },
+    employmentType: 'Full-Time',
+    link: {
+      url: 'https://github.com/hernanda-git/ai-knowledge-library',
+      label: {
+        en: 'Open AI Knowledge Library on GitHub',
+        id: 'Buka AI Knowledge Library di GitHub',
+      },
+    },
+    highlights: {
+      en: [
+        'Handle backend engineering for the company B2B and B2C products while driving internal AI infrastructure initiatives backed by leadership.',
+        'Built an internal .NET AI inference gateway from scratch with multi-provider pooling, model routing, context compression, RBAC usage governance, and strict sensitive-data filtering.',
+        'Created Tourmaline, an internal web-deployable knowledge workspace modeled after Obsidian, alongside a customized agent runtime supporting continuous updates, vision capabilities, browser automation, and concurrent multi-branch agent workspaces.',
+        'Experimented with Qwen benchmarking, custom LoRA training, vector memory caching, internal company chatbots, and continuous blue-team security monitoring workflows.',
+        'Rebuilt the company meeting room and vehicle reservation platforms to clean up legacy booking conflicts.',
+        'Engineered a company-wide budget management and expense tracking system from scratch, incorporating probability-weighted forecasting using linear algebra across flexible cost groupings.',
+      ],
+      id: [
+        'Menangani pengembangan backend untuk produk B2B dan B2C perusahaan sekaligus memimpin inisiatif infrastruktur AI internal dengan dukungan penuh manajemen.',
+        'Membangun AI inference gateway berbasis .NET dari nol dengan provider pooling, model routing, kompresi konteks, tata kelola kuota RBAC, serta filter ketat untuk mencegah kebocoran data sensitif.',
+        'Mengembangkan Tourmaline, workspace pengetahuan internal berbasis web yang terinspirasi dari Obsidian, berdampingan dengan runtime agent kustom yang mendukung pembaruan berkelanjutan, agent vision, otomasi browser, serta workspace multi-branch paralel.',
+        'Mengerjakan benchmarking Qwen, pelatihan LoRA mandiri, caching memori vektor, chatbot internal perusahaan, serta workflow pemantauan keamanan blue-team berkelanjutan.',
+        'Merombak ulang sistem reservasi ruang rapat dan kendaraan operasional perusahaan agar lebih tertib dan bebas bentrok jadwal.',
+        'Membangun sistem manajemen dan pelacakan anggaran perusahaan dari nol, dilengkapi proyeksi pengeluaran berbasis probabilitas menggunakan aljabar linear untuk berbagai skenario pengelompokan biaya.',
+      ],
+    },
+    stack: ['.NET', 'C#', 'B2B/B2C Backend', 'AI Inference Gateway', 'Hermes Agent', 'Tourmaline', 'LoRA', 'Linear Algebra Forecasting'],
+    relatedConceptIds: ['ID-001', 'ID-004', 'ID-006', 'ID-077'],
   },
   {
-    id: "exp-wargadigital",
-    verbatimHeader: "Founder - Warga Digital (warga-digital.com)",
-    role: "Founder",
-    company: "Warga Digital (warga-digital.com)",
-    period: "May 2026 - Present",
-    location: "Indonesia",
-    sector: "Civic Tech & SaaS Lingkungan RT/RW",
-    employmentType: "Founder",
-    highlights: [
-      "Built and launched a mobile-first RT management platform from scratch",
-      "Fully owned the codebase: architecture, backend, frontend, and deployment",
-      "Developed core features like resident data management and kas RT management",
-      "Utilize Supabase and custom JWT auth for a secure, scalable system",
-      "Enabled MSMEs and household services within the neighborhood ecosystem",
-      "Focused on simple, intuitive UX for non-technical users",
-    ],
-    stack: ["Supabase", "Custom JWT", "Mobile-First Web", "PostgreSQL", "TypeScript"],
-    relatedConceptIds: ["ID-060", "ID-062", "ID-024", "ID-107"],
+    id: 'exp-wargadigital',
+    role: {
+      en: 'Founder & Sole Engineer',
+      id: 'Founder & Sole Engineer',
+    },
+    company: 'Warga Digital (warga-digital.com)',
+    period: {
+      en: 'May 2026 - Present',
+      id: 'Mei 2026 - Sekarang',
+    },
+    location: {
+      en: 'Indonesia',
+      id: 'Indonesia',
+    },
+    sector: {
+      en: 'Civic Tech & Neighborhood SaaS',
+      id: 'Civic Tech & SaaS Lingkungan RT/RW',
+    },
+    employmentType: 'Founder',
+    highlights: {
+      en: [
+        'Conceived, built, and shipped a mobile-first RT/RW neighborhood management platform from scratch.',
+        'Owned every layer of the product across system architecture, database modeling, backend APIs, frontend UX, and production deployment.',
+        'Built resident directory workflows and transparent neighborhood treasury tracking (kas RT) tailored for everyday community admins.',
+        'Implemented Supabase with custom JWT authentication to balance data isolation, security, and low operational overhead.',
+        'Opened a neighborhood directory for local MSMEs and household services while keeping the interface straightforward for non-technical residents.',
+      ],
+      id: [
+        'Merancang, membangun, dan meluncurkan platform manajemen lingkungan RT/RW berbasis mobile-first dari nol.',
+        'Menangani seluruh lapisan codebase secara mandiri, mulai dari arsitektur sistem, skema database, backend, frontend, hingga deployment produksi.',
+        'Membangun fitur inti pendataan warga dan transparansi kas RT yang praktis dipakai pengurus lingkungan sehari-hari.',
+        'Menggunakan Supabase dan custom JWT auth untuk menjaga keamanan akses sekaligus efisiensi operasional.',
+        'Menghadirkan direktori UMKM dan jasa rumah tangga warga dengan alur UI/UX yang sederhana bagi pengguna non-teknis.',
+      ],
+    },
+    stack: ['Supabase', 'Custom JWT', 'Mobile-First Web', 'PostgreSQL', 'TypeScript'],
+    relatedConceptIds: ['ID-060', 'ID-062', 'ID-024', 'ID-107'],
   },
   {
-    id: "exp-trakindo",
-    verbatimHeader: "Software Engineer - PT. Tiara Marga Trakindo (Mitra Solusi Telematika)",
-    role: "Software Engineer",
-    company: "PT. Tiara Marga Trakindo (Mitra Solusi Telematika)",
-    period: "January 2026 - May 2026",
-    location: "Jakarta, Indonesia",
-    sector: "Konglomerasi Enterprise & Industri",
-    employmentType: "Full-Time",
-    highlights: [
-      "Designed and delivered centralized approval systems across 80+ applications with dynamic custom workflow process with adaptive key-value pair and dictionary controls while still prioritizing users UI/UX.",
-      "Dive into modular monolith enterprise applications with modern orchestration using RabbitMq, Elsa Workflow, API Gateway system, dynamic data scheme, dynamic forms, dynamic flow system, comprehensive loggings, and integrated auth system.",
-    ],
-    stack: [".NET", "Modular Monolith", "Elsa Workflow", "RabbitMQ", "API Gateway", "SQL Server"],
-    relatedConceptIds: ["ID-029", "ID-033", "ID-070", "ID-071"],
+    id: 'exp-trakindo',
+    role: {
+      en: 'Software Engineer',
+      id: 'Software Engineer',
+    },
+    company: 'PT. Tiara Marga Trakindo (Mitra Solusi Telematika)',
+    period: {
+      en: 'January 2026 - May 2026',
+      id: 'Januari 2026 - Mei 2026',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'Industrial Conglomerate & Enterprise Workflow',
+      id: 'Konglomerasi Industri & Enterprise Workflow',
+    },
+    employmentType: 'Full-Time',
+    highlights: {
+      en: [
+        'Designed and delivered a centralized approval platform spanning 80+ internal applications with configurable approval flows and adaptive key-value form layouts.',
+        'Worked inside a modular monolith enterprise architecture combining RabbitMQ messaging, Elsa Workflow orchestration, API Gateway routing, dynamic schemas, structured audit logging, and unified authentication.',
+        'Kept executive approval screens clean and predictable even when underlying request payloads differed widely across subsidiaries.',
+      ],
+      id: [
+        'Merancang dan menghadirkan sistem approval terpusat untuk lebih dari 80 aplikasi internal dengan alur persetujuan dinamis dan kontrol form key-value yang adaptif.',
+        'Bekerja pada arsitektur Modular Monolith enterprise dengan orkestrasi RabbitMQ, Elsa Workflow, API Gateway, skema data dan form dinamis, audit logging terpusat, serta autentikasi terintegrasi.',
+        'Menjaga pengalaman persetujuan eksekutif tetap ringkas dan konsisten meskipun struktur payload setiap aplikasi anak perusahaan berbeda jauh.',
+      ],
+    },
+    stack: ['.NET', 'Modular Monolith', 'Elsa Workflow', 'RabbitMQ', 'API Gateway', 'SQL Server'],
+    relatedConceptIds: ['ID-029', 'ID-033', 'ID-070', 'ID-071'],
   },
   {
-    id: "exp-mindsoci",
-    verbatimHeader: "AI Tech Lead - MindSoci Singapore",
-    role: "AI Tech Lead",
-    company: "MindSoci Singapore",
-    period: "January 2026 - Present",
-    location: "Singapura (Remote)",
-    sector: "Konsultansi AI & MLOps",
-    employmentType: "Leadership",
-    highlights: [
-      "Built an AI focused Company with my friend in Singapore",
-      "Led the full lifecycle of client-facing AI solutions, from shaping the architecture to delivering production ready application. I translated complex business needs into scalable RAG pipelines and LLM-based applications.",
-      "Set up and maintained MLOps best practices across the team, including CI/CD workflows for deploying models, handling versioning, and monitoring performance to keep things reliable and consistent.",
-      "Led the technical direction for our AI infrastructure, choosing the right tools, frameworks, and cloud services based on what the product needed and what made the most sense operationally.",
-      "Mentored fresh joiners through design discussions, code reviews, and sprint planning, helping the team move fast without compromising on quality.",
-      "Acted as the main bridge between CEO, product, and clients making sure everyone stay aligned, and clearly explaining AI capabilities, limitations, and priorities to both technical and non-technical stakeholders.",
-    ],
-    stack: ["RAG Pipelines", "MLOps", "Python", "CI/CD", "Cloud Infrastructure"],
-    relatedConceptIds: ["ID-002", "ID-003", "ID-007", "ID-085"],
+    id: 'exp-mindsoci',
+    role: {
+      en: 'AI Tech Lead',
+      id: 'AI Tech Lead',
+    },
+    company: 'MindSoci Singapore',
+    period: {
+      en: 'January 2026 - Present',
+      id: 'Januari 2026 - Sekarang',
+    },
+    location: {
+      en: 'Singapore (Remote)',
+      id: 'Singapura (Remote)',
+    },
+    sector: {
+      en: 'AI Engineering & MLOps Advisory',
+      id: 'Konsultansi AI & MLOps',
+    },
+    employmentType: 'Leadership',
+    highlights: {
+      en: [
+        'Co-built an AI-focused engineering practice in Singapore focused on shipping practical client systems rather than throwaway demos.',
+        'Led end-to-end delivery of client-facing RAG pipelines and LLM applications, translating messy operational requirements into maintainable services.',
+        'Established MLOps standards covering CI/CD model deployment, prompt and model versioning, and runtime performance monitoring.',
+        'Guided stack and cloud infrastructure choices based on reliability, latency, and realistic operating budgets.',
+        'Mentored new engineers through architecture reviews, code reviews, and sprint planning while acting as the technical bridge between leadership, product, and clients.',
+      ],
+      id: [
+        'Ikut membangun perusahaan rekayasa AI di Singapura yang berfokus pada sistem produksi yang benar-benar dipakai klien, bukan sekadar demo.',
+        'Memimpin siklus lengkap solusi AI untuk klien, menerjemahkan kebutuhan bisnis yang kompleks menjadi RAG pipeline dan aplikasi LLM yang terukur.',
+        'Menetapkan praktik MLOps di tim, termasuk CI/CD deployment, manajemen versi model dan prompt, serta pemantauan performa di produksi.',
+        'Mengarahkan pemilihan framework, tools, dan layanan cloud agar selaras dengan kebutuhan produk dan efisiensi operasional.',
+        'Membimbing engineer baru lewat diskusi desain, code review, dan sprint planning, sekaligus menjadi penghubung teknis antara CEO, produk, dan klien.',
+      ],
+    },
+    stack: ['RAG Pipelines', 'MLOps', 'Python', 'CI/CD', 'Cloud Infrastructure'],
+    relatedConceptIds: ['ID-002', 'ID-003', 'ID-007', 'ID-085'],
   },
   {
-    id: "exp-inhealth",
-    verbatimHeader: "Software Engineer - PT. Asuransi Jiwa Inhealth Indonesia (Mandiri Inhealth)",
-    role: "Software Engineer",
-    company: "PT. Asuransi Jiwa Inhealth Indonesia (Mandiri Inhealth)",
-    period: "May 2025 - December 2025",
-    location: "Jakarta, Indonesia",
-    sector: "Asuransi Kesehatan & Healthcare",
-    employmentType: "Full-Time",
-    highlights: [
-      "Proposed, design and deliver a new and adaptive Notification and Request Approval services to being used in existing environment.",
-      "Designed sprint timeline to deliver New MiCare system.",
-      "Delivered full-stack project that being made using .NET, ReactJs and deployed to Docker while integrating CI/CD automation.",
-      "Designed and implemented unit-test for test-driven-development to reduce human error and deployment issues due to increasing software developer personnel.",
-    ],
-    stack: [".NET", "ReactJS", "Docker", "CI/CD", "TDD / Unit Tests"],
-    relatedConceptIds: ["ID-041", "ID-038", "ID-039", "ID-073"],
+    id: 'exp-inhealth',
+    role: {
+      en: 'Software Engineer',
+      id: 'Software Engineer',
+    },
+    company: 'PT. Asuransi Jiwa Inhealth Indonesia (Mandiri Inhealth)',
+    period: {
+      en: 'May 2025 - December 2025',
+      id: 'Mei 2025 - Desember 2025',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'Health Insurance & Healthcare',
+      id: 'Asuransi Kesehatan & Healthcare',
+    },
+    employmentType: 'Full-Time',
+    highlights: {
+      en: [
+        'Proposed, designed, and shipped an adaptive notification and request-approval service that plugged cleanly into the existing insurance platform.',
+        'Mapped out sprint milestones and technical delivery plans for the New MiCare platform.',
+        'Built full-stack features with .NET and React, containerized with Docker and wired into automated CI/CD deployment pipelines.',
+        'Introduced unit testing and Test-Driven Development practices to cut down regression bugs and release friction as the engineering team grew.',
+      ],
+      id: [
+        'Mengusulkan, merancang, dan merilis layanan notifikasi serta request approval yang adaptif agar dapat langsung menyatu dengan ekosistem produksi yang sudah berjalan.',
+        'Menyusun rencana sprint dan tahapan delivery teknis untuk pengembangan sistem New MiCare.',
+        'Mengembangkan modul full-stack menggunakan .NET dan React dengan containerisasi Docker serta otomasi pipeline CI/CD.',
+        'Menerapkan unit testing dan praktik Test-Driven Development untuk menekan human error dan risiko deployment seiring bertambahnya jumlah developer.',
+      ],
+    },
+    stack: ['.NET', 'React', 'Docker', 'CI/CD', 'TDD / Unit Tests'],
+    relatedConceptIds: ['ID-041', 'ID-038', 'ID-039', 'ID-073'],
   },
   {
-    id: "exp-delmon",
-    verbatimHeader: "Freelance Project to Develop Digital Task Management - Delmon Group of Companies (Saudi Arabia)",
-    role: "Freelance Project to Develop Digital Task Management",
-    company: "Delmon Group of Companies (Saudi Arabia)",
-    period: "May 2025 - June 2025",
-    location: "Arab Saudi (Remote)",
-    sector: "Enterprise Mobile & Produktivitas Lapangan",
-    employmentType: "Freelance",
-    highlights: [
-      "Developed the Office Anywhere (o-anywhere) mobile app from scratch using .NET MAUI 9, replacing the legacy Flutter-based application.",
-      "Focused on task management with 80% Arabic language support, implementing Right-to-Left (RTL) layout configurations.",
-      "Integrated dynamic form generation using Form.io, parsing JSON to render components dynamically, mapping fields such as value, defaultValue, input types, HTML types, parent-child relationships into .NET MAUI UI components.",
-      "Mapped form metadata with backend API request models to ensure seamless data synchronization.",
-      "Designed for high user experience awareness, including features like UI simplification, intuitive user interactions, animated page transitions, skeleton loading, spinners, conditional component states, alerts, and real-time validation.",
-      "Applied multi-layered security measures for sensitive data protection and prevention of negative interactions.",
-      "Utilized Syncfusion .NET MAUI Toolkit for building custom UI components and enhancing native controls.",
-    ],
-    stack: [".NET MAUI 9", "C#", "Form.io JSON", "Syncfusion", "Arabic RTL"],
-    relatedConceptIds: ["ID-071", "ID-054", "ID-036", "ID-084"],
+    id: 'exp-delmon',
+    role: {
+      en: 'Freelance Mobile Engineer (Digital Task Management)',
+      id: 'Freelance Mobile Engineer (Digital Task Management)',
+    },
+    company: 'Delmon Group of Companies (Saudi Arabia)',
+    period: {
+      en: 'May 2025 - June 2025',
+      id: 'Mei 2025 - Juni 2025',
+    },
+    location: {
+      en: 'Saudi Arabia (Remote)',
+      id: 'Arab Saudi (Remote)',
+    },
+    sector: {
+      en: 'Enterprise Mobile & Field Productivity',
+      id: 'Enterprise Mobile & Produktivitas Lapangan',
+    },
+    employmentType: 'Freelance',
+    highlights: {
+      en: [
+        'Rebuilt the Office Anywhere (o-anywhere) mobile app from scratch in .NET MAUI 9, replacing a legacy Flutter codebase.',
+        'Delivered full Right-to-Left (RTL) layout behavior with 80% Arabic interface coverage for daily operational task tracking.',
+        'Engineered a Form.io JSON parser that dynamically renders .NET MAUI controls with parent-child field dependencies, defaults, and backend API model synchronization.',
+        'Polished usability with smooth transitions, skeleton loading, conditional field states, real-time validation, layered security checks, and Syncfusion native controls.',
+      ],
+      id: [
+        'Membangun ulang aplikasi mobile Office Anywhere (o-anywhere) dari nol menggunakan .NET MAUI 9 untuk menggantikan aplikasi Flutter lama.',
+        'Menerapkan konfigurasi layout Right-to-Left (RTL) secara menyeluruh dengan cakupan antarmuka 80% Bahasa Arab untuk manajemen tugas operasional.',
+        'Mengintegrasikan parser JSON Form.io untuk merender komponen UI .NET MAUI secara dinamis lengkap dengan relasi parent-child, nilai default, dan sinkronisasi payload API backend.',
+        'Meningkatkan kualitas UX lewat transisi halaman halus, skeleton loading, validasi real-time, proteksi keamanan berlapis, serta komponen kustom Syncfusion .NET MAUI Toolkit.',
+      ],
+    },
+    stack: ['.NET MAUI 9', 'C#', 'Form.io JSON', 'Syncfusion', 'Arabic RTL'],
+    relatedConceptIds: ['ID-071', 'ID-054', 'ID-036', 'ID-084'],
   },
   {
-    id: "exp-360adaro",
-    verbatimHeader: "Software Architect - PT. 360 Consulting",
-    role: "Software Architect",
-    company: "PT. 360 Consulting",
-    clientContext: "PT. Saptaindra Sejati (PT. Adaro Energy Tbk)",
-    period: "January 2025 - April 2025",
-    location: "Indonesia",
-    sector: "Pertambangan Batubara & Alat Berat",
-    employmentType: "Konsultan / Penempatan",
-    highlights: [
-      "Being placed for the Coal Mining Company client, PT. Saptaindra Sejati, under PT. Adaro Energy Tbk.",
-      "Designed the project architecture and database schema for the Lubricant Management System using Miro and dbDiagram and proposed it to the Project Owner.",
-      "Presented a proposal for the technologies and libraries that will be used in the project and which framework will be implemented.",
-      "Planned the project timeline and devised the project scopes and boundaries.",
-      "Delivering the project with .NET 8 for the web application and .NET MAUI for the mobile app.",
-      "Created weekly and monthly reports and wrote documentation (SDD, FSD).",
-    ],
-    stack: [".NET 8", ".NET MAUI", "SQL Server", "Miro", "dbDiagram", "SDD / FSD"],
-    relatedConceptIds: ["ID-053", "ID-057", "ID-058", "ID-034"],
+    id: 'exp-360adaro',
+    role: {
+      en: 'Software Architect',
+      id: 'Software Architect',
+    },
+    company: 'PT. 360 Consulting',
+    clientContext: {
+      en: 'Client: PT. Saptaindra Sejati (Adaro Energy)',
+      id: 'Klien: PT. Saptaindra Sejati (PT. Adaro Energy Tbk)',
+    },
+    period: {
+      en: 'January 2025 - April 2025',
+      id: 'Januari 2025 - April 2025',
+    },
+    location: {
+      en: 'Indonesia',
+      id: 'Indonesia',
+    },
+    sector: {
+      en: 'Coal Mining & Heavy Equipment',
+      id: 'Pertambangan Batubara & Alat Berat',
+    },
+    employmentType: 'Konsultan / Penempatan',
+    highlights: {
+      en: [
+        'Placed at coal mining contractor PT. Saptaindra Sejati (Adaro Energy Group) to architect the Lubricant Management System.',
+        'Designed the system architecture and relational database schema in Miro and dbDiagram, then presented stack and framework recommendations to the Project Owner.',
+        'Defined project scope, delivery boundaries, and execution timelines before leading implementation on .NET 8 for web and .NET MAUI for mobile.',
+        'Produced weekly and monthly progress reports alongside formal System Design (SDD) and Functional Specification (FSD) documentation.',
+      ],
+      id: [
+        'Ditempatkan di kontraktor tambang batubara PT. Saptaindra Sejati (Grup Adaro Energy) untuk merancang Lubricant Management System.',
+        'Menyusun arsitektur sistem dan skema database menggunakan Miro dan dbDiagram, lalu mempresentasikan rekomendasi teknologi dan framework kepada Project Owner.',
+        'Merancang timeline, batasan ruang lingkup proyek, serta mengawal implementasi web berbasis .NET 8 dan aplikasi mobile berbasis .NET MAUI.',
+        'Menyusun laporan progres mingguan dan bulanan serta dokumen teknis SDD dan FSD.',
+      ],
+    },
+    stack: ['.NET 8', '.NET MAUI', 'SQL Server', 'Miro', 'dbDiagram', 'SDD / FSD'],
+    relatedConceptIds: ['ID-053', 'ID-057', 'ID-058', 'ID-034'],
   },
   {
-    id: "exp-amman",
-    verbatimHeader: "Senior .NET Engineer - PT. Akal Karya Indonesia & PT. MSBU Konsultan Indonesia",
-    role: "Senior .NET Engineer",
-    company: "PT. Akal Karya Indonesia & PT. MSBU Konsultan Indonesia",
-    clientContext: "PT Amman Mineral Nusa Tenggara",
-    period: "February 2023 - January 2025",
-    location: "Indonesia",
-    sector: "Pertambangan Emas & Tembaga",
-    employmentType: "Konsultan / Penempatan",
-    highlights: [
-      "Placed at the second-largest gold and copper mining company in Indonesia, PT Amman Mineral Nusa Tenggara.",
-      "Designed project architecture and database schema for Meals Online and QC Inspection using Miro and dbDiagram.",
-      "Addressed challenges and issues, especially for complex user requirements, and devised appropriate solutions.",
-      "Designed the UI mockup using Figma.",
-      "Presented the technologies and libraries to be used in the project (.NET 6 & .NET MAUI).",
-      "Provided the client with my premium front-end template, AspStudio, to significantly reduce UI development time.",
-      "Planned the project timeline and defined the project scope and boundaries using Google Sheets.",
-      "Assisting colleagues with complex scenarios in front-end, back-end, database queries, and analysis.",
-      "Fixed and maintained old legacy code for an existing project that still operates.",
-      "Delivered the project using .NET 6 and later migrated to .NET 8, adopting the latest LTS runtime for the web application and .NET MAUI (.NET 8) for the mobile app.",
-      "Set up Azure CI/CD pipelines for vulnerability detection and deployment automation.",
-      "Implemented Azure Active Directory and Azure B2C authentication, integrating employee data.",
-      "Managed publishing and swapping between Production and Development environments periodically on Windows Server.",
-      "Set up and managed the clients signing key and provisioning profiles for iOS development using their Apple Developer Account.",
-      "Created changelogs and managed the deployment for TestFlight and Apple Developer Account releases using the clients credentials for the iOS platform.",
-      "Managed the deployment of the Android platform release in Google Play Console.",
-      "Created daily, weekly, and monthly reports and wrote documentation (UAT, FSD).",
-      "Conducted training sessions with the respective department, providing guidance and tutorials on how to use the application.",
-      "Created backlogs and outlined the future improvements.",
-    ],
-    stack: [".NET 6 / .NET 8", ".NET MAUI", "Azure AD / B2C", "Azure DevOps CI/CD", "TestFlight", "Google Play", "Figma", "AspStudio"],
-    relatedConceptIds: ["ID-054", "ID-056", "ID-094", "ID-081"],
+    id: 'exp-amman',
+    role: {
+      en: 'Senior .NET Engineer',
+      id: 'Senior .NET Engineer',
+    },
+    company: 'PT. Akal Karya Indonesia & PT. MSBU Konsultan Indonesia',
+    clientContext: {
+      en: 'Client: PT Amman Mineral Nusa Tenggara',
+      id: 'Klien: PT Amman Mineral Nusa Tenggara',
+    },
+    period: {
+      en: 'February 2023 - January 2025',
+      id: 'Februari 2023 - Januari 2025',
+    },
+    location: {
+      en: 'Indonesia',
+      id: 'Indonesia',
+    },
+    sector: {
+      en: 'Gold & Copper Mining Operations',
+      id: 'Pertambangan Emas & Tembaga',
+    },
+    employmentType: 'Konsultan / Penempatan',
+    highlights: {
+      en: [
+        'Placed at PT Amman Mineral Nusa Tenggara, Indonesia second-largest gold and copper mining operation, across nearly two years of continuous delivery.',
+        'Architected database schemas, Figma UI mockups, and full web/mobile solutions for Meals Online and QC Inspection while also stabilizing legacy production systems.',
+        'Delivered production web apps on .NET 6 and migrated them to .NET 8 LTS alongside .NET MAUI mobile apps, speeding up UI delivery with a curated frontend template.',
+        'Configured Azure DevOps CI/CD with vulnerability scanning, integrated Azure AD and Azure B2C employee authentication, and managed Production/Development environment swaps on Windows Server.',
+        'Handled end-to-end mobile release operations including Apple Developer signing keys, provisioning profiles, TestFlight builds, and Google Play Console rollouts.',
+        'Authored UAT and FSD documents, ran hands-on department training sessions, and maintained improvement backlogs with stakeholders.',
+      ],
+      id: [
+        'Ditempatkan hampir dua tahun di PT Amman Mineral Nusa Tenggara, salah satu tambang emas dan tembaga terbesar di Indonesia.',
+        'Merancang arsitektur, skema database, dan mockup Figma untuk sistem Meals Online dan QC Inspection, sekaligus memelihara dan memperbaiki aplikasi legacy yang masih aktif.',
+        'Membangun aplikasi web dengan .NET 6 lalu memigrasikannya ke .NET 8 LTS bersama aplikasi mobile .NET MAUI, serta mempercepat produksi UI lewat template frontend yang terkurasi.',
+        'Mengatur pipeline Azure DevOps CI/CD dengan pemindaian kerentanan, mengintegrasikan autentikasi Azure AD dan Azure B2C, serta mengelola rilis dan swap environment di Windows Server.',
+        'Menangani rilis mobile secara penuh mulai dari signing key dan provisioning profile Apple Developer, distribusi TestFlight iOS, hingga rilis Android di Google Play Console.',
+        'Menyusun dokumentasi UAT dan FSD, membawakan sesi pelatihan untuk departemen pengguna, serta mengelola backlog pengembangan lanjutan.',
+      ],
+    },
+    stack: ['.NET 6 / .NET 8', '.NET MAUI', 'Azure AD / B2C', 'Azure DevOps CI/CD', 'TestFlight', 'Google Play', 'Figma'],
+    relatedConceptIds: ['ID-054', 'ID-056', 'ID-094', 'ID-081'],
   },
   {
-    id: "exp-ocbc",
-    verbatimHeader: "Freelance Project to Develop OCBC File Encryption API - Total eBiz Solutions (Singapore)",
-    role: "Freelance Project to Develop OCBC File Encryption API",
-    company: "Total eBiz Solutions (Singapore)",
-    period: "January 2023 - February 2023",
-    location: "Singapura (Remote)",
-    sector: "Perbankan & Keamanan Finansial",
-    employmentType: "Freelance",
-    highlights: [
-      "Create an integrated SOAP API that facilitates file encryption and decryption using OCBC Standards, connecting the client's portal with the OCBC Bank System.",
-    ],
-    stack: [".NET", "SOAP API", "OCBC Encryption Standards", "XML"],
-    relatedConceptIds: ["ID-012", "ID-017", "ID-067", "ID-015"],
+    id: 'exp-ocbc',
+    role: {
+      en: 'Freelance Integration Engineer (Banking Encryption API)',
+      id: 'Freelance Integration Engineer (Banking Encryption API)',
+    },
+    company: 'Total eBiz Solutions (Singapore)',
+    period: {
+      en: 'January 2023 - February 2023',
+      id: 'Januari 2023 - Februari 2023',
+    },
+    location: {
+      en: 'Singapore (Remote)',
+      id: 'Singapura (Remote)',
+    },
+    sector: {
+      en: 'Banking & Financial Security',
+      id: 'Perbankan & Keamanan Finansial',
+    },
+    employmentType: 'Freelance',
+    highlights: {
+      en: [
+        'Built an integrated .NET SOAP API implementing OCBC Bank file encryption and decryption standards to connect the client portal directly with OCBC banking infrastructure.',
+      ],
+      id: [
+        'Membangun SOAP API terintegrasi di .NET untuk enkripsi dan dekripsi file sesuai standar keamanan OCBC Bank guna menghubungkan portal klien dengan sistem perbankan OCBC.',
+      ],
+    },
+    stack: ['.NET', 'SOAP API', 'OCBC Encryption Standards', 'XML'],
+    relatedConceptIds: ['ID-012', 'ID-017', 'ID-067', 'ID-015'],
   },
   {
-    id: "exp-sipatuh",
-    verbatimHeader: "Freelance Software Developer - Hajj and Umrah Travel Agent Management System (Sipatuh Gelang Indonesia)",
-    role: "Freelance Software Developer",
-    company: "Hajj and Umrah Travel Agent Management System (Sipatuh Gelang Indonesia)",
-    period: "August 2022 - November 2022",
-    location: "Indonesia",
-    sector: "Travel Haji & Umrah + Investasi Emas",
-    employmentType: "Freelance",
-    highlights: [
-      "Developed a Hajj and Umrah travel agent management system from scratch for gold investing management, enabling users to fund travel for Hajj or Umrah.",
-      "Built the system using the MERN stack (MongoDB, Express.js, React, Node.js) and enhanced it with Next.js and TypeScript for improved performance, type safety, and scalability.",
-      "Designed and implemented the project architecture, database schema, and RESTful APIs.",
-      "Created user-friendly interfaces with React and Next.js, optimizing for SEO and performance.",
-      "Authored comprehensive documentation, including System Design Document (SDD) and User Acceptance Testing (UAT) documents, to ensure clear project deliverables and client validation.",
-      "Conducted testing and debugging to ensure system reliability and security.",
-    ],
-    stack: ["MongoDB", "Express.js", "React", "Node.js", "Next.js", "TypeScript", "SDD / UAT"],
-    relatedConceptIds: ["ID-016", "ID-100", "ID-013", "ID-099"],
+    id: 'exp-sipatuh',
+    role: {
+      en: 'Freelance Full-Stack Developer',
+      id: 'Freelance Full-Stack Developer',
+    },
+    company: 'Sipatuh Gelang Indonesia (Hajj & Umrah Platform)',
+    period: {
+      en: 'August 2022 - November 2022',
+      id: 'Agustus 2022 - November 2022',
+    },
+    location: {
+      en: 'Indonesia',
+      id: 'Indonesia',
+    },
+    sector: {
+      en: 'Hajj & Umrah Travel + Gold Savings',
+      id: 'Travel Haji & Umrah + Tabungan Emas',
+    },
+    employmentType: 'Freelance',
+    highlights: {
+      en: [
+        'Built a Hajj and Umrah travel agency platform from scratch incorporating gold-backed savings management so customers could accumulate travel funds progressively.',
+        'Delivered the full stack with MongoDB, Express.js, React, Node.js, Next.js, and TypeScript, focusing on type safety, SEO, and clean REST API design.',
+        'Wrote System Design (SDD) and User Acceptance Testing (UAT) documentation and carried out security and reliability testing prior to handoff.',
+      ],
+      id: [
+        'Membangun sistem manajemen agen perjalanan Haji dan Umrah dari nol yang terintegrasi dengan pengelolaan tabungan emas untuk pembiayaan keberangkatan jamaah.',
+        'Mengembangkan arsitektur full-stack menggunakan MongoDB, Express.js, React, Node.js, Next.js, dan TypeScript dengan fokus pada type safety, performa, dan SEO.',
+        'Menyusun dokumen SDD dan UAT serta melaksanakan pengujian keandalan dan keamanan sistem sebelum serah terima.',
+      ],
+    },
+    stack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Next.js', 'TypeScript', 'SDD / UAT'],
+    relatedConceptIds: ['ID-016', 'ID-100', 'ID-013', 'ID-099'],
   },
   {
-    id: "exp-traxia",
-    verbatimHeader: "Senior .NET Developer - PT Digitalinstincts Teknologi (Traxia)",
-    role: "Senior .NET Developer",
-    company: "PT Digitalinstincts Teknologi (Traxia)",
-    period: "September 2021 - February 2023",
-    location: "Jakarta, Indonesia",
-    sector: "Software Studio Multi-Produk & AI",
-    employmentType: "Full-Time",
-    highlights: [
-      "Developed and maintained Survee, a Data Collection Management system with online-offline data synchronization and Google subscription integration.",
-      "Led a three-person team to deliver TheSocialClub Indonesia, a social media influencer broker project, using Xamarin and .NET 6.",
-      "Brainstormed with the client's CTO to enhance user experience and address competitive bottlenecks.",
-      "Designed project image assets and mockups using Figma.",
-      "Developed and maintained RoadTek, a GPS tracking and dashcam recorder system.",
-      "Proposed alternative libraries and technologies to replace deprecated ones.",
-      "Developed and maintained a social media influencer broker platform to connect brand owners with influencers for advertising jobs.",
-      "Improved Traxia-6, a public microservice API for data transactions, including services like thumbnail generation, image compression, and file downloads between the company and clients.",
-      "Integrated an AI worker agent into microservices to perform Human Sentiment Analysis from text and voice inputs using Python libraries (PyTorch, NumPy, Matplotlib).",
-      "Debugged and optimized Python scripts for AI sentiment analysis, improving performance and resolving bugs to ensure reliable operation.",
-      "Enhanced the company's WordPress-based company profile and sales platform for clients, improving functionality and user experience.",
-      "Implemented Docker Compose and containerization for microservices scalability, marking the company's first adoption of containerization, and utilized Kubernetes features for orchestration and management.",
-      "Managed team source control and collaboration using Azure DevOps and Figma.",
-      "Implemented unit tests to adopt Test-Driven Development (TDD) practices, preventing vulnerabilities and ensuring robust negative testing.",
-      "Conducted code refactoring to align with newer runtime syntax and enhance performance efficiency.",
-      "Created NuGet packages to streamline development for other team members.",
-      "Advised and assisted junior programmers and new hires with complex technical issues.",
-      "Authored User Acceptance Testing (UAT) documentation.",
-    ],
-    stack: [".NET 6", "Xamarin", "Docker Compose", "Kubernetes", "Python", "PyTorch", "Azure DevOps", "NuGet"],
-    relatedConceptIds: ["ID-084", "ID-104", "ID-050", "ID-085", "ID-072"],
+    id: 'exp-traxia',
+    role: {
+      en: 'Senior .NET Developer',
+      id: 'Senior .NET Developer',
+    },
+    company: 'PT Digitalinstincts Teknologi (Traxia)',
+    period: {
+      en: 'September 2021 - February 2023',
+      id: 'September 2021 - Februari 2023',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'Multi-Product Software Studio & AI',
+      id: 'Software Studio Multi-Produk & AI',
+    },
+    employmentType: 'Full-Time',
+    highlights: {
+      en: [
+        'Led a three-person team delivering TheSocialClub Indonesia (influencer marketplace) on .NET 6 and Xamarin while working directly with the client CTO on product bottlenecks.',
+        'Built and maintained Survee (field data collection with offline-online sync and Google subscriptions) and RoadTek (GPS fleet tracking and dashcam management).',
+        'Extended Traxia-6 public microservices for media processing and integrated a Python AI worker (PyTorch, NumPy, Matplotlib) for text and voice sentiment analysis.',
+        'Introduced the company first adoption of Docker Compose containerization and Kubernetes orchestration, created shared internal NuGet packages, and brought in TDD unit testing.',
+        'Mentored junior developers, refactored legacy modules to modern .NET syntax, and maintained client-facing web platforms.',
+      ],
+      id: [
+        'Memimpin tim beranggotakan tiga orang untuk membangun TheSocialClub Indonesia (platform influencer broker) dengan .NET 6 dan Xamarin sambil berdiskusi langsung dengan CTO klien.',
+        'Mengembangkan dan memelihara Survee (sistem pengumpulan data lapangan dengan sinkronisasi offline-online dan integrasi langganan Google) serta RoadTek (pelacakan GPS dan dashcam).',
+        'Menyempurnakan microservice publik Traxia-6 untuk pemrosesan media serta mengintegrasikan AI worker Python (PyTorch, NumPy, Matplotlib) untuk analisis sentimen teks dan suara.',
+        'Memelopori adopsi pertama Docker Compose dan orkestrasi Kubernetes di perusahaan, membuat paket NuGet internal, serta menerapkan unit testing berbasis TDD.',
+        'Membimbing programmer junior, melakukan refactoring modul lama ke runtime modern, dan menyusun dokumen UAT.',
+      ],
+    },
+    stack: ['.NET 6', 'Xamarin', 'Docker Compose', 'Kubernetes', 'Python', 'PyTorch', 'Azure DevOps', 'NuGet'],
+    relatedConceptIds: ['ID-084', 'ID-104', 'ID-050', 'ID-085', 'ID-072'],
   },
   {
-    id: "exp-trop",
-    verbatimHeader: ".NET Developer - PT Solusi Teknologi Transportasi (TROP Indonesia)",
-    role: ".NET Developer",
-    company: "PT Solusi Teknologi Transportasi (TROP Indonesia)",
-    period: "August 2019 - September 2021",
-    location: "Jakarta, Indonesia",
-    sector: "Logistik & Marketplace Trucking",
-    employmentType: "Full-Time",
-    highlights: [
-      "Engaged a new startup company with 4 person with different roles to develop an app to serve trucking to customers who have goods to deliver but lack available trucks.",
-      "Deliver a project with .NET 5 and Xamarin Forms (3 Web Portal & 1 Multi-Platform Mobile Apps).",
-      "Mentored fresh-graduate developer to implement SOLID principles and aware of code ethics.",
-      "Consumed Google Geocoding API for live location tracking implementation.",
-      "Managed team source control and do code reviews.",
-      "Addressed challenges and concerns, especially in cases with complex scenarios, think of the effective solutions and alternatives.",
-      "Crafted image assets for UI animation resources using Figma & Adobe Illustrator.",
-      "Managed Azure Portal & Server Deployment.",
-      "Prepared a project timeline for CTO and task management in Azure DevOps.",
-      "Implemented OAuth2 for authentication-authorization schema.",
-    ],
-    stack: [".NET 5", "Xamarin Forms", "Google Geocoding API", "OAuth2", "Azure DevOps", "Figma"],
-    relatedConceptIds: ["ID-045", "ID-046", "ID-051", "ID-052"],
+    id: 'exp-trop',
+    role: {
+      en: '.NET Developer',
+      id: '.NET Developer',
+    },
+    company: 'PT Solusi Teknologi Transportasi (TROP Indonesia)',
+    period: {
+      en: 'August 2019 - September 2021',
+      id: 'Agustus 2019 - September 2021',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'Logistics & Trucking Marketplace',
+      id: 'Logistik & Marketplace Trucking',
+    },
+    employmentType: 'Full-Time',
+    highlights: {
+      en: [
+        'Joined a four-person startup team to build a freight trucking marketplace connecting shippers with available fleet capacity.',
+        'Delivered three web portals and one cross-platform mobile app using .NET 5 and Xamarin Forms, integrating Google Geocoding API for live shipment tracking.',
+        'Implemented OAuth2 authentication, managed Azure deployments and source control, conducted code reviews, and mentored fresh-graduate developers on SOLID practices.',
+        'Created UI animation assets in Figma and Adobe Illustrator while coordinating delivery timelines with the CTO in Azure DevOps.',
+      ],
+      id: [
+        'Bergabung dalam tim startup inti beranggotakan empat orang untuk membangun platform marketplace truk yang menghubungkan pemilik barang dengan armada tersedia.',
+        'Membangun tiga portal web dan satu aplikasi mobile lintas platform menggunakan .NET 5 dan Xamarin Forms dengan integrasi Google Geocoding API untuk pelacakan lokasi.',
+        'Mengimplementasikan autentikasi OAuth2, mengelola deployment di Azure Portal, memimpin code review, serta membimbing developer junior mengenai prinsip SOLID.',
+        'Membuat aset visual UI di Figma dan Adobe Illustrator sambil menyusun timeline proyek bersama CTO di Azure DevOps.',
+      ],
+    },
+    stack: ['.NET 5', 'Xamarin Forms', 'Google Geocoding API', 'OAuth2', 'Azure DevOps', 'Figma'],
+    relatedConceptIds: ['ID-045', 'ID-046', 'ID-051', 'ID-052'],
   },
   {
-    id: "exp-reycom",
-    verbatimHeader: "Freelance Software Developer - PT Reycom Document Solusi",
-    role: "Freelance Software Developer",
-    company: "PT Reycom Document Solusi",
-    period: "January 2019 - February 2019",
-    location: "Jakarta, Indonesia",
-    sector: "Otomasi Dokumen & Percetakan",
-    employmentType: "Freelance",
-    highlights: [
-      "Develop a printing management system for the company's client to extract the database data to desired print template with logo and signature.",
-    ],
-    stack: [".NET", "SQL Server", "Print Template Engine"],
-    relatedConceptIds: ["ID-037", "ID-030", "ID-108"],
+    id: 'exp-reycom',
+    role: {
+      en: 'Freelance Software Developer',
+      id: 'Freelance Software Developer',
+    },
+    company: 'PT Reycom Document Solusi',
+    period: {
+      en: 'January 2019 - February 2019',
+      id: 'Januari 2019 - Februari 2019',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'Document Automation & Printing',
+      id: 'Otomasi Dokumen & Percetakan',
+    },
+    employmentType: 'Freelance',
+    highlights: {
+      en: [
+        'Built a database-driven printing management tool that merges live client records into formatted document templates with dynamic branding logos and signatures.',
+      ],
+      id: [
+        'Mengembangkan sistem manajemen pencetakan dokumen untuk mengekstrak data database secara otomatis ke template cetak kustom lengkap dengan logo dan tanda tangan.',
+      ],
+    },
+    stack: ['.NET', 'SQL Server', 'Print Template Engine'],
+    relatedConceptIds: ['ID-037', 'ID-030', 'ID-108'],
   },
   {
-    id: "exp-codelabs",
-    verbatimHeader: "Freelance Software Developer -  PT Digital Angkasa Indonesia (CodeLabs Indonesia)",
-    role: "Freelance Software Developer",
-    company: "PT Digital Angkasa Indonesia (CodeLabs Indonesia)",
-    period: "September 2018 - December 2018",
-    location: "Indonesia",
-    sector: "Kesehatan & Otomotif Digital",
-    employmentType: "Freelance",
-    highlights: [
-      "Improvements of Siloam Hospital website, Astra Otoparts Website & Mobile App, Shop & Drive Website.",
-    ],
-    stack: [".NET", "Web & Mobile Apps"],
-    relatedConceptIds: ["ID-039", "ID-106", "ID-021"],
+    id: 'exp-codelabs',
+    role: {
+      en: 'Freelance Software Developer',
+      id: 'Freelance Software Developer',
+    },
+    company: 'PT Digital Angkasa Indonesia (CodeLabs Indonesia)',
+    period: {
+      en: 'September 2018 - December 2018',
+      id: 'September 2018 - Desember 2018',
+    },
+    location: {
+      en: 'Indonesia',
+      id: 'Indonesia',
+    },
+    sector: {
+      en: 'Healthcare & Automotive Digital',
+      id: 'Kesehatan & Otomotif Digital',
+    },
+    employmentType: 'Freelance',
+    highlights: {
+      en: [
+        'Delivered feature upgrades and stability improvements across Siloam Hospitals website, Astra Otoparts web and mobile apps, and the Shop & Drive web platform.',
+      ],
+      id: [
+        'Mengerjakan peningkatan fitur dan perbaikan stabilitas pada website Siloam Hospitals, website dan aplikasi mobile Astra Otoparts, serta website Shop & Drive.',
+      ],
+    },
+    stack: ['.NET', 'Web & Mobile Apps'],
+    relatedConceptIds: ['ID-039', 'ID-106', 'ID-021'],
   },
   {
-    id: "exp-sukanda",
-    verbatimHeader: "Senior Staff Software Engineer -  PT Sukanda Djaya (Diamond Cold Storage)",
-    role: "Senior Staff Software Engineer",
-    company: "PT Sukanda Djaya (Diamond Cold Storage)",
-    period: "February 2018 - September 2018",
-    location: "Jakarta, Indonesia",
-    sector: "Distribusi FMCG Cold-Chain",
-    employmentType: "Full-Time",
-    highlights: [
-      "Develop and maintain a core data management system named DataGate. The system has a branch leader KPI for every 18 branches in Indonesia. It also has a taking stock report, a warehouse cleanliness monitoring, a stock extermination report, and a branch ranking for the best branch each month. The system also has an excel data import feature.",
-    ],
-    stack: [".NET", "SQL Server", "Excel Import", "Enterprise KPI Reporting"],
-    relatedConceptIds: ["ID-032", "ID-047", "ID-087", "ID-049"],
+    id: 'exp-sukanda',
+    role: {
+      en: 'Senior Staff Software Engineer',
+      id: 'Senior Staff Software Engineer',
+    },
+    company: 'PT Sukanda Djaya (Diamond Cold Storage)',
+    period: {
+      en: 'February 2018 - September 2018',
+      id: 'Februari 2018 - September 2018',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'FMCG Cold-Chain Distribution',
+      id: 'Distribusi FMCG Cold-Chain',
+    },
+    employmentType: 'Full-Time',
+    highlights: {
+      en: [
+        'Built and maintained DataGate, a nationwide branch operations and KPI platform spanning 18 distribution branches across Indonesia.',
+        'Implemented stock-taking reports, warehouse hygiene audits, stock write-off tracking, monthly branch performance rankings, and bulk Excel data imports.',
+      ],
+      id: [
+        'Mengembangkan dan memelihara DataGate, sistem manajemen data inti dan KPI pimpinan cabang untuk 18 cabang distribusi di seluruh Indonesia.',
+        'Menghadirkan laporan stock opname, pemantauan kebersihan gudang, laporan pemusnahan stok, pemeringkatan cabang terbaik bulanan, serta fitur impor massal Excel.',
+      ],
+    },
+    stack: ['.NET', 'SQL Server', 'Excel Import', 'Enterprise KPI Reporting'],
+    relatedConceptIds: ['ID-032', 'ID-047', 'ID-087', 'ID-049'],
   },
   {
-    id: "exp-inet",
-    verbatimHeader: ".NET Developer -  PT Inet Global Indo",
-    role: ".NET Developer",
-    company: "PT Inet Global Indo",
-    period: "May 2016 - Jan 2018",
-    location: "Jakarta, Indonesia",
-    sector: "Pemerintahan, Kepolisian, ERP & POS",
-    employmentType: "Full-Time",
-    highlights: [
-      "Developed eForeignWorkers and SolusiPembantu, platforms connecting household worker agencies with service seekers locally and overseas.",
-      "Built Simplified Integrated Platform, an ERP-like system for HR, finance, legal, and sales management, interconnected with RDLC reporting.",
-      "Developed and maintained a cafe POS system for a client, supporting laser printer receipt printing, discount management, and promotions for breakfast and employee subsidies.",
-      "Created an Employee Management System for attendance monitoring and KPI tracking, integrated with Fingerprint and ERP systems.",
-      "Developed and maintained SFMCS, a sales force management core system for task assignment, field monitoring, data collection, and performance tracking.",
-      "Built and maintained a visitor tracking system for POLRI and POLDA Metro Jaya (Reskrimsus sub-division), featuring face detection, RFID card scanning, KTP scanning, and mandatory survey forms for building check-in.",
-      "Developed and maintained Iwartelsus, a prisoner balance and communication platform for Nusa Kambangan prison, with a wallet top-up system for food, beverages, and relative communication.",
-      "Researched MIT App Inventor to explore no-code mobile app development, evaluating its potential for rapid prototyping and deployment of mobile applications.",
-      "Investigated PHPMaker for accelerated PHP development, assessing its capabilities for generating fast, client-specific PHP applications.",
-    ],
-    stack: [".NET Framework", "C#", "RDLC", "RFID / Face Detection", "Fingerprint", "SQL Server", "MIT App Inventor", "PHPMaker"],
-    relatedConceptIds: ["ID-066", "ID-022", "ID-031", "ID-083"],
+    id: 'exp-inet',
+    role: {
+      en: '.NET Developer',
+      id: '.NET Developer',
+    },
+    company: 'PT Inet Global Indo',
+    period: {
+      en: 'May 2016 - January 2018',
+      id: 'Mei 2016 - Januari 2018',
+    },
+    location: {
+      en: 'Jakarta, Indonesia',
+      id: 'Jakarta, Indonesia',
+    },
+    sector: {
+      en: 'Government, Law Enforcement, ERP & POS',
+      id: 'Pemerintahan, Kepolisian, ERP & POS',
+    },
+    employmentType: 'Full-Time',
+    highlights: {
+      en: [
+        'Built a visitor management system for POLRI and POLDA Metro Jaya (Reskrimsus) integrating face detection, RFID cards, KTP scanning, and mandatory building check-in surveys.',
+        'Developed and maintained Iwartelsus for Nusa Kambangan correctional facility, managing inmate wallet balances for canteen purchases and family communication.',
+        'Delivered multiple business platforms including Simplified Integrated Platform (ERP with HR, finance, legal, sales, and RDLC reports), SFMCS (sales force field tracking), and fingerprint-linked attendance KPI software.',
+        'Built eForeignWorkers and SolusiPembantu agency portals plus a retail cafe POS system supporting laser receipt printing, promotions, and employee subsidies.',
+        'Evaluated rapid-prototyping tools including MIT App Inventor and PHPMaker to speed up client PoC turnaround.',
+      ],
+      id: [
+        'Membangun sistem pelacakan pengunjung untuk POLRI dan POLDA Metro Jaya (subdit Reskrimsus) dengan deteksi wajah, pemindaian kartu RFID, pemindaian KTP, dan survei wajib check-in.',
+        'Mengembangkan dan memelihara Iwartelsus di Lapas Nusa Kambangan untuk manajemen saldo dompet warga binaan terkait kebutuhan kantin dan komunikasi keluarga.',
+        'Menghadirkan berbagai sistem bisnis termasuk Simplified Integrated Platform (ERP untuk HR, keuangan, legal, penjualan, dan laporan RDLC), SFMCS untuk pemantauan tim sales lapangan, serta sistem absensi KPI terintegrasi mesin fingerprint.',
+        'Membangun portal agen eForeignWorkers dan SolusiPembantu serta sistem POS kafe dengan cetak struk printer laser, manajemen diskon, dan subsidi karyawan.',
+        'Melakukan riset alat rapid prototyping seperti MIT App Inventor dan PHPMaker untuk mempercepat pembuatan PoC klien.',
+      ],
+    },
+    stack: ['.NET Framework', 'C#', 'RDLC', 'RFID / Face Detection', 'Fingerprint', 'SQL Server'],
+    relatedConceptIds: ['ID-066', 'ID-022', 'ID-031', 'ID-083'],
   },
 ];
 
-export const VERBATIM_RESUME_MARKDOWN = "# MUHAMMAD HERNANDA\nIT Consultant (10 Years+ Experience)\n\nJakarta, Indonesia\n\n+62-81280031995\n\nm.hernanda95@gmail.com\n\nlinkedin.com/in/m-hernanda\n\n## Summary\n\nA fully multi-role Software Engineer experienced in responsibilities that intersect with Solution Architect, DevOps, System Analyst, Data Engineer, and Release Manager, since 2016 in Microsoft technologies, specializing in .NET tech stacks.\n\nI have collaborated on various projects across diverse sectors, including banking, mining, prison, logistic, government, data center, and startups. I'm passionate about creating user-centric application that prioritize the UI/UX and performance without ignoring the architectural integrity including SOLID and KISS principle implementation to ensure cost and time efficiency.\n\nI actively keep up with the latest advancements in technologies and enjoy sharing insights with clients, ensuring they stay informed about the updates and best practices in software development life-cycle across various platforms, such as websites, mobile apps, and API managements. I have worked in various capacities including freelancing, collaborating within teams and leading projects independently, ensuring me capable to adapt in different work environments and challenges whether I'm working solo or within a team.\n\nSince AI boom has made the recruitment process unreliable and made it difficult for clients to find reliable talents and profiles, I usually utilize it roughly 20% of my work and activities to make the results still relevant with the needs. To ensure that I am considerable for your needs, you can read my previous experience below, I am open to have a conversation directly before considering me to do interview section due to optimize the time efficiency.\n\n## Technical Skills\n\n**Architectural Design:** Monolith, Modular Monolith, Microservices\n\n**Component Libraries:** Telerik, DevExpress, SyncFusion, Tailwind, Bootstrap, Bunifu, Uranium, Community Toolkit.\n\n**Frameworks:** .NET Framework, .NET Core, .NET MAUI, Xamarin, WPF, WinForms, Console, Blazor, AngularJs, ReactJs\n\n**Languages:** C#, Vanilla Javascript, jQuery, XAML, XML, Python, VB, C, C++, Go, TSQL\n\n**Backend Libraries:** SignalR, Firebase, Supabase, Refit, EPPlus, Aspose, Dapper, MediatR, AutoMapper.\n\n**Logging:** Serilog, Log4Net, Microsoft.Extension.Logging\n\n**Database Schema:** SQL Server, Postgree, MangoDb, SQLite, DbDiagram, Supabase\n\n**Planning & Design:** Figma, Google Stitch, Notion, Miro, Microsoft Visio, Draw.io, Visual Paradigm, Balsamiq.\n\n**Project Management Tools:** Jira, Azure DevOps, Trello, Google Sheets, Microsoft Planner, Loop.\n\n**Azure Features:** Azure Function, Azure CosmosDB, Azure DevOps, Azure AppService, Azure Static Web Page, etc.\n\n**Presentation:** Tableau, Power BI, Figma, Powerpoint.\n\n**API Protocols:** SOAP, REST, gPRC.\n\n**Team Collaborations & Versionings:** Git, Azure TFS, Offline TFS, BitBucket, GitLab.\n\n**Unit Testings & Vulnerability Detection Tools:** NUnit, xUnit, SonarQube, .NET Aspire.\n\n**External Services & Orchestration:** Supabase, Neon, Docker.\n\n**Others:** Laravel, MIT AppInventor, CodeIgniter, Flutter, React Native, Android Studio, XCode, Ionic, Wordpress\n\n## Works & Project Experiences\n\n### Senior Backend Engineer - PT. Mitra Seribu Saudara (GRC Board)\nMay 2026 - Present\n\n- Implementing my self-learn knowledge to this company.\n- https://github.com/hernanda-git/ai-knowledge-library\n- Including self built inference (.NET Built from scratch, not fork), company own hermes agent (forked from nousresearch and rework) which supports continuous updates, reverse engineer obsidian to make ourself replica of it named Tourmaline, and support web deployment, also provider pooling, model mixtures, context compressions, benchmaxxing qwen, making LoRA by myself, vector 4d memory caching, sensitive information concrete wall, RBAC provider usage, agent vision, camofox integration (I'm not using the primitive playwright things. too old...), new style of git branch local-remote workspace and governance to support concurrent multi-session parallel swarm, architect loop, bot profile managements, skill curating, MiTM, 24/7 agentic blue team SecOps, company chat bot, antigravity oauth proxy, monitors all the top github repos to improve all these stuff. I built them all alone with a help of top tier harnesses and SoTA models.\n- Email me, I'll teach you everything from scratch for FREE.\n- Also, beside all of these stuff, I'm actually dedicated, or in charged as a backend developer to support B2B and B2C products. So, the 80% of the whole job desc is all of my initiatives, and thankfully, the company supported my work.\n- I also rework company meeting room reservation system, including car reservation system. I also build from scratch the entire company budget management and budget tracking system for calculating expenses grouped by multiple options. applying complex math to make a forecasting of future company expenses by probabilities percentages using linear algebra.\n\n### Founder - Warga Digital (warga-digital.com)\nMay 2026 - Present\n\n- Built and launched a mobile-first RT management platform from scratch\n- Fully owned the codebase: architecture, backend, frontend, and deployment\n- Developed core features like resident data management and kas RT management\n- Utilize Supabase and custom JWT auth for a secure, scalable system\n- Enabled MSMEs and household services within the neighborhood ecosystem\n- Focused on simple, intuitive UX for non-technical users\n\n### Software Engineer - PT. Tiara Marga Trakindo (Mitra Solusi Telematika)\nJanuary 2026 - May 2026\n\n- Designed and delivered centralized approval systems across 80+ applications with dynamic custom workflow process with adaptive key-value pair and dictionary controls while still prioritizing users UI/UX.\n- Dive into modular monolith enterprise applications with modern orchestration using RabbitMq, Elsa Workflow, API Gateway system, dynamic data scheme, dynamic forms, dynamic flow system, comprehensive loggings, and integrated auth system.\n\n### AI Tech Lead - MindSoci Singapore\nJanuary 2026 - Present\n\n- Built an AI focused Company with my friend in Singapore\n- Led the full lifecycle of client-facing AI solutions, from shaping the architecture to delivering production ready application. I translated complex business needs into scalable RAG pipelines and LLM-based applications.\n- Set up and maintained MLOps best practices across the team, including CI/CD workflows for deploying models, handling versioning, and monitoring performance to keep things reliable and consistent.\n- Led the technical direction for our AI infrastructure, choosing the right tools, frameworks, and cloud services based on what the product needed and what made the most sense operationally.\n- Mentored fresh joiners through design discussions, code reviews, and sprint planning, helping the team move fast without compromising on quality.\n- Acted as the main bridge between CEO, product, and clients making sure everyone stay aligned, and clearly explaining AI capabilities, limitations, and priorities to both technical and non-technical stakeholders.\n\n### Software Engineer - PT. Asuransi Jiwa Inhealth Indonesia (Mandiri Inhealth)\nMay 2025 - December 2025\n\n- Proposed, design and deliver a new and adaptive Notification and Request Approval services to being used in existing environment.\n- Designed sprint timeline to deliver New MiCare system.\n- Delivered full-stack project that being made using .NET, ReactJs and deployed to Docker while integrating CI/CD automation.\n- Designed and implemented unit-test for test-driven-development to reduce human error and deployment issues due to increasing software developer personnel.\n\n### Freelance Project to Develop Digital Task Management - Delmon Group of Companies (Saudi Arabia)\nMay 2025 - June 2025\n\n- Developed the Office Anywhere (o-anywhere) mobile app from scratch using .NET MAUI 9, replacing the legacy Flutter-based application.\n- Focused on task management with 80% Arabic language support, implementing Right-to-Left (RTL) layout configurations.\n- Integrated dynamic form generation using Form.io, parsing JSON to render components dynamically, mapping fields such as value, defaultValue, input types, HTML types, parent-child relationships into .NET MAUI UI components.\n- Mapped form metadata with backend API request models to ensure seamless data synchronization.\n- Designed for high user experience awareness, including features like UI simplification, intuitive user interactions, animated page transitions, skeleton loading, spinners, conditional component states, alerts, and real-time validation.\n- Applied multi-layered security measures for sensitive data protection and prevention of negative interactions.\n- Utilized Syncfusion .NET MAUI Toolkit for building custom UI components and enhancing native controls.\n\n### Software Architect - PT. 360 Consulting\nJanuary 2025 - April 2025\n\n- Being placed for the Coal Mining Company client, PT. Saptaindra Sejati, under PT. Adaro Energy Tbk.\n- Designed the project architecture and database schema for the Lubricant Management System using Miro and dbDiagram and proposed it to the Project Owner.\n- Presented a proposal for the technologies and libraries that will be used in the project and which framework will be implemented.\n- Planned the project timeline and devised the project scopes and boundaries.\n- Delivering the project with .NET 8 for the web application and .NET MAUI for the mobile app.\n- Created weekly and monthly reports and wrote documentation (SDD, FSD).\n\n### Senior .NET Engineer - PT. Akal Karya Indonesia & PT. MSBU Konsultan Indonesia\nFebruary 2023 - January 2025\n\n- Placed at the second-largest gold and copper mining company in Indonesia, PT Amman Mineral Nusa Tenggara.\n- Designed project architecture and database schema for Meals Online and QC Inspection using Miro and dbDiagram.\n- Addressed challenges and issues, especially for complex user requirements, and devised appropriate solutions.\n- Designed the UI mockup using Figma.\n- Presented the technologies and libraries to be used in the project (.NET 6 & .NET MAUI).\n- Provided the client with my premium front-end template, AspStudio, to significantly reduce UI development time.\n- Planned the project timeline and defined the project scope and boundaries using Google Sheets.\n- Assisting colleagues with complex scenarios in front-end, back-end, database queries, and analysis.\n- Fixed and maintained old legacy code for an existing project that still operates.\n- Delivered the project using .NET 6 and later migrated to .NET 8, adopting the latest LTS runtime for the web application and .NET MAUI (.NET 8) for the mobile app.\n- Set up Azure CI/CD pipelines for vulnerability detection and deployment automation.\n- Implemented Azure Active Directory and Azure B2C authentication, integrating employee data.\n- Managed publishing and swapping between Production and Development environments periodically on Windows Server.\n- Set up and managed the clients signing key and provisioning profiles for iOS development using their Apple Developer Account.\n- Created changelogs and managed the deployment for TestFlight and Apple Developer Account releases using the clients credentials for the iOS platform.\n- Managed the deployment of the Android platform release in Google Play Console.\n- Created daily, weekly, and monthly reports and wrote documentation (UAT, FSD).\n- Conducted training sessions with the respective department, providing guidance and tutorials on how to use the application.\n- Created backlogs and outlined the future improvements.\n\n### Freelance Project to Develop OCBC File Encryption API - Total eBiz Solutions (Singapore)\nJanuary 2023 - February 2023\n\n- Create an integrated SOAP API that facilitates file encryption and decryption using OCBC Standards, connecting the client's portal with the OCBC Bank System.\n\n### Freelance Software Developer - Hajj and Umrah Travel Agent Management System (Sipatuh Gelang Indonesia)\nAugust 2022 - November 2022\n\n- Developed a Hajj and Umrah travel agent management system from scratch for gold investing management, enabling users to fund travel for Hajj or Umrah.\n- Built the system using the MERN stack (MongoDB, Express.js, React, Node.js) and enhanced it with Next.js and TypeScript for improved performance, type safety, and scalability.\n- Designed and implemented the project architecture, database schema, and RESTful APIs.\n- Created user-friendly interfaces with React and Next.js, optimizing for SEO and performance.\n- Authored comprehensive documentation, including System Design Document (SDD) and User Acceptance Testing (UAT) documents, to ensure clear project deliverables and client validation.\n- Conducted testing and debugging to ensure system reliability and security.\n\n### Senior .NET Developer - PT Digitalinstincts Teknologi (Traxia)\nSeptember 2021 - February 2023\n\n- Developed and maintained Survee, a Data Collection Management system with online-offline data synchronization and Google subscription integration.\n- Led a three-person team to deliver TheSocialClub Indonesia, a social media influencer broker project, using Xamarin and .NET 6.\n- Brainstormed with the client's CTO to enhance user experience and address competitive bottlenecks.\n- Designed project image assets and mockups using Figma.\n- Developed and maintained RoadTek, a GPS tracking and dashcam recorder system.\n- Proposed alternative libraries and technologies to replace deprecated ones.\n- Developed and maintained a social media influencer broker platform to connect brand owners with influencers for advertising jobs.\n- Improved Traxia-6, a public microservice API for data transactions, including services like thumbnail generation, image compression, and file downloads between the company and clients.\n- Integrated an AI worker agent into microservices to perform Human Sentiment Analysis from text and voice inputs using Python libraries (PyTorch, NumPy, Matplotlib).\n- Debugged and optimized Python scripts for AI sentiment analysis, improving performance and resolving bugs to ensure reliable operation.\n- Enhanced the company's WordPress-based company profile and sales platform for clients, improving functionality and user experience.\n- Implemented Docker Compose and containerization for microservices scalability, marking the company's first adoption of containerization, and utilized Kubernetes features for orchestration and management.\n- Managed team source control and collaboration using Azure DevOps and Figma.\n- Implemented unit tests to adopt Test-Driven Development (TDD) practices, preventing vulnerabilities and ensuring robust negative testing.\n- Conducted code refactoring to align with newer runtime syntax and enhance performance efficiency.\n- Created NuGet packages to streamline development for other team members.\n- Advised and assisted junior programmers and new hires with complex technical issues.\n- Authored User Acceptance Testing (UAT) documentation.\n\n### .NET Developer - PT Solusi Teknologi Transportasi (TROP Indonesia)\nAugust 2019 - September 2021\n\n- Engaged a new startup company with 4 person with different roles to develop an app to serve trucking to customers who have goods to deliver but lack available trucks.\n- Deliver a project with .NET 5 and Xamarin Forms (3 Web Portal & 1 Multi-Platform Mobile Apps).\n- Mentored fresh-graduate developer to implement SOLID principles and aware of code ethics.\n- Consumed Google Geocoding API for live location tracking implementation.\n- Managed team source control and do code reviews.\n- Addressed challenges and concerns, especially in cases with complex scenarios, think of the effective solutions and alternatives.\n- Crafted image assets for UI animation resources using Figma & Adobe Illustrator.\n- Managed Azure Portal & Server Deployment.\n- Prepared a project timeline for CTO and task management in Azure DevOps.\n- Implemented OAuth2 for authentication-authorization schema.\n\n### Freelance Software Developer - PT Reycom Document Solusi\nJanuary 2019 - February 2019\n\n- Develop a printing management system for the company's client to extract the database data to desired print template with logo and signature.\n\n### Freelance Software Developer -  PT Digital Angkasa Indonesia (CodeLabs Indonesia)\nSeptember 2018 - December 2018\n\n- Improvements of Siloam Hospital website, Astra Otoparts Website & Mobile App, Shop & Drive Website.\n\n### Senior Staff Software Engineer -  PT Sukanda Djaya (Diamond Cold Storage)\nFebruary 2018 - September 2018\n\n- Develop and maintain a core data management system named DataGate. The system has a branch leader KPI for every 18 branches in Indonesia. It also has a taking stock report, a warehouse cleanliness monitoring, a stock extermination report, and a branch ranking for the best branch each month. The system also has an excel data import feature.\n\n### .NET Developer -  PT Inet Global Indo\nMay 2016 - Jan 2018\n\n- Developed eForeignWorkers and SolusiPembantu, platforms connecting household worker agencies with service seekers locally and overseas.\n- Built Simplified Integrated Platform, an ERP-like system for HR, finance, legal, and sales management, interconnected with RDLC reporting.\n- Developed and maintained a cafe POS system for a client, supporting laser printer receipt printing, discount management, and promotions for breakfast and employee subsidies.\n- Created an Employee Management System for attendance monitoring and KPI tracking, integrated with Fingerprint and ERP systems.\n- Developed and maintained SFMCS, a sales force management core system for task assignment, field monitoring, data collection, and performance tracking.\n- Built and maintained a visitor tracking system for POLRI and POLDA Metro Jaya (Reskrimsus sub-division), featuring face detection, RFID card scanning, KTP scanning, and mandatory survey forms for building check-in.\n- Developed and maintained Iwartelsus, a prisoner balance and communication platform for Nusa Kambangan prison, with a wallet top-up system for food, beverages, and relative communication.\n- Researched MIT App Inventor to explore no-code mobile app development, evaluating its potential for rapid prototyping and deployment of mobile applications.\n- Investigated PHPMaker for accelerated PHP development, assessing its capabilities for generating fast, client-specific PHP applications.\n";
+export function buildResumeMarkdown(lang: Language): string {
+  const isEn = lang === 'en';
+  const lines: string[] = [
+    `# ${PROFILE.name.toUpperCase()}`,
+    PROFILE.title[lang],
+    '',
+    `${PROFILE.location} | ${PROFILE.phone} | ${PROFILE.email} | ${PROFILE.linkedinLabel}`,
+    '',
+    isEn ? '## Profile Summary' : '## Ringkasan Profil',
+    '',
+    ...PROFILE.summary[lang].flatMap((p) => [p, '']),
+    isEn ? '## Technical Skills' : '## Technical Skills',
+    '',
+    ...SKILL_GROUPS.map((grp) => `**${grp.category[lang]}:** ${grp.items.join(', ')}`),
+    '',
+    isEn ? '## Career & Project Experience' : '## Pengalaman Karier & Proyek',
+    '',
+  ];
+
+  for (const exp of EXPERIENCES) {
+    const clientPart = exp.clientContext ? ` (${exp.clientContext[lang]})` : '';
+    lines.push(`### ${exp.role[lang]} - ${exp.company}${clientPart}`);
+    lines.push(`${exp.period[lang]} | ${exp.location[lang]}`);
+    lines.push('');
+    for (const h of exp.highlights[lang]) {
+      lines.push(`- ${h}`);
+    }
+    if (exp.link) {
+      lines.push(`- ${exp.link.label[lang]}: ${exp.link.url}`);
+    }
+    lines.push('');
+  }
+
+  return lines.join('\n').trim() + '\n';
+}

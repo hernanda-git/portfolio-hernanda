@@ -2,7 +2,15 @@ import React from 'react';
 import { EXPERIENCES, PROFILE } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
 import { PROJECT_PAGES } from '../data/projectPages';
-import { ARCHETYPE_LABELS, SECTORS, type SectorId } from '../data/sectors';
+import {
+  ARCHETYPE_LABELS,
+  getSectorShortName,
+  getSectorThesis,
+  SECTORS,
+  type SectorId,
+} from '../data/sectors';
+import { useLanguage } from '../i18n/LanguageContext';
+import { UI_COPY } from '../i18n/uiCopy';
 import { IconArrowRight, IconShield } from './Icons';
 import { ProjectCard } from './ProjectCard';
 
@@ -17,30 +25,33 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
   onExploreAtlas,
   onOpenExperience,
 }) => {
+  const { lang } = useLanguage();
+  const copy = UI_COPY[lang].overview;
+
   const featured = projects.filter((p) => p.featured).slice(0, 6);
   const archetypeCount = Object.keys(ARCHETYPE_LABELS).length;
   const totalScreens = projects.reduce((sum, p) => sum + (PROJECT_PAGES[p.id]?.pages.length ?? 4), 0);
 
   const stats = [
     {
-      label: 'Rekayasa Produksi',
-      value: '10+ Thn',
-      detail: `${PROFILE.activeSince}-2026 lintas enterprise & startup`,
+      label: copy.stats.prodEngLabel,
+      value: copy.stats.prodEngVal,
+      detail: copy.stats.prodEngDetail(PROFILE.activeSince),
     },
     {
-      label: 'Pengalaman CV Valid',
-      value: `${EXPERIENCES.length} Peran`,
-      detail: 'Fintech, Pertambangan, Asuransi, Logistik, AI, GovTech',
+      label: copy.stats.expLabel,
+      value: copy.stats.expVal(EXPERIENCES.length),
+      detail: copy.stats.expDetail,
     },
     {
-      label: 'Atlas Konsep Produk',
-      value: `${projects.length} Konsep`,
-      detail: `${totalScreens} halaman interaktif | ${SECTORS.length} sektor pasar`,
+      label: copy.stats.atlasLabel,
+      value: copy.stats.atlasVal(projects.length),
+      detail: copy.stats.atlasDetail(totalScreens, SECTORS.length),
     },
     {
-      label: 'Skala Sistem Utama',
-      value: '80+ App',
-      detail: 'Orkestrasi workflow approval konglomerasi',
+      label: copy.stats.scaleLabel,
+      value: copy.stats.scaleVal,
+      detail: copy.stats.scaleDetail,
     },
   ];
 
@@ -54,27 +65,25 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
               <span className="status-dot ok" />
               <span>{PROFILE.location} | {PROFILE.timezone}</span>
               <span>|</span>
-              <span>Aktif Sejak {PROFILE.activeSince}</span>
+              <span>{copy.activeSince(PROFILE.activeSince)}</span>
               <span>|</span>
-              <span>.NET | Solution Architecture | AI Inference</span>
+              <span>{copy.heroDomain}</span>
             </div>
-            <h1 className="hero-title">
-              Merancang perangkat lunak enterprise yang tangguh &amp; memetakan {projects.length} produk digital untuk ekonomi Indonesia.
-            </h1>
-            <p className="hero-lead">{PROFILE.summary[0]}</p>
-            <p className="hero-lead">{PROFILE.summary[1]}</p>
+            <h1 className="hero-title">{copy.heroTitle(projects.length)}</h1>
+            <p className="hero-lead">{PROFILE.summary[lang][0]}</p>
+            <p className="hero-lead">{PROFILE.summary[lang][1]}</p>
           </div>
 
           <div className="hero-cta-row">
             <button type="button" className="btn btn-primary" onClick={() => onExploreAtlas()}>
-              Jelajahi {projects.length} Konsep Produk
+              {copy.exploreAtlasBtn(projects.length)}
               <IconArrowRight size={14} />
             </button>
             <button type="button" className="btn" onClick={onOpenExperience}>
-              Lihat Karier Terverifikasi (2016-2026)
+              {copy.viewCareerBtn}
             </button>
             <a className="btn" href={`mailto:${PROFILE.email}`}>
-              Diskusi Langsung
+              {copy.directContactBtn}
             </a>
           </div>
         </div>
@@ -94,13 +103,13 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             <div>
               <div className="credibility-title">
                 <IconShield size={14} />
-                <span>Pengalaman Nyata vs. Eksplorasi Konseptual</span>
+                <span>{copy.credibilityTitle}</span>
               </div>
-              <p style={{ margin: 0, lineHeight: 1.48 }}>{PROFILE.credibilityStatement}</p>
+              <p style={{ margin: 0, lineHeight: 1.48 }}>{PROFILE.credibilityStatement[lang]}</p>
             </div>
             <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-              <span className="tag tag-ok">{EXPERIENCES.length} Pengalaman CV Valid</span>
-              <span className="tag tag-warn">{projects.length} Konsep Belum Deploy</span>
+              <span className="tag tag-ok">{copy.verifiedRolesTag(EXPERIENCES.length)}</span>
+              <span className="tag tag-warn">{copy.conceptsNotDeployedTag(projects.length)}</span>
             </div>
           </div>
         </aside>
@@ -109,15 +118,15 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       {/* Featured Product Concepts */}
       <section style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '12px', gap: '12px', flexWrap: 'wrap' }}>
-          <h2 className="section-title">Prototipe Unggulan</h2>
+          <h2 className="section-title">{copy.featuredHeading}</h2>
           <button type="button" className="btn btn-sm" onClick={() => onExploreAtlas()}>
-            Lihat seluruh {projects.length} konsep
+            {copy.viewAllConceptsBtn(projects.length)}
             <IconArrowRight size={13} />
           </button>
         </div>
 
         <div className="featured-grid">
-          {featured.map(project => <ProjectCard key={project.id} project={project} />)}
+          {featured.map((project) => <ProjectCard key={project.id} project={project} />)}
         </div>
       </section>
 
@@ -125,12 +134,10 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <section className="panel">
         <div className="panel-header">
           <div>
-            <h2 className="section-title">Atlas Ekonomi Digital Indonesia - {SECTORS.length} Sektor Pasar</h2>
-            <p className="section-desc">
-              Setiap sektor memetakan standar infrastruktur nyata Indonesia 2025-2026 (QRIS Tap, BI-FAST, SATUSEHAT, CoreTax, UU PDP, RKAB/SIMBARA, IDXCarbon, BPJPH, SPBE). Klik sektor mana saja untuk menyaring konsepnya.
-            </p>
+            <h2 className="section-title">{copy.radarHeading(SECTORS.length)}</h2>
+            <p className="section-desc">{copy.radarDesc}</p>
           </div>
-          <span className="tag tag-mono">{projects.length} Konsep | {archetypeCount} Arketipe UI</span>
+          <span className="tag tag-mono">{copy.radarSummaryTag(projects.length, archetypeCount)}</span>
         </div>
 
         <div className="sector-radar-grid">
@@ -144,10 +151,10 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
                 onClick={() => onExploreAtlas(sector.id)}
               >
                 <div className="sector-radar-head">
-                  <span className="sector-radar-name">{sector.shortName}</span>
+                  <span className="sector-radar-name">{getSectorShortName(sector, lang)}</span>
                   <span className="tag tag-mono">{count}</span>
                 </div>
-                <div className="sector-radar-thesis">{sector.indonesiaThesis}</div>
+                <div className="sector-radar-thesis">{getSectorThesis(sector, lang)}</div>
                 <div className="tag-wrap" style={{ marginTop: 'auto', paddingTop: '4px' }}>
                   {sector.standards.slice(0, 2).map((st) => (
                     <span className="tag" style={{ fontSize: '10px' }} key={st}>{st}</span>

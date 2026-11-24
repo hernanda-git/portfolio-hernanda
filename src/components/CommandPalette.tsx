@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { EXPERIENCES } from '../data/profile';
 import type { ConceptProject } from '../data/projects';
-import { ARCHETYPE_LABELS, SECTORS, type SectorId } from '../data/sectors';
+import { getArchetypeLabel, getSectorName, SECTORS, type SectorId } from '../data/sectors';
+import { useLanguage } from '../i18n/LanguageContext';
+import { UI_COPY } from '../i18n/uiCopy';
 import { IconClose, IconSearch } from './Icons';
 
 interface CommandPaletteProps {
@@ -10,7 +12,7 @@ interface CommandPaletteProps {
   onClose: () => void;
   onOpenProject: (project: ConceptProject) => void;
   onJumpSector: (sector: SectorId) => void;
-  onJumpExperience: () => void;
+  onJumpExperience: (expId?: string) => void;
 }
 
 export const CommandPalette: React.FC<CommandPaletteProps> = ({
@@ -21,6 +23,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   onJumpSector,
   onJumpExperience,
 }) => {
+  const { lang } = useLanguage();
+  const copy = UI_COPY[lang].command;
   const [query, setQuery] = useState('');
   const [cursor, setCursor] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -50,11 +54,21 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       .slice(0, 12);
 
     const matchedSectors = SECTORS.filter((s) =>
-      q ? s.name.toLowerCase().includes(q) || s.standards.some((st) => st.toLowerCase().includes(q)) : false
+      q
+        ? s.name.toLowerCase().includes(q) ||
+          s.nameEn.toLowerCase().includes(q) ||
+          s.standards.some((st) => st.toLowerCase().includes(q))
+        : false
     ).slice(0, 4);
 
     const matchedExp = EXPERIENCES.filter((e) =>
-      q ? e.company.toLowerCase().includes(q) || e.role.toLowerCase().includes(q) || e.sector.toLowerCase().includes(q) : false
+      q
+        ? e.company.toLowerCase().includes(q) ||
+          e.role.en.toLowerCase().includes(q) ||
+          e.role.id.toLowerCase().includes(q) ||
+          e.sector.en.toLowerCase().includes(q) ||
+          e.sector.id.toLowerCase().includes(q)
+        : false
     ).slice(0, 3);
 
     return { matchedProjects, matchedSectors, matchedExp };
@@ -86,7 +100,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           onJumpSector(results.matchedSectors[cursor - pLen].id);
           onClose();
         } else {
-          onJumpExperience();
+          onJumpExperience(results.matchedExp[cursor - pLen - sLen]?.id);
           onClose();
         }
       }
@@ -100,7 +114,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   let runningIndex = 0;
 
   return (
-    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label="Pencarian cepat">
+    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label={copy.dialogAria}>
       <div className="cmd-modal" onClick={(e) => e.stopPropagation()}>
         <div className="cmd-input-row">
           <IconSearch size={15} />
@@ -112,9 +126,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               setQuery(e.target.value);
               setCursor(0);
             }}
-            placeholder={`Loncat ke ${projects.length} konsep, standar (QRIS, SATUSEHAT, CoreTax, UU PDP), stack, atau karier...`}
+            placeholder={copy.placeholder(projects.length)}
           />
-          <button type="button" className="icon-btn" onClick={onClose} aria-label="Tutup pencarian cepat">
+          <button type="button" className="icon-btn" onClick={onClose} aria-label={copy.closeAria}>
             <IconClose size={13} />
           </button>
         </div>
@@ -122,12 +136,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         <div className="cmd-list">
           {flatCount === 0 ? (
             <div style={{ padding: '24px 12px', textAlign: 'center', color: 'var(--ui-text-muted)', fontSize: '12.5px' }}>
-              Tidak ditemukan konsep, sektor, atau pengalaman untuk &quot;{query}&quot;. Coba &quot;QRIS&quot;, &quot;SATUSEHAT&quot;, &quot;CoreTax&quot;, &quot;Tambang&quot;, atau &quot;.NET MAUI&quot;.
+              {copy.emptyResult(query)}
             </div>
           ) : (
             <>
               <div className="facet-title" style={{ padding: '4px 10px' }}>
-                <span>{query ? 'Konsep Produk' : 'Konsep Unggulan'}</span>
+                <span>{query ? copy.matchedConcepts : copy.featuredConcepts}</span>
                 <span className="tag-mono">{results.matchedProjects.length}</span>
               </div>
               {results.matchedProjects.map((p) => {
@@ -154,7 +168,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                         {p.tagline}
                       </div>
                     </div>
-                    <span className="tag">{ARCHETYPE_LABELS[p.archetype]}</span>
+                    <span className="tag">{getArchetypeLabel(p.archetype, lang)}</span>
                   </button>
                 );
               })}
@@ -162,7 +176,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               {results.matchedSectors.length > 0 && (
                 <>
                   <div className="facet-title" style={{ padding: '8px 10px 4px' }}>
-                    <span>Sektor Pasar Indonesia</span>
+                    <span>{copy.marketSectors}</span>
                   </div>
                   {results.matchedSectors.map((s) => {
                     const idx = runningIndex++;
@@ -177,8 +191,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                           onClose();
                         }}
                       >
-                        <span style={{ fontSize: '12.5px', fontWeight: 500 }}>{s.name}</span>
-                        <span className="tag">Filter Sektor</span>
+                        <span style={{ fontSize: '12.5px', fontWeight: 500 }}>{getSectorName(s, lang)}</span>
+                        <span className="tag">{copy.filterSectorTag}</span>
                       </button>
                     );
                   })}
@@ -188,7 +202,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               {results.matchedExp.length > 0 && (
                 <>
                   <div className="facet-title" style={{ padding: '8px 10px 4px' }}>
-                    <span>Riwayat Karier Terverifikasi (CV)</span>
+                    <span>{copy.careerHistory}</span>
                   </div>
                   {results.matchedExp.map((e) => {
                     const idx = runningIndex++;
@@ -199,15 +213,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                         className={`cmd-item ${cursor === idx ? 'is-selected' : ''}`}
                         onMouseEnter={() => setCursor(idx)}
                         onClick={() => {
-                          onJumpExperience();
+                          onJumpExperience(e.id);
                           onClose();
                         }}
                       >
                         <div>
-                          <div style={{ fontSize: '12.5px', fontWeight: 600 }}>{e.role} - {e.company}</div>
-                          <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)' }}>{e.period} | {e.sector}</div>
+                          <div style={{ fontSize: '12.5px', fontWeight: 600 }}>{e.role[lang]} - {e.company}</div>
+                          <div style={{ fontSize: '11px', color: 'var(--ui-text-muted)' }}>{e.period[lang]} | {e.sector[lang]}</div>
                         </div>
-                        <span className="tag tag-ok">CV Valid</span>
+                        <span className="tag tag-ok">{copy.verifiedRoleTag}</span>
                       </button>
                     );
                   })}
