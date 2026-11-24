@@ -383,7 +383,7 @@ function TopologyView({ work, map, link }: { work: Workspace; map: boolean; link
                     <span className="atlas-node-meta"><span className="atlas-code">{item.code}</span><small>{map ? `Z${index + 1}` : `0${index + 1}`}</small></span>
                     <strong>{item.title}</strong>
                     <Badge tone={item.tone}>{item.status}</Badge>
-                    {record.linkedCode && <span className="atlas-code">-> {record.linkedCode}</span>}
+                    {record.linkedCode && <span className="atlas-code">ke {record.linkedCode}</span>}
                     {linked === item.code && <Badge tone="accent">Tujuan relasi terpilih</Badge>}
                   </button>
                 );
@@ -415,7 +415,7 @@ function LinkForm({ work, label }: { work: Workspace; label: string }) {
   const save = (event: FormEvent) => {
     event.preventDefault();
     if (target === oldLink || cycle) return;
-    work.apply({ label: target ? 'Relasi lokal disimpan' : 'Relasi lokal dilepas', detail: target ? `${work.selected.code} -> ${target}` : `${work.selected.code} x ${oldLink}`, patch: { linkedCode: target || undefined } });
+    work.apply({ label: target ? 'Relasi lokal disimpan' : 'Relasi lokal dilepas', detail: target ? `${work.selected.code} ke ${target}` : `${work.selected.code} x ${oldLink}`, patch: { linkedCode: target || undefined } });
   };
   return (
     <form className="atlas-form atlas-inline-form" onSubmit={save}>
@@ -699,7 +699,7 @@ function ScheduleView({ work }: { work: Workspace }) {
             <thead><tr><th scope="col">Slot</th>{days.map((name) => <th key={name} scope="col">{name}</th>)}</tr></thead>
             <tbody>{periods.map((time, row) => <tr key={time}><th scope="row">{time}</th>{days.map((name, col) => {
               const item = booked(col, row);
-              return <td key={name}><button type="button" className="atlas-slot" data-booked={!!item} aria-label={`${name} ${time}${item ? ` | ${item.code}` : ' | kosong'}} aria-pressed={day === col && period === row} onClick={() => setChoice({ day: col, period: row })}>{item ? item.code : '+'}</button></td>;
+              return <td key={name}><button type="button" className="atlas-slot" data-booked={!!item} aria-label={`${name} ${time}${item ? ` | ${item.code}` : ' | kosong'}`} aria-pressed={day === col && period === row} onClick={() => setChoice({ day: col, period: row })}>{item ? item.code : '+'}</button></td>;
             })}</tr>)}</tbody>
           </table>
         </div>

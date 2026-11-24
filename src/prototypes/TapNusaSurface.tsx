@@ -13,8 +13,8 @@ const STORAGE = 'portfolio:tapnusa:v1';
 const LIMIT = 500_000;
 const RATE = 3_750;
 const sources = [
-  { name: 'MRT | Dukuh Atas -> Blok M', amount: 8_000 },
-  { name: 'KRL | Sudirman -> Bogor', amount: 6_000 },
+  { name: 'MRT | Dukuh Atas ke Blok M', amount: 8_000 },
+  { name: 'KRL | Sudirman ke Bogor', amount: 6_000 },
   { name: 'TransJakarta | Koridor 1', amount: 3_500 },
 ];
 const initial: Wallet = {
@@ -78,7 +78,7 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
       return;
     }
     if (rail === 'Isi saldo' ? amount + balance > LIMIT : amount > balance) {
-      setFeedback(rail === 'Isi saldo' ? Saldo setelah isi ulang melebihi batas ${money(LIMIT)}. : 'Saldo tidak cukup. Isi saldo sebelum mencoba lagi.');
+      setFeedback(rail === 'Isi saldo' ? `Saldo setelah isi ulang melebihi batas ${money(LIMIT)}.` : 'Saldo tidak cukup. Isi saldo sebelum mencoba lagi.');
       return;
     }
     const id = (wallet.entries.at(-1)?.id ?? 0) + 1;
@@ -137,9 +137,9 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
         <h2>Simulasi pembayaran</h2>
         <label>Jenis transaksi<select value={rail} onChange={event => { setRail(event.target.value as typeof rail); setFeedback(''); }}><option>Tap transit</option><option>QR lintas negara</option><option>Isi saldo</option></select></label>
         {rail === 'Tap transit' && <label>Perjalanan<select value={station} onChange={e => setStation(Number(e.target.value))}>{sources.map((source, index) => <option key={source.name} value={index}>{source.name} | {money(source.amount)}</option>)}</select></label>}
-        {rail === 'QR lintas negara' && <><label>Nominal merchant (MYR)<input required type="number" min="0.01" max="100" step="0.01" value={subtotal} onChange={e => setSubtotal(e.target.value)} /></label><p>{merchant} | Kurs tetap {money(RATE)} / MYR{Number.isFinite(myr) && myr > 0 ?  | MYR ${myrFormat.format(myr)} : ''}</p></>}
+        {rail === 'QR lintas negara' && <><label>Nominal merchant (MYR)<input required type="number" min="0.01" max="100" step="0.01" value={subtotal} onChange={e => setSubtotal(e.target.value)} /></label><p>{merchant} | Kurs tetap {money(RATE)} / MYR{Number.isFinite(myr) && myr > 0 ? ` | MYR ${myrFormat.format(myr)}` : ''}</p></>}
         {rail === 'Isi saldo' && <label>Nominal isi saldo (IDR)<input required type="number" min="1" max={LIMIT} step="1" value={topUp} onChange={e => setTopUp(e.target.value)} /></label>}
-        <button type="submit" className="tapnusa-action">{rail === 'Tap transit' ? 'Simulasikan tap' : rail === 'Isi saldo' ? 'Tambahkan saldo' : 'Bayar QR'}{amount > 0 ?  | ${money(amount)} : ''}</button>
+        <button type="submit" className="tapnusa-action">{rail === 'Tap transit' ? 'Simulasikan tap' : rail === 'Isi saldo' ? 'Tambahkan saldo' : 'Bayar QR'}{amount > 0 ? ` | ${money(amount)}` : ''}</button>
         <output aria-live="polite">{feedback}</output>
       </form>
     </div>}
@@ -164,7 +164,7 @@ export default function TapNusaSurface({ page }: { page: ProjectPageSpec }) {
       </section>
       <section className="tapnusa-panel">
         <h2>Kontrol simulasi</h2>
-        <dl><div><dt>Batas saldo dompet</dt><dd>{money(LIMIT)}</dd></div><div><dt>Persetujuan settlement</dt><dd>Maker -> Checker -> Releaser</dd></div><div><dt>Transaksi eksternal</dt><dd>Tidak dikirim</dd></div></dl>
+        <dl><div><dt>Batas saldo dompet</dt><dd>{money(LIMIT)}</dd></div><div><dt>Persetujuan settlement</dt><dd>Maker ke Checker ke Releaser</dd></div><div><dt>Transaksi eksternal</dt><dd>Tidak dikirim</dd></div></dl>
         {!confirmReset ? <button type="button" className="tapnusa-link" onClick={() => setConfirmReset(true)}>Reset simulasi TapNusa</button> : <div className="tapnusa-confirm"><p>Hapus pembayaran dan persetujuan lokal?</p><button type="button" className="tapnusa-action" onClick={() => { setWallet(initial); setSelected(undefined); setFeedback(''); setConfirmReset(false); }}>Ya, reset</button><button type="button" className="tapnusa-link" onClick={() => setConfirmReset(false)}>Batal</button></div>}
       </section>
     </div>}

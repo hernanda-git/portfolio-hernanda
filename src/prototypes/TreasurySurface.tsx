@@ -136,7 +136,7 @@ function CashPage({ state }: { state: TreasuryState }) {
   return <>
     <dl className="treasury-metrics">
       <Metric label="Saldo buku | IDR" value={compact(cash.booked)} note={`${banks.length} bank | ${idr(cash.booked)}`} />
-      <Metric label="Dana operasional" value={compact(cash.available)} note={${idr(cash.holds)} ditahan bank} tone="accent" />
+      <Metric label="Dana operasional" value={compact(cash.available)} note={`${idr(cash.holds)} ditahan bank`} tone="accent" />
       <Metric label="Saldo kas | USD" value={usd(cash.usd)} note={`Setara ${idr(cash.usd * state.assumptions.rate)}`} />
       <Metric label={`Batch ${batch.ref}`} value={idr(batch.debit)} note={<Badge tone={stage.tone}>{stage.label}</Badge>} />
     </dl>
@@ -163,7 +163,7 @@ function CashPage({ state }: { state: TreasuryState }) {
         </Panel>
         <Panel title="Pergerakan kas intrahari" meta="IDR miliar">
           <LiquidityChart labels={cashTimes} series={[{ label: 'Saldo buku', values: chart, color: 'base' }]}
-            caption={`${cashTimes[0]} ${idr(chart[0])} -> ${cashTimes[cashTimes.length - 1]} ${idr(cash.booked)}`} />
+            caption={`${cashTimes[0]} ${idr(chart[0])} ke ${cashTimes[cashTimes.length - 1]} ${idr(cash.booked)}`} />
           <details className="treasury-chart-details">
             <summary>Lihat data saldo intrahari</summary>
             <DataTable label="Data saldo buku intrahari" columns={intradayColumns}>
@@ -179,7 +179,7 @@ function CashPage({ state }: { state: TreasuryState }) {
             <Fields items={[
               ['Saldo buku IDR', idr(selectedPosition.booked)], ['Ditahan bank', idr(selected.hold)],
               ['Cadangan BI-FAST', idr(selectedPosition.reserve)], ['Saldo USD', selected.usd ? usd(selected.usd) : '-'],
-              ['Posisi sumber', ${selected.stamp} WIB], ['Cutoff simulasi', `${selected.cutoff} WIB`],
+              ['Posisi sumber', `${selected.stamp} WIB`], ['Cutoff simulasi', `${selected.cutoff} WIB`],
             ]} />
             {selected.name === fundingBank.name && <p className="treasury-note">{state.stage === 'released'
               ? `${idr(batch.debit)} telah didebit dari Mandiri dalam simulasi.`
@@ -267,7 +267,7 @@ function ReconciliationPage({ state, run }: { state: TreasuryState; run: RunComm
   return <>
     <dl className="treasury-metrics">
       <Metric label="Mutasi masuk" value={idr(receiptCash)} note={`${receipts.length} kredit kas | VA-1811`} />
-      <Metric label="Dialokasikan ke piutang" value={idr(applied)} note={${posted.length} mutasi diposting ke ERP} tone="ok" />
+      <Metric label="Dialokasikan ke piutang" value={idr(applied)} note={`${posted.length} mutasi diposting ke ERP`} tone="ok" />
       <Metric label="Cocok tanpa selisih" value={exactCount} note="Siap diposting otomatis" tone="accent" />
       <Metric label="Eksepsi terbuka" value={openExceptions} note="Butuh pemeriksaan atau faktur" tone={openExceptions ? 'warn' : 'ok'} />
     </dl>
@@ -332,7 +332,7 @@ function PayoutPage({ state, run }: { state: TreasuryState; run: RunCommand }) {
     </ol>
     <dl className="treasury-metrics">
       <Metric label="Total debit batch" value={idr(batch.debit)} note={`${transfers.length} instruksi | termasuk biaya`} />
-      <Metric label="Dana bebas pakai Mandiri" value={idr(position.available)} note={${idr(position.reserve)} cadangan batch} tone="accent" />
+      <Metric label="Dana bebas pakai Mandiri" value={idr(position.available)} note={`${idr(position.reserve)} cadangan batch`} tone="accent" />
       <Metric label="Dana setelah rilis" value={idr(afterRelease)} note={state.stage === 'released' ? 'Sudah diposting ke saldo lokal' : 'Proyeksi jika seluruh batch dirilis'} />
       <Metric label="Status batch" value={<Badge tone={status.tone}>{status.label}</Badge>} note={`Cutoff Mandiri ${fundingBank.cutoff} WIB`} />
     </dl>
@@ -399,7 +399,7 @@ function ConnectivityPage() {
     <dl className="treasury-metrics">
       <Metric label="Jalur SNAP BI" value="4 bank" note="Respons saldo REST | contoh lokal" />
       <Metric label="File host-to-host" value="1 bank" note="OCBC | contoh file terjadwal" />
-      <Metric label="Konektor dalam SLA" value={${banks.filter(item => dataAge(item) <= item.maxAge).length} / ${banks.length}} note="Usia dihitung dari waktu snapshot" tone="ok" />
+      <Metric label="Konektor dalam SLA" value={`${banks.filter(item => dataAge(item) <= item.maxAge).length} / ${banks.length}`} note="Usia dihitung dari waktu snapshot" tone="ok" />
       <Metric label="Mode jaringan" value="Nonaktif" note="Tidak memanggil API atau server bank" tone="accent" />
     </dl>
     <div className="treasury-split">
