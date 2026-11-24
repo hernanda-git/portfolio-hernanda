@@ -155,7 +155,13 @@ export const ExperienceView: React.FC<ExperienceViewProps> = ({
 
                 <ul className="exp-bullets" style={{ marginTop: '10px' }}>
                   {exp.highlights.map((h, i) => (
-                    <li key={`${exp.id}-${i}`}>{h}</li>
+                    <li key={`${exp.id}-${i}`}>
+                      {/^https?:\/\/\S+$/.test(h) ? (
+                        <a href={h} target="_blank" rel="noreferrer">{h}</a>
+                      ) : (
+                        h
+                      )}
+                    </li>
                   ))}
                 </ul>
 
